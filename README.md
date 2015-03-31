@@ -1,4 +1,4 @@
-# Build
+# Subsite Starterkit
 
        T                                    \`.    T
        |    T     .--------------.___________) \   |    T
@@ -6,9 +6,42 @@
             !     `--------------'           ) (      | !
                                              '-'      !
 
-## Set up your environment:
+This is a starting point for creating new websites for the
+[NextEuropa platform](https://blogs.ec.europa.eu/eu-digital/content/next-europa-it-platform)
+of the European Commission.
 
-*   RUN: composer install
+
+## Starting a new project
+
+### 1. Download the starterkit
+
+```
+$ git clone git@bitbucket.org:digitfpfis/subsite-starterkit.git
+```
+
+### 2. Install dependencies
+
+The software packages that are needed to build the project are installed with
+[Composer](https://getcomposer.org/).
+
+```
+$ cd subsite-starterkit
+$ composer install
+```
+
+### 3. Configure build properties
+
+The `build.properties.dist` file contains default configuration which is common
+to all NextEuropa projects. You might want to override some of these properties
+for your own project.
+
+To do this, create a new file called `build.properties` in the root folder and
+put your overrided properties in it:
+
+```
+$ vi build.properties
+```
+
 
 ## To build your local dev site:
 
