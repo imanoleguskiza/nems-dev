@@ -1,9 +1,6 @@
 # Basic configuration
 # -------------------
 
-# The name of the project.
-phing.project.name = Subsite starterkit
-
 # The build location
 phing.project.build.dir = build
 
@@ -60,6 +57,9 @@ multisite.repo.password = pass
 
 # Subsite configuration
 # ---------------------
+
+# The name of the subsite.
+subsite.name = Subsite starterkit
 
 # The make file for the subsite.
 subsite.make = build.make
