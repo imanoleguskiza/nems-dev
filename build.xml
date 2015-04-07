@@ -193,7 +193,7 @@
               passthru="true" />
     </target>
 
-    <!-- Delete the platform files. -->
+    <!-- Delete the platform. -->
     <target name="delete-platform" description="Deletes the downloaded platform files." depends="init">
         <echo msg="Deleting platform files." />
         <delete dir="${platform.code.dir}" includeemptydirs="true" failonerror="false" />
