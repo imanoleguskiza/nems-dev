@@ -15,6 +15,7 @@
     </target>
 
     <target name="init">
+        <echo msg="Loading Drush task." />
         <taskdef name="drush" classname="DrushTask" />
     </target>
 
