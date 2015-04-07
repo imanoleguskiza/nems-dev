@@ -206,7 +206,8 @@
             <available file="${platform.code.dir}/.git" type="dir" />
             <then>
                 <echo msg="The platform is already cloned." />
-                <phingcall target="fetch-platform" />
+                <phingcall target="checkout-platform" />
+                <phingcall target="pull-platform" />
             </then>
             <else>
                 <echo msg="Cloning platform." />
@@ -226,7 +227,6 @@
             <then>
                 <echo msg="Updating platform repository." />
                 <gitfetch repository="${platform.code.dir}" all="true" />
-                <phingcall target="checkout-platform" />
             </then>
             <else>
                 <fail msg="Platform update failed: the platform has not been downloaded." />
@@ -247,6 +247,20 @@
             </then>
             <else>
                 <fail msg="Platform checkout failed: the platform has not been downloaded." />
+            </else>
+        </if>
+    </target>
+
+    <!-- Fetch and merge latest platform changes. -->
+    <target name="pull-platform" description="Fetch and merge latest platform changes." depends="init">
+        <if>
+            <available file="${platform.code.dir}/.git" type="dir" />
+            <then>
+                <echo msg="Fetching and merging platform repository." />
+                <gitpull repository="${platform.code.dir}" all="true" />
+            </then>
+            <else>
+                <fail msg="Platform pull failed: the platform has not been downloaded." />
             </else>
         </if>
     </target>
