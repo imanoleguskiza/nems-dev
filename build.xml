@@ -50,7 +50,7 @@
 
         <echo msg="Copy platform files." />
         <copy todir="${phing.project.build.dir}">
-            <fileset dir="${phing.project.platform.dir}">
+            <fileset dir="${platform.code.dir}">
               <patternset>
                 <exclude name="**/*.svn"/>
                 <exclude name="**/automation/"/>
@@ -196,23 +196,23 @@
     <!-- svncheckout platform files from SVN. -->
     <target name="init-platform" description="Export multisite from SVN" depends="init">
         <echo message="Deleting platform files." />
-        <delete dir="${project.basedir}/${phing.project.platform.dir}" includeemptydirs="true" failonerror="false" />
+        <delete dir="${platform.code.dir}" includeemptydirs="true" failonerror="false" />
         <svncheckout
              username="${multisite.repo.user}"
              password="${multisite.repo.password}"
              repositoryurl="${multisite.repo.url}"
-             todir="${project.basedir}/${phing.project.platform.dir}"
+             todir="${platform.code.dir}"
              force="true"/>
     </target>
 
     <!-- Update platform files from SVN. -->
     <target name="update-platform" description="Update multisite from SVN" depends="init">
         <if>
-          <available file="${project.basedir}/${phing.project.platform.dir}" type="dir" />
+          <available file="${platform.code.dir}" type="dir" />
           <then>
             <echo message="Update platform files from SVN." />
             <svnupdate
-                 todir="${project.basedir}/${phing.project.platform.dir}" />
+                 todir="${platform.code.dir}" />
          </then>
          <else>
            <echo message="Nothing to update. Proceed by initializing the platform." />

@@ -92,7 +92,7 @@ phing.project.tmp.dir = tmp
 
 # Build locations.
 project.code.dir = ${project.basedir}/${phing.project.build.dir}
-platform.code.dir = ${project.basedir}/${phing.project.platform.dir}
+platform.code.dir = ${project.basedir}/${platform.dir}
 
 # Directories inside the Drupal installation.
 drupal.profile.dir = ${project.code.dir}/profiles
