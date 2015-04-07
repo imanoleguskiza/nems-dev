@@ -3,9 +3,9 @@
 <project name="${subsite.name}" default="help">
 
     <!-- If `build.properties.local` exists then we want it badly -->
+    <property file="build.properties.local" />
+    <property file="build.properties" />
     <property file="build.properties.dist" />
-    <property file="build.properties" override="true" />
-    <property file="build.properties.local" override="true" />
 
     <target name="help" description="Phing target list">
         <exec executable="${phing.bin}"
