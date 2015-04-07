@@ -23,9 +23,9 @@
         <if>
             <available file="${drupal.settings.dir}" type="dir" />
             <then>
-              <chmod mode="0777" failonerror="false" verbose="false" quiet="true">
-                <fileset dir="${drupal.settings.dir}" />
-              </chmod>
+                <chmod mode="0777" failonerror="false" verbose="false" quiet="true">
+                    <fileset dir="${drupal.settings.dir}" />
+                </chmod>
             </then>
         </if>
 
