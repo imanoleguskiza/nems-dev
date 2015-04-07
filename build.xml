@@ -193,41 +193,51 @@
               passthru="true" />
     </target>
 
-    <!-- svncheckout platform files from SVN. -->
-    <target name="init-platform" description="Export multisite from SVN" depends="init">
+    <!-- Delete the platform files. -->
+    <target name="delete-platform" description="Deletes the downloaded platform files." depends="init">
         <echo msg="Deleting platform files." />
         <delete dir="${platform.code.dir}" includeemptydirs="true" failonerror="false" />
-        <svncheckout
-             username="${multisite.repo.user}"
-             password="${multisite.repo.password}"
-             repositoryurl="${multisite.repo.url}"
-             todir="${platform.code.dir}"
-             force="true"/>
     </target>
 
-    <!-- Update platform files from SVN. -->
-    <target name="update-platform" description="Update multisite from SVN" depends="init">
+    <!-- Clone the platform. -->
+    <target name="clone-platform" description="Clone the platform with git." depends="init">
         <if>
-          <available file="${platform.code.dir}" type="dir" />
-          <then>
-            <echo msg="Update platform files from SVN." />
-            <svnupdate
-                 todir="${platform.code.dir}" />
-         </then>
-         <else>
-           <echo msg="Nothing to update. Proceed by initializing the platform." />
-           <phingcall target="init-platform" />
-         </else>
-      </if>
+            <available file="${platform.code.dir}/.git" type="dir" />
+            <then>
+                <echo msg="The platform is already cloned." />
+                <phingcall target="fetch-platform" />
+            </then>
+            <else>
+                <echo msg="Cloning platform." />
+                <gitclone
+                    repository="${platform.repo.url}"
+                    targetPath="${platform.code.dir}"
+                />
+            </else>
+        </if>
+    </target>
+
+    <!-- Update the platform. -->
+    <target name="fetch-platform" description="Fetch latest platform changes." depends="init">
+        <if>
+            <available file="${platform.code.dir}/.git" type="dir" />
+            <then>
+                <echo msg="Updating platform repository." />
+                <gitfetch repository="${platform.code.dir}" all="true" />
+            </then>
+            <else>
+                <fail msg="Platform update failed: the platform has not been downloaded." />
+            </else>
+        </if>
     </target>
 
     <target name="build-dev"
-            description="Build a local Drupal site in order to dev"
-            depends="init, init-platform, drush-distro, link-modules, link-tests, files-directory, create-settings.php" />
+            description="Build a local development version of the site."
+            depends="init, clone-platform, drush-distro, link-modules, link-tests, files-directory, create-settings.php" />
 
     <target name="rebuild-dev"
             description="Rebuild the local development version, keeping settings.php and files intact."
-            depends="init, backup-local-files, update-platform, drush-distro, link-modules, link-tests, files-directory, create-settings.php, restore-local-files" />
+            depends="init, backup-local-files, fetch-platform, drush-distro, link-modules, link-tests, files-directory, create-settings.php, restore-local-files" />
 
     <target name="build-dist"
             description="Build the Drupal site in order to install it"

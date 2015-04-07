@@ -47,13 +47,20 @@ platform.dir = platform
 # The make file for the platform.
 platform.make = ${platform.dir}/${drupal.profile.name}/build.make
 
-# The location and version of the platform to use.
-multisite.repo.root = https://webgate.ec.europa.eu/CITnet/svn/MULTISITE
-multisite.repo.branch = trunk
-multisite.repo.url = ${multisite.repo.root}/${multisite.repo.branch}
-multisite.repo.user = user
-multisite.repo.password = pass
+# The version of to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
+platform.repo.version = master
 
+# The repository to use, either 'dev' or 'reference'.
+platform.repo.repo = dev
+
+# Username used to access the repository on CITnet.
+platform.repo.user = myusername
+
+# The location of the repository.
+platform.repo.protocol = https
+platform.repo.domain = webgate.ec.europa.eu
+platform.repo.path = CITnet/stash/scm/nexteuropa/platform-${platform.repo.repo}.git
+platform.repo.url = ${platform.repo.protocol}://${platform.repo.user}@${platform.repo.domain}/${platform.repo.path}
 
 # Subsite configuration
 # ---------------------
