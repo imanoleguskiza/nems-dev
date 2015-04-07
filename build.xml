@@ -214,6 +214,7 @@
                     repository="${platform.repo.url}"
                     targetPath="${platform.code.dir}"
                 />
+                <phingcall target="checkout-platform" />
             </else>
         </if>
     </target>
@@ -225,9 +226,27 @@
             <then>
                 <echo msg="Updating platform repository." />
                 <gitfetch repository="${platform.code.dir}" all="true" />
+                <phingcall target="checkout-platform" />
             </then>
             <else>
                 <fail msg="Platform update failed: the platform has not been downloaded." />
+            </else>
+        </if>
+    </target>
+
+    <!-- Check out the platform. -->
+    <target name="checkout-platform" description="Check out a particular commit of the platform." depends="init">
+        <if>
+            <available file="${platform.code.dir}/.git" type="dir" />
+            <then>
+                <echo msg="Checking out ref '${platform.repo.branch}'." />
+                <gitcheckout
+                    repository="${platform.code.dir}"
+                    branchname="${platform.repo.branch}"
+                />
+            </then>
+            <else>
+                <fail msg="Platform checkout failed: the platform has not been downloaded." />
             </else>
         </if>
     </target>
