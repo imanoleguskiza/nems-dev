@@ -126,7 +126,7 @@
     </target>
 
     <!-- Backup settings.php file. -->
-    <target name="backup-site-settings" depends="init">
+    <target name="backup-local-files" depends="init">
         <if>
             <available file="${drupal.settings.dir}/settings.php" type="file" />
             <then>
@@ -142,7 +142,7 @@
     </target>
 
     <!-- Backup settings.php file. -->
-    <target name="restore-site-settings" depends="init">
+    <target name="restore-local-files" depends="init">
         <if>
             <available file="${project.basedir}/${phing.project.tmp.dir}/settings.php" type="file" />
             <then>
@@ -226,8 +226,8 @@
             depends="init, init-platform, drush-distro, link-modules, link-tests, files-directory, create-settings.php" />
 
     <target name="rebuild-dev"
-            description="Re-build a local Drupal site in order to dev, keeps settings.php and files intact."
-            depends="init, backup-site-settings, update-platform, drush-distro, link-modules, link-tests, files-directory, create-settings.php, restore-site-settings" />
+            description="Rebuild the local development version, keeping settings.php and files intact."
+            depends="init, backup-local-files, update-platform, drush-distro, link-modules, link-tests, files-directory, create-settings.php, restore-local-files" />
 
     <target name="build-dist"
             description="Build the Drupal site in order to install it"
