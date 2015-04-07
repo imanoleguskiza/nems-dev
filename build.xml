@@ -95,7 +95,7 @@
                 <available file="${project.basedir}/tests/behat.yml" type="file" />
             </not>
             <then>
-                <echo message="Creating behat.yml config file" />
+                <echo msg="Creating behat.yml config file" />
                 <loadfile property="behat.yml" file="${project.basedir}/tests/behat.yml.dist">
                     <filterchain>
                         <replacetokens>
@@ -105,7 +105,7 @@
                         </replacetokens>
                     </filterchain>
                 </loadfile>
-                <echo message="${behat.yml}" file="${project.basedir}/tests/behat.yml" />
+                <echo msg="${behat.yml}" file="${project.basedir}/tests/behat.yml" />
             </then>
         </if>
         <symlink link="${phing.project.build.dir}/behat.yml" target="../tests/behat.yml" />
@@ -130,13 +130,13 @@
         <if>
             <available file="${drupal.settings.dir}/settings.php" type="file" />
             <then>
-                <echo message="Creating backup of settings.php file" />
+                <echo msg="Creating backup of settings.php file" />
                 <mkdir dir="${project.basedir}/${phing.project.tmp.dir}" />
                 <chmod file="${drupal.settings.dir}/settings.php" mode="0777" failonerror="false" verbose="false" quiet="true" />
                 <copy file="${drupal.settings.dir}/settings.php" toDir="${project.basedir}/${phing.project.tmp.dir}" />
             </then>
             <else>
-              <echo message="No settings.php file found. Proceeding with normal build." />
+              <echo msg="No settings.php file found. Proceeding with normal build." />
             </else>
         </if>
     </target>
@@ -146,13 +146,13 @@
         <if>
             <available file="${project.basedir}/${phing.project.tmp.dir}/settings.php" type="file" />
             <then>
-                <echo message="Restoring settings.php file from backup." />
+                <echo msg="Restoring settings.php file from backup." />
                 <copy file="${project.basedir}/${phing.project.tmp.dir}/settings.php" tofile="${drupal.settings.dir}/settings.php" />
-                <echo message="Clean-up temporary folder." />
+                <echo msg="Clean-up temporary folder." />
                 <delete dir="${project.basedir}/${phing.project.tmp.dir}" includeemptydirs="true" failonerror="false" />
             </then>
             <else>
-              <echo message="No backup settings.php file found. Proceeding with normal build." />
+              <echo msg="No backup settings.php file found. Proceeding with normal build." />
             </else>
         </if>
     </target>
@@ -195,7 +195,7 @@
 
     <!-- svncheckout platform files from SVN. -->
     <target name="init-platform" description="Export multisite from SVN" depends="init">
-        <echo message="Deleting platform files." />
+        <echo msg="Deleting platform files." />
         <delete dir="${platform.code.dir}" includeemptydirs="true" failonerror="false" />
         <svncheckout
              username="${multisite.repo.user}"
@@ -210,12 +210,12 @@
         <if>
           <available file="${platform.code.dir}" type="dir" />
           <then>
-            <echo message="Update platform files from SVN." />
+            <echo msg="Update platform files from SVN." />
             <svnupdate
                  todir="${platform.code.dir}" />
          </then>
          <else>
-           <echo message="Nothing to update. Proceed by initializing the platform." />
+           <echo msg="Nothing to update. Proceed by initializing the platform." />
            <phingcall target="init-platform" />
          </else>
       </if>
