@@ -47,8 +47,8 @@ platform.dir = platform
 # The make file for the platform.
 platform.make = ${platform.dir}/${drupal.profile.name}/build.make
 
-# The version of to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
-platform.repo.version = master
+# The branch, tag or commit to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
+platform.repo.branch = develop
 
 # The repository to use, either 'dev' or 'reference'.
 platform.repo.repo = dev
