@@ -7,9 +7,10 @@ nbproject/
 # Ignore local configuration overrides.
 build.properties.local
 
-# Ignore build folders.
+# Ignore build artifacts.
 bin/
 build/
+distro.make
 platform/
 tmp/
 vendor/

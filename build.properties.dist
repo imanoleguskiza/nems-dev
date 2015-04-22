@@ -38,7 +38,7 @@ drupal.make = distro.make
 platform.dir = platform
 
 # The make file for the platform.
-platform.make = ${platform.dir}/${drupal.profile.name}/build.make
+platform.make = ${drupal.platform.profile.dir}/${drupal.profile.name}/build.make
 
 # The branch, tag or commit to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
 platform.repo.branch = epic/NE-2464-reorganized-folders
@@ -64,7 +64,7 @@ platform.repo.url = ${platform.repo.protocol}://${platform.repo.user}:${platform
 subsite.name = Subsite starterkit
 
 # The make file for the subsite.
-subsite.make = build.make
+subsite.make = ${project.basedir}/build.make
 
 
 # Templates

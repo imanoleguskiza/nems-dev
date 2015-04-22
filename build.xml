@@ -19,6 +19,14 @@
         <taskdef name="drush" classname="DrushTask" />
     </target>
 
+    <!-- Generate make file. -->
+    <target name="generate-makefile" depends="init">
+        <echo msg="Generating make file." />
+        <delete file="${drupal.make}" />
+        <touch file="${drupal.make}" />
+        <append destFile="${project.basedir}/${drupal.make}" text="${drush.distro.template}" />
+    </target>
+
     <!-- Execute drush make file and download profile. -->
     <target name="make" depends="init,generate-makefile">
         <if>
@@ -41,7 +49,7 @@
             pipe="yes"
             verbose="${drush.verbose}"
             root="${phing.project.build.dir}">
-            <param>${drupal.platform.profile.dir}/${drupal.profile.name}/build.make</param>
+            <param>${drupal.make}</param>
             <param>${phing.project.build.dir}</param>
             <!--
               High concurrency used because of make problems.
