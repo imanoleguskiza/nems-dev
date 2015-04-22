@@ -41,7 +41,7 @@ platform.dir = platform
 platform.make = ${platform.dir}/${drupal.profile.name}/build.make
 
 # The branch, tag or commit to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
-platform.repo.branch = epic/NEXTEUROPA-2464-Continuous-Integration
+platform.repo.branch = epic/NE-2464-reorganized-folders
 
 # The repository to use, either 'dev' or 'reference'.
 platform.repo.repo = dev
