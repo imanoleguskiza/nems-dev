@@ -20,7 +20,7 @@
     </target>
 
     <!-- Execute drush make file and download profile. -->
-    <target name="make-platform" depends="init">
+    <target name="make" depends="init,generate-makefile">
         <if>
             <available file="${drupal.settings.dir}" type="dir" />
             <then>
@@ -67,14 +67,14 @@
     </target>
 
     <!-- Link custom modules. -->
-    <target name="link-modules" depends="init,make-platform">
+    <target name="link-modules" depends="init,make">
         <symlink link="${drupal.modules.dir}/project" target="../../../../modules" />
         <symlink link="${drupal.themes.dir}/project" target="../../../../themes" />
         <symlink link="${drupal.libraries.dir}/project" target="../../../../libraries" />
     </target>
 
     <!-- Copy custom modules. -->
-    <target name="copy-modules" depends="init,make-platform">
+    <target name="copy-modules" depends="init,make">
         <copy todir="${drupal.modules.dir}">
             <fileset dir="modules" />
         </copy>
@@ -91,7 +91,7 @@
     </target>
 
     <!-- Link test files into the build root. -->
-    <target name="link-tests" depends="init,make-platform">
+    <target name="link-tests" depends="init,make">
         <if>
             <not>
                 <available file="${project.basedir}/tests/behat.yml" type="file" />
@@ -278,15 +278,15 @@
 
     <target name="build-dev"
             description="Build a local development version of the site."
-            depends="init, clone-platform, make-platform, link-modules, link-tests, files-directory, create-settings.php" />
+            depends="init, clone-platform, make, link-modules, link-tests, files-directory, create-settings.php" />
 
     <target name="rebuild-dev"
             description="Rebuild the local development version, keeping settings.php and files intact."
-            depends="init, backup-local-files, fetch-platform, make-platform, link-modules, link-tests, files-directory, create-settings.php, restore-local-files" />
+            depends="init, backup-local-files, fetch-platform, make, link-modules, link-tests, files-directory, create-settings.php, restore-local-files" />
 
     <target name="build-dist"
             description="Build the Drupal site in order to install it"
-            depends="init, make-platform, copy-modules, files-directory, create-settings.php" />
+            depends="init, make, copy-modules, files-directory, create-settings.php" />
 
     <target name="install"
             description="Install the Drupal site"
