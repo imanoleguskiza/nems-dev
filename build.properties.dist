@@ -46,14 +46,16 @@ platform.repo.branch = epic/NEXTEUROPA-2464-Continuous-Integration
 # The repository to use, either 'dev' or 'reference'.
 platform.repo.repo = dev
 
-# Username used to access the repository on CITnet.
+# Credentials used to access the repository on CITnet.
 platform.repo.user = myusername
+platform.repo.pass = mypassword
 
 # The location of the repository.
 platform.repo.protocol = https
 platform.repo.domain = webgate.ec.europa.eu
 platform.repo.path = CITnet/stash/scm/nexteuropa/platform-${platform.repo.repo}.git
-platform.repo.url = ${platform.repo.protocol}://${platform.repo.user}@${platform.repo.domain}/${platform.repo.path}
+platform.repo.url = ${platform.repo.protocol}://${platform.repo.user}:${platform.repo.pass}@${platform.repo.domain}/${platform.repo.path}
+
 
 # Subsite configuration
 # ---------------------
