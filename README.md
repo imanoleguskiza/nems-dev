@@ -31,23 +31,73 @@ $ composer install
 
 ### 3. Configure build properties
 
-The `build.properties.dist` file contains default configuration which is common
-to all NextEuropa projects. You might want to override some of these properties
-for your own project.
+You can configure your project using `build.properties` files:
+
+1.  `build.properties.dist`: This contains default configuration which is
+    common for all NextEuropa projects. This file should never be edited.
+2.  `build.properties`: This is the configuration for your project. In here you
+    can override the default configuration with settings that are more suitable
+    for your project. Some typical settings would be the site name, the install
+    profile to use and the admin password.
+3.  `build.properties.local`: This contains configuration which is unique for
+    the local development environment. In here you would place things like your
+    CITnet username and password, your database settings and the development
+    modules you would like to install. This file should never be committed.
+
+#### a) Create a build.properties file
 
 To do this, create a new file called `build.properties` in the root folder and
-put your overrided properties in it:
+put properties in it that are unique to your project. You can copy any of the
+properties of the `build.properties.dist` file to override them. For example:
 
 ```
-$ vi build.properties
+# The install profile to use.
+drupal.profile.name = multisite_drupal_communities
+
+# The name of the subsite.
+subsite.name = My Project
 ```
 
+#### b) Create a build.properties.local file
 
-## To build your local dev site:
+This file will contain the configuration which are unique to your development
+machine. You can specify your favourite development modules, your database and
+CITnet credentials and so on. Another good trick is that you can try out your
+project against different versions of the Multisite / NextEuropa platform, for
+example you might want to check out if your code still runs fine on the latest
+development version by setting `platform.repo.branch` to `devel`:
 
-*   Create your build.properties.local from build.properties.dist
-*   Change settings in build.properties.local to match your environment.
-*   RUN: <code>bin/phing build-dev</code>
+Because these settings are personal they should not be shared with the rest of
+the team. Make sure you never commit this file!
+
+Example:
+
+```
+# Database settings.
+drupal.db.name = my_database
+drupal.db.user = root
+drupal.db.password = hunter2
+
+# Admin user.
+drupal.admin.username = admin
+drupal.admin.password = admin
+
+# Development / testing modules to enable.
+drupal.development.modules = devel field_ui maillog search_krumo simpletest views_ui
+
+# The branch, tag or commit to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
+platform.repo.branch = develop
+
+# Credentials used to access the repository on CITnet.
+platform.repo.user = myusername
+platform.repo.pass = mypassword
+```
+
+## Building your local development site:
+
+```
+$ ./bin/phing build-dev
+```
 
 ### This will:
 
