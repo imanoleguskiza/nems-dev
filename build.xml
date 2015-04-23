@@ -231,6 +231,7 @@
             <else>
                 <echo msg="Cloning platform." />
                 <gitclone
+                    gitPath="${git.bin}"
                     repository="${platform.repo.url}"
                     targetPath="${platform.code.dir}"
                 />
@@ -245,7 +246,7 @@
             <available file="${platform.code.dir}/.git" type="dir" />
             <then>
                 <echo msg="Updating platform repository." />
-                <gitfetch repository="${platform.code.dir}" all="true" />
+                <gitfetch gitPath="${git.bin}" repository="${platform.code.dir}" all="true" />
             </then>
             <else>
                 <fail msg="Platform update failed: the platform has not been downloaded." />
@@ -260,6 +261,7 @@
             <then>
                 <echo msg="Checking out ref '${platform.repo.branch}'." />
                 <gitcheckout
+                    gitPath="${git.bin}"
                     repository="${platform.code.dir}"
                     branchname="${platform.repo.branch}"
                 />
@@ -276,7 +278,7 @@
             <available file="${platform.code.dir}/.git" type="dir" />
             <then>
                 <echo msg="Fetching and merging platform repository." />
-                <gitpull repository="${platform.code.dir}" all="true" />
+                <gitpull gitPath="${git.bin}" repository="${platform.code.dir}" all="true" />
             </then>
             <else>
                 <fail msg="Platform pull failed: the platform has not been downloaded." />
