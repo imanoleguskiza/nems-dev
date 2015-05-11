@@ -14,13 +14,12 @@
         </exec>
     </target>
 
-    <target name="init">
-        <echo msg="Loading Drush task." />
-        <taskdef name="drush" classname="DrushTask" />
-    </target>
+    <echo msg="Initializing third party Phing tasks." />
+    <taskdef name="continuousphp-package" classname="Continuous\Task\PackageTask" />
+    <taskdef name="drush" classname="DrushTask" />
 
     <!-- Generate make file. -->
-    <target name="generate-makefile" depends="init">
+    <target name="generate-makefile">
         <echo msg="Generating make file." />
         <delete file="${drupal.make}" />
         <touch file="${drupal.make}" />
@@ -28,7 +27,7 @@
     </target>
 
     <!-- Execute drush make file and download profile. -->
-    <target name="make" depends="init,generate-makefile">
+    <target name="make" depends="generate-makefile">
         <if>
             <available file="${drupal.settings.dir}" type="dir" />
             <then>
@@ -60,14 +59,14 @@
     </target>
 
     <!-- Link custom modules. -->
-    <target name="link-modules" depends="init,make">
+    <target name="link-modules" depends="make">
         <symlink link="${drupal.modules.dir}/project" target="../../../../modules" />
         <symlink link="${drupal.themes.dir}/project" target="../../../../themes" />
         <symlink link="${drupal.libraries.dir}/project" target="../../../../libraries" />
     </target>
 
     <!-- Copy custom modules. -->
-    <target name="copy-modules" depends="init,make">
+    <target name="copy-modules" depends="make">
         <copy todir="${drupal.modules.dir}">
             <fileset dir="modules" />
         </copy>
@@ -84,7 +83,7 @@
     </target>
 
     <!-- Link test files into the build root. -->
-    <target name="link-tests" depends="init,make">
+    <target name="link-tests" depends="make">
         <if>
             <not>
                 <available file="${project.basedir}/tests/behat.yml" type="file" />
@@ -108,20 +107,20 @@
     </target>
 
     <!-- Make files directory. -->
-    <target name="files-directory" depends="init">
+    <target name="files-directory">
         <mkdir dir="${drupal.files.dir}" />
         <chmod file="${drupal.files.dir}" mode="0775" failonerror="true" />
     </target>
 
     <!-- Manipulate settings.php file. -->
-    <target name="create-settings.php" depends="init">
+    <target name="create-settings.php">
         <echo msg="Copying default.settings.php file to settings.php..." />
         <copy file="${drupal.settings.dir}/default.settings.php" tofile="${drupal.settings.dir}/settings.php" />
         <chmod file="${drupal.settings.dir}/settings.php" mode="0775" failonerror="true" />
     </target>
 
     <!-- Backup settings.php file. -->
-    <target name="backup-local-files" depends="init">
+    <target name="backup-local-files">
         <if>
             <available file="${drupal.settings.dir}/settings.php" type="file" />
             <then>
@@ -137,7 +136,7 @@
     </target>
 
     <!-- Backup settings.php file. -->
-    <target name="restore-local-files" depends="init">
+    <target name="restore-local-files">
         <if>
             <available file="${project.basedir}/${phing.project.tmp.dir}/settings.php" type="file" />
             <then>
@@ -153,14 +152,14 @@
     </target>
 
     <!-- Install dependencies. -->
-    <target name="install-dependencies" description="Install dependencies." depends="init">
+    <target name="install-dependencies" description="Install dependencies.">
         <composer command="install" composer="${composer.bin}">
             <arg value="--working-dir=${project.code.dir}" />
         </composer>
     </target>
 
     <!-- Install drupal. -->
-    <target name="install-drupal" description="Run the install." depends="init">
+    <target name="install-drupal" description="Run the install.">
         <drush
             command="site-install"
             assume="yes"
@@ -190,7 +189,7 @@
     </target>
 
     <!-- Run behat tests. -->
-    <target name="behat-tests" description="Run behat tests." depends="init">
+    <target name="behat-tests" description="Run behat tests.">
         <exec command="${behat.bin}"
               logoutput="true"
               checkreturn="true"
@@ -200,15 +199,15 @@
 
     <target name="build-dev"
             description="Build a local development version of the site."
-            depends="init, make, link-modules, link-tests, files-directory, create-settings.php" />
+            depends="make, link-modules, link-tests, files-directory, create-settings.php" />
 
     <target name="rebuild-dev"
             description="Rebuild the local development version, keeping settings.php and files intact."
-            depends="init, backup-local-files, make, link-modules, link-tests, files-directory, create-settings.php, restore-local-files" />
+            depends="backup-local-files, make, link-modules, link-tests, files-directory, create-settings.php, restore-local-files" />
 
     <target name="build-dist"
             description="Build the Drupal site in order to install it"
-            depends="init, make, copy-modules, files-directory, create-settings.php" />
+            depends="make, copy-modules, files-directory, create-settings.php" />
 
     <target name="install"
             description="Install the Drupal site"
