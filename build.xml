@@ -57,21 +57,6 @@
             -->
             <option name="concurrency">11</option>
         </drush>
-
-        <echo msg="Copy platform files." />
-        <copy todir="${phing.project.build.dir}">
-            <fileset dir="${platform.code.dir}">
-              <patternset>
-                <exclude name="**/*.svn"/>
-                <exclude name="**/automation/"/>
-                <exclude name="crawling_scripts/"/>
-                <exclude name="custom_subsites/"/>
-                <exclude name="deploy_scripts/"/>
-                <exclude name="dev/"/>
-                <exclude name="**/*.sh"/>
-              </patternset>
-          </fileset>
-        </copy>
     </target>
 
     <!-- Link custom modules. -->
@@ -213,86 +198,13 @@
               passthru="true" />
     </target>
 
-    <!-- Delete the platform. -->
-    <target name="delete-platform" description="Deletes the downloaded platform files." depends="init">
-        <echo msg="Deleting platform files." />
-        <delete dir="${platform.code.dir}" includeemptydirs="true" failonerror="false" />
-    </target>
-
-    <!-- Clone the platform. -->
-    <target name="clone-platform" description="Clone the platform with git." depends="init">
-        <if>
-            <available file="${platform.code.dir}/.git" type="dir" />
-            <then>
-                <echo msg="The platform is already cloned." />
-                <phingcall target="checkout-platform" />
-                <phingcall target="pull-platform" />
-            </then>
-            <else>
-                <echo msg="Cloning platform." />
-                <gitclone
-                    gitPath="${git.bin}"
-                    repository="${platform.repo.url}"
-                    targetPath="${platform.code.dir}"
-                />
-                <phingcall target="checkout-platform" />
-            </else>
-        </if>
-    </target>
-
-    <!-- Update the platform. -->
-    <target name="fetch-platform" description="Fetch latest platform changes." depends="init">
-        <if>
-            <available file="${platform.code.dir}/.git" type="dir" />
-            <then>
-                <echo msg="Updating platform repository." />
-                <gitfetch gitPath="${git.bin}" repository="${platform.code.dir}" all="true" />
-            </then>
-            <else>
-                <fail msg="Platform update failed: the platform has not been downloaded." />
-            </else>
-        </if>
-    </target>
-
-    <!-- Check out the platform. -->
-    <target name="checkout-platform" description="Check out a particular commit of the platform." depends="init">
-        <if>
-            <available file="${platform.code.dir}/.git" type="dir" />
-            <then>
-                <echo msg="Checking out ref '${platform.repo.branch}'." />
-                <gitcheckout
-                    gitPath="${git.bin}"
-                    repository="${platform.code.dir}"
-                    branchname="${platform.repo.branch}"
-                />
-            </then>
-            <else>
-                <fail msg="Platform checkout failed: the platform has not been downloaded." />
-            </else>
-        </if>
-    </target>
-
-    <!-- Fetch and merge latest platform changes. -->
-    <target name="pull-platform" description="Fetch and merge latest platform changes." depends="init">
-        <if>
-            <available file="${platform.code.dir}/.git" type="dir" />
-            <then>
-                <echo msg="Fetching and merging platform repository." />
-                <gitpull gitPath="${git.bin}" repository="${platform.code.dir}" all="true" />
-            </then>
-            <else>
-                <fail msg="Platform pull failed: the platform has not been downloaded." />
-            </else>
-        </if>
-    </target>
-
     <target name="build-dev"
             description="Build a local development version of the site."
-            depends="init, clone-platform, make, link-modules, link-tests, files-directory, create-settings.php" />
+            depends="init, make, link-modules, link-tests, files-directory, create-settings.php" />
 
     <target name="rebuild-dev"
             description="Rebuild the local development version, keeping settings.php and files intact."
-            depends="init, backup-local-files, fetch-platform, make, link-modules, link-tests, files-directory, create-settings.php, restore-local-files" />
+            depends="init, backup-local-files, make, link-modules, link-tests, files-directory, create-settings.php, restore-local-files" />
 
     <target name="build-dist"
             description="Build the Drupal site in order to install it"

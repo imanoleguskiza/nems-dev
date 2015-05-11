@@ -37,18 +37,11 @@ drupal.make = distro.make
 # The path where the platform will be downloaded.
 platform.dir = platform
 
-# The make file for the platform.
-platform.make = ${drupal.platform.profile.dir}/${drupal.profile.name}/build.make
-
 # The branch, tag or commit to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
 platform.repo.branch = epic/NE-2464-reorganized-folders
 
 # The repository to use, either 'dev' or 'reference'.
 platform.repo.repo = dev
-
-# Credentials used to access the repository on CITnet.
-platform.repo.user = myusername
-platform.repo.pass = mypassword
 
 # The location of the repository.
 platform.repo.protocol = https
@@ -98,11 +91,9 @@ phing.project.tmp.dir = tmp
 
 # Build locations.
 project.code.dir = ${project.basedir}/${phing.project.build.dir}
-platform.code.dir = ${project.basedir}/${platform.dir}
 
 # Directories inside the Drupal installation.
 drupal.profile.dir = ${project.code.dir}/profiles
-drupal.platform.profile.dir = ${platform.code.dir}/profiles
 
 drupal.sites.dir = ${project.code.dir}/sites
 drupal.settings.dir = ${drupal.sites.dir}/default
