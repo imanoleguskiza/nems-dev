@@ -1,9 +1,10 @@
 {
   "require": {
-    "phing/phing": "~2.10",
-    "drush/drush": "7.0.*@dev",
+    "continuousphp/phing-tasks": "~0.1",
     "drupal/phing-drush-task": "1.0",
-    "pear/versioncontrol_git": "dev-master"
+    "drush/drush": "7.0.*@dev",
+    "pear/versioncontrol_git": "dev-master",
+    "phing/phing": "~2.10"
   },
   "repositories": [
     {
