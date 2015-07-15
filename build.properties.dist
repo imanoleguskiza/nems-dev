@@ -38,16 +38,16 @@ drupal.make = distro.make
 platform.dir = platform
 
 # The branch, tag or commit to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
-platform.repo.branch = epic/NE-2464-reorganized-folders
+# It is possible to use MySQL style wildcards here.
+platform.package.reference = feature/NEXTEUROPA-2441
 
-# The repository to use, either 'dev' or 'reference'.
-platform.repo.repo = dev
+# The provider that hosts the platform repository.
+platform.package.provider = bitbucket
 
-# The location of the repository.
-platform.repo.protocol = https
-platform.repo.domain = webgate.ec.europa.eu
-platform.repo.path = CITnet/stash/scm/nexteuropa/platform-${platform.repo.repo}.git
-platform.repo.url = ${platform.repo.protocol}://${platform.repo.user}:${platform.repo.pass}@${platform.repo.domain}/${platform.repo.path}
+# The name of the platform repository.
+platform.package.repository = digit-fpfis-platform/nexteuropa
+
+platform.package.destination = tmp
 
 
 # Subsite configuration

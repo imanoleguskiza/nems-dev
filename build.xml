@@ -15,8 +15,22 @@
     </target>
 
     <echo msg="Initializing third party Phing tasks." />
-    <taskdef name="continuousphp-package" classname="Continuous\Task\PackageTask" />
     <taskdef name="drush" classname="DrushTask" />
+
+    <!-- Import the ContinuousPHP specific Phing tasks. -->
+    <import file="vendor/continuousphp/phing-tasks/tasks.xml" />
+
+    <!-- Download the platform. -->
+    <target name="download-platform">
+        <continuousphp-package
+            provider="${platform.package.provider}"
+            repository="${platform.package.repository}"
+            reference="${platform.package.reference}"
+            destination="${platform.package.destination}"
+            property="platform.package.property"
+        />
+        <echo msg="Reference: ${platform.package.property}" />
+    </target>
 
     <!-- Generate make file. -->
     <target name="generate-makefile">
