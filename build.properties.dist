@@ -49,6 +49,9 @@ platform.package.repository = digit-fpfis-platform/nexteuropa
 
 platform.package.destination = tmp
 
+# The ContinuousPHP token. Leave this empty for open source projects.
+platform.package.token =
+
 
 # Subsite configuration
 # ---------------------

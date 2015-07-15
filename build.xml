@@ -22,6 +22,7 @@
 
     <!-- Download the platform. -->
     <target name="download-platform">
+        <continuousphp-config token="${platform.package.token}" />
         <continuousphp-package
             provider="${platform.package.provider}"
             repository="${platform.package.repository}"
