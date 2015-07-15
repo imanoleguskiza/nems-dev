@@ -47,6 +47,7 @@ platform.package.provider = bitbucket
 # The name of the platform repository.
 platform.package.repository = digit-fpfis-platform/nexteuropa
 
+# The name of the folder where the platform will be downloaded.
 platform.package.destination = tmp
 
 # The ContinuousPHP token. Leave this empty for open source projects.
