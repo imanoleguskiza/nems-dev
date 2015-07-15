@@ -39,7 +39,7 @@ platform.dir = platform
 
 # The branch, tag or commit to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
 # It is possible to use MySQL style wildcards here.
-platform.package.reference = feature/NEXTEUROPA-2441
+platform.package.reference = develop
 
 # The provider that hosts the platform repository.
 platform.package.provider = bitbucket
