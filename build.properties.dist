@@ -1,11 +1,18 @@
+# Subsite configuration
+# ---------------------
+
+# The site name.
+subsite.name = My Subsite
+
+# The make file containing the dependencies of the subsite.
+subsite.make = ${subsite.resources.dir}/site.make
+
+# Modules to enable after installation. Separate multiple modules with spaces.
+subsite.install.modules = example_module
+
+
 # Drupal configuration
 # --------------------
-
-# The Drupal version to use.
-drupal.version = 7.35
-
-# The install profile to use.
-drupal.profile.name = multisite_drupal_standard
 
 # Database settings.
 drupal.db.type = mysql
@@ -19,23 +26,28 @@ drupal.db.url = ${drupal.db.type}://${drupal.db.user}:${drupal.db.password}@${dr
 # Admin user.
 drupal.admin.username = admin
 drupal.admin.password = pass
-drupal.admin.email = admin@example.com
+drupal.admin.email = ${drupal.admin.username}@example.com
 
-# Development / testing modules to enable.
-drupal.development.modules = devel field_ui maillog simpletest views_ui
+# The location of the .htaccess file in the Drupal root folder.
+drupal.htaccess.path = ${platform.build.dir}/.htaccess
+
+# Configuration to append to the .htaccess file in the Drupal root folder.
+drupal.htaccess.append.text =
 
 # The site name to use. Use 'all' unless you want to build a multisite setup.
 drupal.site.name = all
-
-# The make file to build.
-drupal.make = distro.make
 
 
 # Platform configuration
 # ----------------------
 
-# The path where the platform will be downloaded.
-platform.dir = platform
+# The root directory of the platform. This will become the Drupal root folder,
+# so point your web server here.
+platform.build.dir = ${project.basedir}/platform
+
+# The install profile to use. Either multisite_drupal_standard or
+# multisite_drupal_communities.
+platform.profile.name = multisite_drupal_standard
 
 # The branch, tag or commit to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
 # It is possible to use MySQL style wildcards here.
@@ -48,79 +60,137 @@ platform.package.provider = bitbucket
 platform.package.repository = digit-fpfis-platform/nexteuropa
 
 # The name of the folder where the platform will be downloaded.
-platform.package.destination = tmp
+platform.package.destination = ${phing.project.tmp.dir}
+
+# The path to the downloaded package. This is named 'deploy-package.tar.gz'.
+platform.package.tarball = ${project.basedir}/${phing.project.tmp.dir}/deploy-package.tar.gz
 
 # The ContinuousPHP token. Leave this empty for open source projects.
 platform.package.token =
 
 
-# Subsite configuration
-# ---------------------
-
-# The name of the subsite.
-subsite.name = Subsite starterkit
-
-# The make file for the subsite.
-subsite.make = ${project.basedir}/build.make
-
-
-# Templates
-# ---------
-
-# The template for the distro.make file.
-drush.distro.template = api = 2${line.separator}\
-core = 7.x${line.separator}\
-${line.separator}\
-projects[drupal][type] = core${line.separator}\
-projects[drupal][version] = ${drupal.version}${line.separator}\
-${line.separator}\
-includes[] = ${platform.make}${line.separator}\
-includes[] = ${subsite.make}${line.separator}
-
-
 # Paths
 # -----
 
-# The build location
-phing.project.build.dir = build
-
 # Paths to executables.
-phing.bin = ${project.basedir}/bin/phing
-drush.bin = ${project.basedir}/bin/drush
 composer.bin = composer.phar
+drush.bin = ${project.basedir}/bin/drush
 git.bin = git
+phing.bin = ${project.basedir}/bin/phing
+
+# Build location.
+phing.project.build.dir = build
+phing.project.src.dir = ${project.basedir}/src
+subsite.build.dir = ${project.basedir}/${phing.project.build.dir}
 
 # Temporary folder.
 phing.project.tmp.dir = tmp
 
-# Build locations.
-project.code.dir = ${project.basedir}/${phing.project.build.dir}
+# Local resources
+subsite.resources.dir = ${project.basedir}/resources
+subsite.resources.lib.dir = ${project.basedir}/lib
+subsite.resources.modules.dir = ${subsite.resources.lib.dir}/modules
+subsite.resources.source.dir = ${subsite.resources.lib.dir}/src
+subsite.resources.themes.dir = ${subsite.resources.lib.dir}/themes
+subsite.resources.composer.json = ${subsite.resources.dir}/composer.json
+subsite.resources.composer.lock = ${subsite.resources.dir}/composer.lock
 
-# Directories inside the Drupal installation.
-drupal.profile.dir = ${project.code.dir}/profiles
+# Files and directories inside the Drupal installation.
+platform.build.settings.dir = ${platform.build.sites.dir}/default
+platform.build.files.dir = ${platform.build.settings.dir}/files
 
-drupal.sites.dir = ${project.code.dir}/sites
-drupal.settings.dir = ${drupal.sites.dir}/default
-drupal.files.dir = ${drupal.settings.dir}/files
+platform.build.profiles.dir = ${platform.build.dir}/profiles
+platform.build.profile.dir = ${platform.build.profiles.dir}/${platform.profile.name}
 
-drupal.site.dir = ${drupal.sites.dir}/${drupal.site.name}
-drupal.libraries.dir = ${drupal.site.dir}/libraries
-drupal.modules.dir = ${drupal.site.dir}/modules
-drupal.themes.dir = ${drupal.site.dir}/themes
+platform.build.sites.dir = ${platform.build.dir}/sites
+platform.build.subsite.dir = ${platform.build.sites.dir}/${drupal.site.name}
+platform.build.subsite.libraries.dir = ${platform.build.subsite.dir}/libraries
+platform.build.subsite.modules.dir = ${platform.build.subsite.dir}/modules
+platform.build.subsite.source.dir = ${platform.build.subsite.dir}/src
+platform.build.subsite.themes.dir = ${platform.build.subsite.dir}/themes
+platform.build.subsite.composer.json = ${platform.build.subsite.dir}/composer.json
+platform.build.subsite.composer.lock = ${platform.build.subsite.dir}/composer.lock
 
 
 # Behat configuration
 # -------------------
 
-# This is for local testing, not needed on continuousphp.
+# The location of the Behat executable.
 behat.bin = ${project.basedir}/bin/behat
+
+# The location of the Behat tests.
 behat.dir = ${project.basedir}/tests
-behat.yml = ${behat.dir}/behat.yml
+
+# The location of the Behat configuration template.
+behat.yml.template = ${behat.dir}/behat.yml.dist
+
+# The location of the generated Behat configuration file.
+behat.yml.path = ${behat.dir}/behat.yml
+
+# The base URL to use in Behat tests.
 behat.base_url = http://localhost
 
+# The location to search for Behat subcontexts.
+behat.subcontexts.path = ${platform.build.subsite.dir}
 
-# Debugging
-# ---------
+# The output format to use for Behat tests, either 'progress' or 'pretty'.
+behat.formatter.name = progress
 
-# Verbosity of drush commands.
+# Enable strict mode in Behat tests. Will only pass if all tests are explicitly
+# passing.
+behat.options.strict = false
+
+# Set verbosity for Behat tests. 0 is completely silent, 1 is normal output, 2
+# shows exception backtraces, 3 shows debugging information.
+behat.options.verbosity = 2
+
+
+# PHP CodeSniffer configuration
+# -----------------------------
+
+# The file extensions to test.
+phpcs.extensions = php inc module install info test profile theme css js
+
+# The default configuration file to generate.
+phpcs.config = ${project.basedir}/phpcs.xml
+
+# The coding standard to use.
+phpcs.standard = ${project.basedir}/phpcs-ruleset.xml
+
+# Paths to check, delimited by semicolons.
+phpcs.files = ${subsite.resources.dir};${subsite.resources.lib.dir};${phing.project.src.dir}
+
+# Paths to ignore, delimited by semicolons.
+phpcs.ignore =
+
+# The report format. For example 'full', 'summary', 'diff', 'xml', 'json'.
+phpcs.report = full
+
+# Whether or not to show sniff codes in the report.
+phpcs.sniffcodes = 0
+
+# Whether or not to show the progress of the run.
+phpcs.progress = 1
+
+# The location of the file containing the global configuration options.
+phpcs.global.config = ${project.basedir}/vendor/squizlabs/php_codesniffer/CodeSniffer.conf
+
+
+# Host configuration
+# ------------------
+
+server.docroot = /var/www
+
+
+# Debugging and development configuration
+# ---------------------------------------
+
+# Verbosity of drush commands. Set to TRUE to be verbose.
 drush.verbose = FALSE
+
+# Verbosity of PHP Codesniffer. Set to 0 for standard output, 1 for progress
+# report, 2 for debugging info.
+phpcs.verbose = 0
+
+# Development / testing modules to enable.
+drupal.development.modules = devel field_ui maillog simpletest views_ui

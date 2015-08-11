@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!-- PHP_CodeSniffer standard for NextEuropa subsites. -->
+<!-- See http://pear.php.net/manual/en/package.php.php-codesniffer.annotated-ruleset.php -->
+<ruleset name="NextEuropa">
+    <description>Drupal coding standard for NextEuropa subsites</description>
+
+    <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal" />
+
+    <!-- Minified files don't have to comply with coding standards. -->
+    <exclude-pattern>*.min.css</exclude-pattern>
+    <exclude-pattern>*.min.js</exclude-pattern>
+
+    <!-- Views handlers not strictly follow Drupal class name conventions. -->
+    <rule ref="Drupal.NamingConventions.ValidClassName">
+        <exclude-pattern>modules/**/views/*.inc</exclude-pattern>
+    </rule>
+
+    <!-- Views handlers not strictly follow Drupal function name conventions. -->
+    <rule ref="Drupal.NamingConventions.ValidFunctionName">
+        <exclude-pattern>modules/**/views/*.inc</exclude-pattern>
+    </rule>
+
+    <!-- Phing tasks require to use CamelCaps for argument names. -->
+    <rule ref="Drupal.NamingConventions.ValidVariableName">
+        <exclude-pattern>src/Phing</exclude-pattern>
+    </rule>
+</ruleset>

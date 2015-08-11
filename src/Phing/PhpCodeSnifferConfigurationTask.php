@@ -93,7 +93,7 @@ class PhpCodeSnifferConfigurationTask extends \Task {
     $document->appendChild($root_element);
 
     // Add the description.
-    $element = $document->createElement('description', 'Default PHP CodeSniffer configuration for NextEuropa.');
+    $element = $document->createElement('description', 'Default PHP CodeSniffer configuration for NextEuropa subsites.');
     $root_element->appendChild($element);
 
     // Add the coding standard.
