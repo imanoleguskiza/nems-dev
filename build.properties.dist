@@ -65,7 +65,8 @@ platform.package.destination = ${phing.project.tmp.dir}
 # The path to the downloaded package. This is named 'deploy-package.tar.gz'.
 platform.package.tarball = ${project.basedir}/${phing.project.tmp.dir}/deploy-package.tar.gz
 
-# The ContinuousPHP token. Leave this empty for open source projects.
+# The ContinuousPHP token. Leave this empty for open source projects. Note that
+# the NextEuropa platform is open source.
 platform.package.token =
 
 
@@ -144,6 +145,9 @@ behat.options.strict = false
 # shows exception backtraces, 3 shows debugging information.
 behat.options.verbosity = 2
 
+# The path to the custom Behat Contexts.
+behat.src.dir = ${behat.dir}/src
+
 
 # PHP CodeSniffer configuration
 # -----------------------------
@@ -158,7 +162,7 @@ phpcs.config = ${project.basedir}/phpcs.xml
 phpcs.standard = ${project.basedir}/phpcs-ruleset.xml
 
 # Paths to check, delimited by semicolons.
-phpcs.files = ${subsite.resources.dir};${subsite.resources.lib.dir};${phing.project.src.dir}
+phpcs.files = ${subsite.resources.dir};${subsite.resources.lib.dir};${phing.project.src.dir};${behat.src.dir}
 
 # Paths to ignore, delimited by semicolons.
 phpcs.ignore =
