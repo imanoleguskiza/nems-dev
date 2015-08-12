@@ -108,11 +108,11 @@ drupal.admin.password = admin
 # Development / testing modules to enable.
 drupal.development.modules = devel field_ui maillog search_krumo simpletest views_ui
 
-# The branch, tag or commit to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
-platform.package.reference = develop
-
 # The base URL to use in Behat tests.
 behat.base_url = http://myproject.local/
+
+# The location of the Composer executable.
+composer.bin = /etc/bin/composer
 
 # Verbosity of drush commands. Set to TRUE to be verbose.
 drush.verbose = FALSE
