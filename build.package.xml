@@ -97,6 +97,8 @@
                 <available file="${platform.package.tarball}" type="file" />
             </not>
             <then>
+                <!-- Create the destination directory if it doesn't exist. -->
+                <mkdir dir="${platform.package.destination}" />
                 <continuousphp-config token="${platform.package.token}" />
                 <continuousphp-package
                     provider="${platform.package.provider}"
