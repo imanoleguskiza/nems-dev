@@ -90,19 +90,21 @@ All Behat related files are located in the `tests/` folder.
 
 This README is divided in different parts, please read the relevant section:
 
-1. [Developing guide](#develop): Explains regular development practices for a
-   NextEuropa subsite.
-2. [Starting a new project](#start): This section explains how to set up a
-   brand new project on the NextEuropa platform. These instructions need only
-   to be followed once by the lead developer of the project.
-3. [Converting an existing project](#convert): If you already have a project
-   that runs on NextEuropa and you want to start using Continuous Integration,
-   check out this section.
-4. [Merging upstream changes](#merge): How to merge the latest changes that
-   have been made to the Subsite Starterkit in your own project.
+1. [Developing guide](#markdown-header-developing-guide): Explains regular
+   development practices for a NextEuropa subsite.
+2. [Starting a new project](#markdown-header-starting-a-new-project): This
+   section explains how to set up a brand new project on the NextEuropa
+   platform. These instructions need only to be followed once by the lead
+   developer at the start of the project.
+3. [Converting an existing project](#markdown-header-converting-an-existing-project):
+   If you already have a project that runs on NextEuropa and you want to start
+   using Continuous Integration, check out this section.
+4. [Merging upstream changes](#markdown-header-merging-upstream-changes): How to
+   merge the latest changes that have been made to the Subsite Starterkit in
+   your own project.
 
 
-## <a name="#start"></a>Starting a new project
+## Starting a new project
 
 ### 1. Fork the starterkit
 
@@ -130,26 +132,13 @@ $ git fetch origin
 $ git push origin master
 ```
 
-### 2. Install dependencies
+### 2. Create a build.properties file
 
-The software packages that are needed to build the project are installed with
-[Composer](https://getcomposer.org/). See the documentation for Composer for
-more information on how to install and use it.
-
-```
-$ composer install
-```
-
-### 3. Configure build properties
-
-
-#### a) Create a build.properties file
-
-To do this, create a new file called `build.properties` in the root folder and
-put properties in it that are unique to your project. You can copy any of the
+Create a new file called `build.properties` in the root folder and put
+properties in it that are unique to your project. You can copy any of the
 properties of the `build.properties.dist` file to override them and then commit
-the file. The settings will then take effect for all developers that work on
-the project.
+the file. The settings will then take effect for all developers that work on the
+project.
 
 Some typical project specific settings are the site name, the install profile,
 the modules to enable after installation, paths to ignore during coding
@@ -173,6 +162,29 @@ subsite.install.modules = myproject_super_feature
 # 'develop' branch. After the 2.1.0 release you can best use 'master'.
 platform.package.reference = develop
 ```
+
+### 3. Commit and push
+
+Now finally commit your configuration file and push it to your repository. Your
+project is now ready to use.
+
+```
+$ git add build.properties
+$ git commit -m "Add project specific build properties."
+$ git push
+```
+
+
+### 2. Install dependencies
+
+The software packages that are needed to build the project are installed with
+[Composer](https://getcomposer.org/). See the documentation for Composer for
+more information on how to install and use it.
+
+```
+$ composer install
+```
+
 
 #### b) Create a build.properties.local file
 
