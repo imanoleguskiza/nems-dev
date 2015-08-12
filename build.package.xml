@@ -99,6 +99,9 @@
             <then>
                 <!-- Create the destination directory if it doesn't exist. -->
                 <mkdir dir="${platform.package.destination}" />
+                <echo msg="Starting to download the platform. Depending on your connection this can take between 5-30 minutes. Go get some coffee." />
+                <echo msg="This file will only be downloaded once and will be cached in ${platform.package.tarball}." />
+                <echo msg="You can delete this cached file whenever you want to download a new version of the platform." />
                 <continuousphp-config token="${platform.package.token}" />
                 <continuousphp-package
                     provider="${platform.package.provider}"
