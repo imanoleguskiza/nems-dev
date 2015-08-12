@@ -66,7 +66,7 @@ Example file:
 subsite.name = My Project
 
 # The install profile to use.
-drupal.profile.name = multisite_drupal_communities
+drupal.profile.name = multisite_drupal_standard
 
 # Modules to enable after installation. Separate multiple modules with spaces.
 subsite.install.modules = myproject_super_feature
