@@ -30,4 +30,72 @@
     <import file="build.package.xml" />
     <import file="build.test.xml" />
 
+
+    <import file="./vendor/continuousphp/aws-sdk-phing/tasks.xml" />
+    <property name="aws.profile" value="" />
+
+    <target name="setup-aws">
+        <aws-config region="${aws.region}" profile="${aws.profile}" />
+    </target>
+
+    <target name="run-stack">
+        <if>
+            <equals arg1="single-server" arg2="${cf.template}" />
+            <then>
+                <aws-cf-runstack
+                        name="subsite-${cf.stackName}"
+                        updateOnConflict="true"
+                        capabilities="CAPABILITY_IAM"
+                        templatePath="./resources/cloudformation/${cf.template}.template">
+                    <param name="KeyName" value="${cf.KeyName}" />
+                    <param name="env" value="${cf.stackName}" />
+                </aws-cf-runstack>
+            </then>
+            <else>
+                <aws-cf-runstack
+                        name="subsite-${cf.stackName}"
+                        updateOnConflict="true"
+                        capabilities="CAPABILITY_IAM"
+                        templatePath="./resources/cloudformation/${cf.template}.template">
+                    <param name="KeyName" value="${cf.KeyName}" />
+                    <param name="DBName" value="${cf.DBName}" />
+                    <param name="DBUser" value="${cf.DBUser}" />
+                    <param name="DBPassword" value="${cf.DBPassword}" />
+                    <param name="env" value="${cf.stackName}" />
+                    <output name="AutoscalingGroup" property="deploy.autoScalingGroup" />
+                </aws-cf-runstack>
+            </else>
+        </if>
+    </target>
+
+    <target name="setup-deployment-group">
+        <if>
+            <equals arg1="single-server" arg2="${cf.template}" />
+            <then>
+                <aws-deploy-deployment-group
+                        name="${cf.stackName}"
+                        updateOnConflict="true"
+                        deploymentConfigName="CodeDeployDefault.OneAtATime"
+                        serviceRole="${deploy.serviceRole}"
+                        application="${deploy.applicationName}">
+                    <ec2TagFilter key="env" value="${cf.stackName}" />
+                </aws-deploy-deployment-group>
+            </then>
+            <else>
+                <aws-deploy-deployment-group
+                        name="${cf.stackName}"
+                        updateOnConflict="true"
+                        deploymentConfigName="CodeDeployDefault.OneAtATime"
+                        serviceRole="${deploy.serviceRole}"
+                        application="${deploy.applicationName}">
+                    <autoScalingGroup name="${deploy.autoScalingGroup}" />
+                </aws-deploy-deployment-group>
+            </else>
+        </if>
+    </target>
+
+    <target name="provision-stack"
+            description="Provision a stack on AWS"
+            depends="setup-aws, run-stack, setup-deployment-group" />
+
 </project>
