@@ -44,7 +44,9 @@
     <!-- Symlink the source folders for easy development. -->
     <target name="link-subsite-resources">
         <!-- Symlink our custom modules. -->
-        <symlink link="${platform.build.subsite.modules.dir}/custom" target="${subsite.resources.modules.dir}" />
+        <symlink link="${platform.build.subsite.modules.custom.dir}" target="${subsite.resources.modules.dir}" />
+        <!-- Symlink our custom features. -->
+        <symlink link="${platform.build.subsite.modules.features.dir}" target="${subsite.resources.features.dir}" />
         <!-- Symlink our custom themes. Delete the empty folder which is created during Drush make. -->
         <delete dir="${platform.build.subsite.themes.dir}" includeemptydirs="true" failonerror="false" />
         <symlink link="${platform.build.subsite.themes.dir}" target="${subsite.resources.themes.dir}" />

@@ -2,13 +2,13 @@
 # ---------------------
 
 # The site name.
-subsite.name = My Subsite
+subsite.name = My Project
 
 # The make file containing the dependencies of the subsite.
 subsite.make = ${subsite.resources.dir}/site.make
 
 # Modules to enable after installation. Separate multiple modules with spaces.
-subsite.install.modules = example_module
+subsite.install.modules = myproject_core
 
 
 # Drupal configuration
@@ -90,6 +90,7 @@ phing.project.tmp.dir = tmp
 # Local resources
 subsite.resources.dir = ${project.basedir}/resources
 subsite.resources.lib.dir = ${project.basedir}/lib
+subsite.resources.features.dir = ${subsite.resources.lib.dir}/features
 subsite.resources.modules.dir = ${subsite.resources.lib.dir}/modules
 subsite.resources.source.dir = ${subsite.resources.lib.dir}/src
 subsite.resources.themes.dir = ${subsite.resources.lib.dir}/themes
@@ -107,6 +108,9 @@ platform.build.sites.dir = ${platform.build.dir}/sites
 platform.build.subsite.dir = ${platform.build.sites.dir}/${drupal.site.name}
 platform.build.subsite.libraries.dir = ${platform.build.subsite.dir}/libraries
 platform.build.subsite.modules.dir = ${platform.build.subsite.dir}/modules
+platform.build.subsite.modules.contrib.dir = ${platform.build.subsite.modules.dir}/contrib
+platform.build.subsite.modules.custom.dir = ${platform.build.subsite.modules.dir}/custom
+platform.build.subsite.modules.features.dir = ${platform.build.subsite.modules.dir}/features
 platform.build.subsite.source.dir = ${platform.build.subsite.dir}/src
 platform.build.subsite.themes.dir = ${platform.build.subsite.dir}/themes
 platform.build.subsite.composer.json = ${platform.build.subsite.dir}/composer.json
