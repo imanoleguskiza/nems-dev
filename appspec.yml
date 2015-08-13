@@ -6,3 +6,5 @@ files:
 hooks:
   BeforeInstall:
     - location: resources/codedeploy/scripts/cleanup.sh
+  AfterInstall:
+    - location: resources/codedeploy/scripts/install.sh
