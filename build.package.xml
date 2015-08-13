@@ -136,7 +136,9 @@
          -->
         <delete dir="${platform.package.destination}/extract" includeemptydirs="true" failonerror="false" />
         <untar file="${platform.package.tarball}" todir="${platform.package.destination}/extract" />
-        <move file="${platform.package.destination}/extract/build" tofile="${platform.build.dir}" />
+        <move includeemptydirs="true" todir="${platform.build.dir}">
+          <fileset dir="${platform.package.destination}/extract/build"/>
+        </move>
         <delete dir="${platform.package.destination}/extract" includeemptydirs="true" failonerror="false" />
     </target>
 
