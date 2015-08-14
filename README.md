@@ -410,6 +410,7 @@ finding the relevant properties in `build.properties.dist`, copying them to
 Finally commit your changes and test the build:
 
 ```
+$ composer install
 $ ./bin/phing build-dev
 $ ./bin/phing install-dev
 ```
