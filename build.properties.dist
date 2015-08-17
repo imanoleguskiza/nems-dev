@@ -63,7 +63,7 @@ platform.package.repository = digit-fpfis-platform/nexteuropa
 platform.package.destination = ${phing.project.tmp.dir}
 
 # The path to the downloaded package. This is named 'deploy-package.tar.gz'.
-platform.package.tarball = ${project.basedir}/${phing.project.tmp.dir}/deploy-package.tar.gz
+platform.package.tarball = ${phing.project.tmp.dir}/deploy-package.tar.gz
 
 # The ContinuousPHP token. Leave this empty for open source projects. Note that
 # the NextEuropa platform is open source.
@@ -85,7 +85,7 @@ phing.project.src.dir = ${project.basedir}/src
 subsite.build.dir = ${project.basedir}/${phing.project.build.dir}
 
 # Temporary folder.
-phing.project.tmp.dir = tmp
+phing.project.tmp.dir = ${project.basedir}/tmp
 
 # Local resources
 subsite.resources.dir = ${project.basedir}/resources

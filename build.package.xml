@@ -18,7 +18,20 @@
         </if>
 
         <echo msg="Delete previous build." />
-        <delete dir="${platform.build.dir}" includeemptydirs="true" failonerror="false" />
+        <!-- Use the faster native command on UNIX systems. -->
+        <if>
+            <os family="unix" />
+            <then>
+                <echo msg='rm -rf "${platform.build.dir}"' />
+                <exec
+                    command='rm -rf "${platform.build.dir}"'
+                    dir="${project.basedir}"
+                    passthru="true" />
+            </then>
+            <else>
+                <delete dir="${platform.build.dir}" includeemptydirs="true" failonerror="false" />
+            </else>
+        </if>
     </target>
 
     <!-- Make the subsite. -->
@@ -122,24 +135,70 @@
 
     <!-- Unpack the platform. -->
     <target name="unpack-platform" depends="download-platform, delete-platform">
-        <!--
-            The tarball contains the entire build folder including all
-            resources that were used to create the build. Extract it in a
-            temporary location and then move the correct subfolder that
-            contains the actual build.
+        <!-- Use the faster native commands on UNIX systems. -->
+        <if>
+            <os family="unix" />
+            <then>
+                <!--
+                    The tarball contains the entire build folder including all
+                    resources that were used to create the build. Extract it in a
+                    temporary location and then move the correct subfolder that
+                    contains the actual build.
 
-            A feature request is pending at ContinuousPHP to have only the build
-            folder available for download.
+                    A feature request is pending at ContinuousPHP to have only the build
+                    folder available for download.
 
-            Todo: Remove this workaround when ContinuousPHP adds support for
-            downloading only the actual build folder.
-         -->
-        <delete dir="${platform.package.destination}/extract" includeemptydirs="true" failonerror="false" />
-        <untar file="${platform.package.tarball}" todir="${platform.package.destination}/extract" />
-        <move includeemptydirs="true" todir="${platform.build.dir}">
-          <fileset dir="${platform.package.destination}/extract/build"/>
-        </move>
-        <delete dir="${platform.package.destination}/extract" includeemptydirs="true" failonerror="false" />
+                    Todo: Remove this workaround when ContinuousPHP adds support for
+                    downloading only the actual build folder.
+                 -->
+                <echo msg='rm -rf "${platform.package.destination}/extract"' />
+                <exec
+                    command='rm -rf "${platform.package.destination}/extract"'
+                    dir="${project.basedir}"
+                    passthru="true" />
+                <echo msg='mkdir "${platform.package.destination}/extract"' />
+                <exec
+                    command='mkdir "${platform.package.destination}/extract"'
+                    dir="${project.basedir}"
+                    passthru="true" />
+                <echo msg='tar xzf "${platform.package.tarball}" -C "${platform.package.destination}/extract"' />
+                <exec
+                    command='tar xzf "${platform.package.tarball}" -C "${platform.package.destination}/extract"'
+                    dir="${project.basedir}"
+                    passthru="true" />
+                <echo msg='mv "${platform.package.destination}/extract/build" "${platform.build.dir}"' />
+                <exec
+                    command='mv "${platform.package.destination}/extract/build" "${platform.build.dir}"'
+                    dir="${project.basedir}"
+                    passthru="true" />
+                <echo msg='rm -rf "${platform.package.destination}/extract"' />
+                <exec
+                    command='rm -rf "${platform.package.destination}/extract"'
+                    dir="${project.basedir}"
+                    passthru="true" />
+            </then>
+            <else>
+                <!--
+                    The tarball contains the entire build folder including all
+                    resources that were used to create the build. Extract it in a
+                    temporary location and then move the correct subfolder that
+                    contains the actual build.
+
+                    A feature request is pending at ContinuousPHP to have only the build
+                    folder available for download.
+
+                    Todo: Remove this workaround when ContinuousPHP adds support for
+                    downloading only the actual build folder.
+                 -->
+                <delete dir="${platform.package.destination}/extract" includeemptydirs="true" failonerror="false" />
+                <untar file="${platform.package.tarball}" todir="${platform.package.destination}/extract" />
+                <move includeemptydirs="true" todir="${platform.build.dir}">
+                  <fileset dir="${platform.package.destination}/extract/build"/>
+                </move>
+                <delete dir="${platform.package.destination}/extract" includeemptydirs="true" failonerror="false" />
+            </else>
+        </if>
+
     </target>
 
     <!-- Copy subsite resources into the build folder. -->
