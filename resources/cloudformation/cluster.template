@@ -690,13 +690,13 @@
             },
             "commands": {
               "01-update-vhost": {
-                "command": "mkdir /var/www/html/public ; chown apache:apache /var/www/html/public"
+                "command": "mkdir /var/www/html/platform ; chown apache:apache /var/www/html/platform"
               },
               "02-restart-httpd": {
                 "command": "sed -i 's#DocumentRoot \"/var/www/html\"#DocumentRoot \"/var/www/html/platform\"#g' /etc/httpd/conf/httpd.conf ; /etc/init.d/httpd restart"
               },
               "03-set-index": {
-                "command": "touch /var/www/html/public/index.php"
+                "command": "touch /var/www/html/platform/index.php"
               }
             },
             "services": {
