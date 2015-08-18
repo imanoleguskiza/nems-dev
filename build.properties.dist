@@ -202,5 +202,3 @@ phpcs.verbose = 0
 
 # Development / testing modules to enable.
 drupal.development.modules = devel field_ui maillog simpletest views_ui
-
-deploy.applicationName = drupal-subsite
