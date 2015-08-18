@@ -693,7 +693,7 @@
                 "command": "mkdir /var/www/html/public ; chown apache:apache /var/www/html/public"
               },
               "02-restart-httpd": {
-                "command": "sed -i 's#DocumentRoot \"/var/www/html\"#DocumentRoot \"/var/www/html/public\"#g' /etc/httpd/conf/httpd.conf ; /etc/init.d/httpd restart"
+                "command": "sed -i 's#DocumentRoot \"/var/www/html\"#DocumentRoot \"/var/www/html/platform\"#g' /etc/httpd/conf/httpd.conf ; /etc/init.d/httpd restart"
               },
               "03-set-index": {
                 "command": "touch /var/www/html/public/index.php"
