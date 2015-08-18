@@ -190,7 +190,7 @@
                     Todo: Remove this workaround when ContinuousPHP adds support for
                     downloading only the actual build folder.
                  -->
-                <delete dir="${platform.package.destination}/extract" includeemptydirs="true" failonerror="false" />
+                <delete dir="${platform.package.destination}/extract" includeemptydirs="true" failonerror="false" quiet="true" />
                 <untar file="${platform.package.tarball}" todir="${platform.package.destination}/extract" />
                 <move includeemptydirs="true" todir="${platform.build.dir}">
                   <fileset dir="${platform.package.destination}/extract/build"/>
