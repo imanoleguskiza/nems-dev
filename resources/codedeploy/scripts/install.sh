@@ -7,4 +7,4 @@ do
 done
 
 vendor/bin/phing -propertyfile /usr/local/etc/subsite/subsite.ini install
-chown -R www:www /var/www/html/*
+chown -R apache:apache /var/www/html/*
