@@ -309,14 +309,14 @@ subsite.name = My Project
 # The install profile to use.
 drupal.profile.name = multisite_drupal_standard
 
-# Modules to enable after installation. Separate multiple modules with spaces.
-subsite.install.modules = myproject_super_feature
-
 # The branch, tag or commit to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
 # It is possible to use MySQL style wildcards here.
 # Until version 2.1.0 of the platform is released, it is advised to use the
 # 'develop' branch. After the 2.1.0 release you can best use 'master'.
 platform.package.reference = develop
+
+# Modules to enable after installation. Separate multiple modules with spaces.
+subsite.install.modules = myproject_super_feature
 ```
 
 ### 3. Commit and push
