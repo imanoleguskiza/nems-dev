@@ -90,19 +90,19 @@ All Behat related files are located in the `tests/` folder.
 
 This README is divided in different parts, please read the relevant section:
 
-1. [Developer guide](#markdown-header-developer-guide): Explains day-to-day
+1. [Developer guide](#developer-guide): Explains day-to-day
    development practices when working on a NextEuropa subsite.
-2. [Starting a new project](#markdown-header-starting-a-new-project): This
+2. [Starting a new project](#starting-a-new-project): This
    section explains how to set up a brand new project on the NextEuropa
    platform. These instructions need only to be followed once by the lead
    developer at the start of the project.
-3. [Converting an existing project](#markdown-header-converting-an-existing-project):
+3. [Converting an existing project](#converting-an-existing-project):
    If you already have a project that runs on NextEuropa and you want to start
    using Continuous Integration, check out this section.
-4. [Merging upstream changes](#markdown-header-merging-upstream-changes): How to
+4. [Merging upstream changes](#merging-upstream-changes): How to
    merge the latest changes that have been made to the Subsite Starterkit in
    your own project.
-5. [Contributing](#markdown-header-contributing): How to contribute bugfixes and
+5. [Contributing](#contributing): How to contribute bugfixes and
    new features to the Subsite Starterkit.
 
 
