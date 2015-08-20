@@ -4,3 +4,10 @@
  * @file
  * Hic sunt dracones.
  */
+
+/**
+ * Implements hook_init().
+ */
+function example_module_init() {
+  drupal_set_message(t('Hello world!'));
+}
