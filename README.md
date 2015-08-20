@@ -351,7 +351,9 @@ drupal.profile.name = multisite_drupal_standard
 platform.package.reference = develop
 
 # Modules to enable after installation. Separate multiple modules with spaces.
-subsite.install.modules = myproject_super_feature
+# This will typically be the 'mother feature' which will contain all your other
+# features and modules as dependencies.
+subsite.install.modules = myproject_core
 ```
 
 ### 4. Commit and push
