@@ -262,10 +262,45 @@ the rules.
 
 ## Starting a new project
 
-### 1. Fork the starterkit
-
 Your new project will be based on the Subsite Starterkit but will live in its
-own repository (on Stash, Bitbucket, GitHub or another provider of your choice).
+own repository on GitHub. We are in fact using two repositories: 'dev' and
+'reference':
+
+- 'dev' repository: This is the repository where the development is done. On
+  request we can give access to other developers (within the EC or external
+  contractors) to this repository so that code can be shared effectively. This
+  repository has 'master' and 'develop' branches as well as feature branches
+  where the actual development is taking place. The 'master' branch will contain
+  the latest code that is deployed on production.
+- 'reference' repository: This is the 'official' repository which is used as a
+  source for building the sites that are deployed on production. This is guarded
+  by the internal QA team who will validate all pull requests and only allow the
+  code to be merged in if it meets our quality guidelines. The official
+  reference repositories are hosted on the internal git repository of the
+  European Commission at https://webgate.ec.europa.eu/CITnet/stash/projects and
+  these are mirrored on GitHub for convenience.
+
+### 1. Create a new repository on GitHub
+
+1. Log in to GitHub.
+2. Go to https://github.com/ec-europa and click on "New repository" to create
+   your repository. If you do not have access to this then please ask your
+   project manager to create a team for you.
+3. Choose a repository name for your project, making sure it ends in '-dev'.
+   For example if you are creating a website for the European Interoperable
+   Department for the Promotion of Agricultural Research and Development a
+   good name for your repository would be `eidpard-dev`.
+4. Decide whether you repository will be private or public. We encourage
+   developers to make their code public, but you will need to consult your
+   client and ask if they agree with it. If the code is public, take care not
+   to commit any sensitive data such as e-mail addresses, API keys or
+   passwords.
+5. Click "Create repository".
+6. On the next page you will see the URL of your repository, which will look
+   similar to this: `git@github.com:ec-europa/myproject-dev.git`. We will need
+   this in the next step.
+
+### 2. Fork the starterkit
 
 Start by downloading the Subsite Starterkit, and then push it to your own
 project's repository. Let's assume we are going to push to a repository called
