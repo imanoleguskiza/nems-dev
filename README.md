@@ -266,13 +266,13 @@ Your new project will be based on the Subsite Starterkit but will live in its
 own repository on GitHub. We are in fact using two repositories: 'dev' and
 'reference':
 
-- 'dev' repository: This is the repository where the development is done. On
+- _'dev'_ repository: This is the repository where the development is done. On
   request we can give access to other developers (within the EC or external
   contractors) to this repository so that code can be shared effectively. This
   repository has 'master' and 'develop' branches as well as feature branches
   where the actual development is taking place. The 'master' branch will contain
   the latest code that is deployed on production.
-- 'reference' repository: This is the 'official' repository which is used as a
+- _'reference'_ repository: This is the 'official' repository which is used as a
   source for building the sites that are deployed on production. This is guarded
   by the internal QA team who will validate all pull requests and only allow the
   code to be merged in if it meets our quality guidelines. The official
@@ -287,34 +287,34 @@ own repository on GitHub. We are in fact using two repositories: 'dev' and
    your repository. If you do not have access to this then please ask your
    project manager to create a team for you.
 3. Choose a repository name for your project, making sure it ends in '-dev'.
-   For example if you are creating a website for the European Interoperable
-   Department for the Promotion of Agricultural Research and Development a
-   good name for your repository would be `eidpard-dev`.
+   For example if you are creating a website for the European Department for
+   the Promotion of Interoperable Agricultural Research and Development a
+   good name for your repository would be `edpiard-dev`.
 4. Decide whether you repository will be private or public. We encourage
    developers to make their code public, but you will need to consult your
    client and ask if they agree with it. If the code is public, take care not
    to commit any sensitive data such as e-mail addresses, API keys or
    passwords.
-5. Click "Create repository".
-6. On the next page you will see the URL of your repository, which will look
+5. Don't add a README or any other files, just leave it empty.
+6. Click "Create repository".
+7. On the next page you will see the URL of your repository, which will look
    similar to this: `git@github.com:ec-europa/myproject-dev.git`. We will need
    this in the next step.
 
 ### 2. Fork the starterkit
 
-Start by downloading the Subsite Starterkit, and then push it to your own
-project's repository. Let's assume we are going to push to a repository called
-'myproject-dev' in the CITnet Stash repository of the European Commission. If
-your repository is hosted elsewhere, just replace the URL.
+Make a fork of the Subsite Starterkit by downloading it and then pushing it to
+your own project's repository. Let's assume we are going to push to a
+repository called 'myproject-dev'.
 
 ```
 # Download the Subsite Starterkit.
-$ git clone https://bitbucket.org/digitfpfis/subsite-starterkit.git
+$ git clone https://github.com/ec-europa/subsite-starterkit.git
 $ cd subsite-starterkit
 
 # Remove the 'origin' remote, and replace it with the one from our project repo.
 $ git remote rm origin
-$ git remote add origin https://myuser@webgate.ec.europa.eu/CITnet/stash/scm/multisite/myproject-dev.git
+$ git remote add origin git@github.com:ec-europa/myproject-dev.git
 
 # Test the connection with the project repository.
 $ git fetch origin
@@ -323,7 +323,7 @@ $ git fetch origin
 $ git push origin master
 ```
 
-### 2. Create a build.properties file
+### 3. Create a build.properties file
 
 Create a new file called `build.properties` in the root folder and put
 properties in it that are unique to your project. You can copy any of the
@@ -354,7 +354,7 @@ platform.package.reference = develop
 subsite.install.modules = myproject_super_feature
 ```
 
-### 3. Commit and push
+### 4. Commit and push
 
 Now finally commit your configuration file and push it to your repository. Your
 project is now ready to use.
