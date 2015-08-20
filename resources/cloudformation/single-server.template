@@ -454,7 +454,7 @@
                 "mkdir -p /var/www/html/platform\n",
                 "chown apache:apache /var/www/html/platform\n",
                 "sed -i 's#DocumentRoot \"/var/www/html\"#DocumentRoot \"/var/www/html/platform\"#g' /etc/httpd/conf/httpd.conf\n",
-                "echo 'date.timezone=Europe/Brussel' >> /etc/php.ini\n",
+                "echo 'date.timezone=Europe/Brussels' >> /etc/php.ini\n",
                 "/etc/init.d/httpd restart\n",
                 "# Setup application dependencies.\n",
                 "mkdir -p /usr/local/etc/subsite",

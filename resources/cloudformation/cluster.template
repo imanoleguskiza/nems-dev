@@ -692,6 +692,9 @@
               }
             },
             "commands": {
+              "00-update-timezone": {
+                "command": "echo 'date.timezone=Europe/Brussels' >> /etc/php.ini"
+              },
               "01-update-vhost": {
                 "command": "mkdir /var/www/html/platform ; chown apache:apache /var/www/html/platform"
               },
