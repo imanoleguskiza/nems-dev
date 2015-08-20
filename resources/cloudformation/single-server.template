@@ -449,7 +449,7 @@
               "",
               [
                 "#!/bin/bash -xe\n",
-                "yum install -y aws-cli php56 mysql55-server php56-mysqlnd\n",
+                "yum install -y aws-cli php56 php56-gd mysql55-server php56-mysqlnd\n",
                 "mkdir -p /var/www/html/platform\n",
                 "chown apache:apache /var/www/html/platform\n",
                 "sed -i 's#DocumentRoot \"/var/www/html\"#DocumentRoot \"/var/www/html/platform\"#g' /etc/httpd/conf/httpd.conf\n",
