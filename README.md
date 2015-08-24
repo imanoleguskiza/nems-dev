@@ -391,7 +391,7 @@ We'll add the Subsite Starterkit repository as a remote called 'starterkit', and
 merge its code.
 
 ```
-$ git remote add starterkit https://bitbucket.org/digitfpfis/subsite-starterkit.git
+$ git remote add starterkit https://github.com/ec-europa/subsite-starterkit.git
 $ git fetch starterkit
 $ git merge starterkit/master
 ```
@@ -456,7 +456,7 @@ $ ./bin/phing install-dev
 ## Merging upstream changes
 
 ```
-$ git remote add upstream https://bitbucket.org/digitfpfis/subsite-starterkit.git
+$ git remote add upstream https://github.com/ec-europa/subsite-starterkit.git
 $ git fetch upstream
 $ git merge upstream/master
 ```
@@ -471,5 +471,4 @@ Subsite Starterkit, please go through the normal channels and create a ticket
 in Jira with your proposal in the NextEuropa project. Your request will be
 handled in the regular sprints.
 
-> Do not create pull requests in the Bitbucket repository, these are not
-> monitored.
+> Do not create pull requests in the Github repository, these are not monitored.
