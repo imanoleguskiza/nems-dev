@@ -54,7 +54,7 @@
             root="${platform.build.dir}"
             bin="${drush.bin}"
             verbose="${drush.verbose}">
-            <param>${subsite.install.modules}</param>
+            <param>${drupal.modules}</param>
         </drush>
     </target>
 
