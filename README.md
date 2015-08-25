@@ -246,11 +246,24 @@ $ ./behat
 ### 8. Check coding standards
 
 PHP CodeSniffer is preconfigured with the latest Drupal coding standards
-courtesy of the Coder module. You can run the coding standards checks from the
+courtesy of the Coder module. A "git pre-push hook" is installed that will
+automatically check the coding standards whenever you push your branch.  When
+you are pushing new code to an existing branch only the changed files will be
+checked to increase performance. When you push an entirely new branch a
+complete check will be performed.
+
+To manually check the coding standards you can run PHP CodeSniffer from the
 root folder:
 
 ```
 $ ./bin/phpcs
+```
+
+In many cases PHP CodeSniffer can fix the found violations automatically. To do
+this, execute the following command from the root folder:
+
+```
+$ ./bin/phpcbf
 ```
 
 If you need to tweak the coding standards (for example because you have created
