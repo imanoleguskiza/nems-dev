@@ -38,8 +38,8 @@ The configuration of the project is managed in 3 `build.properties` files:
     profile to use and the modules/features to enable after installation.
 3.  `build.properties.local`: This contains configuration which is unique for
     the local development environment. In here you would place things like your
-    CITnet username and password, your database settings and the development
-    modules you would like to install. *This file should never be committed.*
+    database credentials and the development modules you would like to install.
+    *This file should never be committed.*
 
 ### 2. Project code
 
@@ -111,19 +111,18 @@ This README is divided in different parts, please read the relevant section:
 ### 1. Download the project
 
 First we obviously need to get hold of the project source code. For most
-projects this will be hosted on CITnet Stash, but individual projects might be
+projects the "dev" version will be hosted on Github, but individual projects might be
 hosted elsewhere. Your project manager will be able to inform you of the exact
 location.
 
 > Note that you will not be working directly on the Subsite Starterkit code base
-> (aka `digitfpfis/subsite-starterkit`), but on a project specific fork.
+> (aka `ec-europa/subsite-starterkit`), but on a project specific fork.
 
-Let's assume our project is called `multisite/myproject` and is hosted on CITnet
-Stash. We will be working on the "dev" version. My user account on CITnet is
-`iamuser`.
+Let's assume our project is called `ec-europa/myproject` and is hosted on our
+Github. We will be working on the "dev" version.
 
 ```
-$ git clone https://iamuser@webgate.ec.europa.eu/CITnet/stash/scm/multisite/myproject-dev.git
+$ git clone git@github.com:ec-europa/myproject-dev.git
 $ cd myproject-dev
 ```
 
