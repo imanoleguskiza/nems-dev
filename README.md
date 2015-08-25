@@ -111,9 +111,9 @@ This README is divided in different parts, please read the relevant section:
 ### 1. Download the project
 
 First we obviously need to get hold of the project source code. For most
-projects the "dev" version will be hosted on Github, but individual projects might be
-hosted elsewhere. Your project manager will be able to inform you of the exact
-location.
+projects the "dev" version will be hosted on Github, but individual projects
+might be hosted elsewhere. Your project manager will be able to inform you of
+the exact location.
 
 > Note that you will not be working directly on the Subsite Starterkit code base
 > (aka `ec-europa/subsite-starterkit`), but on a project specific fork.
@@ -165,7 +165,7 @@ drupal.admin.username = admin
 drupal.admin.password = admin
 
 # Development / testing modules to enable.
-drupal.development.modules = devel field_ui maillog search_krumo simpletest views_ui
+drupal.development.modules = devel field_ui maillog simpletest views_ui
 
 # The base URL to use in Behat tests.
 behat.base_url = http://myproject.local/
