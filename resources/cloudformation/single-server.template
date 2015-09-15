@@ -78,7 +78,7 @@
     "HostedZone":{
       "Type":"String",
       "Description":"The DNS name of an existing Amazon Route 53 hosted zone",
-      "Default":"continuous.lu"
+      "Default":"ec-europa.continuous.lu"
     }
   },
   "Mappings": {
