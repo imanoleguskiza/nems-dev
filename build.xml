@@ -27,9 +27,11 @@
     <echo msg="Loading PHP Codesniffer Configuration task." />
     <taskdef name="phpcodesnifferconfiguration" classname="\NextEuropa\Phing\PhpCodeSnifferConfigurationTask" />
 
+    <echo msg="Loading Drush Makefile task." />
+    <taskdef name="drushmakefile" classname="\NextEuropa\Phing\DrushMakeFileTask" />
+
     <import file="build.package.xml" />
     <import file="build.test.xml" />
-
 
     <import file="./vendor/continuousphp/aws-sdk-phing/tasks.xml" />
     <property name="aws.profile" value="" />

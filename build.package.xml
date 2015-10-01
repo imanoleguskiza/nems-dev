@@ -54,6 +54,44 @@
         </drush>
     </target>
 
+    <!-- Generate the makefile used to download development modules. -->
+    <target name="generate-development-makefile">
+        <echo msg="Generate the makefile for development modules." />
+        <if>
+            <available file="${subsite.temporary.development.make}" type="file" property="development.makefile.available" />
+            <then>
+                <echo message="Deleting existing makefile." />
+                <delete file="${subsite.temporary.development.make}" failonerror="false" />
+            </then>
+        </if>
+        <drushmakefile
+            makeFile="${subsite.temporary.development.make}"
+            coreVersion="${drupal.core.version}"
+            projects="${development.modules.download}"
+            defaultProjectDir="${development.modules.location}"
+        />
+    </target>
+
+    <!-- Download development modules. -->
+    <target name="download-development-modules" depends="generate-development-makefile">
+        <echo msg="Download development modules." />
+        <drush
+            command="make"
+            assume="yes"
+            bin="${drush.bin}"
+            pipe="yes"
+            verbose="${drush.verbose}"
+            root="${platform.build.dir}">
+            <param>${subsite.temporary.development.make}</param>
+            <param>${platform.build.dir}</param>
+            <!-- Increasing the concurrency improves the build time by a factor of 3. -->
+            <option name="concurrency">10</option>
+            <option name="no-patch-txt"></option>
+            <!-- This option will allow us to build inside an existing folder. -->
+            <option name="no-core"></option>
+        </drush>
+    </target>
+
     <!-- Symlink the source folders for easy development. -->
     <target name="link-subsite-resources">
         <!-- Symlink our custom modules. -->
@@ -198,7 +236,6 @@
                 <delete dir="${platform.package.destination}/extract" includeemptydirs="true" failonerror="false" />
             </else>
         </if>
-
     </target>
 
     <!-- Copy subsite resources into the build folder. -->
@@ -209,7 +246,7 @@
     <target
         name="build-dev"
         description="Build a local development version of the subsite."
-        depends="install-build-dependencies, delete-platform, download-platform, unpack-platform, make-subsite, link-subsite-resources, install-subsite-dependencies, setup-behat, update-htaccess, setup-php-codesniffer" />
+        depends="install-build-dependencies, delete-platform, download-platform, unpack-platform, make-subsite, link-subsite-resources, install-subsite-dependencies, setup-behat, update-htaccess, setup-php-codesniffer, download-development-modules" />
 
     <target
         name="build-dist"
