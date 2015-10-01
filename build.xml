@@ -52,6 +52,7 @@
                 </aws-cf-runstack>
             </then>
             <else>
+                <!-- Todo: This is currently untested. -->
                 <aws-cf-runstack
                         name="subsite-${cf.stackName}"
                         updateOnConflict="true"
