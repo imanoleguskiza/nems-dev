@@ -54,10 +54,10 @@ platform.profile.name = multisite_drupal_standard
 platform.package.reference = develop
 
 # The provider that hosts the platform repository.
-platform.package.provider = bitbucket
+platform.package.provider = git-hub
 
 # The name of the platform repository.
-platform.package.repository = digit-fpfis-platform/nexteuropa
+platform.package.repository = ec-europa/platform-dev
 
 # The name of the folder where the platform will be downloaded.
 platform.package.destination = ${phing.project.tmp.dir}
