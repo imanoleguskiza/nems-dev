@@ -164,8 +164,11 @@ drupal.db.password = hunter2
 drupal.admin.username = admin
 drupal.admin.password = admin
 
+# Development / testing modules to download.
+development.modules.download = coffee devel maillog
+
 # Development / testing modules to enable.
-drupal.development.modules = devel field_ui maillog simpletest views_ui
+drupal.development.modules = coffee devel field_ui maillog simpletest views_ui
 
 # The base URL to use in Behat tests.
 behat.base_url = http://myproject.local/
