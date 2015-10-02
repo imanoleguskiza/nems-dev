@@ -37,21 +37,9 @@
     <!-- Make the subsite. -->
     <target name="make-subsite" depends="unpack-platform">
         <echo msg="Make the subsite." />
-        <drush
-            command="make"
-            assume="yes"
-            bin="${drush.bin}"
-            pipe="yes"
-            verbose="${drush.verbose}"
-            root="${platform.build.dir}">
-            <param>${subsite.make}</param>
-            <param>${platform.build.dir}</param>
-            <!-- Increasing the concurrency improves the build time by a factor of 3. -->
-            <option name="concurrency">10</option>
-            <option name="no-patch-txt"></option>
-            <!-- This option will allow us to build inside an existing folder. -->
-            <option name="no-core"></option>
-        </drush>
+        <phingcall target="drush-make-no-core">
+            <property name="drush.make.target.file" value="${subsite.make}" />
+        </phingcall>
     </target>
 
     <!-- Generate the makefile used to download development modules. -->
@@ -75,6 +63,13 @@
     <!-- Download development modules. -->
     <target name="download-development-modules" depends="generate-development-makefile">
         <echo msg="Download development modules." />
+        <phingcall target="drush-make-no-core">
+            <property name="drush.make.target.file" value="${subsite.temporary.development.make}" />
+        </phingcall>
+    </target>
+
+    <!-- Subtarget: execute a makefile with the no-core option. -->
+    <target name="drush-make-no-core">
         <drush
             command="make"
             assume="yes"
@@ -82,7 +77,7 @@
             pipe="yes"
             verbose="${drush.verbose}"
             root="${platform.build.dir}">
-            <param>${subsite.temporary.development.make}</param>
+            <param>${drush.make.target.file}</param>
             <param>${platform.build.dir}</param>
             <!-- Increasing the concurrency improves the build time by a factor of 3. -->
             <option name="concurrency">10</option>
