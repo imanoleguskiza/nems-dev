@@ -371,7 +371,28 @@ platform.package.reference = develop
 subsite.install.modules = myproject_core
 ```
 
-### 4. Commit and push
+### 4. Install Composer dependencies
+
+The starterkit uses Composer to manage its dependencies, but it does not include
+a `composer.lock` file to leave developers free to manage the exact versions of
+the dependencies themselves.
+
+It is highly recommended to install the composer dependencies at the start of
+the project and then "lock" them by committing the `composer.lock` file. This
+will ensure that all members of the team will always use the same versions of
+the software used to build the website. From time to time you can update the
+dependencies to benefit from improvements in new releases.
+
+```
+# Install composer dependencies.
+$ composer install
+
+# Commit the composer.lock file.
+$ git add composer.lock
+$ git commit -m "Lock composer dependencies."
+```
+
+### 5. Commit and push
 
 Now finally commit your configuration file and push it to your repository. Your
 project is now ready to use.
