@@ -357,7 +357,7 @@ Example file:
 subsite.name = My Project
 
 # The install profile to use.
-drupal.profile.name = multisite_drupal_standard
+platform.profile.name = multisite_drupal_standard
 
 # The branch, tag or commit to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
 # It is possible to use MySQL style wildcards here.
@@ -433,7 +433,7 @@ Example file:
 subsite.name = My Project
 
 # The install profile to use.
-drupal.profile.name = multisite_drupal_standard
+platform.profile.name = multisite_drupal_standard
 
 # Modules to enable after installation. Separate multiple modules with spaces.
 subsite.install.modules = myproject_super_feature
