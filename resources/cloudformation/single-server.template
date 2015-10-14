@@ -332,10 +332,25 @@
             {
               "Effect": "Allow",
               "Action": [
-                "autoscaling:Describe*",
-                "cloudformation:Describe*",
-                "cloudformation:GetTemplate",
-                "s3:Get*"
+                "s3:Get*",
+                "cloudformation:*",
+                "codedeploy:*",
+                "ec2:*",
+                "elasticloadbalancing:*",
+                "cloudwatch:*",
+                "autoscaling:*",
+                "route53:*",
+                "rds:*",
+                "iam:AddRoleToInstanceProfile",
+                "iam:CreateInstanceProfile",
+                "iam:CreateRole",
+                "iam:DeleteInstanceProfile",
+                "iam:DeleteRole",
+                "iam:DeleteRolePolicy",
+                "iam:GetRole",
+                "iam:PassRole",
+                "iam:PutRolePolicy",
+                "iam:RemoveRoleFromInstanceProfile"
               ],
               "Resource": "*"
             }
