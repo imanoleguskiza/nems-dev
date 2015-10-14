@@ -468,6 +468,18 @@
                 "\n",
                 "echo 'drupal.db.password=' >> /usr/local/etc/subsite/subsite.tmp.ini",
                 "\n",
+                "echo 'aws.region=",
+                {
+                  "Ref": "AWS::Region"
+                },
+                "' >> /usr/local/etc/subsite/subsite.tmp.ini",
+                "\n",
+                "echo 'cf.stackName=",
+                {
+                  "Ref": "AWS::StackName"
+                },
+                "' >> /usr/local/etc/subsite/subsite.tmp.ini",
+                "\n",
                 "mv /usr/local/etc/subsite/subsite.tmp.ini /usr/local/etc/subsite/subsite.ini",
                 "\n",
                 "# Install the AWS CodeDeploy Agent.\n",
