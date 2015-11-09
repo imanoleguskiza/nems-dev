@@ -122,6 +122,15 @@ platform.build.subsite.themes.dir = ${platform.build.subsite.dir}/themes
 platform.build.subsite.composer.json = ${platform.build.subsite.dir}/composer.json
 platform.build.subsite.composer.lock = ${platform.build.subsite.dir}/composer.lock
 
+# Files and directories inside the distribution build.
+dist.build.modules.dir = ${dist.build.dir}/modules
+dist.build.modules.custom.dir = ${dist.build.modules.dir}/custom
+dist.build.modules.features.dir = ${dist.build.modules.dir}/features
+dist.build.source.dir = ${dist.build.dir}/src
+dist.build.themes.dir = ${dist.build.dir}/themes
+dist.build.composer.json = ${dist.build.dir}/composer.json
+dist.build.composer.lock = ${dist.build.dir}/composer.lock
+
 
 # Behat configuration
 # -------------------
