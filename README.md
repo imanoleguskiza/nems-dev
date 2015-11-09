@@ -76,6 +76,8 @@ All Behat related files are located in the `tests/` folder.
 
 * `bin/`: Contains command line executables for the various tools we use such as
   Behat, Drush, Phing, PHP CodeSniffer etc.
+* `build/`: Will contain the build intended for deployment to production. Use
+  the `build-dist` Phing target to build it.
 * `src/`: Custom PHP code for the build system, such as project specific Phing
   tasks.
 * `tmp/`: A temporary folder where the platform tarball is downloaded and
