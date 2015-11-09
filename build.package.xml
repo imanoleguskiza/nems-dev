@@ -2,8 +2,8 @@
 
 <project name="My subsite" default="help">
 
-    <!-- Delete the previous build. -->
-    <target name="delete-platform">
+    <!-- Delete the previous development build. -->
+    <target name="delete-dev">
         <!--
             During the Drupal installation process the settings folder is write
             protected. Ensure it is writeable so it can be removed.
@@ -43,8 +43,8 @@
         </if>
     </target>
 
-    <!-- Make the subsite. -->
-    <target name="make-subsite" depends="unpack-platform">
+    <!-- Make the development version of the subsite. -->
+    <target name="make-dev" depends="unpack-platform">
         <echo msg="Make the subsite." />
         <phingcall target="drush-make-no-core">
             <property name="drush.make.target.file" value="${subsite.make}" />
@@ -263,7 +263,8 @@
     <target
         name="build-dev"
         description="Build a local development version of the subsite."
-        depends="install-build-dependencies, delete-platform, download-platform, unpack-platform, make-subsite, link-subsite-resources, install-subsite-dependencies, setup-behat, update-htaccess, setup-php-codesniffer, download-development-modules" />
+        depends="install-build-dependencies, delete-dev, download-platform, unpack-platform, make-dev, link-subsite-resources, install-subsite-dependencies, setup-behat, update-htaccess, setup-php-codesniffer, download-development-modules"
+    />
 
     <target
         name="build-dist"
