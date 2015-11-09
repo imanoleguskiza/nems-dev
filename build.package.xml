@@ -66,6 +66,7 @@
         <echo msg="Download development modules." />
         <phingcall target="drush-make-no-core">
             <property name="drush.make.target.file" value="${subsite.temporary.development.make}" />
+            <property name="drush.make.root" value="${platform.build.dir}" />
         </phingcall>
     </target>
 
@@ -74,20 +75,22 @@
         <echo msg="Make the subsite." />
         <phingcall target="drush-make-no-core">
             <property name="drush.make.target.file" value="${subsite.make}" />
+            <property name="drush.make.root" value="${platform.build.dir}" />
         </phingcall>
     </target>
 
     <!-- Subtarget: execute a makefile with the no-core option. -->
     <target name="drush-make-no-core">
+        <echo message="Running make file ${drush.make.target.file} into folder ${drush.make.root}." />
         <drush
             command="make"
             assume="yes"
             bin="${drush.bin}"
             pipe="yes"
             verbose="${drush.verbose}"
-            root="${platform.build.dir}">
+            root="${drush.make.root}">
             <param>${drush.make.target.file}</param>
-            <param>${platform.build.dir}</param>
+            <param>${drush.make.root}</param>
             <!--
                 Increasing the concurrency improves the build time by a factor
                 of 3.
