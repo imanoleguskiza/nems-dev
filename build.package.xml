@@ -8,14 +8,9 @@
             During the Drupal installation process the settings folder is write
             protected. Ensure it is writeable so it can be removed.
          -->
-        <if>
-            <available file="${platform.build.settings.dir}" type="dir" />
-            <then>
-                <chmod mode="0777" failonerror="true" verbose="false" quiet="true">
-                    <fileset dir="${platform.build.settings.dir}" />
-                </chmod>
-            </then>
-        </if>
+        <phingcall target="unprotect-folder">
+            <property name="folder.to.unprotect" value="${platform.build.settings.dir}" />
+        </phingcall>
 
         <echo msg="Delete previous build." />
         <phingcall target="delete-folder">
@@ -40,6 +35,19 @@
             <else>
                 <delete dir="${folder.to.delete}" includeemptydirs="true" failonerror="false" />
             </else>
+        </if>
+    </target>
+
+    <!-- Make the given folder writeable. -->
+    <target name="unprotect-folder">
+        <!-- This should only be used on folders that need to be removed. -->
+        <if>
+            <available file="${folder.to.unprotect}" type="dir" />
+            <then>
+                <chmod mode="0777" failonerror="true" verbose="false" quiet="true">
+                    <fileset dir="${folder.to.unprotect}" />
+                </chmod>
+            </then>
         </if>
     </target>
 
