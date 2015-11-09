@@ -18,6 +18,14 @@
         </phingcall>
     </target>
 
+    <!-- Delete the previous distribution build. -->
+    <target name="delete-dist">
+        <echo msg="Delete previous build." />
+        <phingcall target="delete-folder">
+            <property name="folder.to.delete" value="${subsite.build.dir}" />
+        </phingcall>
+    </target>
+
     <!-- Delete a given folder. -->
     <target name="delete-folder">
         <!-- Use the faster native command on UNIX systems. -->
@@ -84,6 +92,39 @@
         <phingcall target="drush-make-no-core">
             <property name="drush.make.target.file" value="${subsite.make}" />
             <property name="drush.make.root" value="${platform.build.dir}" />
+        </phingcall>
+    </target>
+
+    <!-- Make the distribution version of the subsite. -->
+    <target name="make-dist">
+        <echo msg="Delete temporary build folder." />
+        <phingcall target="delete-folder">
+            <property name="folder.to.delete" value="${phing.project.tmp.dir}/build" />
+        </phingcall>
+
+        <echo msg="Make the subsite." />
+        <!--
+            Drush make builds the site as if it is part of a complete Drupal
+            installation. The actual build is in the /sites/all subfolder. Build
+            in a temporary folder and move the subsite into place when done.
+         -->
+        <phingcall target="drush-make-no-core">
+            <property name="drush.make.target.file" value="${subsite.make}" />
+            <property name="drush.make.root" value="${phing.project.tmp.dir}/build" />
+        </phingcall>
+
+        <!-- Move the subsite to its destination. -->
+        <echo msg='mv "${phing.project.tmp.dir}/build/sites/all/" "${subsite.build.dir}"' />
+        <exec
+            command='mv "${phing.project.tmp.dir}/build/sites/all/" "${subsite.build.dir}"'
+            dir="${project.basedir}"
+            passthru="true"
+            checkreturn="true"
+        />
+
+        <echo msg="Clean up temporary build folder." />
+        <phingcall target="delete-folder">
+            <property name="folder.to.delete" value="${phing.project.tmp.dir}/build" />
         </phingcall>
     </target>
 
