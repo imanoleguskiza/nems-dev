@@ -18,20 +18,27 @@
         </if>
 
         <echo msg="Delete previous build." />
+        <phingcall target="delete-folder">
+            <property name="folder.to.delete" value="${platform.build.dir}" />
+        </phingcall>
+    </target>
+
+    <!-- Delete a given folder. -->
+    <target name="delete-folder">
         <!-- Use the faster native command on UNIX systems. -->
         <if>
             <os family="unix" />
             <then>
-                <echo msg='rm -rf "${platform.build.dir}"' />
+                <echo msg='rm -rf "${folder.to.delete}"' />
                 <exec
-                    command='rm -rf "${platform.build.dir}"'
+                    command='rm -rf "${folder.to.delete}"'
                     dir="${project.basedir}"
                     passthru="true"
                     checkreturn="true"
                 />
             </then>
             <else>
-                <delete dir="${platform.build.dir}" includeemptydirs="true" failonerror="false" />
+                <delete dir="${folder.to.delete}" includeemptydirs="true" failonerror="false" />
             </else>
         </if>
     </target>
