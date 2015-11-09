@@ -43,14 +43,6 @@
         </if>
     </target>
 
-    <!-- Make the development version of the subsite. -->
-    <target name="make-dev" depends="unpack-platform">
-        <echo msg="Make the subsite." />
-        <phingcall target="drush-make-no-core">
-            <property name="drush.make.target.file" value="${subsite.make}" />
-        </phingcall>
-    </target>
-
     <!-- Generate the makefile used to download development modules. -->
     <target name="generate-development-makefile">
         <echo msg="Generate the makefile for development modules." />
@@ -74,6 +66,14 @@
         <echo msg="Download development modules." />
         <phingcall target="drush-make-no-core">
             <property name="drush.make.target.file" value="${subsite.temporary.development.make}" />
+        </phingcall>
+    </target>
+
+    <!-- Make the development version of the subsite. -->
+    <target name="make-dev" depends="unpack-platform">
+        <echo msg="Make the subsite." />
+        <phingcall target="drush-make-no-core">
+            <property name="drush.make.target.file" value="${subsite.make}" />
         </phingcall>
     </target>
 
