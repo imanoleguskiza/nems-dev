@@ -181,7 +181,7 @@
     </target>
 
     <!-- Unpack the platform. -->
-    <target name="unpack-platform" depends="download-platform, delete-platform">
+    <target name="unpack-platform" depends="download-platform">
         <!-- Use the faster native commands on UNIX systems. -->
         <if>
             <os family="unix" />
@@ -263,12 +263,13 @@
     <target
         name="build-dev"
         description="Build a local development version of the subsite."
-        depends="install-build-dependencies, delete-dev, download-platform, unpack-platform, make-dev, link-subsite-resources, install-subsite-dependencies, setup-behat, update-htaccess, setup-php-codesniffer, download-development-modules"
+        depends="install-build-dependencies, delete-dev, make-dev, link-subsite-resources, install-subsite-dependencies, setup-behat, update-htaccess, setup-php-codesniffer, download-development-modules"
     />
 
     <target
         name="build-dist"
         description="Build a version of the subsite intended to distribute as a release package."
-        depends="install-build-dependencies, delete-platform, download-platform, unpack-platform, make-subsite, copy-subsite-resources" />
+        depends="install-build-dependencies, delete-dist, make-dist, copy-subsite-resources"
+    />
 
 </project>
