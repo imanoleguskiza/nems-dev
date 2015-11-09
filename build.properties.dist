@@ -85,7 +85,7 @@ phing.bin = ${project.basedir}/bin/phing
 # Build location.
 phing.project.build.dir = build
 phing.project.src.dir = ${project.basedir}/src
-subsite.build.dir = ${project.basedir}/${phing.project.build.dir}
+dist.build.dir = ${project.basedir}/${phing.project.build.dir}
 
 # Temporary folder.
 phing.project.tmp.dir = ${project.basedir}/tmp

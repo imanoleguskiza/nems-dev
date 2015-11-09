@@ -22,7 +22,7 @@
     <target name="delete-dist">
         <echo msg="Delete previous build." />
         <phingcall target="delete-folder">
-            <property name="folder.to.delete" value="${subsite.build.dir}" />
+            <property name="folder.to.delete" value="${dist.build.dir}" />
         </phingcall>
     </target>
 
@@ -114,9 +114,9 @@
         </phingcall>
 
         <!-- Move the subsite to its destination. -->
-        <echo msg='mv "${phing.project.tmp.dir}/build/sites/all/" "${subsite.build.dir}"' />
+        <echo msg='mv "${phing.project.tmp.dir}/build/sites/all/" "${dist.build.dir}"' />
         <exec
-            command='mv "${phing.project.tmp.dir}/build/sites/all/" "${subsite.build.dir}"'
+            command='mv "${phing.project.tmp.dir}/build/sites/all/" "${dist.build.dir}"'
             dir="${project.basedir}"
             passthru="true"
             checkreturn="true"
@@ -154,7 +154,7 @@
     </target>
 
     <!-- Symlink the source folders for easy development. -->
-    <target name="link-subsite-resources">
+    <target name="link-dev-resources">
         <!-- Symlink our custom modules. -->
         <symlink link="${platform.build.subsite.modules.custom.dir}" target="${subsite.resources.modules.dir}" />
         <!-- Symlink our custom features. -->
@@ -177,7 +177,7 @@
     </target>
 
     <!-- Install Composer dependencies for the subsite. -->
-    <target name="install-subsite-dependencies">
+    <target name="install-dev-dependencies">
         <composer command="install" composer="${composer.bin}">
             <arg value="--working-dir=${platform.build.subsite.dir}" />
         </composer>
@@ -315,13 +315,13 @@
     <target
         name="build-dev"
         description="Build a local development version of the subsite."
-        depends="install-build-dependencies, delete-dev, make-dev, link-subsite-resources, install-subsite-dependencies, setup-behat, update-htaccess, setup-php-codesniffer, download-development-modules"
+        depends="install-build-dependencies, delete-dev, make-dev, link-dev-resources, install-dev-dependencies, setup-behat, update-htaccess, setup-php-codesniffer, download-development-modules"
     />
 
     <target
         name="build-dist"
         description="Build a version of the subsite intended to distribute as a release package."
-        depends="install-build-dependencies, delete-dist, make-dist, copy-subsite-resources"
+        depends="install-build-dependencies, delete-dist, make-dist, copy-dist-resources"
     />
 
 </project>
