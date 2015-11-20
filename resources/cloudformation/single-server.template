@@ -502,7 +502,7 @@
                 "aws s3 cp 's3://aws-codedeploy-us-east-1/latest/codedeploy-agent.noarch.rpm' .\n",
                 "yum -y install codedeploy-agent.noarch.rpm \n",
                 "mkdir -p /root/.aws \n",
-                "aws s3 cp 's3://ec-europa-infra-eu-west-1/terminator/credentials' /root/.aws/credentials \n"
+                "aws s3 cp 's3://ec-europa-infra-eu-west-1/terminator/credentials' /root/.aws/credentials \n",
                 "aws s3 cp 's3://ec-europa-infra-eu-west-1/terminator/cf-terminator' /etc/cron.d/cf-terminator \n"
               ]
             ]
