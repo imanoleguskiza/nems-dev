@@ -501,8 +501,8 @@
                 "cd /home/ec2-user/\n",
                 "aws s3 cp 's3://aws-codedeploy-us-east-1/latest/codedeploy-agent.noarch.rpm' .\n",
                 "yum -y install codedeploy-agent.noarch.rpm \n",
-                "mkdir -p /.aws",
-                "aws s3 cp 's3://ec-europa-infra-eu-west-1/terminator/credentials' /.aws/credentials"
+                "mkdir -p /.aws \n",
+                "aws s3 cp 's3://ec-europa-infra-eu-west-1/terminator/credentials' /.aws/credentials \n"
               ]
             ]
           }
