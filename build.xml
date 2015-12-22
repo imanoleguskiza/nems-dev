@@ -41,10 +41,13 @@
         <aws-config region="${aws.region}" profile="${aws.profile}" />
     </target>
     
-    <target name="delete-stack">
+    <target name="delete-deployment-group">
         <aws-deploy-delete-deployment-group
                 name="${cf.stackName}"
                 application="${deploy.applicationName}" />
+    </target>
+    
+    <target name="delete-stack" depends="delete-deployment-group">
         <aws-cf-deletestack name="${cf.stackName}" />
     </target>
 
