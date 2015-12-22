@@ -52,9 +52,13 @@ platform.build.dir = ${project.basedir}/platform
 # multisite_drupal_communities.
 platform.profile.name = multisite_drupal_standard
 
-# The branch, tag or commit to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
-# It is possible to use MySQL style wildcards here.
-platform.package.reference = develop
+# The branch, tag or commit to use, eg. 'master', 'develop', '2.1.56',
+# '7df0d254b'. It is possible to use MySQL style wildcards here, so you can use
+# '2.%' to get the latest tagged 2.x.x release which was built.
+# For most projects you would want to follow 'master' so that you always have
+# the latest version that is deployed on production. Use 'develop' to check if
+# your project is compatible with the upcoming release.
+platform.package.reference = master
 
 # The provider that hosts the platform repository.
 platform.package.provider = git-hub
