@@ -42,6 +42,9 @@
     </target>
     
     <target name="delete-stack">
+        <aws-deploy-delete-deployment-group
+                name="${cf.stackName}"
+                application="${deploy.applicationName}" />
         <aws-cf-deletestack name="${cf.stackName}" />
     </target>
 
@@ -55,6 +58,7 @@
                         capabilities="CAPABILITY_IAM"
                         templatePath="./resources/cloudformation/${cf.template}.template">
                     <param name="KeyName" value="${cf.KeyName}" />
+                    <param name="ApplicationName" value="${deploy.applicationName}" />
                     <param name="env" value="${cf.stackName}" />
                 </aws-cf-runstack>
             </then>

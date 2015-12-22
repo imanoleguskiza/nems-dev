@@ -75,10 +75,14 @@
       "Type": "String",
       "AllowedPattern": "[a-zA-Z0-9\\-]+"
     },
-    "HostedZone":{
+    "HostedZone": {
       "Type":"String",
       "Description":"The DNS name of an existing Amazon Route 53 hosted zone",
       "Default":"ec-europa.continuous.lu"
+    },
+    "ApplicationName": {
+      "Type": "String",
+      "Description": "The CodeDeploy application name"
     }
   },
   "Mappings": {
@@ -492,6 +496,12 @@
                 "echo 'cf.stackName=",
                 {
                   "Ref": "AWS::StackName"
+                },
+                "' >> /usr/local/etc/subsite/subsite.tmp.ini",
+                "\n",
+                "echo 'deploy.applicationName=",
+                {
+                  "Ref": "ApplicationName"
                 },
                 "' >> /usr/local/etc/subsite/subsite.tmp.ini",
                 "\n",
