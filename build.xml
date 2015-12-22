@@ -43,7 +43,7 @@
     
     <target name="delete-deployment-group">
         <aws-deploy-delete-deployment-group
-                name="${cf.stackName}"
+                name="${deploy.groupName}"
                 application="${deploy.applicationName}" />
     </target>
     

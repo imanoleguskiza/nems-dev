@@ -505,6 +505,12 @@
                 },
                 "' >> /usr/local/etc/subsite/subsite.tmp.ini",
                 "\n",
+                "echo 'deploy.groupName=",
+                {
+                  "Ref": "env"
+                },
+                "' >> /usr/local/etc/subsite/subsite.tmp.ini",
+                "\n",
                 "mv /usr/local/etc/subsite/subsite.tmp.ini /usr/local/etc/subsite/subsite.ini",
                 "\n",
                 "# Install the AWS CodeDeploy Agent.\n",
