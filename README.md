@@ -23,6 +23,13 @@ of the European Commission.
 - Build your website in an automated way to get your entire team up and running
   fast!
 
+## Recent notable changes
+
+- 2015-12-22: The structure of the platform package that is being downloaded
+  from ContinuousPHP has changed. The codebase now resides in the root folder
+  instead of the `build/` folder. The platform downloads should be much faster
+  now.
+
 
 ## Repository structure
 

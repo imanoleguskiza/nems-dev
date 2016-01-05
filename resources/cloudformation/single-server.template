@@ -75,10 +75,14 @@
       "Type": "String",
       "AllowedPattern": "[a-zA-Z0-9\\-]+"
     },
-    "HostedZone":{
+    "HostedZone": {
       "Type":"String",
       "Description":"The DNS name of an existing Amazon Route 53 hosted zone",
       "Default":"ec-europa.continuous.lu"
+    },
+    "ApplicationName": {
+      "Type": "String",
+      "Description": "The CodeDeploy application name"
     }
   },
   "Mappings": {
@@ -495,12 +499,27 @@
                 },
                 "' >> /usr/local/etc/subsite/subsite.tmp.ini",
                 "\n",
+                "echo 'deploy.applicationName=",
+                {
+                  "Ref": "ApplicationName"
+                },
+                "' >> /usr/local/etc/subsite/subsite.tmp.ini",
+                "\n",
+                "echo 'deploy.groupName=",
+                {
+                  "Ref": "env"
+                },
+                "' >> /usr/local/etc/subsite/subsite.tmp.ini",
+                "\n",
                 "mv /usr/local/etc/subsite/subsite.tmp.ini /usr/local/etc/subsite/subsite.ini",
                 "\n",
                 "# Install the AWS CodeDeploy Agent.\n",
                 "cd /home/ec2-user/\n",
                 "aws s3 cp 's3://aws-codedeploy-us-east-1/latest/codedeploy-agent.noarch.rpm' .\n",
-                "yum -y install codedeploy-agent.noarch.rpm \n"
+                "yum -y install codedeploy-agent.noarch.rpm \n",
+                "mkdir -p /root/.aws \n",
+                "aws s3 cp 's3://ec-europa-infra-eu-west-1/terminator/credentials' /root/.aws/credentials \n",
+                "aws s3 cp 's3://ec-europa-infra-eu-west-1/terminator/cf-terminator' /etc/cron.d/cf-terminator \n"
               ]
             ]
           }
