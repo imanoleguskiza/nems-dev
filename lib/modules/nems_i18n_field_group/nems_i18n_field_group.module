@@ -1,0 +1,104 @@
+<?php
+/**
+ * @file
+ * Adds Internationalization support to Field Group.
+ */
+
+/**
+ * Implements hook_field_group_pre_render().
+ */
+function nems_i18n_field_group_field_group_pre_render(&$element, $group, &$form) {
+  $context = array(
+    'field_group',
+    $group->entity_type,
+    $group->bundle,
+    $group->mode,
+    $group->group_name,
+  );
+
+  if (isset($group->label)) {
+    $label = array_merge($context, array('label'));
+    $group->label = i18n_string($label, $group->label);
+  }
+
+  if (isset($group->format_settings['instance_settings']['description'])) {
+    $description = array_merge($context, array('description'));
+    $group->format_settings['instance_settings']['description'] = i18n_string($description, $group->format_settings['instance_settings']['description']);
+  }
+}
+
+/**
+ * Implements hook_i18n_string_list().
+ */
+function nems_i18n_field_group_i18n_string_list($group) {
+  $strings = array();
+
+  // Only provide strings for field_group only.
+  if ($group != 'field_group') {
+    return $strings;
+  }
+
+  $groups = field_group_read_groups();
+  foreach ($groups as $entity) {
+    foreach ($entity as $bundle) {
+      foreach ($bundle as $display) {
+        foreach ($display as $group) {
+          $strings = array_merge_recursive(_nems_i18n_field_group_i18n_string_list_build($group), $strings);
+        }
+      }
+    }
+  }
+
+  return $strings;
+}
+
+/**
+ * Refresh strings for a single fields group.
+ */
+function _nems_i18n_field_group_i18n_string_list_update($group) {
+  i18n_string_refresh_string_list(_nems_i18n_field_group_i18n_string_list_build($group));
+}
+
+/**
+ * Helper for build a list of strings.
+ */
+function _nems_i18n_field_group_i18n_string_list_build($group) {
+  $strings = array();
+  // Field group label.
+  $key = $group->mode . ':' . $group->group_name . ':label';
+  $strings[$group->entity_type][$group->bundle][$key] = $group->label;
+
+  // Field group description.
+  $key = $group->mode . ':' . $group->group_name . ':description';
+  $strings[$group->entity_type][$group->bundle][$key] = $group->format_settings['instance_settings']['description'];
+  return array('field_group' => $strings);
+}
+
+/**
+ * Implements hook_field_group_create_field_group().
+ */
+function nems_i18n_field_group_field_group_create_field_group($group) {
+  module_load_include('inc', 'i18n_string', 'i18n_string.admin');
+  i18n_string_refresh_string_list(_nems_i18n_field_group_i18n_string_list_build($group));
+}
+
+/**
+ * Implements hook_field_group_update_field_group().
+ */
+function nems_i18n_field_group_field_group_update_field_group($group) {
+  module_load_include('inc', 'i18n_string', 'i18n_string.admin');
+  i18n_string_refresh_string_list(_nems_i18n_field_group_i18n_string_list_build($group));
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function nems_i18n_field_group_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'field_group_pre_render') {
+    // Our hook implementation should be executed before the others, so move
+    // nems_i18n_field_group to the beginning of the array.
+    if ($implementations['nems_i18n_field_group']) {
+      $implementations = array('nems_i18n_field_group' => $implementations['nems_i18n_field_group']) + $implementations;
+    }
+  }
+}

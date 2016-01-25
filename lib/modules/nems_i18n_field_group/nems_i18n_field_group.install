@@ -1,0 +1,19 @@
+<?php
+/**
+ * @file
+ * Install and setup accordion module.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function nems_i18n_field_group_enable() {
+  drupal_set_message(t('NEMS i18n field group module is now active on your site.'));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function nems_i18n_field_group_disable() {
+  drupal_set_message(t('NEMS i18n field group module is now disabled on your site.'));
+}
