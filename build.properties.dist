@@ -228,3 +228,15 @@ development.modules.enable = devel field_ui maillog simpletest views_ui
 
 # The location where development modules will be installed.
 development.modules.location = development
+
+# AWS SDK
+# -------
+aws.region = eu-west-1
+
+# AWS Cloud Formation
+# -------------------
+cf.template = single-server
+
+# AWS CodeDeploy
+# --------------
+deploy.serviceRole = arn:aws:iam::918396081007:role/CodeDeploy
