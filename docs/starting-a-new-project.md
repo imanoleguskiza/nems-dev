@@ -84,9 +84,7 @@ platform.profile.name = multisite_drupal_standard
 
 # The branch, tag or commit to use, eg. 'master', 'develop', '1.7', '7df0d254b'.
 # It is possible to use MySQL style wildcards here.
-# Until version 2.1.0 of the platform is released, it is advised to use the
-# 'develop' branch. After the 2.1.0 release you can best use 'master'.
-platform.package.reference = develop
+platform.package.reference = master
 
 # Modules to enable after installation. Separate multiple modules with spaces.
 # This will typically be the 'mother feature' which will contain all your other
@@ -115,7 +113,21 @@ $ git add composer.lock
 $ git commit -m "Lock composer dependencies."
 ```
 
-### 5. Commit and push
+### 5. Set up PHP CodeSniffer
+
+When you use the starterkit, your code will automatically be scanned for coding
+standard violations by PHP CodeSniffer on every push. We need to configure this
+now so that we can push to the repository. This is done with a single command:
+
+```
+$ ./bin/phing setup-php-codesniffer
+```
+
+If this is omitted PHP CodeSniffer will scan your `composer.lock` and
+`build.properties` files and throw a false positive error: "No PHP code was
+found in this file".
+
+### 6. Commit and push
 
 Now finally commit your configuration file and push it to your repository. Your
 project is now ready to use.
