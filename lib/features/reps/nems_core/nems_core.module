@@ -1,0 +1,531 @@
+<?php
+/**
+ * @file
+ * Code for the NEMS core feature.
+ */
+
+include_once 'nems_core.features.field_base.inc';
+include_once 'nems_core.features.inc';
+include_once 'nems_core.api.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function nems_core_menu() {
+  $items = array();
+  // Empty home page.
+  $items['home'] = array(
+    'title' => '',
+    'page callback' => '_nems_core_empty',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_help().
+ */
+function nems_core_help($path, $arg) {
+  $help = '';
+  switch ($path) {
+    // Help text for the nems_core feature.
+    case 'admin/help#nems_core':
+      $help = '<p></p>';
+      break;
+  }
+
+  return $help;
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function nems_core_node_view($node, $view_mode, $langcode) {
+  switch ($node->type) {
+    case 'nems_news':
+      menu_tree_set_path('main-menu', 'news');
+      break;
+
+    case 'nems_event':
+      menu_tree_set_path('main-menu', 'events');
+      break;
+
+    case 'nems_publication':
+      menu_tree_set_path('main-menu', 'publications');
+      break;
+
+    case 'nems_video':
+      menu_tree_set_path('videos');
+      break;
+  }
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function nems_core_menu_alter(&$items) {
+  $items['node/%node/edit']['theme callback'] = '_nems_core_use_admin_theme';
+
+  foreach (node_type_get_types() as $type) {
+    $type_url_str = str_replace('_', '-', $type->type);
+    $items['node/add/' . $type_url_str]['theme callback'] = '_nems_core_use_admin_theme';
+  }
+}
+
+/**
+ * Callback to set the admin theme for node operations.
+ *
+ * @return string
+ *   admin theme variable
+ */
+function nems_core_use_admin_theme() {
+  return variable_get('admin_theme', 'seven');
+}
+
+/**
+ * Empty Callback for the home page.
+ */
+function nems_core_empty() {
+  return '';
+}
+
+/**
+ * Create default pages.
+ */
+function _nems_core_create_default_pages() {
+
+  $page = array(
+    'title' => t('Homepage'),
+    'path' => 'home',
+    'type' => 'nems_homepage',
+  );
+  _nems_core_create_node($page['type'], $page['title'], $page['path']);
+  variable_set('site_frontpage', 'home');
+}
+
+/**
+ * Implements hook_date_format_types().
+ */
+function nems_core_date_format_types() {
+  return array(
+    'just_Y' => t('Year only'),
+  );
+}
+
+/**
+ * Save site name translations.
+ *
+ * @param string $lang
+ *   Lang code.
+ * @param array $vars
+ *   Array containing variables name and values.
+ */
+function _nems_core_site_name($lang, array $vars) {
+  foreach ($vars as $variable => $value) {
+    $results = db_select('variable_store')
+      ->fields(NULL, array('field'))
+      ->condition('name', $variable, '=')
+      ->condition('realm_key', $lang, '=')
+      ->countQuery()
+      ->execute()
+      ->fetchField();
+
+    if ($results == 0) {
+      $query = db_insert('variable_store')
+        ->fields(array(
+          'realm' => 'language',
+          'realm_key' => $lang,
+          'name' => $variable,
+          'value' => $value,
+          'serialized' => 0,
+        ))
+        ->execute();
+    }
+    else {
+      $query = db_update('variable_store')
+        ->fields(array('value' => $value))
+        ->condition('name', $variable, '=')
+        ->condition('realm_key', $lang, '=')
+        ->execute();
+    }
+  }
+}
+
+/**
+ * This is used instead of features_override with the same goal.
+ *
+ * We have to override some configurations based on features belonging to the
+ * multisite platform, since we cannot do properly updating those features,
+ * we had to find a way to override them not using the features_override module.
+ */
+function _nems_core_overrides() {
+  // Page instances of field body.
+  $instances = field_read_instance('node', 'body', 'page');
+  if ($instances) {
+    $instances['display']['default'] = array(
+      'label' => 'hidden',
+      'module' => 'text',
+      'settings' => array(),
+      'type' => 'text_default',
+      'weight' => 1,
+    );
+
+    $instances['display']['full'] = array(
+      'label' => 'hidden',
+      'module' => 'text',
+      'settings' => array(),
+      'type' => 'text_default',
+      'weight' => '0',
+    );
+
+    $instances['display']['teaser'] = array(
+      'label' => 'hidden',
+      'module' => 'smart_trim',
+      'settings' => array(
+        'more_link' => '1',
+        'more_text' => 'Read more',
+        'summary_handler' => 'full',
+        'trim_length' => '30',
+        'trim_options' => array(
+          'text' => 'text',
+        ),
+        'trim_suffix' => '...',
+        'trim_type' => 'words',
+      ),
+      'type' => 'smart_trim_format',
+      'weight' => '0',
+    );
+    field_update_instance($instances);
+  }
+
+  // Enable translations for various fields.
+  $field_names = array(
+    'body',
+    'field_meta_description',
+    'field_meta_classification',
+    'field_tags',
+  );
+
+  foreach ($field_names as $field_name) {
+    $field = field_read_field($field_name);
+    if ($field) {
+      // Set the classification field to suppot multiple values.
+      if ($field_name == 'field_meta_classification') {
+        $field['cardinality'] = -1;
+      }
+      // Make the field translatable.
+      $field['translatable'] = 1;
+      field_update_field($field);
+    }
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function nems_core_block_info() {
+  $blocks = array();
+  $blocks['nems_core_feedback_form']['info'] = t('Help us to improve');
+  $blocks['nems_core_share_webtools']['info'] = t('Webtools share button');
+  $blocks['nems_core_twitter_webtools']['info'] = t('Webtools Twitter block');
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function nems_core_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'nems_core_feedback_form':
+      $block['subject'] = t('Help us to improve');
+      $block['content'] = drupal_get_form('_nems_core_feedback_form');
+      break;
+
+    case 'nems_core_share_webtools':
+      $block['subject'] = t('Webtools Share');
+      $block['content'] = t('Webtools Share');
+      break;
+
+    case 'nems_core_twitter_webtools':
+      $block['subject'] = t('Webtools Twitter');
+      $block['content'] = t('Webtools Twitter');
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Prepare the feedback form.
+ */
+function _nems_core_feedback_form() {
+  $form['#action'] = url('http://webtools.ec.europa.eu/form-tools/process.php', array('external' => TRUE));
+
+  $form['nems_core_feeback_form']['form-found'] = array(
+    '#attributes' => array('id' => 'form-found'),
+    '#type' => 'radios',
+    '#required' => TRUE,
+    '#title' => t('Find what you wanted?'),
+    '#options' => array(
+      'yes' => t('Yes'),
+      'no' => t('No'),
+    ),
+  );
+
+  $form['nems_core_feeback_form']['form-what'] = array(
+    '#attributes' => array('id' => 'form-what'),
+    '#type' => 'textfield',
+    '#required' => TRUE,
+    '#title' => t('What were you looking for?'),
+  );
+
+  $form['nems_core_feeback_form']['form-suggestion'] = array(
+    '#attributes' => array('id' => 'form-suggestion'),
+    '#type' => 'textfield',
+    '#required' => FALSE,
+    '#title' => t('Any suggestions?'),
+  );
+
+  $form['nems_core_feeback_form']['form_tools_form_id'] = array(
+    '#attributes' => array('id' => 'form_tools_form_id'),
+    '#type' => 'hidden',
+    '#default_value' => variable_get('feedback_form_id', '1051'),
+  );
+
+  $form['actions']['submit'] = array(
+    '#type' => 'button',
+    '#value' => t('Send'),
+  );
+
+  return $form;
+}
+
+/**
+ * Check if the menu exists, otherwise create it.
+ *
+ * @param string $menu
+ *   Menu machine name.
+ */
+function _nems_core_check_nems_menus($menu) {
+  $check = menu_load($menu);
+
+  if (!$check) {
+    $menu = array(
+      'menu_name' => $menu,
+      'description' => '',
+      'title' => $menu,
+    );
+    menu_save($menu);
+  }
+}
+
+/**
+ * Check if the content type exists, otherwise create it.
+ *
+ * @param string $ct
+ *   Content type machine name.
+ */
+function _nems_core_check_nems_content_type($ct) {
+  $type = node_type_get_type($ct);
+
+  if (!$type) {
+    $type = array(
+      'type' => $ct,
+      'name' => $ct,
+      'base' => 'node_content',
+      'description' => '',
+      'custom' => 1,
+      'modified' => 1,
+      'locked' => 0,
+    );
+
+    $type = node_type_set_defaults($type);
+    node_type_save($type);
+    $type = node_type_get_type($ct);
+  }
+
+  return $type->type;
+}
+
+/**
+ * Implements hook_post_features_enable_feature().
+ */
+function nems_core_post_features_enable_feature($component) {
+  switch ($component) {
+    case 'field_base':
+      // Revert the field component, it seems it is not ready
+      // after it's enabled.
+      features_revert(array('nems_core' => array($component)));
+      break;
+
+    case 'menu_custom':
+      _nems_core_check_nems_menus('menu-nems-services');
+      break;
+  }
+}
+
+/**
+ * Helper function to create "fake" isntances of exported field bases.
+ *
+ * @param string $component
+ *   Feature component name.
+ */
+function _nems_core_create_instances($component) {
+  // Create a content type if it doesn't exist already.
+  if ($component == 'field_base') {
+    $type_name = 'nems_core_fs';
+    $type = node_type_load($type_name);
+    if (!$type) {
+      $type = array(
+        'type' => $type_name,
+        'name' => t('Field instances'),
+        'base' => 'node_content',
+        'description' => t('Instantiate fields'),
+        'custom' => 1,
+        'modified' => 1,
+        'locked' => 0,
+        'disabled' => 1,
+      );
+
+      $type = node_type_set_defaults($type);
+      node_type_save($type);
+    }
+
+    // Get fields from the features file.
+    $fields = call_user_func_array('nems_core_field_default_field_bases', array(''));
+
+    // Loop through the fields and build "fake" instances.
+    foreach ($fields as $field_name => $field_options) {
+      $exist = field_info_instance('node', $field_name, $type->type);
+      // Only work with unlocked fields and check for existing instances.
+      if ($field_options['locked'] == 0 && $exist === NULL) {
+        $instance = array(
+          'field_name' => $field_name,
+          'entity_type' => 'node',
+          'bundle' => $type->type,
+          'label' => 'default instance',
+          'description' => t('A default instance'),
+          'required' => 0,
+        );
+        field_create_instance($instance);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_filter_info().
+ */
+function nems_core_filter_info() {
+  $filters['filter_basepath'] = array(
+    'title' => t('Base path'),
+    'description' => t('Use it to transform the leading slash of a link with the drupal base_path()'),
+    'process callback' => '_nems_core_filter_basepath',
+  );
+
+  return $filters;
+}
+
+/**
+ * Filter callback.
+ */
+function _nems_core_filter_basepath($text, $filter, $format, $langcode, $cache, $cache_id) {
+  // Add the base path to leading slash links.
+  $link = 'href="/';
+  $img = 'src="/';
+  $text = str_replace($link, substr($link, 0, -1) . base_path(), $text);
+  $text = str_replace($img, substr($img, 0, -1) . base_path(), $text);
+
+  return $text;
+}
+
+/**
+ * Implements hook_filter_default_formats().
+ */
+function nems_core_full_html() {
+  $format = filter_format_load('full_html');
+  $format->filters = array(
+    'filter_url' => array(
+      'weight' => '0',
+      'status' => '1',
+      'settings' => array(
+        'filter_url_length' => '120',
+      ),
+    ),
+    'filter_autop' => array(
+      'weight' => '1',
+      'status' => '1',
+      'settings' => array(),
+    ),
+    'media_filter' => array(
+      'weight' => '2',
+      'status' => '1',
+      'settings' => array(),
+    ),
+    'filter_htmlcorrector' => array(
+      'weight' => '10',
+      'status' => '1',
+      'settings' => array(),
+    ),
+    'filter_basepath' => array(
+      'status' => '1',
+    ),
+  );
+
+  filter_format_save((object) $format);
+}
+
+/**
+ * Delete the default pages.
+ */
+function _nems_core_delete_defaults() {
+  $nids = variable_get('nems_core_default_pages_nids');
+  if (is_array($nids)) {
+    foreach ($nids as $nid) {
+      node_delete($nid);
+    }
+  }
+}
+
+/**
+ * Implements hook_social_media_links_platform_info_alter().
+ */
+function nems_core_social_media_links_platform_info_alter(&$platforms) {
+  // Add additional platform(s).
+  $platforms['flickr'] = array(
+    'title' => t('Flickr'),
+    'base url' => 'https://www.flickr.com/',
+  );
+  // Clean base urls.
+  foreach ($platforms as $service => $values) {
+    $platforms[$service]['base url'] = '';
+  }
+}
+
+/**
+ * Get the existing instances of fields.
+ *
+ * @param string $field_name
+ *   Select or topic for the moment.
+ *
+ * @return array
+ *   instances
+ */
+function _nems_core_get_instances($field_name) {
+  // Get instances per field.
+  $instances = array();
+  if ($field_name) {
+    $content_types = node_type_get_types();
+    $instances = array();
+    // We loop through the list of content types to find all the instances.
+    foreach ($content_types as $machine_name => $content_type) {
+      $exist = field_info_instance('node', $field_name, $machine_name);
+      if ($exist !== NULL) {
+        $instances[] = $exist['bundle'];
+      }
+    }
+  }
+  return $instances;
+}

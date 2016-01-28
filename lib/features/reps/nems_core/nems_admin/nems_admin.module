@@ -1,0 +1,86 @@
+<?php
+/**
+ * @file
+ * Code for the NEMS admin feature.
+ */
+
+include_once 'nems_admin.features.inc';
+
+
+/**
+ * Implements hook_permission().
+ */
+function nems_admin_permission() {
+  return array(
+    'administer nems settings' => array(
+      'title' => t('Administer NEMS settings'),
+    ),
+    'administer nems social links' => array(
+      'title' => t('Administer NEMS social links'),
+    ),
+    'administer nems twitter webtools' => array(
+      'title' => t('Administer NEMS Twitter webtools'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nems_admin_theme($existing, $type, $theme, $path) {
+  return array(
+    'nems_admin_social' => array(
+      'render element' => 'form',
+    ),
+  );
+}
+
+/**
+ * Helper function to get the enabled languages.
+ */
+function _nems_admin_get_languages() {
+  $languages = locale_language_list('name');
+
+  foreach ($languages as $code => $name) {
+    $options[$code] = $name;
+  }
+
+  return $options;
+}
+
+/**
+ * Helper function to get the translations.
+ */
+function _nems_admin_get_string_translations($mlid, $string) {
+  $languages = _nems_admin_get_languages();
+  $translations = array();
+
+  if (!empty($languages)) {
+    foreach ($languages as $langcode => $langname) {
+      $name = 'menu:item:' . $mlid . ':title';
+      $translation = i18n_string_translate($name, $string, array('langcode' => $langcode));
+
+      if ($translation != $string) {
+        $translations[$langcode] = $translation;
+      }
+      else {
+        $translations[$langcode] = '';
+      }
+    }
+  }
+
+  return $translations;
+}
+
+/**
+ * Helper function to get the list of social networks.
+ */
+function _nems_admin_retrieve_socials() {
+  if (module_exists('social_media_links')) {
+    $socials = array_keys(social_media_links_platforms());
+    return $socials;
+  }
+  else {
+    return FALSE;
+  }
+}

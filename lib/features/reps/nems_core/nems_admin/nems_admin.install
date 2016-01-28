@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ * Code for the nems admin feature.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function nems_admin_enable() {
+  drupal_set_message(t("The NEMS admin feature is now enabled on your site!"));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function nems_admin_disable() {
+  drupal_set_message(t("The NEMS admin feature is now disabled on your site"));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function nems_admin_uninstall() {
+  drupal_set_message(t("The NEMS admin feature has been uninstalled."));
+}

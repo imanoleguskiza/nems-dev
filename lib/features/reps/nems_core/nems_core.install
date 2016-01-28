@@ -1,0 +1,151 @@
+<?php
+/**
+ * @file
+ * Code for the nems core feature.
+ */
+
+include_once 'nems_core.api.inc';
+
+/**
+ * Implements hook_enable().
+ */
+function nems_core_enable() {
+  features_revert(array(
+    'nems_core' => array(
+      'field_base',
+      'field_instance',
+      'variable',
+    ),
+  ));
+
+  // Disable content types.
+  multisite_drupal_toolbox_disable_content_type('article');
+  multisite_drupal_toolbox_disable_content_type('flexslider_example');
+
+  // Enable custom features.
+  module_enable(array(
+    'nems_admin',
+    'nems_publications',
+    'nems_events',
+    'nems_videos',
+    'nems_news',
+  ));
+
+  // Enable title_field
+  if (!module_exists('title')) {
+    module_enable(array('title'));
+  }
+
+  multisite_config_service('title')->replaceTitleField('node', 'nems_slide_footer', 'title');
+  multisite_config_service('title')->replaceTitleField('node', 'nems_slide_homepage', 'title');
+  multisite_config_service('title')->replaceTitleField('node', 'nems_contact_point', 'title');
+  multisite_config_service('title')->replaceTitleField('node', 'nems_homepage', 'title');
+  multisite_config_service('title')->replaceTitleField('node', 'nems_homepage_additional_block', 'title');
+
+  // Override some of the options exported in multisite core features.
+  _nems_core_overrides();
+
+  // Drupal set message.
+  drupal_set_message(t("The NEMS core feature is now active on your site"));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function nems_core_disable() {
+  multisite_drupal_toolbox_disable_content_type('nems_slide_footer');
+  multisite_drupal_toolbox_disable_content_type('nems_slide_homepage');
+  drupal_set_message(t("The NEMS core feature is now disabled on your site"));
+}
+
+/**
+ * Implements hook_install().
+ */
+function nems_core_install() {
+  // Set site name.
+  variable_set('site_name', 'Nems');
+  // Activate drupal search.
+  $active_search = variable_get('search_active_modules');
+  $active_search['node'] = 'node';
+  variable_set('search_active_modules', $active_search);
+
+  // Make views translatable.
+  variable_set('views_localize_all', TRUE);  
+
+  // Remove first node, created by Multisite deployment script.
+  node_delete(1);
+
+  // Create default blank pages.
+  _nems_core_create_default_pages();
+
+  variable_set('pathauto_node_pattern', '');
+  $entity_translation_entity_types = array(
+    'node' => 'node',
+    'taxonomy_term' => 'taxonomy_term',
+    'bean' => 'bean',
+    'comment' => 0,
+    'file' => 0,
+    'user' => 0,
+  );
+  variable_set('entity_translation_entity_types', $entity_translation_entity_types);
+
+  // Disable Multisite "homepage" context.
+  $context = context_load('homepage');
+  ctools_export_set_object_status($context);
+
+  // Disable Multisite "site_wide" context.
+  $context = context_load('site_wide');
+  ctools_export_set_object_status($context);
+
+  // Disable Multisite "workbench_moderate_all" context.
+  $context = context_load('workbench_moderate_all');
+  ctools_export_set_object_status($context);
+
+  db_delete('block')
+    ->condition('theme', 'nems')
+    ->condition('region', 'header_top')
+    ->execute();
+
+  // Custom date format.
+  db_insert('date_formats')
+    ->fields(array(
+      'format' => 'Y',
+      'type' => 'custom',
+      'locked' => 0,
+    ))
+    ->execute();
+
+  // Make the main menu translatable.
+  $main_menu = menu_load('main-menu');
+  $main_menu['language'] = LANGUAGE_NONE;
+  $main_menu['i18n_mode'] = 5;
+  menu_save($main_menu);
+
+  // Empty the main menu.
+  _nems_core_delete('main-menu');
+
+  // Force a revert fo the menu component.
+  features_revert(array('nems_core' => array('menu_custom')));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function nems_core_uninstall() {
+  variable_set('site_name', '');
+  variable_set('theme_default', 'ec_resp');
+  variable_set('classification', '');
+  variable_set('meta_configuration', '');
+  variable_set('site_frontpage', 'node');
+  theme_disable(array('nems'));
+}
+
+/**
+ * Implements hook_update().
+ */
+function nems_core_update_7001() {
+  // Activate drupal search.
+  $active_search = variable_get('search_active_modules');
+  $active_search['node'] = 'node';
+  variable_set('search_active_modules', $active_search);
+}

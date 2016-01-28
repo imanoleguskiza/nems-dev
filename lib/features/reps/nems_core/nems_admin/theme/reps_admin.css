@@ -1,0 +1,103 @@
+.tabledrag-hide {
+  display: none;
+}
+
+.nems-menu-tree ul li a {
+  background: #ececec;
+  border: 1px solid #ccc;
+  display: block;
+  padding: 5px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.nems-menu-tree ul li ul {
+  margin-left: 5%;
+  padding: 0;
+  display: block;
+}
+
+.nems-menu-tree ul li {
+  padding: 0;
+}
+
+.nems-edit {
+  font-size: 11px;
+  font-style: italic;
+  color: red;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 50px;
+}
+
+.nems-menu-tree ul li ul li a {
+  background: #f9f9f9;
+  font-size: 13px;
+}
+
+.nems-edit.nems-editable {
+  color: green;
+}
+
+#-nems-admin-menu-edit {
+  clear: both;
+}
+
+#-nems-admin-menu-edit .draggable label {
+  display: inline-block;
+}
+
+#-nems-admin-menu-edit .draggable input {
+  display: block;
+}
+
+.page-admin-nems #edit-parent {
+  border: 2px solid orange;
+}
+
+#-nems-admin-menu-add .form-item,
+#-nems-admin-menu-add .form-item {
+  border: 1px solid #ececec;
+  background: #f9f9f9;
+  padding: 5px 15px;
+  margin: 5px 0;
+}
+
+.page-admin-nems #block-locale-language ul li {
+  display: inline-block;
+  padding: 2px 15px;
+  margin: 0 5px 0 0;
+  background: #ececec;
+  border: 1px solid #ccc;
+}
+
+.page-admin-nems #block-locale-language h2 {
+  visibility: hidden;
+}
+
+.page-admin-nems #block-locale-language {
+  margin-top: -30px;
+}
+
+.page-admin-nems #block-locale-language ul li.active {
+  background: green;
+}
+
+.page-admin-nems #block-locale-language ul li.active a {
+  color: #fff;
+  font-style: italic;
+}
+.page-admin-nems #block-locale-language ul {
+  margin: 0;
+  padding: 0;
+}
+
+.page-admin-nems #block-locale-language ul li:hover {
+  background: #ccc;
+  border: 1px solid #ececec;
+}
+
+.page-admin-nems #block-locale-language ul li:hover a {
+  color: #fff;
+}
