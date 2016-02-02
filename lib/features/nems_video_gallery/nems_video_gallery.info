@@ -1,5 +1,5 @@
 name = NEMS Video Gallery
-description = Video gallery feature for europa.eu website
+description = Video gallery feature for NEMS website
 core = 7.x
 package = NEMS
 version = 7.x-1.0

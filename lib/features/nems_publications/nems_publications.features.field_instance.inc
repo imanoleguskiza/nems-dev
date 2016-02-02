@@ -10,7 +10,7 @@
 function nems_publications_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-nems_publication-body'
+  // Exported field_instance: 'node-nems_publication-body'.
   $field_instances['node-nems_publication-body'] = array(
     'bundle' => 'nems_publication',
     'default_value' => NULL,
@@ -67,7 +67,7 @@ function nems_publications_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_publication-field_nems_core_date'
+  // Exported field_instance: 'node-nems_publication-field_nems_core_date'.
   $field_instances['node-nems_publication-field_nems_core_date'] = array(
     'bundle' => 'nems_publication',
     'deleted' => 0,
@@ -201,7 +201,7 @@ function nems_publications_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_publication-field_nems_core_image'
+  // Exported field_instance: 'node-nems_publication-field_nems_core_image'.
   $field_instances['node-nems_publication-field_nems_core_image'] = array(
     'bundle' => 'nems_publication',
     'deleted' => 0,
@@ -293,7 +293,7 @@ function nems_publications_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-nems_publication-field_nems_publication_file'
+  // 'node-nems_publication-field_nems_publication_file'.
   $field_instances['node-nems_publication-field_nems_publication_file'] = array(
     'bundle' => 'nems_publication',
     'deleted' => 0,

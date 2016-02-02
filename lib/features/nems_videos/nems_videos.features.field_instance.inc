@@ -10,7 +10,7 @@
 function nems_videos_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-nems_video-body'
+  // Exported field_instance: 'node-nems_video-body'.
   $field_instances['node-nems_video-body'] = array(
     'bundle' => 'nems_video',
     'default_value' => NULL,
@@ -67,7 +67,7 @@ function nems_videos_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_video-field_nems_core_external_url'
+  // Exported field_instance: 'node-nems_video-field_nems_core_external_url'.
   $field_instances['node-nems_video-field_nems_core_external_url'] = array(
     'bundle' => 'nems_video',
     'default_value' => NULL,
@@ -134,7 +134,7 @@ function nems_videos_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_video-field_nems_core_image'
+  // Exported field_instance: 'node-nems_video-field_nems_core_image'.
   $field_instances['node-nems_video-field_nems_core_image'] = array(
     'bundle' => 'nems_video',
     'deleted' => 0,
@@ -221,7 +221,7 @@ function nems_videos_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_video-field_tags'
+  // Exported field_instance: 'node-nems_video-field_tags'.
   $field_instances['node-nems_video-field_tags'] = array(
     'bundle' => 'nems_video',
     'default_value' => NULL,
@@ -274,7 +274,7 @@ function nems_videos_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_video-title_field'
+  // Exported field_instance: 'node-nems_video-title_field'.
   $field_instances['node-nems_video-title_field'] = array(
     'bundle' => 'nems_video',
     'default_value' => NULL,

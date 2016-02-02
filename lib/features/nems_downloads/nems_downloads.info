@@ -1,5 +1,5 @@
 name = NEMS Downloads
-description = Downloads feature for europa.eu site
+description = Downloads feature for NEMS site
 core = 7.x
 package = NEMS
 version = 7.x-1.0

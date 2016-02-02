@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * nems_news.features.inc.
+ * Nems_news.features.inc.
  */
 
 /**

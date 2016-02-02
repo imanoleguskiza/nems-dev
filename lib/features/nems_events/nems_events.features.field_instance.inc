@@ -10,7 +10,7 @@
 function nems_events_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-nems_event-body'
+  // Exported field_instance: 'node-nems_event-body'.
   $field_instances['node-nems_event-body'] = array(
     'bundle' => 'nems_event',
     'default_value' => NULL,
@@ -67,7 +67,7 @@ function nems_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_event-field_meta_classification'
+  // Exported field_instance: 'node-nems_event-field_meta_classification'.
   $field_instances['node-nems_event-field_meta_classification'] = array(
     'bundle' => 'nems_event',
     'default_value' => array(
@@ -104,7 +104,7 @@ function nems_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_event-field_meta_description'
+  // Exported field_instance: 'node-nems_event-field_meta_description'.
   $field_instances['node-nems_event-field_meta_description'] = array(
     'bundle' => 'nems_event',
     'default_value' => NULL,
@@ -164,7 +164,7 @@ function nems_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_event-field_nems_core_abstract'
+  // Exported field_instance: 'node-nems_event-field_nems_core_abstract'.
   $field_instances['node-nems_event-field_nems_core_abstract'] = array(
     'bundle' => 'nems_event',
     'default_value' => NULL,
@@ -243,7 +243,7 @@ function nems_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_event-field_nems_core_external_url'
+  // Exported field_instance: 'node-nems_event-field_nems_core_external_url'.
   $field_instances['node-nems_event-field_nems_core_external_url'] = array(
     'bundle' => 'nems_event',
     'default_value' => NULL,
@@ -309,7 +309,7 @@ function nems_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_event-field_nems_core_file'
+  // Exported field_instance: 'node-nems_event-field_nems_core_file'.
   $field_instances['node-nems_event-field_nems_core_file'] = array(
     'bundle' => 'nems_event',
     'deleted' => 0,
@@ -386,7 +386,7 @@ function nems_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_event-field_nems_core_image'
+  // Exported field_instance: 'node-nems_event-field_nems_core_image'.
   $field_instances['node-nems_event-field_nems_core_image'] = array(
     'bundle' => 'nems_event',
     'deleted' => 0,
@@ -477,7 +477,7 @@ function nems_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_event-field_nems_core_related_links'
+  // Exported field_instance: 'node-nems_event-field_nems_core_related_links'.
   $field_instances['node-nems_event-field_nems_core_related_links'] = array(
     'bundle' => 'nems_event',
     'default_value' => NULL,
@@ -544,7 +544,7 @@ function nems_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_event-field_nems_core_related_video'
+  // Exported field_instance: 'node-nems_event-field_nems_core_related_video'.
   $field_instances['node-nems_event-field_nems_core_related_video'] = array(
     'bundle' => 'nems_event',
     'deleted' => 0,
@@ -612,7 +612,7 @@ function nems_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_event-field_nems_event_date'
+  // Exported field_instance: 'node-nems_event-field_nems_event_date'.
   $field_instances['node-nems_event-field_nems_event_date'] = array(
     'bundle' => 'nems_event',
     'deleted' => 0,
@@ -678,7 +678,7 @@ function nems_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_event-field_nems_event_location'
+  // Exported field_instance: 'node-nems_event-field_nems_event_location'.
   $field_instances['node-nems_event-field_nems_event_location'] = array(
     'bundle' => 'nems_event',
     'default_value' => NULL,
@@ -757,7 +757,7 @@ function nems_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_event-field_tags'
+  // Exported field_instance: 'node-nems_event-field_tags'.
   $field_instances['node-nems_event-field_tags'] = array(
     'bundle' => 'nems_event',
     'default_value' => NULL,
@@ -809,7 +809,7 @@ function nems_events_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_event-title_field'
+  // Exported field_instance: 'node-nems_event-title_field'.
   $field_instances['node-nems_event-title_field'] = array(
     'bundle' => 'nems_event',
     'default_value' => NULL,

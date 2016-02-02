@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * nems_events.features.inc.
+ * Nems_events.features.inc.
  */
 
 /**

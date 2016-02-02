@@ -515,7 +515,8 @@ function nems_homepage_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_slide_footer-field_nems_homepage_image'.
+  // Exported field_instance:
+  // 'node-nems_slide_footer-field_nems_homepage_image'.
   $field_instances['node-nems_slide_footer-field_nems_homepage_image'] = array(
     'bundle' => 'nems_slide_footer',
     'deleted' => 0,
@@ -687,7 +688,8 @@ function nems_homepage_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_slide_homepage-field_nems_homepage_date'.
+  // Exported field_instance:
+  // 'node-nems_slide_homepage-field_nems_homepage_date'.
   $field_instances['node-nems_slide_homepage-field_nems_homepage_date'] = array(
     'bundle' => 'nems_slide_homepage',
     'deleted' => 0,
@@ -812,7 +814,8 @@ function nems_homepage_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_slide_homepage-field_nems_homepage_image'.
+  // Exported field_instance:
+  // 'node-nems_slide_homepage-field_nems_homepage_image'.
   $field_instances['node-nems_slide_homepage-field_nems_homepage_image'] = array(
     'bundle' => 'nems_slide_homepage',
     'deleted' => 0,

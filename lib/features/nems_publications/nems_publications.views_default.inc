@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * nems_publications.views_default.inc.
+ * Nems_publications.views_default.inc.
  */
 
 /**

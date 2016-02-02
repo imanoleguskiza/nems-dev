@@ -10,7 +10,7 @@
 function nems_news_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_nems_news_category'
+  // Exported field_base: 'field_nems_news_category'.
   $field_bases['field_nems_news_category'] = array(
     'active' => 1,
     'cardinality' => -1,

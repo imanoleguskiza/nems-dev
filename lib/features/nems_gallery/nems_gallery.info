@@ -1,5 +1,5 @@
 name = NEMS Gallery
-description = Gallery feature for europa.eu website
+description = Gallery feature for nems website
 core = 7.x
 package = NEMS
 version = 7.x-1.0

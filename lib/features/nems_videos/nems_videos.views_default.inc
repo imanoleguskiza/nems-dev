@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * nems_videos.views_default.inc.
+ * Nems_videos.views_default.inc.
  */
 
 /**

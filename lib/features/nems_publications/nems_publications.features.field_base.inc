@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * nems_publications.features.field_base.inc.
+ * Nems_publications.features.field_base.inc.
  */
 
 /**
@@ -10,7 +10,7 @@
 function nems_publications_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_nems_publication_file'
+  // Exported field_base: 'field_nems_publication_file'.
   $field_bases['field_nems_publication_file'] = array(
     'active' => 1,
     'cardinality' => 1,

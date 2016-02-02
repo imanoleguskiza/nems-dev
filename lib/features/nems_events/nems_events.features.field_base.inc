@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * nems_events.features.field_base.inc.
+ * Nems_events.features.field_base.inc.
  */
 
 /**
@@ -10,7 +10,7 @@
 function nems_events_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_nems_event_date'
+  // Exported field_base: 'field_nems_event_date'.
   $field_bases['field_nems_event_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -41,7 +41,7 @@ function nems_events_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'field_nems_event_location'
+  // Exported field_base: 'field_nems_event_location'.
   $field_bases['field_nems_event_location'] = array(
     'active' => 1,
     'cardinality' => 1,

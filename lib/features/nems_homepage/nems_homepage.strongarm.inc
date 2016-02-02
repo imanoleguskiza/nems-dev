@@ -456,7 +456,7 @@ function nems_homepage_strongarm() {
   $strongarm->name = 'node_options_nems_homepage';
   $strongarm->value = array(
     0 => 'promote',
-   1 => 'moderation',
+    1 => 'moderation',
     2 => 'revision',
   );
   $export['node_options_nems_homepage'] = $strongarm;

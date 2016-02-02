@@ -1,7 +1,7 @@
-.view.view-europa-eu-gallery.view-id-nems_gallery.view-display-id-block .view-content .views-row {
+.view.view-nems-gallery.view-id-nems_gallery.view-display-id-block .view-content .views-row {
   display: none;
 }
 
-.view.view-europa-eu-gallery.view-id-nems_gallery.view-display-id-block .view-content .views-row.views-row-first {
+.view.view-nems-gallery.view-id-nems_gallery.view-display-id-block .view-content .views-row.views-row-first {
   display: block;
 }

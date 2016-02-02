@@ -34,7 +34,7 @@ function nems_video_gallery_node_info() {
     'video_gallery' => array(
       'name' => t('Video gallery'),
       'base' => 'node_content',
-      'description' => t('Gallery of videos for europa.eu website'),
+      'description' => t('Gallery of videos for NEMS website'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

@@ -10,7 +10,7 @@
 function nems_core_strongarm() {
   $export = array();
 
-    $strongarm = new stdClass();
+  $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_just_Y';
@@ -88,7 +88,7 @@ function nems_core_strongarm() {
   );
   $export['theme_nems_theme_settings'] = $strongarm;
 
-    $strongarm = new stdClass();
+  $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_map_css';
@@ -124,7 +124,6 @@ function nems_core_strongarm() {
     'user-menu' => 0,
   );
   $export['site_map_show_menus'] = $strongarm;
-
 
   return $export;
 }

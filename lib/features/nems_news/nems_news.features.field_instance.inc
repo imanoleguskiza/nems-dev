@@ -10,7 +10,7 @@
 function nems_news_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-nems_news-body'
+  // Exported field_instance: 'node-nems_news-body'.
   $field_instances['node-nems_news-body'] = array(
     'bundle' => 'nems_news',
     'default_value' => NULL,
@@ -67,7 +67,7 @@ function nems_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_news-field_meta_classification'
+  // Exported field_instance: 'node-nems_news-field_meta_classification'.
   $field_instances['node-nems_news-field_meta_classification'] = array(
     'bundle' => 'nems_news',
     'default_value' => array(
@@ -105,7 +105,7 @@ function nems_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_news-field_meta_description'
+  // Exported field_instance: 'node-nems_news-field_meta_description'.
   $field_instances['node-nems_news-field_meta_description'] = array(
     'bundle' => 'nems_news',
     'default_value' => NULL,
@@ -166,7 +166,7 @@ function nems_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_news-field_nems_core_abstract'
+  // Exported field_instance: 'node-nems_news-field_nems_core_abstract'.
   $field_instances['node-nems_news-field_nems_core_abstract'] = array(
     'bundle' => 'nems_news',
     'default_value' => NULL,
@@ -245,7 +245,7 @@ function nems_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_news-field_nems_core_date'
+  // Exported field_instance: 'node-nems_news-field_nems_core_date'.
   $field_instances['node-nems_news-field_nems_core_date'] = array(
     'bundle' => 'nems_news',
     'deleted' => 0,
@@ -304,7 +304,7 @@ function nems_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_news-field_nems_core_file'
+  // Exported field_instance: 'node-nems_news-field_nems_core_file'.
   $field_instances['node-nems_news-field_nems_core_file'] = array(
     'bundle' => 'nems_news',
     'deleted' => 0,
@@ -381,7 +381,7 @@ function nems_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_news-field_nems_core_image'
+  // Exported field_instance: 'node-nems_news-field_nems_core_image'.
   $field_instances['node-nems_news-field_nems_core_image'] = array(
     'bundle' => 'nems_news',
     'default_value' => array(),
@@ -473,7 +473,7 @@ function nems_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_news-field_nems_core_related_links'
+  // Exported field_instance: 'node-nems_news-field_nems_core_related_links'.
   $field_instances['node-nems_news-field_nems_core_related_links'] = array(
     'bundle' => 'nems_news',
     'default_value' => NULL,
@@ -540,7 +540,7 @@ function nems_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_news-field_nems_core_related_video'
+  // Exported field_instance: 'node-nems_news-field_nems_core_related_video'.
   $field_instances['node-nems_news-field_nems_core_related_video'] = array(
     'bundle' => 'nems_news',
     'deleted' => 0,
@@ -608,7 +608,7 @@ function nems_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_news-field_nems_news_category'
+  // Exported field_instance: 'node-nems_news-field_nems_news_category'.
   $field_instances['node-nems_news-field_nems_news_category'] = array(
     'bundle' => 'nems_news',
     'default_value' => NULL,
@@ -649,7 +649,7 @@ function nems_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_news-field_tags'
+  // Exported field_instance: 'node-nems_news-field_tags'.
   $field_instances['node-nems_news-field_tags'] = array(
     'bundle' => 'nems_news',
     'default_value' => NULL,
@@ -701,7 +701,7 @@ function nems_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_news-title_field'
+  // Exported field_instance: 'node-nems_news-title_field'.
   $field_instances['node-nems_news-title_field'] = array(
     'bundle' => 'nems_news',
     'default_value' => NULL,
@@ -756,7 +756,7 @@ function nems_news_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-nems_news_categories-name_field'
+  // Exported field_instance: 'taxonomy_term-nems_news_categories-name_field'.
   $field_instances['taxonomy_term-nems_news_categories-name_field'] = array(
     'bundle' => 'nems_news_categories',
     'default_value' => NULL,

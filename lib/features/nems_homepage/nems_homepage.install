@@ -33,8 +33,7 @@ function nems_homepage_install() {
   // Create default blank pages.
   _nems_homepage_create_default_pages();
 
-
-  // Add blocks to context
+  // Add blocks to context.
   multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_sliders-block', 'views', 'nems_sliders-block', 'content', '-10');
   multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_news-block', 'views', 'nems_news-block', 'content', '-9');
   multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_events-block', 'views', 'nems_events-block', 'content', '-8');
