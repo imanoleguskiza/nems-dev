@@ -1,7 +1,7 @@
 name = NEMS Downloads
 description = Downloads feature for europa.eu site
 core = 7.x
-package = europa_eu
+package = NEMS
 version = 7.x-1.0
 project = nems_downloads
 multisite_version = 2.1

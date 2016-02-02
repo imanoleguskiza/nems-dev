@@ -1,7 +1,7 @@
 name = NEMS carousel
 description = Carousel feature for NEMS website
 core = 7.x
-package = europa_eu
+package = NEMS
 version = 7.x-1.0
 project = nems_carousel
 multisite_version = 2.1

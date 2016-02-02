@@ -1,7 +1,7 @@
 name = See also
 description = See also feature
 core = 7.x
-package = europa_eu
+package = NEMS
 version = 7.x-1.0
 project = nems_see_also
 multisite_version = 2.1

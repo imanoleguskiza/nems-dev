@@ -1,0 +1,250 @@
+<?php
+/**
+ * @file
+ * Code for the NEMS core feature.
+ */
+
+include_once 'nems_homepage.features.field_base.inc';
+include_once 'nems_homepage.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function nems_homepage_menu() {
+  $items = array();
+  // Empty home page.
+  $items['home'] = array(
+    'title' => '',
+    'page callback' => '_nems_homepage_empty',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_help().
+ */
+function nems_homepage_help($path, $arg) {
+  $help = '';
+  switch ($path) {
+    // Help text for the nems_homepage feature.
+    case 'admin/help#nems_homepage':
+      $help = '<p></p>';
+      break;
+  }
+
+  return $help;
+}
+
+/**
+ * Empty Callback for the home page.
+ */
+function nems_homepage_empty() {
+  return '';
+}
+
+/**
+ * Create default pages.
+ */
+function _nems_homepage_create_default_pages() {
+
+  $page = array(
+    'title' => t('Homepage'),
+    'path' => 'home',
+    'type' => 'nems_homepage',
+  );
+  _nems_homepage_create_node($page['type'], $page['title'], $page['path']);
+  variable_set('site_frontpage', 'home');
+}
+
+/**
+ * Implements hook_date_format_types().
+ */
+function nems_homepage_date_format_types() {
+  return array(
+    'just_Y' => t('Year only'),
+  );
+}
+
+/**
+ * This is used instead of features_override with the same goal.
+ *
+ * We have to override some configurations based on features belonging to the
+ * multisite platform, since we cannot do properly updating those features,
+ * we had to find a way to override them not using the features_override module.
+ */
+function _nems_homepage_overrides() {
+  // Page instances of field body.
+  $instances = field_read_instance('node', 'body', 'page');
+  if ($instances) {
+    $instances['display']['default'] = array(
+      'label' => 'hidden',
+      'module' => 'text',
+      'settings' => array(),
+      'type' => 'text_default',
+      'weight' => 1,
+    );
+
+    $instances['display']['full'] = array(
+      'label' => 'hidden',
+      'module' => 'text',
+      'settings' => array(),
+      'type' => 'text_default',
+      'weight' => '0',
+    );
+
+    $instances['display']['teaser'] = array(
+      'label' => 'hidden',
+      'module' => 'smart_trim',
+      'settings' => array(
+        'more_link' => '1',
+        'more_text' => 'Read more',
+        'summary_handler' => 'full',
+        'trim_length' => '30',
+        'trim_options' => array(
+          'text' => 'text',
+        ),
+        'trim_suffix' => '...',
+        'trim_type' => 'words',
+      ),
+      'type' => 'smart_trim_format',
+      'weight' => '0',
+    );
+    field_update_instance($instances);
+  }
+
+  // Enable translations for various fields.
+  $field_names = array(
+    'body',
+    'field_meta_description',
+    'field_meta_classification',
+    'field_tags',
+  );
+
+  foreach ($field_names as $field_name) {
+    $field = field_read_field($field_name);
+    if ($field) {
+      // Set the classification field to suppot multiple values.
+      if ($field_name == 'field_meta_classification') {
+        $field['cardinality'] = -1;
+      }
+      // Make the field translatable.
+      $field['translatable'] = 1;
+      field_update_field($field);
+    }
+  }
+}
+
+/**
+ * Implements hook_post_features_enable_feature().
+ */
+function nems_homepage_post_features_enable_feature($component) {
+  switch ($component) {
+    case 'field_base':
+      // Revert the field component, it seems it is not ready
+      // after it's enabled.
+      features_revert(array('nems_homepage' => array($component)));
+      break;
+  }
+}
+
+/**
+ * Implements hook_filter_info().
+ */
+function nems_homepage_filter_info() {
+  $filters['filter_basepath'] = array(
+    'title' => t('Base path'),
+    'description' => t('Use it to transform the leading slash of a link with the drupal base_path()'),
+    'process callback' => '_nems_homepage_filter_basepath',
+  );
+
+  return $filters;
+}
+
+/**
+ * Filter callback.
+ */
+function _nems_homepage_filter_basepath($text, $filter, $format, $langcode, $cache, $cache_id) {
+  // Add the base path to leading slash links.
+  $link = 'href="/';
+  $img = 'src="/';
+  $text = str_replace($link, substr($link, 0, -1) . base_path(), $text);
+  $text = str_replace($img, substr($img, 0, -1) . base_path(), $text);
+
+  return $text;
+}
+
+/**
+ * Implements hook_filter_default_formats().
+ */
+function nems_homepage_full_html() {
+  $format = filter_format_load('full_html');
+  $format->filters = array(
+    'filter_url' => array(
+      'weight' => '0',
+      'status' => '1',
+      'settings' => array(
+        'filter_url_length' => '120',
+      ),
+    ),
+    'filter_autop' => array(
+      'weight' => '1',
+      'status' => '1',
+      'settings' => array(),
+    ),
+    'media_filter' => array(
+      'weight' => '2',
+      'status' => '1',
+      'settings' => array(),
+    ),
+    'filter_htmlcorrector' => array(
+      'weight' => '10',
+      'status' => '1',
+      'settings' => array(),
+    ),
+    'filter_basepath' => array(
+      'status' => '1',
+    ),
+  );
+
+  filter_format_save((object) $format);
+}
+
+/**
+ * Create a node placeholder of a given type.
+ *
+ * @param string $type
+ *   Content type machine name.
+ * @param string $title
+ *   Node title.
+ * @param string $menu
+ *   Menu machine name, if specified the node will receive
+ *   a menu item attached to the specified menu having
+ *   with the node's title as label.
+ *
+ * @return string
+ *   Return nid.
+ */
+function _nems_homepage_create_node($type, $title, $path = 'node', $lang = LANGUAGE_NONE, $menu = NULL) {
+  $node = new stdClass();
+  $node->type = $type;
+  node_object_prepare($node);
+  $node->uid = 1;
+  $node->title = $title;
+  $node->language = $lang;
+  $node->path['alias'] = $path;
+  $node->path['pathauto'] = 0;
+
+  if ($menu) {
+    $node->menu['plid'] = 0;
+    $node->menu['menu_name'] = $menu;
+    $node->menu['enabled'] = 1;
+    $node->menu['link_title'] = $title;
+    $node->menu['description'] = '';
+  }
+  node_save($node);
+
+  return $node->nid;
+}

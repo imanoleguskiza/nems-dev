@@ -1,0 +1,58 @@
+<?php
+/**
+ * @file
+ * Code for the nems core feature.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function nems_homepage_enable() {
+
+  // Override some of the options exported in multisite core features.
+  _nems_homepage_overrides();
+
+  // Drupal set message.
+  drupal_set_message(t("The NEMS homepage feature is now active on your site"));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function nems_homepage_disable() {
+  multisite_drupal_toolbox_disable_content_type('nems_slide_footer');
+  multisite_drupal_toolbox_disable_content_type('nems_slide_homepage');
+  drupal_set_message(t("The NEMS homepage feature is now disabled on your site"));
+}
+
+/**
+ * Implements hook_install().
+ */
+function nems_homepage_install() {
+
+  // Create default blank pages.
+  _nems_homepage_create_default_pages();
+
+
+  // Add blocks to context
+  multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_sliders-block', 'views', 'nems_sliders-block', 'content', '-10');
+  multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_news-block', 'views', 'nems_news-block', 'content', '-9');
+  multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_events-block', 'views', 'nems_events-block', 'content', '-8');
+  multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_videos-block', 'views', 'nems_videos-block', 'content', '-5');
+  multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_publications-block', 'views', 'nems_publications-block', 'content', '-4');
+  multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_sliders-block_1', 'views', 'nems_sliders-block_1', 'footer', '-10');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function nems_homepage_uninstall() {
+
+  // Remove blocks from context.
+  multisite_drupal_toolbox_remove_block_context('homepage', 'views-nems_sliders-block');
+  multisite_drupal_toolbox_remove_block_context('homepage', 'views-nems_news-block');
+  multisite_drupal_toolbox_remove_block_context('homepage', 'views-nems_events-block');
+  multisite_drupal_toolbox_remove_block_context('homepage', 'views-nems_videos-block');
+  multisite_drupal_toolbox_remove_block_context('homepage', 'views-nems_publications-block');
+  multisite_drupal_toolbox_remove_block_context('homepage', 'views-nems_sliders-block_1');
+}

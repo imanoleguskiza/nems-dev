@@ -1,0 +1,29 @@
+<?php
+/**
+ * @file
+ * Install file for the europa.eu Nolink module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function nems_nolink_uninstall() {
+  variable_del('nems_nolink_nolink_tag');
+  variable_del('nems_nolink_seperator_tag');
+  variable_del('nems_nolink_seperator_value');
+  variable_del('nems_nolink_menu_item_link');
+}
+
+/**
+ * Implements hook_enable().
+ */
+function nems_nolink_enable() {
+  drupal_set_message(t('The Europa.eu Nolink module was successfully enabled.'));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function nems_nolink_disable() {
+  drupal_set_message(t('The Europa.eu Nolink module was successfully disabled.'));
+}
