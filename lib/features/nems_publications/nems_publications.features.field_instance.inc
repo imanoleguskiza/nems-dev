@@ -369,7 +369,7 @@ function nems_publications_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_publication-field_tags'
+  // Exported field_instance: 'node-nems_publication-field_tags'.
   $field_instances['node-nems_publication-field_tags'] = array(
     'bundle' => 'nems_publication',
     'default_value' => NULL,
@@ -422,7 +422,7 @@ function nems_publications_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_publication-title_field'
+  // Exported field_instance: 'node-nems_publication-title_field'.
   $field_instances['node-nems_publication-title_field'] = array(
     'bundle' => 'nems_publication',
     'default_value' => NULL,
