@@ -5,17 +5,14 @@ core = 7.x
 ; Contributed modules
 ; ===================
 
-projects[boxes][subdir] = "contrib"
-projects[boxes][version] = 1.2
-
-projects[i18n_boxes][subdir] = "contrib"
-projects[i18n_boxes][version] = 1.0
-
 projects[fancybox][subdir] = "contrib"
 projects[fancybox][version] = 2.0-beta6
 
 projects[features_extra][subdir] = "contrib"
 projects[features_extra][version] = 1.0
+
+projects[features_roles_permissions][subdir] = "contrib"
+projects[features_roles_permissions][version] = 1.2
 
 projects[owlcarousel][subdir] = "contrib"
 projects[owlcarousel][version] = 1.5
@@ -43,6 +40,9 @@ projects[ckeditor_tabber][version] = 1.3
 
 projects[integration][subdir] = "contrib"
 projects[integration][version] = 1.x-dev
+
+projects[role_delegation][subdir] = "contrib"
+projects[role_delegation][version] = 1.1
 
 projects[tocify][subdir] = "contrib"
 projects[tocify][version] = 1.0
