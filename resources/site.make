@@ -5,9 +5,6 @@ core = 7.x
 ; Contributed modules
 ; ===================
 
-projects[fancybox][subdir] = "contrib"
-projects[fancybox][version] = 2.0-beta6
-
 projects[features_extra][subdir] = "contrib"
 projects[features_extra][version] = 1.0
 
@@ -54,6 +51,8 @@ projects[insert_block][subdir] = "contrib"
 projects[insert_block][version] = 1.x-dev
 projects[insert_block][patch][] = "https://www.drupal.org/files/1873624-insert_block-undefined-index-warnings.patch"
 
+projects[weight][subdir] = "contrib"
+projects[weight][version] = 3.1
 ; =========
 ; Libraries
 ; =========
