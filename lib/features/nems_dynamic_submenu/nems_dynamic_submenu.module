@@ -1,0 +1,32 @@
+<?php
+/**
+ * @file
+ * Code to add a left sidebar navigation based on heading in the body field.
+ */
+
+include_once 'nems_dynamic_submenu.features.inc';
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function nems_dynamic_submenu_preprocess_page(&$variables) {
+  if (isset($variables['node']) && isset($variables['node']->field_dynamic_submenu['und']['0']['value'])
+    && $variables['node']->field_dynamic_submenu['und']['0']['value'] == 1
+    && isset($variables['page']['sidebar_left'])
+  ) {
+    $block = block_load('tocify', 'tocify');
+    $block_content = _block_render_blocks(array($block));
+    $build = _block_get_renderable_array($block_content);
+    $variables['page']['sidebar_left'] += $build;
+  }
+}
+
+/**
+ * Implements hook_block_view_MODULE_DELTA_alter().
+ */
+function nems_dynamic_submenu_block_view_tocify_tocify_alter(&$data, $block) {
+  if (arg(0) != 'node') {
+    $data['content']['#attached']['js'][0]['data']['tocify']['context'] = '.view-content';
+    $data['content']['#attached']['js'][0]['data']['tocify']['selectors'] = 'h3';
+  }
+}

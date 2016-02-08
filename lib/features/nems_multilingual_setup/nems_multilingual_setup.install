@@ -1,0 +1,21 @@
+<?php
+/**
+ * @file
+ * Code for the nems_multilingual_setup feature.
+ */
+
+include_once 'nems_multilingual_setup.features.inc';
+
+/**
+ * Implements hook_enable().
+ */
+function nems_multilingual_setup_enable() {
+  drupal_set_message(t('NEMS multilingual feature is now active on your site.'));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function nems_multilingual_setup_disable() {
+  drupal_set_message(t('NEMS multilingual feature is now disabled on your site.'));
+}

@@ -1,0 +1,7 @@
+.view.view-nems-gallery.view-id-nems_gallery.view-display-id-block .view-content .views-row {
+  display: none;
+}
+
+.view.view-nems-gallery.view-id-nems_gallery.view-display-id-block .view-content .views-row.views-row-first {
+  display: block;
+}

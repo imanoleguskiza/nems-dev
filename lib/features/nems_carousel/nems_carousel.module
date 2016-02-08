@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the nems_carousel feature.
+ */
+
+include_once 'nems_carousel.features.inc';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the NEMS core settings feature.
+ */
+
+include_once 'nems_core.features.inc';

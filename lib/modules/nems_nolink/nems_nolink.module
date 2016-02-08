@@ -1,0 +1,174 @@
+<?php
+/**
+ * @file
+ * Module to enable placeholder or separator menu items.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function nems_nolink_menu() {
+  $items['nolink'] = array(
+    'page callback' => 'drupal_not_found',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['separator'] = array(
+    'page callback' => 'drupal_not_found',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['admin/config/system/nems_nolink'] = array(
+    'title' => 'Europaeu Nolink',
+    'description' => 'Configure nems nolink.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('nems_nolink_admin_settings_form'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Override of theme_link().
+ *
+ * This function will render link if it is "nolink" or "separator".
+ *
+ * Otherwise it will call originally overwritten menu_item_link function.
+ */
+function nems_nolink_link(array $variables) {
+  if (in_array($variables['path'], array('nolink', 'separator'))) {
+    switch ($variables['path']) {
+      case 'nolink':
+        $tag = variable_get('nems_nolink_nolink_tag', '<span>');
+        $title = $variables['options']['html'] ? $variables['text'] : check_plain($variables['text']);
+        $variables['options']['attributes']['class'][] = 'nolink';
+        break;
+
+      case 'separator':
+        $tag = variable_get('nems_nolink_separator_tag', '<span>');
+        $title = variable_get('nems_nolink_separator_value', '<hr>');
+        $variables['options']['attributes']['class'][] = 'separator';
+        break;
+    }
+
+    $attributes = drupal_attributes($variables['options']['attributes']);
+
+    if ($tag != '<a>') {
+      // <a> tags can have these but a <span> cannot, so we remove them.
+      foreach (array('accesskey', 'target', 'rel', 'name') as $attribute) {
+        $attributes = preg_replace("/ $attribute=\".*\"/i", "", $attributes);
+      }
+    }
+
+    return nems_nolink_render_menu_item($tag, $title, $attributes);
+  }
+  // Call the original theme function for normal menu link.
+  return theme('nems_nolink_link_default', $variables);
+}
+
+/**
+ * Returns menu item rendered.
+ */
+function nems_nolink_render_menu_item($tag, $value, $attrs = array()) {
+  // $attrs may be a string already or an array.
+  if (is_array($attrs)) {
+    $attrs = drupal_attributes($attrs);
+  }
+  $length = strlen($tag);
+  if ($tag[0] == '<' && $tag[$length - 1] == '>') {
+    $tag = substr($tag, 1, $length - 2);
+  }
+  $closingtag = explode(' ', $tag, 2);
+  $closingtag = '</' . $closingtag[0] . '>';
+  $tag = '<' . $tag . $attrs . '>';
+
+  return $tag . $value . $closingtag;
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ *
+ * We replace theme_menu_item_link with our own function.
+ */
+function nems_nolink_theme_registry_alter(&$registry) {
+  // Save previous value from registry in case another theme overwrites
+  // menu_item_link.
+  $registry['nems_nolink_link_default'] = $registry['link'];
+  $registry['link']['function'] = 'nems_nolink_link';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Description changed, added nolink and separator as path types.
+ */
+function nems_nolink_form_menu_edit_item_alter(&$form, &$form_state) {
+  // Some menu items have a pre-defined path which cannot be modified hence
+  // no default_value.
+  if (isset($form['link_path']['#default_value'])) {
+    $default_value = $form['link_path']['#default_value'];
+
+    if (preg_match('/^nolink\/[0-9]+$/', $default_value)) {
+      $default_value = 'nolink';
+    }
+    elseif (preg_match('/^separator\/[0-9]+$/', $default_value)) {
+      $default_value = 'separator';
+    }
+
+    $form['link_path']['#default_value'] = $default_value;
+    $form['link_path']['#description'] .= ' ' . t('Enter "%nolink" to generate non-linkable item, enter "%separator" to generate separator item.', array('%nolink' => 'nolink', '%separator' => 'separator'));
+  }
+}
+
+/**
+ * Implements hook_init().
+ */
+function nems_nolink_init() {
+  // Make breadcrumb of nolink menu item nonlinkable.
+  $breadcrumb = drupal_get_breadcrumb();
+
+  foreach ($breadcrumb as $key => $crumb) {
+    if (strlen(strstr($crumb, 'nolink')) > 0) {
+      $crumb = strip_tags($crumb);
+      $tag = variable_get('nems_nolink_nolink_tag', '<span>');
+      $breadcrumb[$key] = nems_nolink_render_menu_item($tag, $crumb);
+    }
+  }
+
+  drupal_set_breadcrumb($breadcrumb);
+}
+
+/**
+ * Europaeu Nolink admin settings form.
+ *
+ * @return array
+ *   The settings form used by Europaeu Nolink.
+ */
+function nems_nolink_admin_settings_form() {
+  $form['nems_nolink_nolink_tag'] = array(
+    '#type' => 'textfield',
+    '#title' => t('HTML tag for "nolink"'),
+    '#description' => t('By default, Europaeu Nolink will use a span tag for the nolink menu item. Here you can specify your own tag.'),
+    '#default_value' => variable_get('nems_nolink_nolink_tag', '<span>'),
+  );
+
+  $form['nems_nolink_separator_tag'] = array(
+    '#type' => 'textfield',
+    '#title' => t('HTML tag for "separator"'),
+    '#description' => t('By default, Europaeu Nolink will use a span tag for the separator menu item. Here you can specify your own tag.'),
+    '#default_value' => variable_get('nems_nolink_separator_tag', '<span>'),
+  );
+
+  $form['nems_nolink_separator_value'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Value to be displayed for the "separator"'),
+    '#description' => t('By default, Europaeu Nolink will use a "&lt;hr&gt;" value for the separator. You can specify your own value for the separator.'),
+    '#default_value' => variable_get('nems_nolink_separator_value', '<hr>'),
+  );
+
+  return system_settings_form($form);
+}
