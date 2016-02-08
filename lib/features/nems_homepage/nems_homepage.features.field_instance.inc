@@ -55,8 +55,8 @@ function nems_homepage_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-nems_homepage-field_nems_homepage_reference'.
-  $field_instances['node-nems_homepage-field_nems_homepage_reference'] = array(
+  // 'node-nems_homepage-field_nems_homepage_node_reference'.
+  $field_instances['node-nems_homepage-field_nems_homepage_node_reference'] = array(
     'bundle' => 'nems_homepage',
     'default_value' => NULL,
     'deleted' => 0,
@@ -81,7 +81,7 @@ function nems_homepage_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_nems_homepage_reference',
+    'field_name' => 'field_nems_homepage_node_reference',
     'label' => 'Additional block(s)',
     'required' => 0,
     'settings' => array(
@@ -515,8 +515,7 @@ function nems_homepage_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-nems_slide_footer-field_nems_homepage_image'.
+  // Exported field_instance: 'node-nems_slide_footer-field_nems_homepage_image'.
   $field_instances['node-nems_slide_footer-field_nems_homepage_image'] = array(
     'bundle' => 'nems_slide_footer',
     'deleted' => 0,
@@ -688,8 +687,7 @@ function nems_homepage_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-nems_slide_homepage-field_nems_homepage_date'.
+  // Exported field_instance: 'node-nems_slide_homepage-field_nems_homepage_date'.
   $field_instances['node-nems_slide_homepage-field_nems_homepage_date'] = array(
     'bundle' => 'nems_slide_homepage',
     'deleted' => 0,
@@ -814,8 +812,7 @@ function nems_homepage_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance:
-  // 'node-nems_slide_homepage-field_nems_homepage_image'.
+  // Exported field_instance: 'node-nems_slide_homepage-field_nems_homepage_image'.
   $field_instances['node-nems_slide_homepage-field_nems_homepage_image'] = array(
     'bundle' => 'nems_slide_homepage',
     'deleted' => 0,
@@ -1199,8 +1196,8 @@ function nems_homepage_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_nems_homepage_mi_body'.
-  $field_instances['node-page-field_nems_homepage_mi_body'] = array(
+  // Exported field_instance: 'node-page-field_nems_homepage_more_info_body'.
+  $field_instances['node-page-field_nems_homepage_more_info_body'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1227,7 +1224,7 @@ function nems_homepage_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_nems_homepage_mi_body',
+    'field_name' => 'field_nems_homepage_more_info_body',
     'label' => 'Body',
     'required' => 0,
     'settings' => array(
@@ -1272,8 +1269,8 @@ function nems_homepage_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_nems_homepage_mi_link'.
-  $field_instances['node-page-field_nems_homepage_mi_link'] = array(
+  // Exported field_instance: 'node-page-field_nems_homepage_more_info_link'.
+  $field_instances['node-page-field_nems_homepage_more_info_link'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1300,7 +1297,7 @@ function nems_homepage_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_nems_homepage_mi_link',
+    'field_name' => 'field_nems_homepage_more_info_link',
     'label' => 'Link',
     'required' => 0,
     'settings' => array(
@@ -1335,8 +1332,8 @@ function nems_homepage_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_nems_homepage_mi_title'.
-  $field_instances['node-page-field_nems_homepage_mi_title'] = array(
+  // Exported field_instance: 'node-page-field_nems_homepage_more_info_title'.
+  $field_instances['node-page-field_nems_homepage_more_info_title'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1367,7 +1364,7 @@ function nems_homepage_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_nems_homepage_mi_title',
+    'field_name' => 'field_nems_homepage_more_info_title',
     'label' => 'Title',
     'required' => 0,
     'settings' => array(

@@ -42,28 +42,28 @@ function nems_homepage_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_nems_homepage';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_default_mode_nems_homepage'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_nems_homepage_additional_block';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_default_mode_nems_homepage_additional_block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_nems_slide_footer';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_default_mode_nems_slide_footer'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_nems_slide_homepage';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_default_mode_nems_slide_homepage'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -205,6 +205,69 @@ function nems_homepage_strongarm() {
   $strongarm->name = 'comment_subject_field_nems_slide_homepage';
   $strongarm->value = 1;
   $export['comment_subject_field_nems_slide_homepage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_just_Y';
+  $strongarm->value = 'Y';
+  $export['date_format_just_Y'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_views_day_format_without_year';
+  $strongarm->value = 'l, F j';
+  $export['date_views_day_format_without_year'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_views_day_format_with_year';
+  $strongarm->value = 'l, F j, Y';
+  $export['date_views_day_format_with_year'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_views_month_format_without_year';
+  $strongarm->value = 'F';
+  $export['date_views_month_format_without_year'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_views_month_format_with_year';
+  $strongarm->value = 'F Y';
+  $export['date_views_month_format_with_year'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_views_week_format_without_year';
+  $strongarm->value = 'F j';
+  $export['date_views_week_format_without_year'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_views_week_format_with_year';
+  $strongarm->value = 'F j, Y';
+  $export['date_views_week_format_with_year'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_entity_types';
+  $strongarm->value = array(
+    'node' => 'node',
+    'taxonomy_term' => 'taxonomy_term',
+    'bean' => 'bean',
+    'comment' => 0,
+    'file' => 0,
+    'user' => 0,
+  );
+  $export['entity_translation_entity_types'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -391,6 +454,24 @@ function nems_homepage_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'language_suffix_delimiter';
+  $strongarm->value = '_';
+  $export['language_suffix_delimiter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_types';
+  $strongarm->value = array(
+    'language' => TRUE,
+    'language_content' => TRUE,
+    'language_url' => FALSE,
+  );
+  $export['language_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_nems_homepage';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -449,6 +530,13 @@ function nems_homepage_strongarm() {
   $strongarm->name = 'menu_parent_nems_slide_homepage';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_nems_slide_homepage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'meta_reference';
+  $strongarm->value = 'EUROPA/COMM/REP';
+  $export['meta_reference'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
