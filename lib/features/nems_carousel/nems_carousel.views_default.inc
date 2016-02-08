@@ -69,9 +69,15 @@ function nems_carousel_views_default_views() {
   $handler->display->display_options['fields']['field_image_carousel']['alter']['link_class'] = 'fancybox';
   $handler->display->display_options['fields']['field_image_carousel']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_carousel']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_carousel']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_image_carousel']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => '',
+    'colorbox_node_style' => 'large',
+    'colorbox_node_style_first' => '',
+    'colorbox_image_style' => '',
+    'colorbox_gallery' => 'post',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'auto',
+    'colorbox_caption_custom' => '',
   );
   $handler->display->display_options['fields']['field_image_carousel']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_image_carousel']['delta_offset'] = '0';

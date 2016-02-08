@@ -62,6 +62,34 @@ function nems_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entityconnect_show_add_icon_default';
+  $strongarm->value = '1';
+  $export['entityconnect_show_add_icon_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entityconnect_show_edit_icon_default';
+  $strongarm->value = '1';
+  $export['entityconnect_show_edit_icon_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entityconnect_unload_add_default';
+  $strongarm->value = '0';
+  $export['entityconnect_unload_add_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entityconnect_unload_edit_default';
+  $strongarm->value = '0';
+  $export['entityconnect_unload_edit_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'site_map_css';
   $strongarm->value = 1;
   $export['site_map_css'] = $strongarm;

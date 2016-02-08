@@ -16,7 +16,6 @@ dependencies[] = nexteuropa_multilingual
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = title
-dependencies[] = nems_carousel
 dependencies[] = nems_video_gallery
 dependencies[] = nems_gallery
 dependencies[] = nems_downloads
