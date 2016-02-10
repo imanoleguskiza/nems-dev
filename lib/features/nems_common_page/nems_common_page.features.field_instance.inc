@@ -183,7 +183,7 @@ function nems_common_page_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_dynamic_submenu',
-    'label' => 'Dynamic submenu',
+    'label' => 'Display table of contents',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -399,7 +399,7 @@ function nems_common_page_field_default_field_instances() {
   t('Body');
   t('Carousel');
   t('Downloads');
-  t('Dynamic submenu');
+  t('Display table of contents');
   t('Gallery');
   t('See also');
   t('The sidebar navigation block will appear with links to headings in the body field');
