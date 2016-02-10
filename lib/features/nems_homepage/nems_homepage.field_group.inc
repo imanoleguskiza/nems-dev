@@ -139,7 +139,7 @@ function nems_homepage_field_group_info() {
     'children' => array(
       0 => 'field_nems_homepage_abstract',
       1 => 'field_nems_homepage_image',
-      2 => 'field_nems_homepage_node_reference',
+      2 => 'field_nems_homepage_reference',
       3 => 'title_field',
     ),
     'format_type' => 'tab',
@@ -195,9 +195,9 @@ function nems_homepage_field_group_info() {
     'label' => 'More Info',
     'weight' => '3',
     'children' => array(
-      0 => 'field_nems_homepage_more_info_body',
-      1 => 'field_nems_homepage_more_info_link',
-      2 => 'field_nems_homepage_more_info_title',
+      0 => 'field_nems_homepage_mi_body',
+      1 => 'field_nems_homepage_mi_link',
+      2 => 'field_nems_homepage_mi_title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -282,7 +282,7 @@ function nems_homepage_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'body',
-      1 => 'field_nems_homepage_node_reference',
+      1 => 'field_nems_homepage_reference',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -426,7 +426,7 @@ function nems_homepage_field_group_info() {
     'label' => 'Related Content',
     'weight' => '1',
     'children' => array(
-      0 => 'field_nems_homepage_related_video',
+      0 => 'field_nems_homepage_video',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -482,7 +482,7 @@ function nems_homepage_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_nems_homepage_abstract',
-      1 => 'field_nems_homepage_more_info_link',
+      1 => 'field_nems_homepage_mi_link',
       2 => 'title_field',
     ),
     'format_type' => 'tab',
@@ -625,7 +625,7 @@ function nems_homepage_field_group_info() {
     'children' => array(
       0 => 'field_nems_rightcol_position',
       1 => 'field_nems_rightcol_weight',
-      2 => 'field_nems_homepage_node_reference',
+      2 => 'field_nems_homepage_reference',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -654,7 +654,7 @@ function nems_homepage_field_group_info() {
     'children' => array(
       0 => 'field_nems_rightcol_position',
       1 => 'field_nems_rightcol_weight',
-      2 => 'field_nems_homepage_node_reference',
+      2 => 'field_nems_homepage_reference',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -683,7 +683,7 @@ function nems_homepage_field_group_info() {
     'children' => array(
       0 => 'field_nems_rightcol_position',
       1 => 'field_nems_rightcol_weight',
-      2 => 'field_nems_homepage_node_reference',
+      2 => 'field_nems_homepage_reference',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

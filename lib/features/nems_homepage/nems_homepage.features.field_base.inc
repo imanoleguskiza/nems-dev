@@ -142,13 +142,13 @@ function nems_homepage_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_nems_homepage_more_info_body'.
-  $field_bases['field_nems_homepage_more_info_body'] = array(
+  // Exported field_base: 'field_nems_homepage_mi_body'.
+  $field_bases['field_nems_homepage_mi_body'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_nems_homepage_more_info_body',
+    'field_name' => 'field_nems_homepage_mi_body',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -163,13 +163,13 @@ function nems_homepage_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_nems_homepage_more_info_link'.
-  $field_bases['field_nems_homepage_more_info_link'] = array(
+  // Exported field_base: 'field_nems_homepage_mi_link'.
+  $field_bases['field_nems_homepage_mi_link'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_nems_homepage_more_info_link',
+    'field_name' => 'field_nems_homepage_mi_link',
     'indexes' => array(),
     'locked' => 1,
     'module' => 'link',
@@ -193,13 +193,13 @@ function nems_homepage_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_nems_homepage_more_info_title'.
-  $field_bases['field_nems_homepage_more_info_title'] = array(
+  // Exported field_base: 'field_nems_homepage_mi_title'.
+  $field_bases['field_nems_homepage_mi_title'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_nems_homepage_more_info_title',
+    'field_name' => 'field_nems_homepage_mi_title',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -215,13 +215,13 @@ function nems_homepage_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_nems_homepage_node_reference'.
-  $field_bases['field_nems_homepage_node_reference'] = array(
+  // Exported field_base: 'field_nems_homepage_reference'.
+  $field_bases['field_nems_homepage_reference'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_nems_homepage_node_reference',
+    'field_name' => 'field_nems_homepage_reference',
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -251,13 +251,13 @@ function nems_homepage_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_nems_homepage_related_links'.
-  $field_bases['field_nems_homepage_related_links'] = array(
+  // Exported field_base: 'field_nems_homepage_links'.
+  $field_bases['field_nems_homepage_links'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_nems_homepage_related_links',
+    'field_name' => 'field_nems_homepage_links',
     'indexes' => array(),
     'locked' => 1,
     'module' => 'link',
@@ -281,13 +281,13 @@ function nems_homepage_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_nems_homepage_related_video'.
-  $field_bases['field_nems_homepage_related_video'] = array(
+  // Exported field_base: 'field_nems_homepage_video'.
+  $field_bases['field_nems_homepage_video'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_nems_homepage_related_video',
+    'field_name' => 'field_nems_homepage_video',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
