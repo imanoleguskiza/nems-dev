@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the NEMS Downloads feature.
- */
-
-include_once 'nems_downloads.features.inc';

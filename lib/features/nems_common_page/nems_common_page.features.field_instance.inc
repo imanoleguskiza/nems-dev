@@ -100,9 +100,11 @@ function nems_common_page_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'fields' => array(),
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
+        'type_settings' => array(),
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 5,
@@ -118,19 +120,10 @@ function nems_common_page_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => TRUE,
-          'view_mode' => 'default',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 5,
-      ),
-      'full' => array(
-        'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
+        'type' => 'text_default',
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -141,22 +134,47 @@ function nems_common_page_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_downloads_items',
-    'label' => 'Downloads',
+    'label' => 'Downloads news',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
       'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'entityreference',
+      'module' => 'text',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
+        'rows' => 5,
       ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 9,
+      'type' => 'text_textarea',
+      'weight' => 11,
     ),
   );
 
@@ -183,7 +201,7 @@ function nems_common_page_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_dynamic_submenu',
-    'label' => 'Display table of contents',
+    'label' => 'Dynamic submenu',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -256,19 +274,10 @@ function nems_common_page_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => TRUE,
-          'view_mode' => 'default',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 4,
-      ),
-      'full' => array(
-        'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
+        'type' => 'text_default',
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -279,22 +288,47 @@ function nems_common_page_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_see_also_items',
-    'label' => 'See also',
+    'label' => 'See also new',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
       'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'entityreference',
+      'module' => 'text',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
+        'rows' => 5,
       ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 8,
+      'type' => 'text_textarea',
+      'weight' => 10,
     ),
   );
 
@@ -399,9 +433,11 @@ function nems_common_page_field_default_field_instances() {
   t('Body');
   t('Carousel');
   t('Downloads');
-  t('Display table of contents');
+  t('Downloads news');
+  t('Dynamic submenu');
   t('Gallery');
   t('See also');
+  t('See also new');
   t('The sidebar navigation block will appear with links to headings in the body field');
   t('Title');
   t('Video Gallery');

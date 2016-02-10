@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the See also feature.
- */
-
-include_once 'nems_see_also.features.inc';

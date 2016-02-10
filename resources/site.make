@@ -5,6 +5,9 @@ core = 7.x
 ; Contributed modules
 ; ===================
 
+projects[entityconnect][subdir] = "contrib"
+projects[entityconnect][version] = 1.0-rc5
+
 projects[features_extra][subdir] = "contrib"
 projects[features_extra][version] = 1.0
 

@@ -609,7 +609,7 @@ function nems_gallery_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_publish_enable_gallery';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['scheduler_publish_enable_gallery'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -637,7 +637,7 @@ function nems_gallery_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_publish_revision_gallery';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['scheduler_publish_revision_gallery'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -658,14 +658,14 @@ function nems_gallery_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_unpublish_enable_gallery';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['scheduler_unpublish_enable_gallery'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_unpublish_moderation_state_gallery';
-  $strongarm->value = 'draft';
+  $strongarm->value = 'expired';
   $export['scheduler_unpublish_moderation_state_gallery'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -679,7 +679,7 @@ function nems_gallery_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_unpublish_revision_gallery';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['scheduler_unpublish_revision_gallery'] = $strongarm;
 
   $strongarm = new stdClass();

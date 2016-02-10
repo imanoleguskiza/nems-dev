@@ -11,6 +11,7 @@ dependencies[] = ctools
 dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = list
+dependencies[] = nems_multilingual_setup
 dependencies[] = strongarm
 dependencies[] = tocify
 features[context][] = dynamic_submenu

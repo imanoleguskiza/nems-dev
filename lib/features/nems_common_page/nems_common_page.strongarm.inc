@@ -14,7 +14,7 @@ function nems_common_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_common_page';
-  $strongarm->value = 'edit-submission';
+  $strongarm->value = 'edit-scheduler';
   $export['additional_settings__active_tab_common_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -312,7 +312,7 @@ function nems_common_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_publish_enable_common_page';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['scheduler_publish_enable_common_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -340,7 +340,7 @@ function nems_common_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_publish_revision_common_page';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['scheduler_publish_revision_common_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -361,14 +361,14 @@ function nems_common_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_unpublish_enable_common_page';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['scheduler_unpublish_enable_common_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_unpublish_moderation_state_common_page';
-  $strongarm->value = 'draft';
+  $strongarm->value = 'expired';
   $export['scheduler_unpublish_moderation_state_common_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -382,7 +382,7 @@ function nems_common_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_unpublish_revision_common_page';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['scheduler_unpublish_revision_common_page'] = $strongarm;
 
   $strongarm = new stdClass();
