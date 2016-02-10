@@ -209,69 +209,6 @@ function nems_homepage_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_just_Y';
-  $strongarm->value = 'Y';
-  $export['date_format_just_Y'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_views_day_format_without_year';
-  $strongarm->value = 'l, F j';
-  $export['date_views_day_format_without_year'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_views_day_format_with_year';
-  $strongarm->value = 'l, F j, Y';
-  $export['date_views_day_format_with_year'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_views_month_format_without_year';
-  $strongarm->value = 'F';
-  $export['date_views_month_format_without_year'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_views_month_format_with_year';
-  $strongarm->value = 'F Y';
-  $export['date_views_month_format_with_year'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_views_week_format_without_year';
-  $strongarm->value = 'F j';
-  $export['date_views_week_format_without_year'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_views_week_format_with_year';
-  $strongarm->value = 'F j, Y';
-  $export['date_views_week_format_with_year'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_entity_types';
-  $strongarm->value = array(
-    'node' => 'node',
-    'taxonomy_term' => 'taxonomy_term',
-    'bean' => 'bean',
-    'comment' => 0,
-    'file' => 0,
-    'user' => 0,
-  );
-  $export['entity_translation_entity_types'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__nems_homepage';
   $strongarm->value = array(
     'view_modes' => array(
@@ -450,24 +387,6 @@ function nems_homepage_strongarm() {
   $strongarm->name = 'language_content_type_nems_slide_homepage';
   $strongarm->value = '4';
   $export['language_content_type_nems_slide_homepage'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'language_suffix_delimiter';
-  $strongarm->value = '_';
-  $export['language_suffix_delimiter'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'language_types';
-  $strongarm->value = array(
-    'language' => TRUE,
-    'language_content' => TRUE,
-    'language_url' => FALSE,
-  );
-  $export['language_types'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

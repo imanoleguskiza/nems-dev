@@ -32,9 +32,9 @@ function nems_gallery_views_api($module = NULL, $api = NULL) {
 function nems_gallery_node_info() {
   $items = array(
     'gallery' => array(
-      'name' => t('Gallery'),
+      'name' => t('Picture Gallery'),
       'base' => 'node_content',
-      'description' => t('Content type for add a gallery functionality to the conten types'),
+      'description' => t('Content type for add a picture gallery functionality to the conten types'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
