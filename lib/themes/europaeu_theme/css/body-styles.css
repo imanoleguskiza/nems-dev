@@ -1,0 +1,524 @@
+/* ************************************************************************** commons */
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a {
+  text-decoration: none !important;
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover {
+  text-decoration: underline !important;
+  color: #347c98 !important;
+}
+/* ************************************************************************** nav horizontal */
+ul.content-nav {
+  margin-top: 8px;
+  padding: 0;
+}
+ul.content-nav ul {
+  padding: 0;
+}
+ul.content-nav li {
+  list-style: outside none none;
+  margin-bottom: 2%;
+}
+ul.content-nav li a {
+  font-family: Arial, Helvetica, "DejaVu Sans", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+ul.content-nav li li {
+  border-right: 1px solid #b1ac9c;
+  display: inline;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+ul.content-nav li li.last {
+  border-right: medium none;
+}
+ul.content-nav li li a {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: normal;
+}
+/* ************************************************************************** infographic */
+.infographic_container,
+.video_embed {
+  margin: 2% 0 5%;
+  text-align: center;
+}
+.infographic_container h3,
+.video_embed h3 {
+  margin: 0;
+}
+.infographic_container {
+  overflow: hidden;
+}
+.infographic_container a {
+  display: inline-block;
+}
+.infographic_single {
+  float: left;
+  margin: 0 10%;
+  text-align: center;
+  width: 40%;
+}
+.box-list-links {
+  margin: 30px 2% 20px;
+}
+.infographic_single {
+  float: left;
+  margin: 0 10%;
+  text-align: center;
+  width: 40%;
+}
+.infographic_single p {
+  text-align: left;
+}
+@media all and (max-width: 768px) {
+  .infographic_single {
+    width: auto;
+  }
+}
+.policyareaimg {
+  float: right;
+  text-align: center;
+  margin: 2% 0 5% 2%;
+}
+.policyareaimg a.infographic {
+  float: none;
+}
+.infographic {
+  box-sizing: border-box;
+  float: left;
+  margin-right: 3%;
+  width: 30%;
+}
+.infographic h3 {
+  margin: 0;
+}
+.infographic.last {
+  margin-right: 0;
+}
+.box-list-links {
+  border: 1px solid #e5e4e2;
+  padding: 10px 20px;
+  margin: 30px 2% 20px;
+}
+/* ************************************************************************** visit card */
+.visit-card {
+  border: 1px solid #e5e4e2;
+  margin: 0 0 30px;
+  padding: 0;
+  position: relative;
+}
+.visit-card .card-content {
+  margin-bottom: 10px;
+  min-height: 65px;
+  padding: 10px;
+}
+.visit-card .card-content img {
+  float: left;
+  margin-right: 50px;
+}
+.visit-card h3 {
+  margin: 0;
+  padding: 0;
+}
+.visit-card .subtitle {
+  color: #666666;
+  font-family: Arial, Helvetica, "DejaVu Sans", sans-serif;
+  margin: 0;
+  padding: 5px 0 0;
+  text-transform: uppercase;
+}
+.visit-card .open-link {
+  width: 100%;
+}
+.visit-card .open-link a {
+  background: #f3f3f3 url("../images/sprite-accordion-reverse.png") no-repeat scroll right 12px;
+  color: #555555;
+  display: block;
+  font-family: Arial, Helvetica, "DejaVu Sans", sans-serif;
+  font-weight: bold;
+  padding: 10px 40px 7px 10px;
+  text-align: right;
+  text-decoration: none;
+}
+.visit-card .open-link a:hover {
+  background-position: right -22px;
+  color: #000000;
+}
+.visit-card .open-link a.active {
+  background-color: #2dace3;
+  background-position: right -60px;
+  color: #000000;
+}
+/* ************************************************************************** downloads table */
+#links_list li:first-child {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  font-weight: bold;
+  list-style: outside none none;
+}
+#links_list li.contains_table {
+  list-style: outside none none;
+}
+#links_list li table {
+  border: medium none;
+  border-collapse: collapse;
+  width: 100%;
+}
+#links_list li table tbody {
+  border: none;
+}
+#links_list li table tr {
+  border: medium none;
+  margin: 0;
+  padding: 0;
+}
+#links_list li table tr td {
+  border: medium none;
+}
+#links_list li table tr td a {
+  display: inline-block;
+}
+#links_list li table tr td a img {
+  width: 25px;
+}
+#links_list li table tr td.first {
+  width: 40%;
+}
+#links_list li table tr td.links {
+  font-size: 0.85em;
+  text-align: center;
+  width: 20%;
+}
+#links_list li * {
+  vertical-align: middle;
+}
+/* ************************************************************************** founding fathers */
+#foundingfathers_container {
+  display: inline-block;
+  margin: 15px 0;
+  width: 100%;
+}
+#foundingfathers_container ul {
+  box-sizing: border-box;
+  float: left;
+  list-style: outside none none;
+  margin: 0;
+  padding: 0 5px 0 0;
+  width: 50%;
+}
+#foundingfathers_container ul li img {
+  margin-right: 15px;
+}
+/* ************************************************************************** head block */
+#goto_2,
+#goto_3 {
+  margin-bottom: 15px;
+  padding: 0;
+}
+.head_block {
+  margin-top: 15px;
+}
+.head_block .head_picture {
+  float: left;
+  margin: 0 10px 5px 0;
+}
+.head_block p {
+  display: block;
+  margin-top: 0;
+  padding-top: 0;
+}
+.head_block p.role {
+  clear: both;
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 480px) {
+  .head_block .head_picture {
+    clear: both;
+    float: none;
+  }
+}
+/* ************************************************************************** countries */
+.sub-section {
+  clear: both;
+  margin-bottom: 15px;
+  overflow: auto;
+}
+.countries_thumbs {
+  margin-top: 15px;
+  overflow: hidden;
+}
+.countries_thumbs div {
+  border: 1px solid #e5e4e2;
+  box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 47%;
+}
+.countries_thumbs div.odd {
+  float: left;
+  margin-right: 4%;
+}
+.countries_thumbs div h2 {
+  padding-top: 0;
+}
+.countries_thumbs div h2 a {
+  background-image: url("/about-eu/countries/images/right-arrow.png");
+  background-position: right center;
+  background-repeat: no-repeat;
+  display: inline-block;
+  padding-right: 15px;
+}
+.countries_thumbs div h2 a:visited {
+  background-image: url("/about-eu/countries/images/right-arrow-visited.png");
+}
+.countries_thumbs div h2 img {
+  border: 2px solid #e5e4e2;
+  margin-right: 7px;
+}
+.countries_thumbs div p {
+  padding-bottom: 2px;
+  padding-top: 0;
+  margin: 0;
+}
+.countries_thumbs div a.more_about_link {
+  font-weight: bold;
+  margin-top: 7px;
+}
+.sub-section {
+  clear: both;
+  margin-bottom: 15px;
+  overflow: auto;
+}
+.country-list {
+  float: left;
+  margin: 5px 1% 0 0 !important;
+  padding: 0 2% 0 !important;
+  width: 45%;
+}
+@media all and (max-width: 480px) {
+  div.layout-content img.country_map {
+    float: none;
+    margin: 10px 0 20px;
+  }
+  .countries_thumbs div {
+    float: none;
+    width: 100%;
+  }
+  .country-list {
+    float: none;
+    width: 100%;
+  }
+}
+/* ************************************************************************** table zebra */
+table.zebra {
+  border-collapse: collapse !important;
+  margin-bottom: 30px !important;
+  width: 100% !important;
+}
+table.zebra th {
+  background-color: transparent !important;
+  border: 1px solid #e5e4e2 !important;
+  color: #404040 !important;
+}
+table.zebra tr:nth-child(2n) {
+  background-color: #f3f3f3;
+}
+table.zebra tr:nth-child(2n+1) {
+  background-color: #ffffff;
+}
+table.zebra,
+table.zebra th,
+table.zebra td {
+  border: 1px solid #e5e4e2;
+  padding: 5px;
+}
+/* ************************************************************************** cards */
+.cards {
+  margin-bottom: 30px;
+  position: relative;
+}
+.cards .card {
+  border-radius: 0;
+  box-shadow: 0 0 0;
+  margin-bottom: 0;
+  border: 1px solid #e5e4e2;
+  box-sizing: border-box;
+  float: left;
+  margin-right: 3.2%;
+  min-height: 240px;
+  padding: 10px;
+  width: 48.3%;
+}
+.row-abstract {
+  margin-bottom: 1em;
+}
+.cards .card h3,
+.card-focus h3 {
+  margin: 0;
+  padding: 0;
+}
+.cards .card h3 a,
+.card-focus h3 a {
+  background: rgba(0, 0, 0, 0) url("../images/icon-arrow-link.png") no-repeat scroll right 7px;
+  padding-right: 15px;
+}
+.cards .card.last {
+  margin-right: 0;
+}
+.card-focus {
+  background-color: #f3f3f3;
+  display: table;
+  height: 200px;
+  margin-bottom: 30px;
+  position: relative;
+  width: 100%;
+}
+.card-focus .card-box {
+  box-sizing: border-box;
+  display: table-cell;
+  vertical-align: middle;
+}
+.card-focus .card-info {
+  padding: 20px;
+  width: 60%;
+}
+.card-focus .card-picture {
+  background: rgba(0, 0, 0, 0) url("../images/photo.jpg") no-repeat scroll right center;
+  height: 200px;
+  width: 40%;
+}
+.card-focus .card-picture span {
+  background: rgba(0, 0, 0, 0) url("../images/arrow-photo.png") no-repeat scroll 0 0;
+  height: 52px;
+  margin-top: -20px;
+  position: absolute;
+  right: 224px;
+  top: 50%;
+  width: 26px;
+  z-index: 100;
+}
+.gray-box {
+  background-color: #f3f3f3;
+  margin: 30px 0 20px;
+  padding: 10px 20px;
+}
+.gray-box ul li {
+  list-style: outside none none;
+}
+.gray-box ul.dotted li {
+  list-style: outside none disc;
+}
+.gray-box #content_2 {
+  margin-bottom: 10px;
+}
+/* ************************************************************************** populer publi */
+.popular-publ {
+  border-top: 1px solid #e5e4e2;
+  margin-top: 50px;
+  overflow: hidden;
+  padding-top: 20px;
+  position: relative;
+}
+.popular-publ .left_content {
+  float: left;
+  margin-right: 20px;
+}
+.popular-publ .right_content h3 {
+  margin-top: 0;
+  padding-top: 0;
+}
+/* ************************************************************************** 3 cols */
+.block-3-columns {
+  margin-bottom: 30px;
+  position: relative;
+}
+.block-3-columns .box-slide {
+  box-sizing: border-box;
+  float: left;
+  font-family: Arial, Helvetica, "DejaVu Sans", sans-serif;
+  margin-right: 3.2%;
+  width: 30%;
+}
+.block-3-columns .box-slide .fancybox img {
+  width: 100%;
+}
+.block-3-columns .box-slide h3 {
+  margin: 5px 0 0;
+  padding: 0;
+}
+.block-3-columns .box-slide ul,
+.download-files ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+.block-3-columns .box-slide ul li,
+.download-files ul li {
+  display: inline;
+  margin-right: 10px;
+}
+.block-3-columns .box-slide ul li a,
+.download-files ul li a {
+  text-decoration: none;
+}
+.block-3-columns .box-slide.last {
+  margin-right: 0;
+}
+html body a.link-ico span {
+  text-decoration: underline;
+}
+/* ************************************************************************** others */
+div.factsheet_info_panel {
+  background-color: #c3d6dd;
+  clear: both;
+  margin-top: 2%;
+  padding: 2%;
+  width: 96%;
+}
+div.factsheet_info_panel img {
+  float: left;
+  margin-right: 50px;
+}
+ul.az_index {
+  margin: 15px 0;
+  padding: 0;
+}
+ul.az_index li {
+  display: inline;
+  margin-bottom: 10px;
+}
+ul.az_index li a span {
+  background-color: #2dace3;
+  color: #000000;
+  display: inline-block;
+  font-family: Arial, Helvetica, "DejaVu Sans", sans-serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-right: 3px;
+  padding: 0 5px;
+  text-decoration: none;
+}
+ul.az_index li span {
+  background-color: #f3f3f3;
+  color: #000000;
+  display: inline-block;
+  font-family: Arial, Helvetica, "DejaVu Sans", sans-serif;
+  font-weight: bold;
+  margin-right: 3px;
+  padding: 0 5px;
+  text-decoration: none;
+}
+ul.az_index li a:hover span {
+  background-color: #394c8b;
+  color: #ffffff;
+  margin-bottom: 10px;
+}

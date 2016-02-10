@@ -1,0 +1,46 @@
+name = Europa.eu theme
+description = This is a sub-theme of theme ec_resp
+core = 7.x
+base theme = ec_resp
+multisite_version = 2.1
+package = europa_eu
+php = 5.6
+version = 7.x-1.0
+
+regions[header_top] = "Header Top"
+regions[header_right] = "Header Right"
+
+regions[featured] = "Featured"
+regions[tools] = "Tools"
+regions[help] = "Help"
+
+regions[sidebar_left] = "Sidebar Left"
+regions[sidebar_right] = "Sidebar Right"
+
+regions[content_top] = "Content Top"
+regions[content] = "Content"
+regions[content_right] = "Content Right"
+regions[content_bottom] = "Content Bottom"
+
+regions[footer_top] = "Footer Top"
+regions[footer] = "Footer"
+
+settings[enable_interinstitutional_theme] = 1
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/europaeu_theme.css
+stylesheets[all][] = css/inner.css
+stylesheets[all][] = css/responsive.css
+stylesheets[all][] = css/body-styles.css
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;
+scripts[] = js/modernizr-custom.js
+scripts[] = js/js_floating-1.12.js
+scripts[] = js/jquery.columnizer.min.js
+scripts[] = js/europaeu_theme.js
+scripts[] = js/europaeu_menu.js

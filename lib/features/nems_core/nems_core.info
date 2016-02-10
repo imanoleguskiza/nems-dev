@@ -58,6 +58,7 @@ dependencies[] = multisite_metatags
 dependencies[] = multisite_workbench_moderation_view
 dependencies[] = nems_i18n_field_group
 dependencies[] = nems_nolink
+dependencies[] = nems_accordion
 dependencies[] = nexteuropa_webtools
 dependencies[] = node_export
 dependencies[] = og
