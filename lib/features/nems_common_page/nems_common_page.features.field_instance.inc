@@ -90,7 +90,7 @@ function nems_common_page_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_carousel_items',
-    'label' => 'Carousel',
+    'label' => 'Picture Carousel',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -134,7 +134,7 @@ function nems_common_page_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_downloads_items',
-    'label' => 'Downloads news',
+    'label' => 'Downloads',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -246,7 +246,7 @@ function nems_common_page_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_gallery_items',
-    'label' => 'Gallery',
+    'label' => 'Picture Gallery',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -288,7 +288,7 @@ function nems_common_page_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_see_also_items',
-    'label' => 'See also new',
+    'label' => 'See also',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
@@ -431,11 +431,11 @@ function nems_common_page_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Carousel');
+  t('Picture Carousel');
   t('Downloads');
   t('Downloads news');
   t('Display table of contents');
-  t('Gallery');
+  t('Picture Gallery');
   t('See also');
   t('See also new');
   t('The sidebar navigation block will appear with links to headings in the body field');
