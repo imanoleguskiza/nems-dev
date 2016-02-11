@@ -164,7 +164,7 @@ function nems_common_page_field_default_field_instances() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -318,7 +318,7 @@ function nems_common_page_field_default_field_instances() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -431,13 +431,11 @@ function nems_common_page_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('Picture Carousel');
-  t('Downloads');
-  t('Downloads news');
   t('Display table of contents');
+  t('Downloads');
+  t('Picture Carousel');
   t('Picture Gallery');
   t('See also');
-  t('See also new');
   t('The sidebar navigation block will appear with links to headings in the body field');
   t('Title');
   t('Video Gallery');
