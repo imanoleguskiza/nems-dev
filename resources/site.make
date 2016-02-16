@@ -17,6 +17,9 @@ projects[features_roles_permissions][version] = 1.2
 projects[owlcarousel][subdir] = "contrib"
 projects[owlcarousel][version] = 1.5
 
+projects[page_title][subdir] = "contrib"
+projects[page_title][version] = 2.7
+
 projects[menu_admin_per_menu][subdir] = "contrib"
 projects[menu_admin_per_menu][version] = 1.1
 
