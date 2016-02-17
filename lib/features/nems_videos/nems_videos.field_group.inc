@@ -1,14 +1,14 @@
 <?php
 /**
  * @file
- * Nems_videos.field_group.inc.
+ * nems_videos.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
 function nems_videos_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -21,12 +21,11 @@ function nems_videos_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '0',
+    'weight' => '2',
     'children' => array(
-      0 => 'title_field',
-      1 => 'body',
-      2 => 'field_nems_core_external_url',
-      3 => 'field_nems_core_image',
+      0 => 'body',
+      1 => 'field_nems_core_external_url',
+      2 => 'field_nems_core_image',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -38,7 +37,7 @@ function nems_videos_field_group_info() {
       ),
     ),
   );
-  $export['group_nems_video_content|node|nems_video|form'] = $field_group;
+  $field_groups['group_nems_video_content|node|nems_video|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -51,13 +50,10 @@ function nems_videos_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '1',
+    'weight' => '3',
     'children' => array(
-      0 => 'field_meta_classification',
-      1 => 'field_meta_description',
-      2 => 'path',
-      3 => 'language',
-      4 => 'field_tags',
+      0 => 'field_tags',
+      1 => 'path',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -69,7 +65,12 @@ function nems_videos_field_group_info() {
       ),
     ),
   );
-  $export['group_nems_video_metadata|node|nems_video|form'] = $field_group;
+  $field_groups['group_nems_video_metadata|node|nems_video|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Content');
+  t('Metadata');
+
+  return $field_groups;
 }
