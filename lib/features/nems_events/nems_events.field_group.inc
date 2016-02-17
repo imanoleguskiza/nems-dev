@@ -24,11 +24,10 @@ function nems_events_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'body',
-      1 => 'field_nems_core_abstract',
-      2 => 'field_nems_core_external_url',
-      3 => 'field_nems_core_image',
-      4 => 'field_nems_event_date',
-      5 => 'field_nems_event_location',
+      1 => 'field_nems_core_external_url',
+      2 => 'field_nems_core_image',
+      3 => 'field_nems_event_date',
+      4 => 'field_nems_event_location',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

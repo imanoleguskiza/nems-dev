@@ -82,7 +82,7 @@ function nems_news_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Field: Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_nems_core_image']['id'] = 'field_nems_core_image';
   $handler->display->display_options['fields']['field_nems_core_image']['table'] = 'field_data_field_nems_core_image';
   $handler->display->display_options['fields']['field_nems_core_image']['field'] = 'field_nems_core_image';
@@ -217,12 +217,16 @@ function nems_news_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Field: Abstract */
-  $handler->display->display_options['fields']['field_nems_core_abstract']['id'] = 'field_nems_core_abstract';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['table'] = 'field_data_field_nems_core_abstract';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['field'] = 'field_nems_core_abstract';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['label'] = '';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['element_label_colon'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '300',
+  );
   /* Field: Entity translation: Category: translated */
   $handler->display->display_options['fields']['field_nems_news_category_et']['id'] = 'field_nems_news_category_et';
   $handler->display->display_options['fields']['field_nems_news_category_et']['table'] = 'field_data_field_nems_news_category';
@@ -341,12 +345,16 @@ function nems_news_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Field: Abstract */
-  $handler->display->display_options['fields']['field_nems_core_abstract']['id'] = 'field_nems_core_abstract';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['table'] = 'field_data_field_nems_core_abstract';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['field'] = 'field_nems_core_abstract';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['label'] = '';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['element_label_colon'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '300',
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
