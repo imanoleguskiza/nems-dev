@@ -161,6 +161,20 @@ function nems_publications_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_publication';
+  $strongarm->value = '';
+  $export['page_title_type_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_publication_showfield';
+  $strongarm->value = 1;
+  $export['page_title_type_publication_showfield'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_nems_publication_pattern';
   $strongarm->value = 'publications/[node:title-source-translation]';
   $export['pathauto_node_nems_publication_pattern'] = $strongarm;
