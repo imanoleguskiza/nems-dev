@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Nems_events.views_default.inc.
+ * nems_events.views_default.inc
  */
 
 /**
@@ -33,7 +33,7 @@ function nems_events_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Field: Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_nems_core_image']['id'] = 'field_nems_core_image';
   $handler->display->display_options['fields']['field_nems_core_image']['table'] = 'field_data_field_nems_core_image';
   $handler->display->display_options['fields']['field_nems_core_image']['field'] = 'field_nems_core_image';
@@ -63,7 +63,7 @@ function nems_events_views_default_views() {
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
-  /* Field: Field: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -71,7 +71,7 @@ function nems_events_views_default_views() {
   $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 1;
-  /* Field: Field: External Url */
+  /* Field: Content: External Link */
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['id'] = 'field_nems_core_external_url_1';
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['table'] = 'field_data_field_nems_core_external_url';
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['field'] = 'field_nems_core_external_url';
@@ -134,7 +134,7 @@ function nems_events_views_default_views() {
   $handler->display->display_options['sorts']['field_nems_event_date_value']['table'] = 'field_data_field_nems_event_date';
   $handler->display->display_options['sorts']['field_nems_event_date_value']['field'] = 'field_nems_event_date_value';
   $handler->display->display_options['sorts']['field_nems_event_date_value']['order'] = 'DESC';
-  /* Sort criterion: Weight: Weight */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'weight_weights';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
@@ -157,7 +157,7 @@ function nems_events_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_nems_core_image']['id'] = 'field_nems_core_image';
   $handler->display->display_options['fields']['field_nems_core_image']['table'] = 'field_data_field_nems_core_image';
   $handler->display->display_options['fields']['field_nems_core_image']['field'] = 'field_nems_core_image';
@@ -188,7 +188,7 @@ function nems_events_views_default_views() {
   $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
-  /* Field: Field: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -196,7 +196,7 @@ function nems_events_views_default_views() {
   $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 1;
-  /* Field: Field: External Url */
+  /* Field: Content: External Link */
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['id'] = 'field_nems_core_external_url_1';
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['table'] = 'field_data_field_nems_core_external_url';
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['field'] = 'field_nems_core_external_url';
@@ -206,12 +206,16 @@ function nems_events_views_default_views() {
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['empty'] = '<h3>[title_field_1]</h3>';
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['click_sort_column'] = 'url';
-  /* Field: Field: Abstract */
-  $handler->display->display_options['fields']['field_nems_core_abstract']['id'] = 'field_nems_core_abstract';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['table'] = 'field_data_field_nems_core_abstract';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['field'] = 'field_nems_core_abstract';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['label'] = '';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['element_label_colon'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '300',
+  );
   /* Field: Content: Date */
   $handler->display->display_options['fields']['field_nems_event_date']['id'] = 'field_nems_event_date';
   $handler->display->display_options['fields']['field_nems_event_date']['table'] = 'field_data_field_nems_event_date';
@@ -259,11 +263,6 @@ function nems_events_views_default_views() {
   $handler->display->display_options['sorts']['field_nems_event_date_value']['table'] = 'field_data_field_nems_event_date';
   $handler->display->display_options['sorts']['field_nems_event_date_value']['field'] = 'field_nems_event_date_value';
   $handler->display->display_options['sorts']['field_nems_event_date_value']['order'] = 'DESC';
-  /* Sort criterion: Weight: Weight */
-  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['table'] = 'weight_weights';
-  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['order'] = 'DESC';
   $handler->display->display_options['path'] = 'events';
 
   /* Display: Block */
@@ -281,7 +280,7 @@ function nems_events_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '2';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_nems_core_image']['id'] = 'field_nems_core_image';
   $handler->display->display_options['fields']['field_nems_core_image']['table'] = 'field_data_field_nems_core_image';
   $handler->display->display_options['fields']['field_nems_core_image']['field'] = 'field_nems_core_image';
@@ -312,7 +311,7 @@ function nems_events_views_default_views() {
   $handler->display->display_options['fields']['field_nems_core_external_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_nems_core_external_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_nems_core_external_url']['type'] = 'link_absolute';
-  /* Field: Field: Title */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -320,7 +319,7 @@ function nems_events_views_default_views() {
   $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 1;
-  /* Field: Field: External Url */
+  /* Field: Content: External Link */
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['id'] = 'field_nems_core_external_url_1';
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['table'] = 'field_data_field_nems_core_external_url';
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['field'] = 'field_nems_core_external_url';
@@ -330,12 +329,16 @@ function nems_events_views_default_views() {
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['empty'] = '<h3>[title_field_1]</h3>';
   $handler->display->display_options['fields']['field_nems_core_external_url_1']['click_sort_column'] = 'url';
-  /* Field: Field: Abstract */
-  $handler->display->display_options['fields']['field_nems_core_abstract']['id'] = 'field_nems_core_abstract';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['table'] = 'field_data_field_nems_core_abstract';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['field'] = 'field_nems_core_abstract';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['label'] = '';
-  $handler->display->display_options['fields']['field_nems_core_abstract']['element_label_colon'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '300',
+  );
   /* Field: Content: Date */
   $handler->display->display_options['fields']['field_nems_event_date']['id'] = 'field_nems_event_date';
   $handler->display->display_options['fields']['field_nems_event_date']['table'] = 'field_data_field_nems_event_date';

@@ -153,5 +153,28 @@ function nems_core_strongarm() {
   );
   $export['theme_nems_theme_settings'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'version_management_node_types';
+  $strongarm->value = array(
+    'article' => 'article',
+    'page' => 'page',
+    'common_page' => 'common_page',
+    'nems_event' => 'nems_event',
+    'nems_homepage' => 'nems_homepage',
+    'nems_homepage_additional_block' => 'nems_homepage_additional_block',
+    'nems_news' => 'nems_news',
+    'gallery' => 'gallery',
+    'nems_publication' => 'nems_publication',
+    'nems_slide_footer' => 'nems_slide_footer',
+    'nems_slide_homepage' => 'nems_slide_homepage',
+    'nems_video' => 'nems_video',
+    'video_gallery' => 'video_gallery',
+    'editorial_team' => 0,
+    'flexslider_example' => 0,
+  );
+  $export['version_management_node_types'] = $strongarm;
+
   return $export;
 }

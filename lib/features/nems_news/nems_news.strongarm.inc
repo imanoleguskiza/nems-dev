@@ -41,16 +41,16 @@ function nems_news_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_nems_news';
+  $strongarm->name = 'comment_nems_news';
   $strongarm->value = '1';
-  $export['comment_preview_nems_news'] = $strongarm;
+  $export['comment_nems_news'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_nems_news';
+  $strongarm->name = 'comment_preview_nems_news';
   $strongarm->value = '1';
-  $export['comment_nems_news'] = $strongarm;
+  $export['comment_preview_nems_news'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -135,9 +135,7 @@ function nems_news_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_nems_news';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_nems_news'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -171,6 +169,20 @@ function nems_news_strongarm() {
   $strongarm->name = 'node_submitted_nems_news';
   $strongarm->value = 0;
   $export['node_submitted_nems_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_nems_news';
+  $strongarm->value = '';
+  $export['page_title_type_nems_news'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_nems_news_showfield';
+  $strongarm->value = 1;
+  $export['page_title_type_nems_news_showfield'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

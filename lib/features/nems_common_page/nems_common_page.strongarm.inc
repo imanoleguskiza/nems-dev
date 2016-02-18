@@ -14,7 +14,7 @@ function nems_common_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_common_page';
-  $strongarm->value = 'edit-scheduler';
+  $strongarm->value = 'edit-workflow';
   $export['additional_settings__active_tab_common_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -152,7 +152,7 @@ function nems_common_page_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '6',
+          'weight' => '10',
         ),
         'language' => array(
           'weight' => '1',
@@ -216,6 +216,20 @@ function nems_common_page_strongarm() {
   $strongarm->name = 'node_submitted_common_page';
   $strongarm->value = 0;
   $export['node_submitted_common_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_common_page';
+  $strongarm->value = '';
+  $export['page_title_type_common_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_common_page_showfield';
+  $strongarm->value = 1;
+  $export['page_title_type_common_page_showfield'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

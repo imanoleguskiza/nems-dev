@@ -30,6 +30,9 @@ projects[insert_block][patch][] = "https://www.drupal.org/files/1873624-insert_b
 projects[integration][subdir] = "contrib"
 projects[integration][version] = 1.x-dev
 
+projects[page_title][subdir] = "contrib"
+projects[page_title][version] = 2.7
+
 projects[menu_admin_per_menu][subdir] = "contrib"
 projects[menu_admin_per_menu][version] = 1.1
 

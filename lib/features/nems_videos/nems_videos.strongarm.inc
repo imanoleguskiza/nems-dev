@@ -175,6 +175,20 @@ function nems_videos_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_video';
+  $strongarm->value = '';
+  $export['page_title_type_video'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_video_showfield';
+  $strongarm->value = 1;
+  $export['page_title_type_video_showfield'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_publish_enable_nems_video';
   $strongarm->value = 1;
   $export['scheduler_publish_enable_nems_video'] = $strongarm;

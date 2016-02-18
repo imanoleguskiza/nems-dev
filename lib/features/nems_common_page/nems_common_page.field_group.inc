@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function nems_common_page_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -35,7 +35,7 @@ function nems_common_page_field_group_info() {
       ),
     ),
   );
-  $export['group_description|node|common_page|form'] = $field_group;
+  $field_groups['group_description|node|common_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -50,8 +50,8 @@ function nems_common_page_field_group_info() {
     'label' => 'Links',
     'weight' => '5',
     'children' => array(
-      0 => 'field_see_also_items',
-      1 => 'field_downloads_items',
+      0 => 'field_downloads_items',
+      1 => 'field_see_also_items',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -63,7 +63,36 @@ function nems_common_page_field_group_info() {
       ),
     ),
   );
-  $export['group_links|node|common_page|form'] = $field_group;
+  $field_groups['group_links|node|common_page|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_metadata|node|common_page|form';
+  $field_group->group_name = 'group_metadata';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'common_page';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Metadata',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_meta_classification',
+      1 => 'field_meta_description',
+      2 => 'path',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-metadata field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_metadata|node|common_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -92,7 +121,14 @@ function nems_common_page_field_group_info() {
       ),
     ),
   );
-  $export['group_multimedia|node|common_page|form'] = $field_group;
+  $field_groups['group_multimedia|node|common_page|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Description');
+  t('Links');
+  t('Metadata');
+  t('Multimedia');
+
+  return $field_groups;
 }

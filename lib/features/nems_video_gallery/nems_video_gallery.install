@@ -15,6 +15,13 @@ function nems_video_gallery_install() {
  * Implements hook_enable().
  */
 function nems_video_gallery_enable() {
+
+  $version_settings = variable_get('version_management_node_types','');
+  if (!empty($version_settings)) {
+    $version_settings['video_gallery'] = 'video_gallery';
+    variable_set('version_management_node_types', $version_settings);
+  }
+
   drupal_set_message(t('NEMS video gallery feature is now active on your site.'));
 }
 

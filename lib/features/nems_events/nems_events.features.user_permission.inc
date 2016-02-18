@@ -13,49 +13,35 @@ function nems_events_user_default_permissions() {
   // Exported permission: 'create nems_event content'.
   $permissions['create nems_event content'] = array(
     'name' => 'create nems_event content',
-    'roles' => array(
-      'NEMS Administrator' => 'NEMS Administrator',
-      'editor' => 'editor',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any nems_event content'.
   $permissions['delete any nems_event content'] = array(
     'name' => 'delete any nems_event content',
-    'roles' => array(
-      'NEMS Administrator' => 'NEMS Administrator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own nems_event content'.
   $permissions['delete own nems_event content'] = array(
     'name' => 'delete own nems_event content',
-    'roles' => array(
-      'NEMS Administrator' => 'NEMS Administrator',
-      'editor' => 'editor',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any nems_event content'.
   $permissions['edit any nems_event content'] = array(
     'name' => 'edit any nems_event content',
-    'roles' => array(
-      'NEMS Administrator' => 'NEMS Administrator',
-      'editor' => 'editor',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own nems_event content'.
   $permissions['edit own nems_event content'] = array(
     'name' => 'edit own nems_event content',
-    'roles' => array(
-      'NEMS Administrator' => 'NEMS Administrator',
-      'editor' => 'editor',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
