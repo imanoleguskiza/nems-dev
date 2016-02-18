@@ -36,6 +36,5 @@ function nems_press_releases_install() {
     ));
     $source->save();
     $source->schedule();
-    $source->importer->schedule();
   }
 }

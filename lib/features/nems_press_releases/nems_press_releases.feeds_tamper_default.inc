@@ -15,7 +15,7 @@ function nems_press_releases_feeds_tamper_default() {
   $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'europa_eu_rapid_-xpathparser_1-strtotime';
   $feeds_tamper->importer = 'europa_eu_rapid_';
-  $feeds_tamper->source = 'xpathparser:11';
+  $feeds_tamper->source = 'xpathparser:12';
   $feeds_tamper->plugin_id = 'strtotime';
   $feeds_tamper->settings = array();
   $feeds_tamper->weight = 0;
