@@ -23,6 +23,19 @@ projects[features_extra][version] = 1.0
 projects[features_roles_permissions][subdir] = "contrib"
 projects[features_roles_permissions][version] = 1.2
 
+projects[feeds_et][subdir] = "contrib"
+projects[feeds_et][version] = 1.x-dev
+projects[feeds_et][patch][] = "https://www.drupal.org/files/feeds_et_link_support-2078069-1.patch"
+
+projects[media_feeds][subdir] = "contrib"
+projects[media_feeds][version] = 2.x-dev
+
+projects[feeds_xpathparser][subdir] = "contrib"
+projects[feeds_xpathparser][version] = 1.1
+
+projects[owlcarousel][subdir] = "contrib"
+projects[owlcarousel][version] = 1.5
+
 projects[insert_block][subdir] = "contrib"
 projects[insert_block][version] = 1.x-dev
 projects[insert_block][patch][] = "https://www.drupal.org/files/1873624-insert_block-undefined-index-warnings.patch"
