@@ -30,9 +30,9 @@ function nems_press_releases_install() {
   foreach ($importer_urls as $key => $url) {
     $source = feeds_source($key);
     $source->addConfig(array(
-        'FeedsHTTPFetcher' => array(
-          'source' => $url,
-        ),
+      'FeedsHTTPFetcher' => array(
+        'source' => $url,
+      ),
     ));
     $source->save();
     $source->schedule();
