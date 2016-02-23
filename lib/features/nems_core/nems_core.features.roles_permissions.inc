@@ -17,6 +17,7 @@ function nems_core_default_roles_permissions() {
     'permissions' => array(
       'accept translation jobs' => TRUE,
       'access administration menu' => TRUE,
+      'access administration pages' => TRUE,
       'access bean overview' => TRUE,
       'access content overview' => TRUE,
       'access ecas import users function' => TRUE,
