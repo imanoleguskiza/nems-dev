@@ -52,6 +52,7 @@ function nems_core_default_roles_permissions() {
       'configure all region settings' => TRUE,
       'create any webtools bean' => TRUE,
       'create blocks' => TRUE,
+      'create files' => TRUE,
       'create translation jobs' => TRUE,
       'delete any webtools bean' => TRUE,
       'delete revisions' => TRUE,
