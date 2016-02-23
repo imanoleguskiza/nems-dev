@@ -17,7 +17,6 @@ function nems_core_default_roles_permissions() {
     'permissions' => array(
       'accept translation jobs' => TRUE,
       'access administration menu' => TRUE,
-      'access administration pages' => TRUE,
       'access bean overview' => TRUE,
       'access content overview' => TRUE,
       'access ecas import users function' => TRUE,
@@ -42,6 +41,7 @@ function nems_core_default_roles_permissions() {
       'administer workbench moderation' => TRUE,
       'assign contributor role' => TRUE,
       'assign editor role' => TRUE,
+      'assign webmaster role' => TRUE,
       'bypass node access' => TRUE,
       'bypass workbench moderation' => TRUE,
       'change own username' => TRUE,
