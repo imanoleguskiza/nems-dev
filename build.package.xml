@@ -183,19 +183,19 @@
         <phingcall target="copy-folder">
             <property name="copy.source.path" value="${subsite.resources.modules.dir}" />
             <property name="copy.destination.path" value="${dist.build.modules.custom.dir}" />
-            <property name="copy.path.haltonerror" value="true" />
+            <property name="copy.path.haltonerror" value="false" />
         </phingcall>
         <!-- Copy our custom features. -->
         <phingcall target="copy-folder">
             <property name="copy.source.path" value="${subsite.resources.features.dir}" />
             <property name="copy.destination.path" value="${dist.build.modules.features.dir}" />
-            <property name="copy.path.haltonerror" value="true" />
+            <property name="copy.path.haltonerror" value="false" />
         </phingcall>
         <!-- Copy our custom themes. -->
         <phingcall target="copy-folder">
             <property name="copy.source.path" value="${subsite.resources.themes.dir}" />
             <property name="copy.destination.path" value="${dist.build.themes.dir}" />
-            <property name="copy.path.haltonerror" value="true" />
+            <property name="copy.path.haltonerror" value="false" />
         </phingcall>
         <!-- Copy our custom PSR-4 code. -->
         <phingcall target="copy-folder">
