@@ -61,8 +61,8 @@
 
     <!-- Copies a given folder to a new location. -->
     <target name="copy-folder">
-        <copy todir="${copy.destination.path}">
-            <fileset dir="${copy.source.path}" defaultexcludes="false" haltonerror="${copy.path.haltonerror}" />
+        <copy todir="${copy.destination.path}" haltonerror="${copy.path.haltonerror}">
+            <fileset dir="${copy.source.path}" defaultexcludes="false" />
         </copy>
     </target>
 
