@@ -363,27 +363,6 @@ function nems_homepage_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'i18n_node_extended_nems_homepage_additional_block';
-  $strongarm->value = 1;
-  $export['i18n_node_extended_nems_homepage_additional_block'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'i18n_node_options_nems_homepage_additional_block';
-  $strongarm->value = array();
-  $export['i18n_node_options_nems_homepage_additional_block'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'i18n_sync_node_type_nems_homepage_additional_block';
-  $strongarm->value = array();
-  $export['i18n_sync_node_type_nems_homepage_additional_block'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_nems_homepage';
   $strongarm->value = '4';
   $export['language_content_type_nems_homepage'] = $strongarm;
@@ -591,6 +570,111 @@ function nems_homepage_strongarm() {
   $strongarm->name = 'page_title_type_nems_homepage_showfield';
   $strongarm->value = 1;
   $export['page_title_type_nems_homepage_showfield'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_nems_homepage_additional_block';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_nems_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_nems_slide_footer';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_nems_slide_footer'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_nems_slide_homepage';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_nems_slide_homepage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_nems_homepage_additional_block';
+  $strongarm->value = '2';
+  $export['rh_node_action_nems_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_nems_slide_footer';
+  $strongarm->value = '2';
+  $export['rh_node_action_nems_slide_footer'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_nems_slide_homepage';
+  $strongarm->value = '2';
+  $export['rh_node_action_nems_slide_homepage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_override_nems_homepage_additional_block';
+  $strongarm->value = 0;
+  $export['rh_node_override_nems_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_override_nems_slide_footer';
+  $strongarm->value = 0;
+  $export['rh_node_override_nems_slide_footer'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_override_nems_slide_homepage';
+  $strongarm->value = 0;
+  $export['rh_node_override_nems_slide_homepage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_nems_homepage_additional_block';
+  $strongarm->value = '';
+  $export['rh_node_redirect_nems_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_nems_slide_footer';
+  $strongarm->value = '';
+  $export['rh_node_redirect_nems_slide_footer'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_nems_slide_homepage';
+  $strongarm->value = '';
+  $export['rh_node_redirect_nems_slide_homepage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_response_nems_homepage_additional_block';
+  $strongarm->value = '301';
+  $export['rh_node_redirect_response_nems_homepage_additional_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_response_nems_slide_footer';
+  $strongarm->value = '301';
+  $export['rh_node_redirect_response_nems_slide_footer'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_response_nems_slide_homepage';
+  $strongarm->value = '301';
+  $export['rh_node_redirect_response_nems_slide_homepage'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
