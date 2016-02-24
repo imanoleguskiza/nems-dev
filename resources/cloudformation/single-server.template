@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
-  "Description": "CodeDeploy single server template",
+  "Description": "Subsite single server template",
   "Parameters": {
     "KeyName": {
       "Description": "Name of an existing EC2 KeyPair to enable SSH access to the instances",
@@ -10,54 +10,18 @@
     "InstanceType": {
       "Description": "WebServer EC2 instance type",
       "Type": "String",
-      "Default": "t1.micro",
+      "Default": "t2.micro",
       "AllowedValues": [
-        "t1.micro",
+        "t2.nano",
         "t2.micro",
         "t2.small",
         "t2.medium",
-        "m1.small",
-        "m1.medium",
-        "m1.large",
-        "m1.xlarge",
-        "m2.xlarge",
-        "m2.2xlarge",
-        "m2.4xlarge",
-        "m3.medium",
-        "m3.large",
-        "m3.xlarge",
-        "m3.2xlarge",
-        "c1.medium",
-        "c1.xlarge",
-        "c3.large",
-        "c3.xlarge",
-        "c3.2xlarge",
-        "c3.4xlarge",
-        "c3.8xlarge",
-        "c4.large",
-        "c4.xlarge",
-        "c4.2xlarge",
-        "c4.4xlarge",
-        "c4.8xlarge",
-        "g2.2xlarge",
-        "r3.large",
-        "r3.xlarge",
-        "r3.2xlarge",
-        "r3.4xlarge",
-        "r3.8xlarge",
-        "i2.xlarge",
-        "i2.2xlarge",
-        "i2.4xlarge",
-        "i2.8xlarge",
-        "d2.xlarge",
-        "d2.2xlarge",
-        "d2.4xlarge",
-        "d2.8xlarge",
-        "hi1.4xlarge",
-        "hs1.8xlarge",
-        "cr1.8xlarge",
-        "cc2.8xlarge",
-        "cg1.4xlarge"
+        "t2.large",
+        "m4.large",
+        "m4.xlarge",
+        "m4.2xlarge",
+        "m4.4xlarge",
+        "m4.10xlarge"
       ],
       "ConstraintDescription": "must be a valid EC2 instance type."
     },
@@ -83,197 +47,6 @@
     "ApplicationName": {
       "Type": "String",
       "Description": "The CodeDeploy application name"
-    }
-  },
-  "Mappings": {
-    "AWSInstanceType2Arch": {
-      "t1.micro": {
-        "Arch": "PV64"
-      },
-      "t2.micro": {
-        "Arch": "HVM64"
-      },
-      "t2.small": {
-        "Arch": "HVM64"
-      },
-      "t2.medium": {
-        "Arch": "HVM64"
-      },
-      "m1.small": {
-        "Arch": "PV64"
-      },
-      "m1.medium": {
-        "Arch": "PV64"
-      },
-      "m1.large": {
-        "Arch": "PV64"
-      },
-      "m1.xlarge": {
-        "Arch": "PV64"
-      },
-      "m2.xlarge": {
-        "Arch": "PV64"
-      },
-      "m2.2xlarge": {
-        "Arch": "PV64"
-      },
-      "m2.4xlarge": {
-        "Arch": "PV64"
-      },
-      "m3.medium": {
-        "Arch": "HVM64"
-      },
-      "m3.large": {
-        "Arch": "HVM64"
-      },
-      "m3.xlarge": {
-        "Arch": "HVM64"
-      },
-      "m3.2xlarge": {
-        "Arch": "HVM64"
-      },
-      "c1.medium": {
-        "Arch": "PV64"
-      },
-      "c1.xlarge": {
-        "Arch": "PV64"
-      },
-      "c3.large": {
-        "Arch": "HVM64"
-      },
-      "c3.xlarge": {
-        "Arch": "HVM64"
-      },
-      "c3.2xlarge": {
-        "Arch": "HVM64"
-      },
-      "c3.4xlarge": {
-        "Arch": "HVM64"
-      },
-      "c3.8xlarge": {
-        "Arch": "HVM64"
-      },
-      "c4.large": {
-        "Arch": "HVM64"
-      },
-      "c4.xlarge": {
-        "Arch": "HVM64"
-      },
-      "c4.2xlarge": {
-        "Arch": "HVM64"
-      },
-      "c4.4xlarge": {
-        "Arch": "HVM64"
-      },
-      "c4.8xlarge": {
-        "Arch": "HVM64"
-      },
-      "g2.2xlarge": {
-        "Arch": "HVMG2"
-      },
-      "r3.large": {
-        "Arch": "HVM64"
-      },
-      "r3.xlarge": {
-        "Arch": "HVM64"
-      },
-      "r3.2xlarge": {
-        "Arch": "HVM64"
-      },
-      "r3.4xlarge": {
-        "Arch": "HVM64"
-      },
-      "r3.8xlarge": {
-        "Arch": "HVM64"
-      },
-      "i2.xlarge": {
-        "Arch": "HVM64"
-      },
-      "i2.2xlarge": {
-        "Arch": "HVM64"
-      },
-      "i2.4xlarge": {
-        "Arch": "HVM64"
-      },
-      "i2.8xlarge": {
-        "Arch": "HVM64"
-      },
-      "d2.xlarge": {
-        "Arch": "HVM64"
-      },
-      "d2.2xlarge": {
-        "Arch": "HVM64"
-      },
-      "d2.4xlarge": {
-        "Arch": "HVM64"
-      },
-      "d2.8xlarge": {
-        "Arch": "HVM64"
-      },
-      "hi1.4xlarge": {
-        "Arch": "HVM64"
-      },
-      "hs1.8xlarge": {
-        "Arch": "HVM64"
-      },
-      "cr1.8xlarge": {
-        "Arch": "HVM64"
-      },
-      "cc2.8xlarge": {
-        "Arch": "HVM64"
-      }
-    },
-    "AWSRegionArch2AMI": {
-      "us-east-1": {
-        "PV64": "ami-1ccae774",
-        "HVM64": "ami-1ecae776",
-        "HVMG2": "ami-8c6b40e4"
-      },
-      "us-west-2": {
-        "PV64": "ami-ff527ecf",
-        "HVM64": "ami-e7527ed7",
-        "HVMG2": "ami-abbe919b"
-      },
-      "us-west-1": {
-        "PV64": "ami-d514f291",
-        "HVM64": "ami-d114f295",
-        "HVMG2": "ami-f31ffeb7"
-      },
-      "eu-west-1": {
-        "PV64": "ami-bf0897c8",
-        "HVM64": "ami-a10897d6",
-        "HVMG2": "ami-d5bc24a2"
-      },
-      "eu-central-1": {
-        "PV64": "ami-ac221fb1",
-        "HVM64": "ami-a8221fb5",
-        "HVMG2": "ami-7cd2ef61"
-      },
-      "ap-northeast-1": {
-        "PV64": "ami-27f90e27",
-        "HVM64": "ami-cbf90ecb",
-        "HVMG2": "ami-6318e863"
-      },
-      "ap-southeast-1": {
-        "PV64": "ami-acd9e8fe",
-        "HVM64": "ami-68d8e93a",
-        "HVMG2": "ami-3807376a"
-      },
-      "ap-southeast-2": {
-        "PV64": "ami-ff9cecc5",
-        "HVM64": "ami-fd9cecc7",
-        "HVMG2": "ami-89790ab3"
-      },
-      "sa-east-1": {
-        "PV64": "ami-bb2890a6",
-        "HVM64": "ami-b52890a8",
-        "HVMG2": "NOT_SUPPORTED"
-      },
-      "cn-north-1": {
-        "PV64": "ami-fa39abc3",
-        "HVM64": "ami-f239abcb",
-        "HVMG2": "NOT_SUPPORTED"
-      }
     }
   },
   "Conditions": {
@@ -401,6 +174,8 @@
                 [
                   { "Ref": "env" },
                   ".",
+                  { "Ref": "ApplicationName" },
+                  ".",
                   { "Ref": "HostedZone" },
                   "."
                 ]
@@ -419,6 +194,8 @@
                 [
                   "*.",
                   { "Ref": "env" },
+                  ".",
+                  { "Ref": "ApplicationName" },
                   ".",
                   { "Ref": "HostedZone" },
                   "."
@@ -468,25 +245,7 @@
               "",
               [
                 "#!/bin/bash -xe\n",
-                "yum install -y aws-cli php56 php56-gd mysql55-server php56-mysqlnd\n",
-                "/etc/init.d/mysqld start\n",
-                "mkdir -p /var/log/subsite\n",
-                "mkdir -p /var/www/html/platform\n",
-                "chown apache:apache /var/www/html/platform\n",
-                "sed -i 's#DocumentRoot \"/var/www/html\"#DocumentRoot \"/var/www/html/platform\"#g' /etc/httpd/conf/httpd.conf\n",
-                "echo 'date.timezone=Europe/Brussels' >> /etc/php.ini\n",
-                "/etc/init.d/httpd restart\n",
                 "# Setup application dependencies.\n",
-                "mkdir -p /usr/local/etc/subsite",
-                "\n",
-                "echo 'drupal.db.host=localhost' >> /usr/local/etc/subsite/subsite.tmp.ini",
-                "\n",
-                "echo 'drupal.db.name=subsite' >> /usr/local/etc/subsite/subsite.tmp.ini",
-                "\n",
-                "echo 'drupal.db.user=root' >> /usr/local/etc/subsite/subsite.tmp.ini",
-                "\n",
-                "echo 'drupal.db.password=' >> /usr/local/etc/subsite/subsite.tmp.ini",
-                "\n",
                 "echo 'aws.region=",
                 {
                   "Ref": "AWS::Region"
@@ -512,48 +271,27 @@
                 "' >> /usr/local/etc/subsite/subsite.tmp.ini",
                 "\n",
                 "mv /usr/local/etc/subsite/subsite.tmp.ini /usr/local/etc/subsite/subsite.ini",
-                "\n",
-                "# Install the AWS CodeDeploy Agent.\n",
-                "cd /home/ec2-user/\n",
-                "aws s3 cp 's3://aws-codedeploy-us-east-1/latest/codedeploy-agent.noarch.rpm' .\n",
-                "yum -y install codedeploy-agent.noarch.rpm \n",
-                "mkdir -p /root/.aws \n",
-                "aws s3 cp 's3://ec-europa-infra-eu-west-1/terminator/credentials' /root/.aws/credentials \n",
-                "aws s3 cp 's3://ec-europa-infra-eu-west-1/terminator/cf-terminator' /etc/cron.d/cf-terminator \n"
+                "\n"
               ]
             ]
           }
         },
-        "ImageId": {
-          "Fn::FindInMap": [
-            "AWSRegionArch2AMI",
-            {
-              "Ref": "AWS::Region"
-            },
-            {
-              "Fn::FindInMap": [
-                "AWSInstanceType2Arch",
-                {
-                  "Ref": "InstanceType"
-                },
-                "Arch"
-              ]
-            }
-          ]
-        },
+        "ImageId": "ami-7d75c90e",
         "InstanceType": {
           "Ref": "InstanceType"
         },
         "Tags": [
           {
-            "Key": "env",
-            "Value": {
-              "Ref": "env"
-            }
+            "Key": "stack",
+            "Value": {"Ref": "AWS::StackName"}
           },
           {
             "Key":"Name",
             "Value": { "Ref": "AWS::StackName" }
+          },
+          {
+            "Key":"env",
+            "Value": { "Ref": "env" }
           }
         ]
       }
@@ -593,12 +331,14 @@
             "http://",
             { "Ref": "env" },
             ".",
+            { "Ref": "ApplicationName" },
+            ".",
             { "Ref": "HostedZone" },
             "/"
           ]
         ]
       },
-      "Description" : "URL of Zend Server UI"
+      "Description" : "Endpoint URL"
     }
   }
 }

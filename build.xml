@@ -56,7 +56,7 @@
             <equals arg1="single-server" arg2="${cf.template}" />
             <then>
                 <aws-cf-runstack
-                        name="subsite-${cf.stackName}"
+                        name="${deploy.applicationName}-${cf.stackName}"
                         updateOnConflict="true"
                         capabilities="CAPABILITY_IAM"
                         templatePath="./resources/cloudformation/${cf.template}.template">
@@ -68,7 +68,7 @@
             <else>
                 <!-- Todo: This is currently untested. -->
                 <aws-cf-runstack
-                        name="subsite-${cf.stackName}"
+                        name="${deploy.applicationName}-${cf.stackName}"
                         updateOnConflict="true"
                         capabilities="CAPABILITY_IAM"
                         templatePath="./resources/cloudformation/${cf.template}.template">
