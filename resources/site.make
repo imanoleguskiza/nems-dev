@@ -55,6 +55,9 @@ projects[owlcarousel][version] = 1.5
 projects[pathologic][subdir] = "contrib"
 projects[pathologic][version] = 3.1
 
+projects[rabbit_hole][subdir] = "contrib"
+projects[rabbit_hole][version] = 2.23
+
 projects[remote_stream_wrapper][subdir] = "contrib"
 projects[remote_stream_wrapper][version] = 1.0-rc1
 
