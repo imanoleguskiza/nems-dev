@@ -93,7 +93,7 @@
                         deploymentConfigName="CodeDeployDefault.OneAtATime"
                         serviceRole="${deploy.serviceRole}"
                         application="${deploy.applicationName}">
-                    <ec2TagFilter key="env" value="${cf.stackName}" />
+                    <ec2TagFilter key="stack" value="${deploy.applicationName}-${cf.stackName}" />
                 </aws-deploy-deployment-group>
             </then>
             <else>
