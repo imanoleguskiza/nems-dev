@@ -39,6 +39,7 @@ features[field_instance][] = node-common_page-field_gallery_items
 features[field_instance][] = node-common_page-field_meta_classification
 features[field_instance][] = node-common_page-field_meta_description
 features[field_instance][] = node-common_page-field_see_also_items
+features[field_instance][] = node-common_page-field_tags
 features[field_instance][] = node-common_page-field_video_gallery_items
 features[field_instance][] = node-common_page-title_field
 features[node][] = common_page
