@@ -1,9 +1,9 @@
 ## Merging upstream changes
 
 ```
-$ git remote add upstream https://github.com/ec-europa/subsite-starterkit.git
-$ git fetch upstream
-$ git merge upstream/master
+$ git remote add starterkit https://github.com/ec-europa/subsite-starterkit.git
+$ git fetch starterkit
+$ git merge starterkit/master
 ```
 
 You might need to fix merge conflicts as usual.
