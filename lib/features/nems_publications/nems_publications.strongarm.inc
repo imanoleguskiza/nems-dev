@@ -41,16 +41,16 @@ function nems_publications_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_nems_publication';
+  $strongarm->name = 'comment_nems_publication';
   $strongarm->value = '1';
-  $export['comment_preview_nems_publication'] = $strongarm;
+  $export['comment_nems_publication'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_nems_publication';
+  $strongarm->name = 'comment_preview_nems_publication';
   $strongarm->value = '1';
-  $export['comment_nems_publication'] = $strongarm;
+  $export['comment_preview_nems_publication'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -96,7 +96,7 @@ function nems_publications_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '4',
+          'weight' => '11',
         ),
         'language' => array(
           'weight' => '0',
@@ -104,11 +104,35 @@ function nems_publications_strongarm() {
         'xmlsitemap' => array(
           'weight' => '30',
         ),
+        'rabbit_hole' => array(
+          'weight' => '12',
+        ),
       ),
       'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__nems_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_extended_nems_publication';
+  $strongarm->value = 1;
+  $export['i18n_node_extended_nems_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_node_options_nems_publication';
+  $strongarm->value = array();
+  $export['i18n_node_options_nems_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'i18n_sync_node_type_nems_publication';
+  $strongarm->value = array();
+  $export['i18n_sync_node_type_nems_publication'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -121,9 +145,7 @@ function nems_publications_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_nems_publication';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_nems_publication'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -161,6 +183,20 @@ function nems_publications_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_nems_publication';
+  $strongarm->value = '';
+  $export['page_title_type_nems_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_nems_publication_showfield';
+  $strongarm->value = 1;
+  $export['page_title_type_nems_publication_showfield'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'page_title_type_publication';
   $strongarm->value = '';
   $export['page_title_type_publication'] = $strongarm;
@@ -182,6 +218,13 @@ function nems_publications_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_expand_fieldset_nems_publication';
+  $strongarm->value = '0';
+  $export['scheduler_expand_fieldset_nems_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_publish_enable_nems_publication';
   $strongarm->value = 1;
   $export['scheduler_publish_enable_nems_publication'] = $strongarm;
@@ -196,9 +239,37 @@ function nems_publications_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_past_date_nems_publication';
+  $strongarm->value = 'error';
+  $export['scheduler_publish_past_date_nems_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_required_nems_publication';
+  $strongarm->value = 0;
+  $export['scheduler_publish_required_nems_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_publish_revision_nems_publication';
   $strongarm->value = 1;
   $export['scheduler_publish_revision_nems_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_publish_touch_nems_publication';
+  $strongarm->value = 0;
+  $export['scheduler_publish_touch_nems_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_default_time_nems_publication';
+  $strongarm->value = '';
+  $export['scheduler_unpublish_default_time_nems_publication'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -217,9 +288,23 @@ function nems_publications_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_unpublish_required_nems_publication';
+  $strongarm->value = 0;
+  $export['scheduler_unpublish_required_nems_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'scheduler_unpublish_revision_nems_publication';
   $strongarm->value = 1;
   $export['scheduler_unpublish_revision_nems_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scheduler_use_vertical_tabs_nems_publication';
+  $strongarm->value = '1';
+  $export['scheduler_use_vertical_tabs_nems_publication'] = $strongarm;
 
   return $export;
 }
