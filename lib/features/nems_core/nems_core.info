@@ -72,6 +72,7 @@ dependencies[] = strongarm
 dependencies[] = taxonomy_access_fix
 dependencies[] = tb_megamenu
 dependencies[] = text
+dependencies[] = text_with_summary
 dependencies[] = token_filter
 dependencies[] = transliteration
 dependencies[] = wysiwyg

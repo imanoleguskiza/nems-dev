@@ -70,6 +70,9 @@ projects[social_media_links][version] = 1.5
 projects[taxonomy_access_fix][subdir] = "contrib"
 projects[taxonomy_access_fix][version] = 2.3
 
+projects[text_with_summary][subdir] = "contrib"
+projects[text_with_summary][version] = 1.0
+
 projects[tb_megamenu][subdir] = "contrib"
 projects[tb_megamenu][version] = 1.0-rc2
 

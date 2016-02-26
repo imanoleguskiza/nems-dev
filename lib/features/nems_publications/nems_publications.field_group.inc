@@ -55,7 +55,10 @@ function nems_publications_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'field_tags',
-      1 => 'path',
+      1 => 'field_meta_description',
+      2 => 'field_meta_classification',
+      3 => 'path',
+      4 => 'rabbit_hole',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
