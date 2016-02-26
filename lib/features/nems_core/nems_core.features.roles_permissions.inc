@@ -164,6 +164,7 @@ function nems_core_default_roles_permissions() {
       'moderate content from validated to published' => TRUE,
       'multisite_workbench_moderation_view_bulk_update' => TRUE,
       'schedule (un)publishing of nodes' => TRUE,
+      'set page title' => TRUE,
       'submit translation jobs' => TRUE,
       'translate content' => TRUE,
       'translate node entities' => TRUE,
