@@ -30,6 +30,9 @@
     <echo msg="Loading Drush Makefile task." />
     <taskdef name="drushmakefile" classname="\NextEuropa\Phing\DrushMakeFileTask" />
 
+    <echo msg="Loading Starterkit update check task." />
+    <taskdef name="checkstarterkit" classname="\NextEuropa\Phing\CheckStarterkitTask" />
+
     <import file="build.package.xml" />
     <import file="build.test.xml" />
 

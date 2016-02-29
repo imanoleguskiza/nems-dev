@@ -245,6 +245,19 @@ cf.template = single-server
 deploy.serviceRole = arn:aws:iam::918396081007:role/CodeDeploy
 
 
+# Subsite starterkit
+# ------------------
+
+# The location of the subsite starterkit repository.
+starterkit.repository = https://github.com/ec-europa/subsite-starterkit.git
+
+# The branch of the subsite starterkit that will be tracked.
+starterkit.branch = master
+
+# The name of the git remote for the starterkit.
+starterkit.remote = starterkit
+
+
 # Build defaults
 # --------------
 

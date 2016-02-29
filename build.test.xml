@@ -122,6 +122,17 @@
         />
     </target>
 
+    <!-- Check that the subsite starterkit is up-to-date. -->
+    <target name="check-starterkit">
+        <echo msg="Checking if the subsite starterkit is up-to-date." />
+        <checkstarterkit
+            starterkitRepository="${starterkit.repository}"
+            starterkitBranch="${starterkit.branch}"
+            starterkitRemote="${starterkit.remote}"
+            subsiteRepository="${project.basedir}"
+        />
+    </target>
+
     <!-- Install a development version of the subsite. -->
     <target
         name="install-dev"
