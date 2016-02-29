@@ -3,7 +3,6 @@
 namespace NextEuropa\Phing;
 
 use GitWrapper\GitWrapper;
-use GitWrapper\GitWorkingCopy;
 
 require_once 'phing/Task.php';
 
@@ -53,6 +52,33 @@ class CheckStarterkitTask extends \Task {
   public function main() {
     // Check if all required properties are present.
     $this->checkRequiredProperties();
+
+    // Add the remote for the starterkit if it doesn't exist yet.
+    if (!$this->subsiteRepository->hasRemote($this->starterkitRemote)) {
+      $this->log('Creating remote repository.');
+      // Only track the given branch, and don't download any tags.
+      $options = [
+        '--no-tags' => TRUE,
+        '-t' => [$this->starterkitBranch],
+      ];
+      $this->subsiteRepository->addRemote($this->starterkitRemote, $this->starterkitRepository, $options);
+    }
+
+    // Fetch the latest changes.
+    $this->log('Fetching latest changes.');
+    $this->subsiteRepository->fetch($this->starterkitRemote);
+
+    // Check if the latest commit on the remote is merged into the current
+    // branch.
+    $remote = 'remotes/' . $this->starterkitRemote . '/' . $this->starterkitBranch;
+    $latest_commit = (string) $this->subsiteRepository->run(array('rev-parse', $remote));
+    $merge_base = (string) $this->subsiteRepository->run(array('merge-base @ ' . $remote));
+
+    // If the latest commit on the remote is not merged into the current branch,
+    // the repository is not up-to-date.
+    if ($merge_base !== $latest_commit) {
+      throw new \BuildException('The current branch is not up to date with the starterkit.');
+    }
   }
 
   /**
