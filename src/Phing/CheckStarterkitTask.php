@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \NextEuropa\build\Phing\CheckStarterkitTask.
- */
-
 namespace NextEuropa\Phing;
 
 use GitWrapper\GitWrapper;
