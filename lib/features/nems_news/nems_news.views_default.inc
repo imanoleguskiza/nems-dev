@@ -236,170 +236,12 @@ function nems_news_views_default_views() {
   $handler->display->display_options['path'] = 'news/rss.xml';
 
   /* Display: News Simple List */
-  $handler = $view->new_display('block', 'News Simple List', 'block_news_simple');
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Tags (field_tags) */
-  $handler->display->display_options['relationships']['field_tags_tid']['id'] = 'field_tags_tid';
-  $handler->display->display_options['relationships']['field_tags_tid']['table'] = 'field_data_field_tags';
-  $handler->display->display_options['relationships']['field_tags_tid']['field'] = 'field_tags_tid';
-  $handler->display->display_options['relationships']['field_tags_tid']['label'] = 'Tags';
-  /* Relationship: Taxonomy term: Content using Tags */
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['id'] = 'reverse_field_tags_node';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['field'] = 'reverse_field_tags_node';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['relationship'] = 'field_tags_tid';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['label'] = 'Contextual node';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_nems_core_date']['id'] = 'field_nems_core_date';
-  $handler->display->display_options['fields']['field_nems_core_date']['table'] = 'field_data_field_nems_core_date';
-  $handler->display->display_options['fields']['field_nems_core_date']['field'] = 'field_nems_core_date';
-  $handler->display->display_options['fields']['field_nems_core_date']['label'] = '';
-  $handler->display->display_options['fields']['field_nems_core_date']['element_class'] = 'label label-default label-small';
-  $handler->display->display_options['fields']['field_nems_core_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_nems_core_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Content: Category */
-  $handler->display->display_options['fields']['field_nems_news_category']['id'] = 'field_nems_news_category';
-  $handler->display->display_options['fields']['field_nems_news_category']['table'] = 'field_data_field_nems_news_category';
-  $handler->display->display_options['fields']['field_nems_news_category']['field'] = 'field_nems_news_category';
-  $handler->display->display_options['fields']['field_nems_news_category']['label'] = '';
-  $handler->display->display_options['fields']['field_nems_news_category']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_nems_news_category']['settings'] = array(
-    'link' => 0,
-  );
-  $handler->display->display_options['fields']['field_nems_news_category']['delta_offset'] = '0';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_tags_node';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-
-  /* Display: News List */
-  $handler = $view->new_display('block', 'News List', 'block_news_list');
-  $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Tags (field_tags) */
-  $handler->display->display_options['relationships']['field_tags_tid']['id'] = 'field_tags_tid';
-  $handler->display->display_options['relationships']['field_tags_tid']['table'] = 'field_data_field_tags';
-  $handler->display->display_options['relationships']['field_tags_tid']['field'] = 'field_tags_tid';
-  $handler->display->display_options['relationships']['field_tags_tid']['label'] = 'Tags';
-  /* Relationship: Taxonomy term: Content using Tags */
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['id'] = 'reverse_field_tags_node';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['field'] = 'reverse_field_tags_node';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['relationship'] = 'field_tags_tid';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['label'] = 'Contextual node';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_nems_core_image']['id'] = 'field_nems_core_image';
-  $handler->display->display_options['fields']['field_nems_core_image']['table'] = 'field_data_field_nems_core_image';
-  $handler->display->display_options['fields']['field_nems_core_image']['field'] = 'field_nems_core_image';
-  $handler->display->display_options['fields']['field_nems_core_image']['label'] = '';
-  $handler->display->display_options['fields']['field_nems_core_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_nems_core_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_nems_core_image']['settings'] = array(
-    'image_style' => 'media_thumbnail',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_nems_core_image']['group_column'] = 'entity_id';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_nems_core_date']['id'] = 'field_nems_core_date';
-  $handler->display->display_options['fields']['field_nems_core_date']['table'] = 'field_data_field_nems_core_date';
-  $handler->display->display_options['fields']['field_nems_core_date']['field'] = 'field_nems_core_date';
-  $handler->display->display_options['fields']['field_nems_core_date']['label'] = '';
-  $handler->display->display_options['fields']['field_nems_core_date']['element_class'] = 'label label-default label-small';
-  $handler->display->display_options['fields']['field_nems_core_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_nems_core_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Content: Category */
-  $handler->display->display_options['fields']['field_nems_news_category']['id'] = 'field_nems_news_category';
-  $handler->display->display_options['fields']['field_nems_news_category']['table'] = 'field_data_field_nems_news_category';
-  $handler->display->display_options['fields']['field_nems_news_category']['field'] = 'field_nems_news_category';
-  $handler->display->display_options['fields']['field_nems_news_category']['label'] = '';
-  $handler->display->display_options['fields']['field_nems_news_category']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_nems_news_category']['settings'] = array(
-    'link' => 0,
-  );
-  $handler->display->display_options['fields']['field_nems_news_category']['delta_offset'] = '0';
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '300',
-  );
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_tags_node';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-
-  /* Display: News Simple List (Filtered) */
-  $handler = $view->new_display('block', 'News Simple List (Filtered)', 'block_news_simple_filters');
+  $handler = $view->new_display('block', 'News Simple List', 'block_news_simple_filters');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Tags (field_tags) */
-  $handler->display->display_options['relationships']['field_tags_tid']['id'] = 'field_tags_tid';
-  $handler->display->display_options['relationships']['field_tags_tid']['table'] = 'field_data_field_tags';
-  $handler->display->display_options['relationships']['field_tags_tid']['field'] = 'field_tags_tid';
-  $handler->display->display_options['relationships']['field_tags_tid']['label'] = 'Tags';
-  /* Relationship: Taxonomy term: Content using Tags */
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['id'] = 'reverse_field_tags_node';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['field'] = 'reverse_field_tags_node';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['relationship'] = 'field_tags_tid';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['label'] = 'Contextual node';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -442,16 +284,39 @@ function nems_news_views_default_views() {
   $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['term_page'] = FALSE;
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['node'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['anyall'] = '+';
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['limit'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['vocabularies'] = array(
+    'tags' => 'tags',
+  );
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
+    'tags' => 'tags',
+  );
+  $handler->display->display_options['arguments']['tid']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['tid']['break_phrase'] = TRUE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_tags_node';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['not'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -511,24 +376,13 @@ function nems_news_views_default_views() {
     7 => 0,
   );
 
-  /* Display: News List (Filtered) */
-  $handler = $view->new_display('block', 'News List (Filtered)', 'block_news_list_filters');
+  /* Display: News List */
+  $handler = $view->new_display('block', 'News List', 'block_news_list_filters');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['group_by'] = FALSE;
-  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Field: Tags (field_tags) */
-  $handler->display->display_options['relationships']['field_tags_tid']['id'] = 'field_tags_tid';
-  $handler->display->display_options['relationships']['field_tags_tid']['table'] = 'field_data_field_tags';
-  $handler->display->display_options['relationships']['field_tags_tid']['field'] = 'field_tags_tid';
-  $handler->display->display_options['relationships']['field_tags_tid']['label'] = 'Tags';
-  /* Relationship: Taxonomy term: Content using Tags */
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['id'] = 'reverse_field_tags_node';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['field'] = 'reverse_field_tags_node';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['relationship'] = 'field_tags_tid';
-  $handler->display->display_options['relationships']['reverse_field_tags_node']['label'] = 'Contextual node';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Image */
   $handler->display->display_options['fields']['field_nems_core_image']['id'] = 'field_nems_core_image';
@@ -587,16 +441,39 @@ function nems_news_views_default_views() {
     'trim_length' => '300',
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Has taxonomy term ID */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['term_page'] = FALSE;
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['node'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['anyall'] = '+';
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['limit'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['vocabularies'] = array(
+    'tags' => 'tags',
+  );
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
+    'tags' => 'tags',
+  );
+  $handler->display->display_options['arguments']['tid']['validate_options']['type'] = 'tids';
+  $handler->display->display_options['arguments']['tid']['break_phrase'] = TRUE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_tags_node';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['not'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

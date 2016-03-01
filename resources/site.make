@@ -79,6 +79,9 @@ projects[tb_megamenu][version] = 1.0-rc2
 projects[tocify][subdir] = "contrib"
 projects[tocify][version] = 1.0
 
+projects[views_block_filter_block][subdir] = "contrib"
+projects[views_block_filter_block][version] = 1.0-beta2
+
 projects[weight][subdir] = "contrib"
 projects[weight][version] = 3.1
 ; =========
