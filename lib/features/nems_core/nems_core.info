@@ -75,6 +75,7 @@ dependencies[] = text
 dependencies[] = text_with_summary
 dependencies[] = token_filter
 dependencies[] = transliteration
+dependencies[] = views_block_filter_block
 dependencies[] = wysiwyg
 features[block_access][] = block
 features[block_access][] = views
