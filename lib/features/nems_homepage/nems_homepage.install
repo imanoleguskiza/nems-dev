@@ -67,7 +67,7 @@ function nems_homepage_install() {
 
   // Add blocks to context.
   multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_sliders-block', 'views', 'nems_sliders-block', 'content', '-10');
-  multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_news-block', 'views', 'nems_news-block', 'content', '-9');
+  multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_news-block', 'views', 'nems_news-block_news_home', 'content', '-9');
   multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_events-block', 'views', 'nems_events-block_events_home', 'content', '-8');
   multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_videos-block', 'views', 'nems_videos-block', 'content', '-5');
   multisite_drupal_toolbox_add_block_context('homepage', 'views-nems_publications-block', 'views', 'nems_publications-block', 'content', '-4');

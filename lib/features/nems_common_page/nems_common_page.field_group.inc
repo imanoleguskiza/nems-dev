@@ -80,7 +80,8 @@ function nems_common_page_field_group_info() {
     'children' => array(
       0 => 'field_meta_classification',
       1 => 'field_meta_description',
-      2 => 'path',
+      2 => 'field_tags',
+      3 => 'path',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
