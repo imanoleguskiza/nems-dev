@@ -36,6 +36,7 @@ features[field_base][] = field_video_gallery_items
 features[field_base][] = field_video_items
 features[field_base][] = field_video_thumbnail
 features[field_base][] = filename_field
+features[field_group][] = group_content|node|video_gallery|form
 features[field_group][] = group_gallery|node|video_gallery|form
 features[field_instance][] = file-video-field_video_description
 features[field_instance][] = file-video-field_video_thumbnail
