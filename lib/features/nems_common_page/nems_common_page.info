@@ -31,6 +31,7 @@ features[field_group][] = group_description|node|common_page|form
 features[field_group][] = group_links|node|common_page|form
 features[field_group][] = group_metadata|node|common_page|form
 features[field_group][] = group_multimedia|node|common_page|form
+features[field_group][] = group_tags|node|common_page|form
 features[field_instance][] = node-common_page-body
 features[field_instance][] = node-common_page-field_carousel_items
 features[field_instance][] = node-common_page-field_downloads_items

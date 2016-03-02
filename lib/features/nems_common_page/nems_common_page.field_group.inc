@@ -21,7 +21,7 @@ function nems_common_page_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'body',
     ),
@@ -48,7 +48,7 @@ function nems_common_page_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Links',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_downloads_items',
       1 => 'field_see_also_items',
@@ -76,12 +76,11 @@ function nems_common_page_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '6',
+    'weight' => '8',
     'children' => array(
       0 => 'field_meta_classification',
       1 => 'field_meta_description',
-      2 => 'field_tags',
-      3 => 'path',
+      2 => 'path',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -106,7 +105,7 @@ function nems_common_page_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Multimedia',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_carousel_items',
       1 => 'field_gallery_items',
@@ -124,12 +123,40 @@ function nems_common_page_field_group_info() {
   );
   $field_groups['group_multimedia|node|common_page|form'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_tags|node|common_page|form';
+  $field_group->group_name = 'group_tags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'common_page';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Tags',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_tags',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-tags field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_tags|node|common_page|form'] = $field_group;
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Description');
   t('Links');
   t('Metadata');
   t('Multimedia');
+  t('Tags');
 
   return $field_groups;
 }
