@@ -14,6 +14,7 @@ features[field_base][] = field_nems_news_category
 features[field_group][] = group_nems_news_content|node|nems_news|form
 features[field_group][] = group_nems_news_metadata|node|nems_news|form
 features[field_group][] = group_nems_news_rel|node|nems_news|form
+features[field_group][] = group_tags|node|nems_news|form
 features[field_instance][] = node-nems_news-body
 features[field_instance][] = node-nems_news-field_meta_classification
 features[field_instance][] = node-nems_news-field_meta_description
