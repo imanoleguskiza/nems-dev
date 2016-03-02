@@ -35,6 +35,7 @@ features[features_api][] = api:2
 features[field_base][] = field_carousel_items
 features[field_base][] = field_gallery_image
 features[field_base][] = field_gallery_items
+features[field_group][] = group_content|node|gallery|form
 features[field_group][] = group_gallery|node|gallery|form
 features[field_instance][] = node-gallery-body
 features[field_instance][] = node-gallery-field_gallery_image
