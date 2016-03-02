@@ -13,6 +13,7 @@ features[features_api][] = api:2
 features[field_base][] = field_nems_publication_file
 features[field_group][] = group_nems_publication_content|node|nems_publication|form
 features[field_group][] = group_nems_publication_metadata|node|nems_publication|form
+features[field_group][] = group_tags|node|nems_publication|form
 features[field_instance][] = node-nems_publication-body
 features[field_instance][] = node-nems_publication-field_meta_classification
 features[field_instance][] = node-nems_publication-field_meta_description
