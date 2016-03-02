@@ -15,6 +15,7 @@ features[field_base][] = field_nems_event_location
 features[field_group][] = group_nems_event_content|node|nems_event|form
 features[field_group][] = group_nems_event_rel|node|nems_event|form
 features[field_group][] = group_nems_metadata|node|nems_event|form
+features[field_group][] = group_tags|node|nems_event|form
 features[field_instance][] = node-nems_event-body
 features[field_instance][] = node-nems_event-field_meta_classification
 features[field_instance][] = node-nems_event-field_meta_description

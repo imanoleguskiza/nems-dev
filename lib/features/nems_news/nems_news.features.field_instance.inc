@@ -298,7 +298,7 @@ function nems_news_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -614,12 +614,12 @@ function nems_news_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_buttons',
       'weight' => 3,
     ),
   );
@@ -718,7 +718,6 @@ function nems_news_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Abstract');
   t('Body');
   t('Category');
   t('Date');
