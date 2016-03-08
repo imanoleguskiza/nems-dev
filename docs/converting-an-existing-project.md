@@ -1,7 +1,8 @@
 ## Converting an existing project
 
-If you already have an existing project and want to convert it to the Subsite
-Starterkit methodology then please follow these guidelines.
+If you already have a project that was built on NextEuropa or Multisite CMS and
+want to convert it to the Subsite Starterkit methodology then please follow
+these guidelines.
 
 > Note that only NextEuropa 2.1.0 or higher is supported. If your project is on
 > version 1.7.x or 2.0.x you will need to update to 2.1.x first.
@@ -24,10 +25,11 @@ work please move the code to Github first.
   Websites that contain only content intended to be shared with the public
   are encouraged to make their code public.
   Make your repository private if you have a good reason for it: for example
-  if you are have known security vulnerabilities, or have committed sensitive
+  if you have known security vulnerabilities, or have committed sensitive
   data such as database dumps, e-mail addresses or passwords.
 * Push the code from Stash to Github. For this you need the URLs of both. You
   can get these from the project page on Stash and the new one of Github.
+
   ```
   # This is a one time operation, so it's a good idea to do it in /tmp.
   $ cd /tmp
@@ -38,12 +40,14 @@ work please move the code to Github first.
   # Push the mirror to Github, using the URL from the new repository.
   $ git push --mirror https://github.com/ec-europa/myproject-dev.git
   ```
+
 * Check that all code and branches are now available on Github. If all is
   well, inform your colleagues to no longer use the repository on Stash, and
   either remove the repository from Stash or rename it to
   'myproject-dev-obsolete' so that it is clear it should no longer be used.
 * Finally, remove your mirror. This is a bare repository, so it is not
   useful for doing any work in.
+
   ```
   $ rm -rf /tmp/myproject-dev
   ```
