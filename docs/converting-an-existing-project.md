@@ -36,7 +36,7 @@ work please move the code to Github first.
   # Make a mirror clone of the project, using the URL from Stash.
   $ git clone --mirror https://myname@webgate.ec.europa.eu/CITnet/stash/path/to/myproject-dev.git
   # Leap into the mirrored repository.
-  $ cd myproject-dev
+  $ cd myproject-dev.git
   # Push the mirror to Github, using the URL from the new repository.
   $ git push --mirror https://github.com/ec-europa/myproject-dev.git
   ```
