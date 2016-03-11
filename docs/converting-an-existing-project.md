@@ -1,10 +1,56 @@
 ## Converting an existing project
 
-If you already have an existing project and want to convert it to the Subsite
-Starterkit methodology then please follow these guidelines.
+If you already have a project that was built on NextEuropa or Multisite CMS and
+want to convert it to the Subsite Starterkit methodology then please follow
+these guidelines.
 
 > Note that only NextEuropa 2.1.0 or higher is supported. If your project is on
 > version 1.7.x or 2.0.x you will need to update to 2.1.x first.
+
+### 0. Move the project to Github
+
+If your project was made before the adoption of the starterkit it probably is
+still hosted on Stash. For the automated tests and coding standards checks to
+work please move the code to Github first.
+
+* Create a Github account if you do not have one yet. It is fine to use your
+  personal e-mail address for this.
+* Ask to get added to the 'ec-europa' organisation, this hosts all code of
+  the European Commission. You can ask anyone in the QA team to add you.
+* [Create a new repository](https://github.com/organizations/ec-europa/repositories/new)
+  in the 'ec-europa' organisation for your project. The name of the repository
+  will be your project name with the '-dev' suffix. Example 'myproject-dev'.
+* Your project can be either public or private. We encourage projects to be
+  public to increase interoperability with other government organisations.
+  Websites that contain only content intended to be shared with the public
+  are encouraged to make their code public.
+  Make your repository private if you have a good reason for it: for example
+  if you have known security vulnerabilities, or have committed sensitive
+  data such as database dumps, e-mail addresses or passwords.
+* Push the code from Stash to Github. For this you need the URLs of both. You
+  can get these from the project page on Stash and the new one of Github.
+
+  ```
+  # This is a one time operation, so it's a good idea to do it in /tmp.
+  $ cd /tmp
+  # Make a mirror clone of the project, using the URL from Stash.
+  $ git clone --mirror https://myname@webgate.ec.europa.eu/CITnet/stash/path/to/myproject-dev.git
+  # Leap into the mirrored repository.
+  $ cd myproject-dev.git
+  # Push the mirror to Github, using the URL from the new repository.
+  $ git push --mirror https://github.com/ec-europa/myproject-dev.git
+  ```
+
+* Check that all code and branches are now available on Github. If all is
+  well, inform your colleagues to no longer use the repository on Stash, and
+  either remove the repository from Stash or rename it to
+  'myproject-dev-obsolete' so that it is clear it should no longer be used.
+* Finally, remove your mirror. This is a bare repository, so it is not
+  useful for doing any work in.
+
+  ```
+  $ rm -rf /tmp/myproject-dev
+  ```
 
 ### 1. Create a working branch
 
@@ -12,13 +58,16 @@ To avoid any unintentional damage to the existing code base it is advised to
 work in a temporary working branch.
 
 ```
-$ git checkout -b convert-to-sssk
+# Clone the repository from Github.
+$ git clone https://github.com/ec-europa/myproject-dev.git
+# Create a temporary working branch.
+$ git checkout -b convert-to-starterkit
 ```
 
 ### 2. Get the code
 
 We'll add the Subsite Starterkit repository as a remote called 'starterkit', and
-merge its code.
+merge its code. This will import the starterkit code into your project.
 
 ```
 $ git remote add starterkit https://github.com/ec-europa/subsite-starterkit.git
