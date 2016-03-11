@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# Install curl. This is needed for the `chr` module.
+# Todo: add this to the machine image instead.
+apt-get install php5-curl -qq
+
 cd /var/www/html
 
 while [ ! -f /usr/local/etc/subsite/subsite.ini ]
