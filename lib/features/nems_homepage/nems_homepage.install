@@ -18,7 +18,7 @@ function nems_homepage_enable() {
     ),
   ));
 
-  $version_settings = variable_get('version_management_node_types','');
+  $version_settings = variable_get('version_management_node_types', '');
   if (!empty($version_settings)) {
     $version_settings['nems_homepage'] = 'nems_homepage';
     variable_set('version_management_node_types', $version_settings);

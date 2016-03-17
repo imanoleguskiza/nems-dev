@@ -9,7 +9,7 @@
  */
 function nems_gallery_enable() {
 
-  $version_settings = variable_get('version_management_node_types','');
+  $version_settings = variable_get('version_management_node_types', '');
   if (!empty($version_settings)) {
     $version_settings['gallery'] = 'gallery';
     variable_set('version_management_node_types', $version_settings);

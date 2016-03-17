@@ -10,7 +10,7 @@
 function nems_core_block_access_defaults() {
   $block_access = array();
 
-  // Exported Block Access settings for module views
+  // Exported Block Access settings for module views.
   $block_access['views'] = array(
     'webmaster' => array(
       0 => 'config',
@@ -30,7 +30,7 @@ function nems_core_block_access_defaults() {
     ),
   );
 
-  // Exported Block Access settings for module block
+  // Exported Block Access settings for module block.
   $block_access['block'] = array(
     'webmaster' => array(
       0 => 'config',

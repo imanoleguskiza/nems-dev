@@ -13,7 +13,7 @@ function nems_news_enable() {
       'field_instance',
     ),
   ));
-  $version_settings = variable_get('version_management_node_types','');
+  $version_settings = variable_get('version_management_node_types', '');
   if (!empty($version_settings)) {
     $version_settings['nems_news'] = 'nems_news';
     variable_set('version_management_node_types', $version_settings);
