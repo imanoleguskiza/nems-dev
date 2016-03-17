@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\nexteuropa\MyGroup\MyClass.
- */
-
 namespace Drupal\nexteuropa\MyGroup;
 
 /**
