@@ -110,7 +110,7 @@ starterkit. Note that most of these paths can be adapted to your liking by
 finding the relevant properties in `build.properties.dist`, copying them to
 `build.properties` and changing their values.
 
-* Custom modules, themes and PHP code go in the `lib/` folder.
+* Custom modules, features, themes and PHP code go in the `lib/` folder.
 * The make file should be moved to `resources/site.make`.
 * Your Behat tests go in the `tests/` folder. The starterkit uses a template
   file `tests/behat.yml.dist` to generate the Behat configuration so you might
