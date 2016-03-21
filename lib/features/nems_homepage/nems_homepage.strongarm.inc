@@ -560,20 +560,6 @@ function nems_homepage_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_nems_homepage';
-  $strongarm->value = '';
-  $export['page_title_type_nems_homepage'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_nems_homepage_showfield';
-  $strongarm->value = 1;
-  $export['page_title_type_nems_homepage_showfield'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'rh_module_nems_homepage_additional_block';
   $strongarm->value = 'rh_node';
   $export['rh_module_nems_homepage_additional_block'] = $strongarm;
