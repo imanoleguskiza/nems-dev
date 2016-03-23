@@ -10,9 +10,9 @@
 function nems_links_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-link-body'.
-  $field_instances['node-link-body'] = array(
-    'bundle' => 'link',
+  // Exported field_instance: 'node-nems_link-body'.
+  $field_instances['node-nems_link-body'] = array(
+    'bundle' => 'nems_link',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -55,9 +55,9 @@ function nems_links_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-link-field_main_file'.
-  $field_instances['node-link-field_main_file'] = array(
-    'bundle' => 'link',
+  // Exported field_instance: 'node-nems_link-field_main_file'.
+  $field_instances['node-nems_link-field_main_file'] = array(
+    'bundle' => 'nems_link',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -120,9 +120,9 @@ function nems_links_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-link-field_main_link'.
-  $field_instances['node-link-field_main_link'] = array(
-    'bundle' => 'link',
+  // Exported field_instance: 'node-nems_link-field_main_link'.
+  $field_instances['node-nems_link-field_main_link'] = array(
+    'bundle' => 'nems_link',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -178,9 +178,9 @@ function nems_links_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-link-field_tags'.
-  $field_instances['node-link-field_tags'] = array(
-    'bundle' => 'link',
+  // Exported field_instance: 'node-nems_link-field_tags'.
+  $field_instances['node-nems_link-field_tags'] = array(
+    'bundle' => 'nems_link',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -216,9 +216,9 @@ function nems_links_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-link-title_field'.
-  $field_instances['node-link-title_field'] = array(
-    'bundle' => 'link',
+  // Exported field_instance: 'node-nems_link-title_field'.
+  $field_instances['node-nems_link-title_field'] = array(
+    'bundle' => 'nems_link',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',

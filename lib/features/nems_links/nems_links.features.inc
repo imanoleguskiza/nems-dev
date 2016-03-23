@@ -28,7 +28,7 @@ function nems_links_views_api($module = NULL, $api = NULL) {
  */
 function nems_links_node_info() {
   $items = array(
-    'link' => array(
+    'nems_link' => array(
       'name' => t('Link'),
       'base' => 'node_content',
       'description' => '',
