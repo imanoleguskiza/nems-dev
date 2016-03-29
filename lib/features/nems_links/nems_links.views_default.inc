@@ -11,7 +11,7 @@ function nems_links_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'links';
+  $view->name = 'nems_links';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
