@@ -619,7 +619,7 @@ function nems_video_gallery_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'rh_node_action_video_gallery';
-  $strongarm->value = '2';
+  $strongarm->value = '0';
   $export['rh_node_action_video_gallery'] = $strongarm;
 
   $strongarm = new stdClass();

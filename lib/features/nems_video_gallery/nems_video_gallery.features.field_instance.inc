@@ -309,12 +309,19 @@ function nems_video_gallery_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'file_entity',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'autoplay' => FALSE,
+          'controls' => TRUE,
+          'height' => NULL,
+          'loop' => FALSE,
+          'multiple_file_behavior' => 'tags',
+          'muted' => FALSE,
+          'preload' => '',
+          'width' => NULL,
         ),
-        'type' => 'file_rendered',
+        'type' => 'file_video',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -372,11 +379,55 @@ function nems_video_gallery_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-video_gallery-title_field'.
+  $field_instances['node-video_gallery-title_field'] = array(
+    'bundle' => 'video_gallery',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('A field replacing file name.');
   t('Body');
   t('File name');
+  t('Title');
   t('Video Description');
   t('Video item');
   t('Video thumbnail');
