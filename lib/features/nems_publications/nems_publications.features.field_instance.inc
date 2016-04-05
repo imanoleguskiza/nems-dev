@@ -486,10 +486,8 @@ function nems_publications_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Date');
-  t('Description metatag');
   t('External Url');
   t('File');
-  t('IPG Classification');
   t('Image');
   t('Tags');
   t('Title');

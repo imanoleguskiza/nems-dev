@@ -96,16 +96,19 @@ function nems_publications_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '11',
+          'weight' => '5',
         ),
         'language' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'xmlsitemap' => array(
           'weight' => '30',
         ),
         'rabbit_hole' => array(
-          'weight' => '12',
+          'weight' => '6',
+        ),
+        'metatags' => array(
+          'weight' => '7',
         ),
       ),
       'display' => array(),
