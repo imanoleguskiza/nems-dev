@@ -6,6 +6,7 @@ version = 7.x-1.0
 project = nems_core
 multisite_version = 2.1
 php = 5.6
+dependencies[] = admin_language
 dependencies[] = admin_menu
 dependencies[] = better_formats
 dependencies[] = block_access

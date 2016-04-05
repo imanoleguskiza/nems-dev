@@ -11,6 +11,7 @@ include_once 'nems_core.features.inc';
  */
 function nems_core_install() {
   variable_set('views_localize_all', TRUE);
+  variable_set('node_admin_theme', TRUE);
   multisite_drupal_toolbox_remove_block_context('site_wide', 'language_selector_site');
   multisite_drupal_toolbox_add_block_context('site_wide', 'locale-language', 'locale', 'language', 'header_top', '-8');
   multisite_drupal_toolbox_add_block_context('site_wide', 'nexteuropa_europa_search-nexteuropa_search_form', 'nexteuropa_europa_search', 'nexteuropa_search_form', 'header_right', '2');
@@ -35,6 +36,7 @@ function nems_core_install() {
 function nems_core_uninstall() {
   variable_set('theme_default', 'ec_resp');
   variable_set('views_localize_all', FALSE);
+  variable_set('node_admin_theme', FALSE);
   variable_set('nexteuropa_search_url', 'http://ec.europa.eu/geninfo/query/resultaction.jsp');
   variable_set('easy_breadcrumb-include_title_segment', "1");
   multisite_drupal_toolbox_add_block_context('site_wide', 'language_selector_site', 'language_selector_site', 'language_selector_site', 'header_right', '-10');
