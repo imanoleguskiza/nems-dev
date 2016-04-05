@@ -14,6 +14,7 @@ features[field_base][] = field_nems_event_date
 features[field_base][] = field_nems_event_location
 features[field_group][] = group_nems_event_content|node|nems_event|form
 features[field_group][] = group_nems_event_rel|node|nems_event|form
+features[field_group][] = group_nems_files|node|nems_event|form
 features[field_group][] = group_tags|node|nems_event|form
 features[field_instance][] = node-nems_event-body
 features[field_instance][] = node-nems_event-field_nems_core_external_url
