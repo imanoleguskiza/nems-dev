@@ -152,13 +152,16 @@ function nems_common_page_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '11',
+          'weight' => '9',
         ),
         'language' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
         'rabbit_hole' => array(
-          'weight' => '0',
+          'weight' => '1',
+        ),
+        'metatags' => array(
+          'weight' => '10',
         ),
       ),
       'display' => array(),
