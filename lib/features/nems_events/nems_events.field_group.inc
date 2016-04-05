@@ -73,35 +73,6 @@ function nems_events_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_nems_metadata|node|nems_event|form';
-  $field_group->group_name = 'group_nems_metadata';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'nems_event';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Metadata',
-    'weight' => '6',
-    'children' => array(
-      0 => 'field_meta_classification',
-      1 => 'field_meta_description',
-      2 => 'path',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $field_groups['group_nems_metadata|node|nems_event|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_tags|node|nems_event|form';
   $field_group->group_name = 'group_tags';
   $field_group->entity_type = 'node';

@@ -176,20 +176,6 @@ function nems_events_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_nems_event';
-  $strongarm->value = '';
-  $export['page_title_type_nems_event'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_nems_event_showfield';
-  $strongarm->value = 1;
-  $export['page_title_type_nems_event_showfield'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_nems_event_pattern';
   $strongarm->value = 'events/[node:title-source-translation]';
   $export['pathauto_node_nems_event_pattern'] = $strongarm;
