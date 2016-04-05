@@ -336,7 +336,7 @@ function nems_publications_field_default_field_instances() {
       'description_field' => 0,
       'entity_translation_sync' => 0,
       'file_directory' => '',
-      'file_extensions' => 'txt pdf doc docx ppt xls',
+      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
