@@ -1119,3 +1119,4 @@ function nems_news_views_default_views() {
 
   return $export;
 }
+
