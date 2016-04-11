@@ -56,7 +56,6 @@ features[variable][] = scheduler_unpublish_moderation_state_nems_news
 features[variable][] = scheduler_unpublish_revision_nems_news
 features[views_view][] = nems_categories
 features[views_view][] = nems_news
-features[views_view][] = nems_news_latest
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][date] = date
 features_exclude[dependencies][features] = features
