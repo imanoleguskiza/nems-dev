@@ -1,0 +1,264 @@
+<?php
+/**
+ * @file
+ * Code for the Nems Migrate module.
+ */
+
+/**
+ * Check for images and files.
+ *
+ * @param string|array $files
+ *   File or files from the calling place.
+ *
+ * @return string|array
+ *   Checked file or files.
+ */
+function _nems_migrate_file_check($files) {
+  // Can be a string or an array.
+  if (is_array($files)) {
+    $i = 0;
+    foreach ($files as $file) {
+      // Check that the value is a valid URL.
+      if (!filter_var($file, FILTER_VALIDATE_URL)) {
+        $files[$i] = 'http://europa.eu' . $file;
+      }
+      // Now check if the resource exists.
+      if (!$fp = curl_init($files[$i])) {
+        unset($files[$i]);
+      }
+      $i++;
+    }
+    if (empty($files)) {
+      $files = FALSE;
+    }
+  }
+  // String.
+  else {
+    if (!filter_var($files, FILTER_VALIDATE_URL)) {
+      $files = 'http://europa.eu' . $files;
+    }
+    if (!$fp = curl_init($files)) {
+      $files = FALSE;
+    }
+  }
+  // String or array.
+  return $files;
+}
+
+/**
+ * Helper function to find the matching classification term.
+ *
+ * @param string|array $value
+ *   Contains terms.
+ *
+ * @return array
+ *   Term ids of the parameter(s).
+ */
+function _nems_migrate_get_classification($value) {
+  $values = !is_array($value) ? (array) $value : $value;
+  $tids = array();
+
+  foreach ($values as $term) {
+    $vid = taxonomy_vocabulary_machine_name_load('classification')->vid;
+    $code = str_replace('-', '', filter_var($term, FILTER_SANITIZE_NUMBER_INT));
+    $query = new EntityFieldQuery();
+    $result = $query
+        ->entityCondition('entity_type', 'taxonomy_term')
+        ->propertyCondition('name', $code)
+        ->propertyCondition('vid', $vid)
+        ->execute();
+
+    if (!empty($result['taxonomy_term'])) {
+      $tids[] = array_shift($result['taxonomy_term'])->tid;
+    }
+  }
+
+  return $tids;
+}
+
+/**
+ * Replace <img> tags and <a> linking to images href.
+ *
+ * @param string $text
+ *   Text to filter.
+ * @param string $site
+ *   Site name.
+ *
+ * @return string
+ *   Text filtered.
+ */
+function _nems_migrate_import_contents_filter($text, $site) {
+  // Remove styles.
+  preg_match_all('/style="(.*?)"/s', $text, $styles);
+  preg_match_all('/class="lead"/s', $text, $styles);
+  if (is_array($styles[0])) {
+    foreach ($styles[0] as $style) {
+      $text = str_replace($style, '', $text);
+    }
+  }
+
+  $document = new DOMDocument;
+  // We need to silence the warnings because otherwise the migration process will end.
+  @$document->loadHTML($text);
+  $links = $document->getElementsByTagName('a');
+  foreach ($links as $link) {
+    // Check if the link belongs to the domain.
+    if (strrpos($link->getAttribute('href'), 'http://europa.eu/' . $site . '/', -strlen($link->getAttribute('href'))) !== false) {
+      // Find internal links to files.
+      preg_match('#(.*?)/(.*?).(doc|docx|xls|ppt|pdf|zip|rar)$#', $link->getAttribute('href'), $file);
+      if (!empty($file[2])) {
+        // Import the file and replace the href attibute of the link.
+        _nems_migrate_import_files($link, 'docs/body');
+      }
+      else {
+        // We assume it is a link to a webpage.
+        $new_link = $GLOBALS['base_url'] . '/' . _nems_migrate_path($link->getAttribute('href'));
+        $link->setAttribute('href', $new_link);
+      }
+    }
+  }
+
+  // Find all the img tags.
+  $images = $document->getElementsByTagName('img');
+  foreach ($images as $image) {
+    _nems_migrate_import_files($image->getAttribute('src'), 'img/body');
+  }
+  // Get the new HTML
+  $new_text = $document->saveHTML();
+
+  // Strip out the tags that loadHTML() introduces to get the clean HTML.
+  $patterns = array("/^\<\!DOCTYPE.*?<html><body>/si", "!</body></html>$!si");
+  $text = preg_replace($patterns, '', $new_text);
+  return $text;
+}
+
+/**
+ * Helper function to copy files to the Drupal filesystem.
+ *
+ * @param string $file
+ *   Text to filter.
+ * @param string $dir
+ *   Foreseen folder.
+ *
+ * @return string
+ *   Text filtered.
+ */
+function _nems_migrate_import_files($file, $dir) {
+  if ($link->tagName == 'img') {
+    $attribute = 'src';
+  } else {
+    $attribute = 'href';
+  }
+  $sibling = $link->nextSibling;
+  // Build the folder tree if needed.
+  $dest = 'public://' . $dir;
+  $wrapper = file_stream_wrapper_get_instance_by_uri($dest);
+  $path = $wrapper->realpath();
+  // Check if the folder exists otherwise create it.
+  if (!is_dir($path)) {
+    drupal_mkdir($dest, NULL, TRUE);
+  }
+
+
+  // Run the checks.
+  $file = _nems_migrate_file_check($link->getAttribute($attribute));
+  if ($file) {
+    $files = _nems_migrate_check_coverage($link->getAttribute($attribute));
+    foreach ($files as $lang => $file) {
+      // Check if file was already imported
+      $file_link = '';
+      $file_link = _nems_migrate_file_exists($file, $dest);
+      if (!$file_link) {
+        // Import the file, the TRUE parameter means that it will be managed.
+      $dfile = system_retrieve_file($file, $dest, TRUE, FILE_EXISTS_REPLACE);
+      $file_link = file_create_url($dfile->uri);
+      }
+      if ($file == $link->getAttribute($attribute)) {
+          $link->setAttribute($attribute, $file_link);
+      } else {
+          $extra_link = $link->ownerDocument->createElement('a', $lang);
+          $extra_link->setAttribute($attribute, $file_link);
+          $extra_link->setAttribute('class', 'link-coverage');
+          $link->parentNode->insertBefore($extra_link, $link->nextSibling);
+      }
+    }
+  }
+}
+
+/**
+ * Helper function to get the current path to assign to nodes.
+ *
+ * @param string $url
+ *   Orginal url.
+ * @param string $site
+ *   Site name.
+ *
+ * @return string
+ *   Path.
+ */
+function _nems_migrate_path($url, $site = FALSE) {
+  $lang = locale_language_list('name');
+  $lang_keys = array_keys($lang);
+  $str = array();
+  $str[] = 'http://europa.eu';
+
+  foreach ($lang_keys as $lang_key) {
+    $str[] = '/index_' . $lang_key . '.htm';
+    $str[] = '_' . $lang_key . '.htm';
+    $str[] = '/index_' . $lang_key . '.xml';
+    $str[] = '_' . $lang_key . '.xml';
+  }
+
+  if ($site) {
+    $str[] = '/' . $site . '/';
+  }
+
+  $rep[] = '';
+  for ($i = 0; $i < count($str); $i++) {
+    $rep[$i] = '';
+  }
+
+  // Given the source and replace arrays, apply every replacement.
+  $path = str_replace($str, $rep, $url);
+
+  return $path;
+}
+
+/**
+ * Helper function to check whether a file exists.
+ *
+ */
+function _nems_migrate_file_exists($file, $dest) {
+
+  $parsed_url = parse_url($file);
+  if (is_dir(drupal_realpath($dest))) {
+    // Prevent URIs with triple slashes when glueing parts together.
+    $path = str_replace('///', '//', "$dest/") . drupal_basename($parsed_url['path']);
+  }
+  if (file_exists($path)) {
+    return file_create_url($path);
+  }
+  return FALSE;
+}
+
+/**
+ * Helper function to check whether a file exists.
+ *
+ */
+function _nems_migrate_check_coverage($file) {
+  $response = drupal_http_request('http://europa.eu/cgi-bin/coverage/coverage?url=' . $file);
+  $data = simplexml_load_string($response->data);
+  $coverage = array();
+  if ($response->code == 200) {
+    if (isset($data->error)) {
+      $coverage[] = $file;
+    } else {
+      foreach ($data->document as $language_coverage) {
+        $coverage[(string) $language_coverage->attributes()->lang] = (string) $language_coverage->attributes()->href;
+      }
+    }
+  } else {
+    $coverage[] = $file;
+  }
+  return $coverage;
+}

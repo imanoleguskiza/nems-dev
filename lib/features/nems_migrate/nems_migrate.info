@@ -1,0 +1,9 @@
+name = NextEuropa Migrate
+description = Base migrate classes for migrations using pivot files
+core = 7.x
+package = NextEuropa Migration
+
+dependencies[] = integration_migrate
+
+files[] = includes/nems_migrate.abstract.inc
+files[] = includes/nems_migrate.menu.inc
