@@ -24,6 +24,7 @@ function nems_common_page_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'body',
+      1 => 'field_related_content',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -125,7 +126,6 @@ function nems_common_page_field_group_info() {
   // Included for use with string extractors like potx.
   t('Description');
   t('Links');
-  t('Metadata');
   t('Multimedia');
   t('Tags');
 

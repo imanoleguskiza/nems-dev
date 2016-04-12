@@ -160,6 +160,9 @@ function nems_common_page_strongarm() {
         'rabbit_hole' => array(
           'weight' => '0',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(),
     ),
