@@ -10,7 +10,7 @@
 function nems_core_default_roles_permissions() {
   $roles = array();
 
-  // Exported role: webmaster
+  // Exported role: webmaster.
   $roles['webmaster'] = (object) array(
     'name' => 'webmaster',
     'weight' => 5,
