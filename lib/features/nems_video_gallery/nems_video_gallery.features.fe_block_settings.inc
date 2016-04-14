@@ -23,10 +23,16 @@ function nems_video_gallery_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'nems_theme' => array(
+      'ec_resp' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'nems_theme',
+        'theme' => 'ec_resp',
+        'weight' => 0,
+      ),
+      'europaeu_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'europaeu_theme',
         'weight' => 0,
       ),
       'seven' => array(

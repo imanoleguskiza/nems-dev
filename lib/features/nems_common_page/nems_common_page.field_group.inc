@@ -125,7 +125,6 @@ function nems_common_page_field_group_info() {
   // Included for use with string extractors like potx.
   t('Description');
   t('Links');
-  t('Metadata');
   t('Multimedia');
   t('Tags');
 

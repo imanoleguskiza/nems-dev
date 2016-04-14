@@ -38,7 +38,7 @@ function nems_video_gallery_views_default_views() {
   $handler->display->display_options['header']['area_text_custom']['content'] = '<h2 class="field-content">[title_field]</h2>
 [body]';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
-  /* Relationship: Entity Reference: Referencing entity */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['reverse_field_video_gallery_items_node']['id'] = 'reverse_field_video_gallery_items_node';
   $handler->display->display_options['relationships']['reverse_field_video_gallery_items_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_video_gallery_items_node']['field'] = 'reverse_field_video_gallery_items_node';
@@ -183,6 +183,13 @@ function nems_video_gallery_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+
+  /* Display: EVA Field */
+  $handler = $view->new_display('entity_view', 'EVA Field', 'entity_view_1');
+  $handler->display->display_options['entity_type'] = 'node';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'video_gallery',
+  );
   $export['nems_video_gallery'] = $view;
 
   return $export;

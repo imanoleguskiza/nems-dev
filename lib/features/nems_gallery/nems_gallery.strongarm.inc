@@ -155,6 +155,9 @@ function nems_gallery_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'eva_display' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -165,7 +168,22 @@ function nems_gallery_strongarm() {
           'weight' => '1',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'nems_gallery_entity_view_1' => array(
+          'default' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+          'eva_display' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__gallery'] = $strongarm;

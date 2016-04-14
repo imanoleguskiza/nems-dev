@@ -148,6 +148,9 @@ function nems_video_gallery_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'eva_display' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -160,8 +163,29 @@ function nems_video_gallery_strongarm() {
         'language' => array(
           'weight' => '1',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '0',
+        ),
       ),
-      'display' => array(),
+      'display' => array(
+        'nems_video_gallery_entity_view_1' => array(
+          'default' => array(
+            'weight' => '3',
+            'visible' => FALSE,
+          ),
+          'eva_display' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__video_gallery'] = $strongarm;

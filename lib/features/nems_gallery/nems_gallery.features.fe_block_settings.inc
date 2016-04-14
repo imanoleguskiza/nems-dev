@@ -12,10 +12,10 @@ function nems_gallery_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['views-nems_gallery-block'] = array(
+  $export['views-nems_carousel-block'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'nems_gallery-block',
+    'delta' => 'nems_carousel-block',
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'views',
@@ -23,11 +23,17 @@ function nems_gallery_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'nems_theme' => array(
+      'ec_resp' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'nems_theme',
-        'weight' => 1,
+        'theme' => 'ec_resp',
+        'weight' => 0,
+      ),
+      'europaeu_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'europaeu_theme',
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
@@ -40,10 +46,10 @@ function nems_gallery_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['views-nems_carousel-block'] = array(
+  $export['views-nems_gallery-block'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'nems_carousel-block',
+    'delta' => 'nems_gallery-block',
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'views',
@@ -51,11 +57,17 @@ function nems_gallery_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'nems_theme' => array(
+      'ec_resp' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'nems_theme',
-        'weight' => 2,
+        'theme' => 'ec_resp',
+        'weight' => 0,
+      ),
+      'europaeu_theme' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'europaeu_theme',
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',

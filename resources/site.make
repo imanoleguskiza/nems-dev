@@ -20,6 +20,9 @@ projects[ckeditor_tabber][version] = 1.3
 projects[entityconnect][subdir] = "contrib"
 projects[entityconnect][version] = 1.0-rc5
 
+projects[eva][subdir] = "contrib"
+projects[eva][version] = 1.2
+
 projects[features_extra][subdir] = "contrib"
 projects[features_extra][version] = 1.0
 
@@ -51,6 +54,9 @@ projects[page_title][version] = 2.7
 
 projects[menu_admin_per_menu][subdir] = "contrib"
 projects[menu_admin_per_menu][version] = 1.1
+
+projects[nodeblock][subdir] = "contrib"
+projects[nodeblock][version] = 1.7
 
 projects[owlcarousel][subdir] = "contrib"
 projects[owlcarousel][version] = 1.5
