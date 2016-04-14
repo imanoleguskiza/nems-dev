@@ -3,7 +3,6 @@ description = Common page content type and related functionalities
 core = 7.x
 package = NEMS
 version = 7.x-1.0
-php = 5.6
 project = nems_common_page
 dependencies[] = cce_basic_config
 dependencies[] = ctools
