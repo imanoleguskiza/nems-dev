@@ -99,7 +99,6 @@ function nems_news_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Content');
-  t('Metadata');
   t('Related content');
   t('Tags');
 
