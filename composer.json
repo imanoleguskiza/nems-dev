@@ -5,10 +5,9 @@
     "continuousphp/sdk": "~0.3.2",
     "cpliakas/git-wrapper": "~1.6",
     "drupal/coder": "dev-8.x-2.x",
-    "drupal/drupal-driver": "dev-master",
-    "drupal/drupal-extension": "dev-master",
+    "drupal/drupal-extension": "~3.1.5",
     "drupal/phing-drush-task": "1.0",
-    "drush/drush": "8.0.*@beta",
+    "drush/drush": "~8.0",
     "ext-json": "*",
     "ext-phar": "*",
     "ext-xml": "*",
@@ -31,7 +30,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "http://git.drupal.org/project/coder.git"
+      "url": "https://git.drupal.org/project/coder.git"
     },
     {
       "type": "package",
@@ -39,7 +38,7 @@
         "name": "drupal/phing-drush-task",
         "version": "1.0",
         "source": {
-          "url": "http://git.drupal.org/project/phingdrushtask.git",
+          "url": "https://git.drupal.org/project/phingdrushtask.git",
           "type": "git",
           "reference": "7.x-1.0"
         },
