@@ -51,15 +51,6 @@ function nems_common_page_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'php';
-  $handler->display->display_options['arguments']['nid']['validate_options']['code'] = '$node = node_load($argument);
-if (isset($node->field_related_content) && is_array($node->field_related_content) && count($node->field_related_content) > 0) {
-  return TRUE;
-}
-else {
-  return FALSE;
-}';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -74,6 +65,11 @@ else {
   $handler->display->display_options['filters']['type']['value'] = array(
     'common_page' => 'common_page',
   );
+  /* Filter criterion: Content: Related Content (field_related_content) */
+  $handler->display->display_options['filters']['field_related_content_value']['id'] = 'field_related_content_value';
+  $handler->display->display_options['filters']['field_related_content_value']['table'] = 'field_data_field_related_content';
+  $handler->display->display_options['filters']['field_related_content_value']['field'] = 'field_related_content_value';
+  $handler->display->display_options['filters']['field_related_content_value']['operator'] = 'not empty';
 
   /* Display: Related Content Block */
   $handler = $view->new_display('block', 'Related Content Block', 'block');
