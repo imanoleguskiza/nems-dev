@@ -8,7 +8,9 @@
  * Implements hook_install().
  */
 function nems_video_gallery_install() {
-  _nems_multilingual_setup_import_translations('nems_video_gallery');
+  if (module_exists(nems_multilingual_setup)) {
+    _nems_multilingual_setup_import_translations('nems_video_gallery');
+  }
 }
 
 /**
