@@ -10,42 +10,6 @@
 function nems_gallery_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_carousel_items'.
-  $field_bases['field_carousel_items'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_carousel_items',
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 1,
-    'module' => 'entityreference',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'gallery' => 'gallery',
-        ),
-      ),
-      'target_type' => 'node',
-    ),
-    'translatable' => 1,
-    'type' => 'entityreference',
-  );
-
   // Exported field_base: 'field_gallery_image'.
   $field_bases['field_gallery_image'] = array(
     'active' => 1,
@@ -69,42 +33,6 @@ function nems_gallery_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'image',
-  );
-
-  // Exported field_base: 'field_gallery_items'.
-  $field_bases['field_gallery_items'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_gallery_items',
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 1,
-    'module' => 'entityreference',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'gallery' => 'gallery',
-        ),
-      ),
-      'target_type' => 'node',
-    ),
-    'translatable' => 1,
-    'type' => 'entityreference',
   );
 
   return $field_bases;
