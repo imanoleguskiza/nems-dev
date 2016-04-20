@@ -133,6 +133,13 @@
         />
     </target>
 
+    <!-- Run a full static analysis. -->
+    <target
+        name="mjolnir"
+        description="The Hammer Of Thor will execute a full static analysis. Run this before sending a delivery to QA. Before starting this, make sure to do a full clean build + installation."
+        depends="check-starterkit, setup-behat, behat"
+    />
+
     <!-- Install a development version of the subsite. -->
     <target
         name="install-dev"
