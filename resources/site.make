@@ -49,9 +49,6 @@ projects[insert_block][patch][] = "https://www.drupal.org/files/1873624-insert_b
 projects[integration][subdir] = "contrib"
 projects[integration][version] = 1.x-dev
 
-projects[page_title][subdir] = "contrib"
-projects[page_title][version] = 2.7
-
 projects[menu_admin_per_menu][subdir] = "contrib"
 projects[menu_admin_per_menu][version] = 1.1
 
@@ -72,9 +69,6 @@ projects[remote_stream_wrapper][version] = 1.0-rc1
 
 projects[role_delegation][subdir] = "contrib"
 projects[role_delegation][version] = 1.1
-
-projects[social_media_links][subdir] = "contrib"
-projects[social_media_links][version] = 1.5
 
 projects[taxonomy_access_fix][subdir] = "contrib"
 projects[taxonomy_access_fix][version] = 2.3
