@@ -605,7 +605,7 @@ function nems_events_views_default_views() {
   );
 
   /* Display: All Events simple list */
-  $handler = $view->new_display('block', 'All Events simple list', 'block_1');
+  $handler = $view->new_display('block', 'All Events simple list', 'block_events_simple_filters_all');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'block-events';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -743,7 +743,7 @@ function nems_events_views_default_views() {
   );
 
   /* Display: All Events list */
-  $handler = $view->new_display('block', 'All Events list', 'block_2');
+  $handler = $view->new_display('block', 'All Events list', 'block_events_all_filters');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'block-events';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
