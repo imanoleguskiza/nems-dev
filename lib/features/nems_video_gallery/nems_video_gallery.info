@@ -17,6 +17,7 @@ dependencies[] = file
 dependencies[] = file_entity
 dependencies[] = image
 dependencies[] = media
+dependencies[] = nems_core
 dependencies[] = nems_multilingual_setup
 dependencies[] = nexteuropa_multilingual
 dependencies[] = owlcarousel_views

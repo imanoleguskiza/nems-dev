@@ -15,6 +15,7 @@ dependencies[] = features
 dependencies[] = field_group
 dependencies[] = image
 dependencies[] = media
+dependencies[] = nems_core
 dependencies[] = nexteuropa_multilingual
 dependencies[] = owlcarousel
 dependencies[] = owlcarousel_ui
