@@ -31,7 +31,6 @@ features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[fe_block_settings][] = views-nems_video_gallery-block
 features[features_api][] = api:2
-features[field_base][] = field_video_gallery_items
 features[field_base][] = field_video_items
 features[field_base][] = field_video_thumbnail
 features[field_base][] = filename_field
