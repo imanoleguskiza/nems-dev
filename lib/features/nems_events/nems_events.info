@@ -27,7 +27,6 @@ features[field_instance][] = node-nems_event-field_tags
 features[field_instance][] = node-nems_event-title_field
 features[image][] = thumbs_events_listing__width__250px_
 features[node][] = nems_event
-features[weight][] = nems_event
 features[user_permission][] = create nems_event content
 features[user_permission][] = delete any nems_event content
 features[user_permission][] = delete own nems_event content
