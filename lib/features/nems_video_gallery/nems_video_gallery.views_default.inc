@@ -181,9 +181,6 @@ function nems_video_gallery_views_default_views() {
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-
   /* Display: EVA Field */
   $handler = $view->new_display('entity_view', 'EVA Field', 'entity_view_1');
   $handler->display->display_options['entity_type'] = 'node';
