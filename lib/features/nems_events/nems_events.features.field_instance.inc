@@ -698,9 +698,7 @@ function nems_events_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Date');
-  t('Description metatag');
   t('External Link');
-  t('IPG Classification');
   t('Image');
   t('Location');
   t('Related Document(s)');

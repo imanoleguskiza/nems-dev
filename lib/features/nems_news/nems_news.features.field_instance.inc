@@ -674,9 +674,7 @@ function nems_news_field_default_field_instances() {
   t('Body');
   t('Category');
   t('Date');
-  t('Description metatag');
   t('External Link');
-  t('IPG Classification');
   t('Image');
   t('Name');
   t('Related Document(s)');
