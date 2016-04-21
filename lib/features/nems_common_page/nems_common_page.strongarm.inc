@@ -163,6 +163,9 @@ function nems_common_page_strongarm() {
         'metatags' => array(
           'weight' => '10',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(),
     ),
