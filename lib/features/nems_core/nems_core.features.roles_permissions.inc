@@ -10,7 +10,7 @@
 function nems_core_default_roles_permissions() {
   $roles = array();
 
-  // Exported role: contributor.
+  // Exported role: contributor
   $roles['contributor'] = (object) array(
     'name' => 'contributor',
     'weight' => 3,
@@ -19,13 +19,8 @@ function nems_core_default_roles_permissions() {
       'access workbench' => TRUE,
       'add media from remote sources' => TRUE,
       'create article content' => TRUE,
-      'create links content' => TRUE,
-      'delete any links content' => TRUE,
       'delete own article content' => TRUE,
-      'delete own links content' => TRUE,
-      'edit any links content' => TRUE,
       'edit own article content' => TRUE,
-      'edit own links content' => TRUE,
       'moderate content from draft to needs_review' => TRUE,
       'moderate content from needs_review to draft' => TRUE,
       'revert revisions' => TRUE,
@@ -41,7 +36,7 @@ function nems_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: editor.
+  // Exported role: editor
   $roles['editor'] = (object) array(
     'name' => 'editor',
     'weight' => 4,
@@ -49,28 +44,19 @@ function nems_core_default_roles_permissions() {
       'access media browser' => TRUE,
       'add media from remote sources' => TRUE,
       'create article content' => TRUE,
-      'create links content' => TRUE,
       'create nems_news content' => TRUE,
       'create nems_publication content' => TRUE,
-      'create nems_video content' => TRUE,
       'delete any article content' => TRUE,
-      'delete any links content' => TRUE,
       'delete own article content' => TRUE,
-      'delete own links content' => TRUE,
       'delete own nems_news content' => TRUE,
       'delete own nems_publication content' => TRUE,
-      'delete own nems_video content' => TRUE,
       'delete revisions' => TRUE,
       'edit any article content' => TRUE,
-      'edit any links content' => TRUE,
       'edit any nems_news content' => TRUE,
       'edit any nems_publication content' => TRUE,
-      'edit any nems_video content' => TRUE,
       'edit own article content' => TRUE,
-      'edit own links content' => TRUE,
       'edit own nems_news content' => TRUE,
       'edit own nems_publication content' => TRUE,
-      'edit own nems_video content' => TRUE,
       'export nodes' => TRUE,
       'moderate content from draft to needs_review' => TRUE,
       'moderate content from needs_review to draft' => TRUE,
@@ -88,7 +74,7 @@ function nems_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: webmaster.
+  // Exported role: webmaster
   $roles['webmaster'] = (object) array(
     'name' => 'webmaster',
     'weight' => 5,
@@ -100,8 +86,8 @@ function nems_core_default_roles_permissions() {
       'access content overview' => TRUE,
       'access ecas import users function' => TRUE,
       'access media browser' => TRUE,
-      'access the block administration page' => TRUE,
       'access site reports' => TRUE,
+      'access the block administration page' => TRUE,
       'add media from remote sources' => TRUE,
       'add terms in classification' => TRUE,
       'add terms in tags' => TRUE,
@@ -169,7 +155,6 @@ function nems_core_default_roles_permissions() {
       'multisite_workbench_moderation_view_bulk_update' => TRUE,
       'override default scheduler time' => TRUE,
       'schedule (un)publishing of nodes' => TRUE,
-      'set page title' => TRUE,
       'submit translation jobs' => TRUE,
       'translate content' => TRUE,
       'translate node entities' => TRUE,

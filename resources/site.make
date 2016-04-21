@@ -82,6 +82,9 @@ projects[tb_megamenu][version] = 1.0-rc2
 projects[tocify][subdir] = "contrib"
 projects[tocify][version] = 1.0
 
+projects[viewreference][subdir] = "contrib"
+projects[viewreference][version] = 3.5
+
 projects[views_block_filter_block][subdir] = "contrib"
 projects[views_block_filter_block][version] = 1.0-beta2
 
