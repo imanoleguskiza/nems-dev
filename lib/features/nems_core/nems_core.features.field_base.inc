@@ -22,7 +22,7 @@ function nems_core_field_default_field_bases() {
         0 => 'view_id',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'viewreference',
     'settings' => array(
       'append_id' => 0,
@@ -205,7 +205,7 @@ function nems_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -384,7 +384,7 @@ function nems_core_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_view_more',
     'indexes' => array(),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'link',
     'settings' => array(
       'attributes' => array(
