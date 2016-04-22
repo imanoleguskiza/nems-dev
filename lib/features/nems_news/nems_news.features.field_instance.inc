@@ -67,6 +67,105 @@ function nems_news_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-nems_news-field_meta_classification'.
+  $field_instances['node-nems_news-field_meta_classification'] = array(
+    'bundle' => 'nems_news',
+    'default_value' => array(
+      0 => array(
+        'tid' => 16,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_meta_classification',
+    'label' => 'IPG Classification',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-nems_news-field_meta_description'.
+  $field_instances['node-nems_news-field_meta_description'] = array(
+    'bundle' => 'nems_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_meta_description',
+    'label' => 'Description metatag',
+    'required' => 1,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-nems_news-field_nems_core_date'.
   $field_instances['node-nems_news-field_nems_core_date'] = array(
     'bundle' => 'nems_news',
@@ -688,7 +787,9 @@ function nems_news_field_default_field_instances() {
   t('Body');
   t('Category');
   t('Date');
+  t('Description metatag');
   t('External Link');
+  t('IPG Classification');
   t('Image');
   t('Name');
   t('Related Document(s)');

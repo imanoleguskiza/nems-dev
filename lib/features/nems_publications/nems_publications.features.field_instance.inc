@@ -67,6 +67,113 @@ function nems_publications_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-nems_publication-field_meta_classification'.
+  $field_instances['node-nems_publication-field_meta_classification'] = array(
+    'bundle' => 'nems_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 12,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_meta_classification',
+    'label' => 'IPG Classification',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-nems_publication-field_meta_description'.
+  $field_instances['node-nems_publication-field_meta_description'] = array(
+    'bundle' => 'nems_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_meta_description',
+    'label' => 'Description metatag',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'basic_html' => 'basic_html',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'basic_html' => array(
+              'weight' => 5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-nems_publication-field_nems_core_date'.
   $field_instances['node-nems_publication-field_nems_core_date'] = array(
     'bundle' => 'nems_publication',
@@ -140,7 +247,7 @@ function nems_publications_field_default_field_instances() {
     'bundle' => 'nems_publication',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'The external link can be used to refer to news located in other sites. If this field is filled, the rest of the content fields will be ignored.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -170,12 +277,13 @@ function nems_publications_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_nems_core_external_url',
-    'label' => 'External Url',
+    'label' => 'External Link',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
+        'configurable_class' => 0,
         'configurable_title' => 0,
         'rel' => '',
         'target' => 'default',
@@ -188,7 +296,7 @@ function nems_publications_field_default_field_instances() {
       'entity_translation_sync' => FALSE,
       'rel_remove' => 'default',
       'title' => 'none',
-      'title_label_use_field_label' => FALSE,
+      'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -486,10 +594,13 @@ function nems_publications_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Date');
-  t('External Url');
+  t('Description metatag');
+  t('External Link');
   t('File');
+  t('IPG Classification');
   t('Image');
   t('Tags');
+  t('The external link can be used to refer to news located in other sites. If this field is filled, the rest of the content fields will be ignored.');
   t('Title');
 
   return $field_instances;

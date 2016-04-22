@@ -14,7 +14,6 @@ function nems_publications_user_default_permissions() {
   $permissions['create nems_publication content'] = array(
     'name' => 'create nems_publication content',
     'roles' => array(
-      'NEMS Administrator' => 'NEMS Administrator',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -25,7 +24,6 @@ function nems_publications_user_default_permissions() {
   $permissions['delete any nems_publication content'] = array(
     'name' => 'delete any nems_publication content',
     'roles' => array(
-      'NEMS Administrator' => 'NEMS Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -35,7 +33,6 @@ function nems_publications_user_default_permissions() {
   $permissions['delete own nems_publication content'] = array(
     'name' => 'delete own nems_publication content',
     'roles' => array(
-      'NEMS Administrator' => 'NEMS Administrator',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -46,7 +43,6 @@ function nems_publications_user_default_permissions() {
   $permissions['edit any nems_publication content'] = array(
     'name' => 'edit any nems_publication content',
     'roles' => array(
-      'NEMS Administrator' => 'NEMS Administrator',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),
@@ -57,7 +53,6 @@ function nems_publications_user_default_permissions() {
   $permissions['edit own nems_publication content'] = array(
     'name' => 'edit own nems_publication content',
     'roles' => array(
-      'NEMS Administrator' => 'NEMS Administrator',
       'administrator' => 'administrator',
       'editor' => 'editor',
     ),

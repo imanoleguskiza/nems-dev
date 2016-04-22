@@ -13,6 +13,33 @@ function nems_news_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_external_link|node|nems_news|form';
+  $field_group->group_name = 'group_external_link';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'nems_news';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'External Link',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_nems_core_external_url',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-external-link field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_external_link|node|nems_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_nems_files|node|nems_news|form';
   $field_group->group_name = 'group_nems_files';
   $field_group->entity_type = 'node';
@@ -66,6 +93,35 @@ function nems_news_field_group_info() {
     ),
   );
   $field_groups['group_nems_news_content|node|nems_news|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_nems_news_metadata|node|nems_news|form';
+  $field_group->group_name = 'group_nems_news_metadata';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'nems_news';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Metadata',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_meta_classification',
+      1 => 'field_meta_description',
+      2 => 'path',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_nems_news_metadata|node|nems_news|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -125,6 +181,8 @@ function nems_news_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Content');
+  t('External Link');
+  t('Metadata');
   t('Related content');
   t('Tags');
   t('Upload files');
