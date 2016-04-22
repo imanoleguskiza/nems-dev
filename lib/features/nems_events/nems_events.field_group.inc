@@ -51,10 +51,9 @@ function nems_events_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'body',
-      1 => 'field_nems_core_external_url',
-      2 => 'field_nems_core_image',
-      3 => 'field_nems_event_date',
-      4 => 'field_nems_event_location',
+      1 => 'field_nems_core_image',
+      2 => 'field_nems_event_date',
+      3 => 'field_nems_event_location',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -79,7 +78,7 @@ function nems_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Related content',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_nems_core_related_links',
       1 => 'field_nems_core_related_video',
@@ -107,7 +106,7 @@ function nems_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Upload files',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_nems_core_file',
     ),
@@ -163,7 +162,7 @@ function nems_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_tags',
     ),
