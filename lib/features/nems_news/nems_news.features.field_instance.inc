@@ -174,7 +174,7 @@ function nems_news_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 10,
+      'weight' => 7,
     ),
   );
 
@@ -224,7 +224,7 @@ function nems_news_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'file',
       'settings' => array(
         'allowed_schemes' => array(
           'avportal' => 0,
@@ -248,9 +248,23 @@ function nems_news_field_default_field_instances() {
           'upload' => 'upload',
           'youtube' => 0,
         ),
+        'filefield_sources' => array(
+          'filefield_sources' => array(),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+          ),
+        ),
         'progress_indicator' => 'throbber',
       ),
-      'type' => 'media_generic',
+      'type' => 'file_generic',
       'weight' => 9,
     ),
   );
@@ -628,7 +642,7 @@ function nems_news_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -674,9 +688,7 @@ function nems_news_field_default_field_instances() {
   t('Body');
   t('Category');
   t('Date');
-  t('Description metatag');
   t('External Link');
-  t('IPG Classification');
   t('Image');
   t('Name');
   t('Related Document(s)');

@@ -117,6 +117,7 @@ function nems_core_default_roles_permissions() {
       'administer nodes' => TRUE,
       'administer quicktabs' => TRUE,
       'administer site configuration' => TRUE,
+      'administer tb_megamenu' => TRUE,
       'administer translation tasks' => TRUE,
       'administer users' => TRUE,
       'administer workbench moderation' => TRUE,

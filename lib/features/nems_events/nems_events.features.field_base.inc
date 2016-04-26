@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Nems_events.features.field_base.inc.
+ * nems_events.features.field_base.inc
  */
 
 /**
@@ -17,7 +17,6 @@ function nems_events_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_nems_event_date',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 1,
     'module' => 'date',
@@ -48,14 +47,6 @@ function nems_events_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_nems_event_location',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
