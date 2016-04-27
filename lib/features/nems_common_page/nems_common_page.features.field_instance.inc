@@ -62,55 +62,6 @@ function nems_common_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-common_page-field_carousel_items'.
-  $field_instances['node-common_page-field_carousel_items'] = array(
-    'bundle' => 'common_page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 18,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_carousel_items',
-    'label' => 'Picture Carousel',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'fields' => array(),
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-        'type_settings' => array(),
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 5,
-    ),
-  );
-
   // Exported field_instance: 'node-common_page-field_downloads_items'.
   $field_instances['node-common_page-field_downloads_items'] = array(
     'bundle' => 'common_page',
@@ -215,53 +166,6 @@ function nems_common_page_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-common_page-field_gallery_items'.
-  $field_instances['node-common_page-field_gallery_items'] = array(
-    'bundle' => 'common_page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_gallery_items',
-    'label' => 'Picture Gallery',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 6,
     ),
   );
 
@@ -505,53 +409,6 @@ function nems_common_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-common_page-field_video_gallery_items'.
-  $field_instances['node-common_page-field_video_gallery_items'] = array(
-    'bundle' => 'common_page',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'full' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_video_gallery_items',
-    'label' => 'Video Gallery',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 7,
-    ),
-  );
-
   // Exported field_instance: 'node-common_page-title_field'.
   $field_instances['node-common_page-title_field'] = array(
     'bundle' => 'common_page',
@@ -608,12 +465,10 @@ function nems_common_page_field_default_field_instances() {
   t('Display table of contents');
   t('Downloads');
   t('Picture Carousel');
-  t('Picture Gallery');
   t('See also');
   t('Tags');
   t('The sidebar navigation block will appear with links to headings in the body field');
   t('Title');
-  t('Video Gallery');
 
   return $field_instances;
 }

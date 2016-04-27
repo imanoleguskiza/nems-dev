@@ -5,15 +5,3 @@
  */
 
 include_once 'nems_common_page.features.inc';
-
-/**
- * Implements hook_node_view().
- *
- * Function to give NULL to the $node->title if type is see_also or downloads.
- */
-function nems_common_page_node_view($node, $view_mode, $langcode) {
-  $page_node = menu_get_object();
-  if ($node->nid != $page_node->nid && ($node->type == 'see_also' || $node->type == 'downloads')) {
-    $node->title = NULL;
-  }
-}
