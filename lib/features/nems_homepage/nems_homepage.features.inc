@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * nems_homepage.features.inc
+ * Nems_core.features.inc.
  */
 
 /**
@@ -10,9 +10,6 @@
 function nems_homepage_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "bean_admin_ui" && $api == "bean") {
     return array("version" => "5");
-  }
-  if ($module == "context" && $api == "context") {
-    return array("version" => "3");
   }
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
@@ -72,4 +69,21 @@ function nems_homepage_node_info() {
   );
   drupal_alter('node_info', $items);
   return $items;
+}
+
+/**
+ * Implements hook_weight_features_default_settings().
+ */
+function nems_homepage_weight_features_default_settings() {
+  $settings = array();
+
+  $settings['nems_slide_homepage'] = array(
+    'enabled' => 1,
+    'range' => 20,
+    'menu_weight' => 0,
+    'default' => 0,
+    'sync_translations' => 1,
+  );
+
+  return $settings;
 }

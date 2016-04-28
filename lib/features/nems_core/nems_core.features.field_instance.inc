@@ -18,7 +18,7 @@ function nems_core_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'viewreference',
         'settings' => array(),
         'type' => 'viewreference_default',
@@ -49,7 +49,7 @@ function nems_core_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -110,7 +110,7 @@ function nems_core_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
@@ -137,10 +137,10 @@ function nems_core_field_default_field_instances() {
       'enable_tokens' => 1,
       'entity_translation_sync' => FALSE,
       'rel_remove' => 'default',
-      'title' => 'required',
+      'title' => 'none',
       'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
-      'title_value' => '',
+      'title_value' => 'More',
       'url' => 0,
       'user_register_form' => FALSE,
       'validate_url' => 1,

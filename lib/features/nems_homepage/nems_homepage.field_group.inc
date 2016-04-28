@@ -13,6 +13,34 @@ function nems_homepage_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_page_content|node|page|form';
+  $field_group->group_name = 'group_page_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'page';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Content',
+    'weight' => 0,
+    'children' => array(
+      0 => 'title_field',
+      1 => 'title',
+      2 => 'body',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'classes' => 'group-page-content field-group-tab',
+        'required_fields' => TRUE,
+      ),
+    ),
+  );
+  $export['group_page_content|node|page|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_nems_add_blocks_content|node|nems_homepage_additional_block|form';
   $field_group->group_name = 'group_nems_add_blocks_content';
   $field_group->entity_type = 'node';
@@ -100,34 +128,6 @@ function nems_homepage_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_nems_homepage_content|node|nems_homepage|form';
-  $field_group->group_name = 'group_nems_homepage_content';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'nems_homepage';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Content',
-    'weight' => '2',
-    'children' => array(
-      0 => 'body',
-      1 => 'field_nems_homepage_reference',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-nems-homepage-content field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $field_groups['group_nems_homepage_content|node|nems_homepage|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_nems_homepage_more_info|node|page|form';
   $field_group->group_name = 'group_nems_homepage_more_info';
   $field_group->entity_type = 'node';
@@ -153,6 +153,91 @@ function nems_homepage_field_group_info() {
     ),
   );
   $field_groups['group_nems_homepage_more_info|node|page|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_nems_cp_content|node|nems_contact_point|form';
+  $field_group->group_name = 'group_nems_cp_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'nems_contact_point';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Content',
+    'weight' => '0',
+    'children' => array(
+      0 => 'body',
+      1 => 'title_field',
+      3 => 'field_nems_cp_type',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_nems_cp_content|node|nems_contact_point|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_nems_cp_meta|node|nems_contact_point|form';
+  $field_group->group_name = 'group_nems_cp_meta';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'nems_contact_point';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Metadata',
+    'weight' => '1',
+    'children' => array(
+      0 => 'path',
+      1 => 'language',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-nems-cp-meta field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_nems_cp_meta|node|nems_contact_point|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_nems_homepage_content|node|nems_homepage|form';
+  $field_group->group_name = 'group_nems_homepage_content';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'nems_homepage';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Content',
+    'weight' => '2',
+    'children' => array(
+      0 => 'body',
+      1 => 'field_nems_homepage_reference',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-nems-homepage-content field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_nems_homepage_content|node|nems_homepage|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -590,6 +675,7 @@ function nems_homepage_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Content');
+  t('Metadata');
   t('More Info');
   t('Organic Groups');
   t('Other');
