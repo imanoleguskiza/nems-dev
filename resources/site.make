@@ -10,6 +10,7 @@ projects[admin_language][version] = 1.0-beta1
 
 projects[block_access][subdir] = "contrib"
 projects[block_access][version] = 1.6
+projects[block_access][patch][] = "https://www.drupal.org/files/block_access_delete_fix-2039989-2.patch"
 
 projects[collapsiblock][subdir] = "contrib"
 projects[collapsiblock][version] = 1.1
