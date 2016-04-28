@@ -141,3 +141,4 @@ features_exclude[dependencies][votingapi] = votingapi
 features_exclude[dependencies][workbench] = workbench
 features_exclude[dependencies][workbench_moderation] = workbench_moderation
 features_exclude[user_role][webmaster] = webmaster
+multisite_version = 2.1
