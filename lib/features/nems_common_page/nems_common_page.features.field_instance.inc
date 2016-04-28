@@ -234,8 +234,8 @@ function nems_common_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-common_page-field_related_content'.
-  $field_instances['node-common_page-field_related_content'] = array(
+  // Exported field_instance: 'node-common_page-field_nems_core_related_content'.
+  $field_instances['node-common_page-field_nems_core_related_content'] = array(
     'bundle' => 'common_page',
     'default_value' => NULL,
     'deleted' => 0,
@@ -256,7 +256,7 @@ function nems_common_page_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_related_content',
+    'field_name' => 'field_nems_core_related_content',
     'label' => 'Related Content',
     'required' => 0,
     'settings' => array(

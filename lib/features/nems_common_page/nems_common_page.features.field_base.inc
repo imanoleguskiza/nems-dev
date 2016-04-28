@@ -31,27 +31,6 @@ function nems_common_page_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_related_content'.
-  $field_bases['field_related_content'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_related_content',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'text_long',
-  );
-
   // Exported field_base: 'field_see_also_items'.
   $field_bases['field_see_also_items'] = array(
     'active' => 1,
