@@ -49,6 +49,8 @@ function nems_core_menu_alter(&$items){
     'admin/config/user-interface/chosen',
     'admin/people/create',
     'admin/structure/block/add',
+    'admin/config/regional/language/admin_language',
+    'admin/config/regional/language/configure'
   );
   foreach ($path_list as $path) {
     if (isset($items[$path])) {
