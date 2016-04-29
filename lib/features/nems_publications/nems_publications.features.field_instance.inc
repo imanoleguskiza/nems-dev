@@ -487,10 +487,8 @@ function nems_publications_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Date');
-  t('Description metatag');
   t('External Link');
   t('File');
-  t('IPG Classification');
   t('Image');
   t('Tags');
   t('The external link can be used to refer to news located in other sites. If this field is filled, the rest of the content fields will be ignored.');

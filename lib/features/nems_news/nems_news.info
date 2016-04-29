@@ -18,7 +18,6 @@ features[field_base][] = field_nems_news_category
 features[field_group][] = group_external_link|node|nems_news|form
 features[field_group][] = group_nems_files|node|nems_news|form
 features[field_group][] = group_nems_news_content|node|nems_news|form
-features[field_group][] = group_nems_news_metadata|node|nems_news|form
 features[field_group][] = group_nems_news_rel|node|nems_news|form
 features[field_group][] = group_tags|node|nems_news|form
 features[field_instance][] = node-nems_news-body

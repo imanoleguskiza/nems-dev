@@ -16,7 +16,6 @@ features[field_group][] = group_external_link|node|nems_event|form
 features[field_group][] = group_nems_event_content|node|nems_event|form
 features[field_group][] = group_nems_event_rel|node|nems_event|form
 features[field_group][] = group_nems_files|node|nems_event|form
-features[field_group][] = group_nems_metadata|node|nems_event|form
 features[field_group][] = group_tags|node|nems_event|form
 features[field_instance][] = node-nems_event-body
 features[field_instance][] = node-nems_event-field_nems_core_external_url

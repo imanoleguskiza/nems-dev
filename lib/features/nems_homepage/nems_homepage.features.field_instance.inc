@@ -1414,10 +1414,8 @@ function nems_homepage_field_default_field_instances() {
   t('Additional block(s)');
   t('Body');
   t('Date');
-  t('Description metatag');
   t('External Url');
   t('Free content');
-  t('IPG Classification');
   t('Image');
   t('JSON Object');
   t('Link');
