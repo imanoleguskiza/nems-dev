@@ -191,7 +191,7 @@ function nems_common_page_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_nems_core_file',
-    'label' => 'Attachments',
+    'label' => 'Related Document(s)',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
