@@ -933,7 +933,7 @@ function nems_events_views_default_views() {
     'body' => 'body',
   );
 
-/* Display: All Events simple list */
+  /* Display: All Events simple list */
   $handler = $view->new_display('block', 'All Events simple list', 'block_events_simple_all');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'block-events';
@@ -1223,7 +1223,6 @@ function nems_events_views_default_views() {
     'title_field_1' => 'title_field_1',
     'body' => 'body',
   );
-
   $export['nems_events'] = $view;
 
   return $export;
