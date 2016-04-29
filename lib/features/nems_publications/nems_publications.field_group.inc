@@ -106,10 +106,8 @@ function nems_publications_field_group_info() {
     'label' => 'Metadata',
     'weight' => '6',
     'children' => array(
-      0 => 'field_meta_classification',
-      1 => 'field_meta_description',
-      2 => 'path',
-      3 => 'rabbit_hole',
+      0 => 'path',
+      1 => 'rabbit_hole',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

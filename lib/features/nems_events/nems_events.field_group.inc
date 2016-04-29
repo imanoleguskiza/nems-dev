@@ -135,9 +135,7 @@ function nems_events_field_group_info() {
     'label' => 'Metadata',
     'weight' => '7',
     'children' => array(
-      0 => 'field_meta_classification',
-      1 => 'field_meta_description',
-      2 => 'path',
+      0 => 'path',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
