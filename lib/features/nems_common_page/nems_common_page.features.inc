@@ -32,7 +32,7 @@ function nems_common_page_views_api($module = NULL, $api = NULL) {
 function nems_common_page_node_info() {
   $items = array(
     'common_page' => array(
-      'name' => t('Common Page'),
+      'name' => t('Page'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
