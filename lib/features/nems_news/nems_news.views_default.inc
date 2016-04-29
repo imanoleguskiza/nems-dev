@@ -110,6 +110,11 @@ function nems_news_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Sort criterion: Content: Date (field_nems_core_date) */
   $handler->display->display_options['sorts']['field_nems_core_date_value']['id'] = 'field_nems_core_date_value';
   $handler->display->display_options['sorts']['field_nems_core_date_value']['table'] = 'field_data_field_nems_core_date';
@@ -1365,6 +1370,11 @@ function nems_news_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Sort criterion: Content: Date (field_nems_core_date) */
   $handler->display->display_options['sorts']['field_nems_core_date_value']['id'] = 'field_nems_core_date_value';
   $handler->display->display_options['sorts']['field_nems_core_date_value']['table'] = 'field_data_field_nems_core_date';
