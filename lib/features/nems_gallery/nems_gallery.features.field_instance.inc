@@ -158,6 +158,44 @@ function nems_gallery_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-gallery-field_picture_gallery_category'.
+  $field_instances['node-gallery-field_picture_gallery_category'] = array(
+    'bundle' => 'gallery',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_picture_gallery_category',
+    'label' => 'Picture Gallery Category',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-gallery-title_field'.
   $field_instances['node-gallery-title_field'] = array(
     'bundle' => 'gallery',
@@ -217,6 +255,7 @@ function nems_gallery_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Image');
+  t('Picture Gallery Category');
   t('Title');
 
   return $field_instances;

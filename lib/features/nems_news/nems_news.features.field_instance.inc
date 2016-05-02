@@ -539,6 +539,38 @@ function nems_news_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-nems_news-field_news_category'.
+  $field_instances['node-nems_news-field_news_category'] = array(
+    'bundle' => 'nems_news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 13,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_news_category',
+    'label' => 'News Category',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'node-nems_news-field_tags'.
   $field_instances['node-nems_news-field_tags'] = array(
     'bundle' => 'nems_news',
@@ -691,6 +723,7 @@ function nems_news_field_default_field_instances() {
   t('External Link');
   t('Image');
   t('Name');
+  t('News Category');
   t('Related Document(s)');
   t('Related Link(s)');
   t('Related video');

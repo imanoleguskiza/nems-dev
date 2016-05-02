@@ -201,7 +201,7 @@ function nems_publications_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => -4,
+      'weight' => 12,
     ),
   );
 
@@ -374,6 +374,45 @@ function nems_publications_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-nems_publication-field_publications_category'.
+  $field_instances['node-nems_publication-field_publications_category'] = array(
+    'bundle' => 'nems_publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_publications_category',
+    'label' => 'Publications Category',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 11,
+    ),
+  );
+
   // Exported field_instance: 'node-nems_publication-field_tags'.
   $field_instances['node-nems_publication-field_tags'] = array(
     'bundle' => 'nems_publication',
@@ -490,6 +529,7 @@ function nems_publications_field_default_field_instances() {
   t('External Link');
   t('File');
   t('Image');
+  t('Publications Category');
   t('Tags');
   t('The external link can be used to refer to news located in other sites. If this field is filled, the rest of the content fields will be ignored.');
   t('Title');

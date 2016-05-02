@@ -161,16 +161,16 @@ function nems_video_gallery_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
         'language' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '7',
         ),
         'rabbit_hole' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
       ),
       'display' => array(
