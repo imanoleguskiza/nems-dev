@@ -102,7 +102,7 @@ function nems_events_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '8',
         ),
         'language' => array(
           'weight' => '2',
@@ -111,7 +111,7 @@ function nems_events_strongarm() {
           'weight' => '3',
         ),
         'metatags' => array(
-          'weight' => '12',
+          'weight' => '11',
         ),
         'rabbit_hole' => array(
           'weight' => '0',

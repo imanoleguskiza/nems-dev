@@ -171,7 +171,7 @@ function nems_gallery_strongarm() {
           'weight' => '2',
         ),
         'metatags' => array(
-          'weight' => '8',
+          'weight' => '7',
         ),
         'rabbit_hole' => array(
           'weight' => '1',

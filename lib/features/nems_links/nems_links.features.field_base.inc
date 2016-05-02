@@ -10,34 +10,6 @@
 function nems_links_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_links_category'.
-  $field_bases['field_links_category'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_links_category',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 1,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'nems_links_categories',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'options_list_callback' => 'i18n_taxonomy_allowed_values',
-    ),
-    'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
   // Exported field_base: 'field_main_file'.
   $field_bases['field_main_file'] = array(
     'active' => 1,
@@ -92,6 +64,34 @@ function nems_links_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'link_field',
+  );
+
+  // Exported field_base: 'field_nems_links_category'.
+  $field_bases['field_nems_links_category'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_nems_links_category',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'nems_links_categories',
+          'parent' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
   );
 
   return $field_bases;

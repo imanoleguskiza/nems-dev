@@ -300,7 +300,7 @@ function nems_news_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Category */
+  /* Field: Content: News Category */
   $handler->display->display_options['fields']['field_nems_news_category']['id'] = 'field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['field'] = 'field_nems_news_category';
@@ -390,7 +390,7 @@ function nems_news_views_default_views() {
     'title' => 'title',
     'body' => 'body',
   );
-  /* Filter criterion: Content: Category (field_nems_news_category) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['id'] = 'field_nems_news_category_target_id';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['field'] = 'field_nems_news_category_target_id';
@@ -482,7 +482,7 @@ function nems_news_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Category */
+  /* Field: Content: News Category */
   $handler->display->display_options['fields']['field_nems_news_category']['id'] = 'field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['field'] = 'field_nems_news_category';
@@ -576,7 +576,7 @@ function nems_news_views_default_views() {
     'title' => 'title',
     'body' => 'body',
   );
-  /* Filter criterion: Content: Category (field_nems_news_category) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['id'] = 'field_nems_news_category_target_id';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['field'] = 'field_nems_news_category_target_id';
@@ -656,7 +656,7 @@ function nems_news_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Category */
+  /* Field: Content: News Category */
   $handler->display->display_options['fields']['field_nems_news_category']['id'] = 'field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['field'] = 'field_nems_news_category';
@@ -745,7 +745,7 @@ function nems_news_views_default_views() {
     'title' => 'title',
     'body' => 'body',
   );
-  /* Filter criterion: Content: Category (field_nems_news_category) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['id'] = 'field_nems_news_category_target_id';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['field'] = 'field_nems_news_category_target_id';
@@ -837,7 +837,7 @@ function nems_news_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Category */
+  /* Field: Content: News Category */
   $handler->display->display_options['fields']['field_nems_news_category']['id'] = 'field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['field'] = 'field_nems_news_category';
@@ -930,7 +930,7 @@ function nems_news_views_default_views() {
     'title' => 'title',
     'body' => 'body',
   );
-  /* Filter criterion: Content: Category (field_nems_news_category) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['id'] = 'field_nems_news_category_target_id';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['field'] = 'field_nems_news_category_target_id';
@@ -1026,7 +1026,7 @@ function nems_news_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Category */
+  /* Field: Content: News Category */
   $handler->display->display_options['fields']['field_nems_news_category']['id'] = 'field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['field'] = 'field_nems_news_category';
@@ -1120,7 +1120,7 @@ function nems_news_views_default_views() {
     'title' => 'title',
     'body' => 'body',
   );
-  /* Filter criterion: Content: Category (field_nems_news_category) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['id'] = 'field_nems_news_category_target_id';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['field'] = 'field_nems_news_category_target_id';
@@ -1204,7 +1204,7 @@ function nems_news_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Category */
+  /* Field: Content: News Category */
   $handler->display->display_options['fields']['field_nems_news_category']['id'] = 'field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['field'] = 'field_nems_news_category';
@@ -1294,7 +1294,7 @@ function nems_news_views_default_views() {
     'title' => 'title',
     'body' => 'body',
   );
-  /* Filter criterion: Content: Category (field_nems_news_category) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['id'] = 'field_nems_news_category_target_id';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['field'] = 'field_nems_news_category_target_id';
@@ -1445,7 +1445,7 @@ function nems_news_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Category */
+  /* Field: Content: News Category */
   $handler->display->display_options['fields']['field_nems_news_category']['id'] = 'field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['field'] = 'field_nems_news_category';
@@ -1502,7 +1502,7 @@ function nems_news_views_default_views() {
     'title' => 'title',
     'body' => 'body',
   );
-  /* Filter criterion: Content: Category (field_nems_news_category) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['id'] = 'field_nems_news_category_target_id';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['field'] = 'field_nems_news_category_target_id';
@@ -1594,7 +1594,7 @@ function nems_news_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Category */
+  /* Field: Content: News Category */
   $handler->display->display_options['fields']['field_nems_news_category']['id'] = 'field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['fields']['field_nems_news_category']['field'] = 'field_nems_news_category';
@@ -1655,7 +1655,7 @@ function nems_news_views_default_views() {
     'title' => 'title',
     'body' => 'body',
   );
-  /* Filter criterion: Content: Category (field_nems_news_category) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['id'] = 'field_nems_news_category_target_id';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['table'] = 'field_data_field_nems_news_category';
   $handler->display->display_options['filters']['field_nems_news_category_target_id']['field'] = 'field_nems_news_category_target_id';

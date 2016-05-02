@@ -55,44 +55,6 @@ function nems_links_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_link-field_links_category'.
-  $field_instances['node-nems_link-field_links_category'] = array(
-    'bundle' => 'nems_link',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_links_category',
-    'label' => 'Links Category',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 9,
-    ),
-  );
-
   // Exported field_instance: 'node-nems_link-field_main_file'.
   $field_instances['node-nems_link-field_main_file'] = array(
     'bundle' => 'nems_link',
@@ -213,6 +175,44 @@ function nems_links_field_default_field_instances() {
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-nems_link-field_nems_links_category'.
+  $field_instances['node-nems_link-field_nems_links_category'] = array(
+    'bundle' => 'nems_link',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_nems_links_category',
+    'label' => 'Links Category',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 9,
     ),
   );
 

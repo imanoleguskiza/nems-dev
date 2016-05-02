@@ -48,7 +48,7 @@ function nems_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'External Link',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_nems_core_external_url',
     ),
@@ -105,7 +105,7 @@ function nems_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Related content',
-    'weight' => '10',
+    'weight' => '9',
     'children' => array(
       0 => 'field_nems_core_related_links',
       1 => 'field_nems_core_related_video',
@@ -125,6 +125,33 @@ function nems_events_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_nems_events_category|node|nems_event|form';
+  $field_group->group_name = 'group_nems_events_category';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'nems_event';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Events Category',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_nems_events_category',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-nems-events-category field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_nems_events_category|node|nems_event|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_nems_files|node|nems_event|form';
   $field_group->group_name = 'group_nems_files';
   $field_group->entity_type = 'node';
@@ -133,7 +160,7 @@ function nems_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Upload files',
-    'weight' => '8',
+    'weight' => '7',
     'children' => array(
       0 => 'field_nems_core_file',
     ),
@@ -160,7 +187,7 @@ function nems_events_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '11',
+    'weight' => '10',
     'children' => array(
       0 => 'field_tags',
     ),

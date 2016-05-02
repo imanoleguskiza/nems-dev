@@ -158,8 +158,8 @@ function nems_gallery_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gallery-field_picture_gallery_category'.
-  $field_instances['node-gallery-field_picture_gallery_category'] = array(
+  // Exported field_instance: 'node-gallery-field_nems_gallery_category'.
+  $field_instances['node-gallery-field_nems_gallery_category'] = array(
     'bundle' => 'gallery',
     'default_value' => NULL,
     'deleted' => 0,
@@ -180,7 +180,7 @@ function nems_gallery_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_picture_gallery_category',
+    'field_name' => 'field_nems_gallery_category',
     'label' => 'Picture Gallery Category',
     'required' => 0,
     'settings' => array(
@@ -192,7 +192,7 @@ function nems_gallery_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 12,
+      'weight' => 9,
     ),
   );
 
