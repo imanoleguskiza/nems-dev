@@ -5,3 +5,59 @@
  */
 
 include_once 'nems_core.features.inc';
+
+/**
+ * Implements hook_permission().
+ */
+function nems_core_permission() {
+  return array(
+    'nems menu access' => array(
+      'title' => t('NEMS Menu access'),
+      'description' => t('Restrict the access to several menu items on the NEMS template.'),
+    ),
+  );
+}
+
+/*
+ * Implements hook_menu_alter().
+ */
+function nems_core_menu_alter(&$items){
+  // List of menu items we will restrict access to.
+  $path_list = array (
+    'admin/config/content/ckeditor_tabber',
+    'admin/config/administration/admin_menu',
+    'admin/config/content/title',
+    'admin/config/content/entityconnect',
+    'admin/config/content/version_management/settings',
+    'admin/config/media/file-system',
+    'admin/config/media/file-system/transliteration',
+    'admin/config/content/node_export',
+    'admin/config/date/date_popup',
+    'admin/config/development/strongarm',
+    'admin/config/people/accounts',
+    'admin/config/development/jquery_update',
+    'admin/config/development/generate/user',
+    'admin/config/menu_token',
+    'admin/config/media/media_node',
+    'admin/config/media/image-toolkit',
+    'admin/config/media/colorbox',
+    'admin/config/media/file-settings',
+    'admin/config/regional/language/configure',
+    'admin/config/security/settings',
+    'admin/config/system/nexteuropa-tokens',
+    'admin/config/system/cron',
+    'admin/config/user-interface/chosen',
+    'admin/people/create',
+    'admin/structure/block/add',
+    'admin/config/regional/language/admin_language',
+    'admin/config/regional/language/configure'
+  );
+  foreach ($path_list as $path) {
+    if (isset($items[$path])) {
+      if (isset($items[$path]['access callback'])) {
+        unset($items[$path]['access callback']);
+      }
+      $items[$path]['access arguments'][0] = 'nems menu access';
+    }
+  }
+}
