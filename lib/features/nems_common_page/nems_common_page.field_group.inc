@@ -24,7 +24,7 @@ function nems_common_page_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'body',
-      1 => 'field_related_content',
+      1 => 'field_nems_core_related_content',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
