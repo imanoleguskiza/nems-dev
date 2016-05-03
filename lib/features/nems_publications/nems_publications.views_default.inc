@@ -106,6 +106,11 @@ function nems_publications_views_default_views() {
   $handler->display->display_options['fields']['field_nems_publication_file']['label'] = '';
   $handler->display->display_options['fields']['field_nems_publication_file']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_nems_publication_file']['click_sort_column'] = 'fid';
+  /* Sort criterion: Content: Sticky */
+  $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['table'] = 'node';
+  $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
   /* Sort criterion: Content: Date (field_nems_core_date) */
   $handler->display->display_options['sorts']['field_nems_core_date_value_1']['id'] = 'field_nems_core_date_value_1';
   $handler->display->display_options['sorts']['field_nems_core_date_value_1']['table'] = 'field_data_field_nems_core_date';
