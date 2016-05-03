@@ -54,6 +54,9 @@ function nems_core_menu_alter(&$items){
   );
   foreach ($path_list as $path) {
     if (isset($items[$path])) {
+      if (isset($items[$path]['access callback'])) {
+        unset($items[$path]['access callback']);
+      }
       $items[$path]['access arguments'][0] = 'nems menu access';
     }
   }
