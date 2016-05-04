@@ -196,7 +196,7 @@ function nems_common_page_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'entity_translation_sync' => 0,
-      'file_directory' => '',
+      'file_directory' => 'docs/pages',
       'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
       'max_filesize' => '',
       'user_register_form' => FALSE,
@@ -207,11 +207,11 @@ function nems_common_page_field_default_field_instances() {
       'settings' => array(
         'filefield_sources' => array(
           'filefield_sources' => array(
-            'attach' => 0,
-            'clipboard' => 0,
-            'plupload' => 0,
-            'reference' => 0,
-            'remote' => 0,
+            'attach' => 'attach',
+            'clipboard' => 'clipboard',
+            'plupload' => 'plupload',
+            'reference' => 'reference',
+            'remote' => 'remote',
             'upload' => 'upload',
           ),
           'source_attach' => array(

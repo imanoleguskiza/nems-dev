@@ -218,7 +218,7 @@ function nems_news_field_default_field_instances() {
       'description_field' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => 'docs/news',
-      'file_extensions' => 'pdf',
+      'file_extensions' => 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -226,30 +226,15 @@ function nems_news_field_default_field_instances() {
       'active' => 1,
       'module' => 'file',
       'settings' => array(
-        'allowed_schemes' => array(
-          'avportal' => 0,
-          'dailymotion' => 0,
-          'node' => 0,
-          'private' => 'private',
-          'public' => 'public',
-          'vimeo' => 0,
-          'youtube' => 0,
-        ),
-        'allowed_types' => array(
-          'audio' => 'audio',
-          'document' => 'document',
-          'image' => 'image',
-          'video' => 'video',
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
-          'upload' => 'upload',
-          'youtube' => 0,
-        ),
         'filefield_sources' => array(
-          'filefield_sources' => array(),
+          'filefield_sources' => array(
+            'attach' => 'attach',
+            'clipboard' => 'clipboard',
+            'plupload' => 'plupload',
+            'reference' => 'reference',
+            'remote' => 'remote',
+            'upload' => 'upload',
+          ),
           'source_attach' => array(
             'absolute' => 0,
             'attach_mode' => 'move',
@@ -260,6 +245,7 @@ function nems_news_field_default_field_instances() {
           ),
           'source_reference' => array(
             'autocomplete' => 0,
+            'search_all_fields' => 0,
           ),
         ),
         'progress_indicator' => 'throbber',
