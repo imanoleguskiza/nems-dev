@@ -21,7 +21,7 @@ function nems_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'External Link',
-    'weight' => '6',
+    'weight' => '4',
     'children' => array(
       0 => 'field_nems_core_external_url',
     ),
@@ -48,7 +48,7 @@ function nems_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Upload files',
-    'weight' => '7',
+    'weight' => '5',
     'children' => array(
       0 => 'field_nems_core_file',
     ),
@@ -75,7 +75,7 @@ function nems_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'News Category',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_nems_news_category',
     ),
@@ -102,7 +102,7 @@ function nems_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
       0 => 'body',
       1 => 'field_nems_core_date',
@@ -131,7 +131,7 @@ function nems_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Related content',
-    'weight' => '8',
+    'weight' => '6',
     'children' => array(
       0 => 'field_nems_core_related_links',
       1 => 'field_nems_core_related_video',
@@ -151,33 +151,6 @@ function nems_news_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_news_category|node|nems_news|form';
-  $field_group->group_name = 'group_news_category';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'nems_news';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'News Category',
-    'weight' => '4',
-    'children' => array(
-      0 => 'field_news_category',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-news-category field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $field_groups['group_news_category|node|nems_news|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_tags|node|nems_news|form';
   $field_group->group_name = 'group_tags';
   $field_group->entity_type = 'node';
@@ -186,7 +159,7 @@ function nems_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '9',
+    'weight' => '7',
     'children' => array(
       0 => 'field_tags',
     ),

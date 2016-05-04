@@ -22,7 +22,7 @@ function nems_video_gallery_field_default_field_bases() {
         0 => 'tid',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'taxonomy',
     'settings' => array(
       'allowed_values' => array(

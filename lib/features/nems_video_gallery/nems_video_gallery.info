@@ -6,7 +6,6 @@ version = 7.x-1.0
 project = nems_video_gallery
 php = 5.6
 dependencies[] = eva
-dependencies[] = field_group
 dependencies[] = flexslider
 dependencies[] = flexslider_views
 dependencies[] = nems_core

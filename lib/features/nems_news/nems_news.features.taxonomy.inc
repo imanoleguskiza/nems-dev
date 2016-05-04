@@ -12,10 +12,10 @@ function nems_news_taxonomy_default_vocabularies() {
     'nems_news_categories' => (object) array(
       'name' => 'NEMS News Categories',
       'machine_name' => 'nems_news_categories',
-      'description' => 'News Categories for NEMS News Content Type',
+      'description' => 'Categories for NEMS News Content Type',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 1,
+      'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 1,
       'rdf_mapping' => array(

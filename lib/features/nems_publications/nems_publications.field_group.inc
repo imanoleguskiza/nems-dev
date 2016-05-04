@@ -123,33 +123,6 @@ function nems_publications_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_publications_category|node|nems_publication|form';
-  $field_group->group_name = 'group_publications_category';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'nems_publication';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Publications Category',
-    'weight' => '3',
-    'children' => array(
-      0 => 'field_publications_category',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-publications-category field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $field_groups['group_publications_category|node|nems_publication|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_tags|node|nems_publication|form';
   $field_group->group_name = 'group_tags';
   $field_group->entity_type = 'node';
