@@ -54,6 +54,7 @@ function nems_events_field_group_info() {
       1 => 'field_nems_core_image',
       2 => 'field_nems_event_date',
       3 => 'field_nems_event_location',
+      4 => 'field_nems_core_related_content',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -66,34 +67,6 @@ function nems_events_field_group_info() {
     ),
   );
   $field_groups['group_nems_event_content|node|nems_event|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_nems_event_rel|node|nems_event|form';
-  $field_group->group_name = 'group_nems_event_rel';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'nems_event';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Related content',
-    'weight' => '9',
-    'children' => array(
-      0 => 'field_nems_core_related_links',
-      1 => 'field_nems_core_related_video',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-nems-event-rel field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $field_groups['group_nems_event_rel|node|nems_event|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -181,7 +154,6 @@ function nems_events_field_group_info() {
   t('Content');
   t('Events Category');
   t('External Link');
-  t('Related content');
   t('Tags');
   t('Upload files');
 
