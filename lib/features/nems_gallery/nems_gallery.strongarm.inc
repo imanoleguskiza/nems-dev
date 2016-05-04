@@ -165,9 +165,15 @@ function nems_gallery_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
         'language' => array(
+          'weight' => '2',
+        ),
+        'metatags' => array(
+          'weight' => '7',
+        ),
+        'rabbit_hole' => array(
           'weight' => '1',
         ),
       ),

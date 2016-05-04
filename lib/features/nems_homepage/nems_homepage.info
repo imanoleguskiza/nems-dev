@@ -78,7 +78,6 @@ features[node][] = nems_homepage
 features[node][] = nems_homepage_additional_block
 features[node][] = nems_slide_footer
 features[node][] = nems_slide_homepage
-features[taxonomy][] = nems_news_categories
 features[variable][] = comment_anonymous_nems_homepage
 features[variable][] = comment_anonymous_nems_homepage_additional_block
 features[variable][] = comment_anonymous_nems_slide_footer

@@ -1,23 +1,23 @@
 <?php
 /**
  * @file
- * nems_homepage.features.taxonomy.inc
+ * nems_video_gallery.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function nems_homepage_taxonomy_default_vocabularies() {
+function nems_video_gallery_taxonomy_default_vocabularies() {
   return array(
-    'nems_news_categories' => (object) array(
-      'name' => 'NEMS News Categories',
-      'machine_name' => 'nems_news_categories',
-      'description' => 't',
+    'nems_video_gallery_categories' => (object) array(
+      'name' => 'NEMS Video Gallery Categories',
+      'machine_name' => 'nems_video_gallery_categories',
+      'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 1,
+      'weight' => 0,
       'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 1,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',

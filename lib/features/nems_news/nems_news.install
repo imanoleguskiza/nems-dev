@@ -42,23 +42,6 @@ function nems_news_install() {
     variable_set('entity_translation_entity_types', $enabled);
   }
 
-  $vocabulary = taxonomy_vocabulary_machine_name_load('nems_news_categories');
-
-  if (!$vocabulary) {
-    $vocabulary = array(
-      'name' => $t = get_t('NEMS news categories'),
-      'machine_name' => 'nems_news_categories',
-      'description' => get_t('A list of categories for the NEMS'),
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => 1,
-      'i18n_mode' => 4,
-    );
-
-    $vocabulary = (object) $vocabulary;
-    taxonomy_vocabulary_save($vocabulary);
-  }
-
   // Enable title_field.
   if (module_exists('title')) {
     multisite_config_service('title')->replaceTitleField('node', 'nems_news', 'title');

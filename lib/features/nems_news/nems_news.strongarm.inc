@@ -108,7 +108,7 @@ function nems_news_strongarm() {
           'weight' => '30',
         ),
         'metatags' => array(
-          'weight' => '9',
+          'weight' => '8',
         ),
         'rabbit_hole' => array(
           'weight' => '2',

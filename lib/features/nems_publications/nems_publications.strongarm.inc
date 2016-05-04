@@ -96,7 +96,7 @@ function nems_publications_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '5',
+          'weight' => '7',
         ),
         'language' => array(
           'weight' => '1',
@@ -105,10 +105,10 @@ function nems_publications_strongarm() {
           'weight' => '30',
         ),
         'rabbit_hole' => array(
-          'weight' => '6',
+          'weight' => '8',
         ),
         'metatags' => array(
-          'weight' => '7',
+          'weight' => '9',
         ),
       ),
       'display' => array(),

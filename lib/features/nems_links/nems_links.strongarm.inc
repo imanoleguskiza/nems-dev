@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * nems_nems_links.strongarm.inc
+ * nems_links.strongarm.inc
  */
 
 /**
@@ -62,13 +62,6 @@ function nems_links_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_hide_translation_nems_links_nems_link';
-  $strongarm->value = 0;
-  $export['entity_translation_hide_translation_nems_links_nems_link'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'entity_translation_node_metadata_nems_link';
   $strongarm->value = '0';
   $export['entity_translation_node_metadata_nems_link'] = $strongarm;
@@ -85,13 +78,16 @@ function nems_links_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
         'rabbit_hole' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'language' => array(
           'weight' => '1',
+        ),
+        'metatags' => array(
+          'weight' => '8',
         ),
       ),
       'display' => array(),

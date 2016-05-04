@@ -132,7 +132,7 @@ function nems_events_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => -4,
+      'weight' => 18,
     ),
   );
 
@@ -516,6 +516,38 @@ function nems_events_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-nems_event-field_nems_events_category'.
+  $field_instances['node-nems_event-field_nems_events_category'] = array(
+    'bundle' => 'nems_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 13,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_nems_events_category',
+    'label' => 'Events Category',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 17,
+    ),
+  );
+
   // Exported field_instance: 'node-nems_event-field_tags'.
   $field_instances['node-nems_event-field_tags'] = array(
     'bundle' => 'nems_event',
@@ -627,6 +659,7 @@ function nems_events_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Date');
+  t('Events Category');
   t('External Link');
   t('Image');
   t('Location');
