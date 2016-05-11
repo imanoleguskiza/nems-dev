@@ -597,9 +597,8 @@ function nems_news_field_default_field_instances() {
   t('Image');
   t('Name');
   t('News Category');
+  t('Related Content');
   t('Related Document(s)');
-  t('Related Link(s)');
-  t('Related video');
   t('Tags');
   t('The external link can be used to refer to news located in other sites. If this field is filled, the rest of the content fields will be ignored.');
   t('Title');

@@ -34,7 +34,7 @@ function nems_homepage_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'flexslider';
   $handler->display->display_options['style_options']['optionset'] = 'nems_homepage_flexslider';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Field: Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_nems_homepage_image']['id'] = 'field_nems_homepage_image';
   $handler->display->display_options['fields']['field_nems_homepage_image']['table'] = 'field_data_field_nems_homepage_image';
   $handler->display->display_options['fields']['field_nems_homepage_image']['field'] = 'field_nems_homepage_image';
@@ -45,7 +45,7 @@ function nems_homepage_views_default_views() {
     'image_style' => 'slider_homepage__342_x_272_',
     'image_link' => '',
   );
-  /* Field: Field: Link */
+  /* Field: Content: External Url */
   $handler->display->display_options['fields']['field_nems_homepage_external_url']['id'] = 'field_nems_homepage_external_url';
   $handler->display->display_options['fields']['field_nems_homepage_external_url']['table'] = 'field_data_field_nems_homepage_external_url';
   $handler->display->display_options['fields']['field_nems_homepage_external_url']['field'] = 'field_nems_homepage_external_url';
@@ -117,7 +117,7 @@ function nems_homepage_views_default_views() {
     'image_style' => 'slide_homepage_large__719x265_',
     'image_link' => '',
   );
-  /* Field: Field: Link */
+  /* Field: Content: External Url */
   $handler->display->display_options['fields']['field_nems_homepage_external_url']['id'] = 'field_nems_homepage_external_url';
   $handler->display->display_options['fields']['field_nems_homepage_external_url']['table'] = 'field_data_field_nems_homepage_external_url';
   $handler->display->display_options['fields']['field_nems_homepage_external_url']['field'] = 'field_nems_homepage_external_url';
@@ -169,7 +169,7 @@ function nems_homepage_views_default_views() {
 </div>';
   $handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Weight: Weight */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'weight_weights';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
@@ -205,7 +205,7 @@ function nems_homepage_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Field: Link */
+  /* Field: Content: External Url */
   $handler->display->display_options['fields']['field_nems_homepage_external_url']['id'] = 'field_nems_homepage_external_url';
   $handler->display->display_options['fields']['field_nems_homepage_external_url']['table'] = 'field_data_field_nems_homepage_external_url';
   $handler->display->display_options['fields']['field_nems_homepage_external_url']['field'] = 'field_nems_homepage_external_url';
@@ -214,7 +214,7 @@ function nems_homepage_views_default_views() {
   $handler->display->display_options['fields']['field_nems_homepage_external_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_nems_homepage_external_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_nems_homepage_external_url']['type'] = 'link_absolute';
-  /* Field: Field: Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_nems_homepage_image']['id'] = 'field_nems_homepage_image';
   $handler->display->display_options['fields']['field_nems_homepage_image']['table'] = 'field_data_field_nems_homepage_image';
   $handler->display->display_options['fields']['field_nems_homepage_image']['field'] = 'field_nems_homepage_image';

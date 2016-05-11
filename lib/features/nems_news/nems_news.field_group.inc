@@ -153,7 +153,6 @@ function nems_news_field_group_info() {
   t('Content');
   t('External Link');
   t('News Category');
-  t('Related content');
   t('Tags');
   t('Upload files');
 

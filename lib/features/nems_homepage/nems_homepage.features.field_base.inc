@@ -10,6 +10,34 @@
 function nems_homepage_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_nems_cp_type'.
+  $field_bases['field_nems_cp_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_nems_cp_type',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'nems_contact_point_categories',
+          'parent' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
+    ),
+    'translatable' => 1,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_nems_homepage_abstract'.
   $field_bases['field_nems_homepage_abstract'] = array(
     'active' => 1,
@@ -142,6 +170,36 @@ function nems_homepage_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_nems_homepage_links'.
+  $field_bases['field_nems_homepage_links'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_nems_homepage_links',
+    'indexes' => array(),
+    'locked' => 1,
+    'module' => 'link',
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'rel' => '',
+        'target' => 'default',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+    ),
+    'translatable' => 1,
+    'type' => 'link_field',
+  );
+
   // Exported field_base: 'field_nems_homepage_mi_body'.
   $field_bases['field_nems_homepage_mi_body'] = array(
     'active' => 1,
@@ -251,36 +309,6 @@ function nems_homepage_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_nems_homepage_links'.
-  $field_bases['field_nems_homepage_links'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_nems_homepage_links',
-    'indexes' => array(),
-    'locked' => 1,
-    'module' => 'link',
-    'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'rel' => '',
-        'target' => 'default',
-      ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'entity_translation_sync' => FALSE,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
-    ),
-    'translatable' => 1,
-    'type' => 'link_field',
-  );
-
   // Exported field_base: 'field_nems_homepage_video'.
   $field_bases['field_nems_homepage_video'] = array(
     'active' => 1,
@@ -300,34 +328,6 @@ function nems_homepage_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'media',
-  );
-
-  // Exported field_base: 'field_nems_cp_type'.
-  $field_bases['field_nems_cp_type'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_nems_cp_type',
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 1,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'nems_contact_point_categories',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'options_list_callback' => 'i18n_taxonomy_allowed_values',
-    ),
-    'translatable' => 1,
-    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_nems_rightcol_position'.

@@ -118,6 +118,19 @@ function nems_common_page_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_node__common_page';
+  $strongarm->value = array(
+    'default_language' => 'xx-et-default',
+    'hide_language_selector' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 0,
+    'shared_fields_original_only' => 0,
+  );
+  $export['entity_translation_settings_node__common_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__common_page';
   $strongarm->value = array(
     'view_modes' => array(
@@ -159,9 +172,6 @@ function nems_common_page_strongarm() {
         ),
         'rabbit_hole' => array(
           'weight' => '1',
-        ),
-        'metatags' => array(
-          'weight' => '10',
         ),
         'metatags' => array(
           'weight' => '40',
