@@ -234,7 +234,8 @@ function nems_common_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-common_page-field_nems_core_related_content'.
+  // Exported field_instance:
+  // 'node-common_page-field_nems_core_related_content'.
   $field_instances['node-common_page-field_nems_core_related_content'] = array(
     'bundle' => 'common_page',
     'default_value' => NULL,
@@ -459,11 +460,11 @@ function nems_common_page_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Attachments');
   t('Body');
   t('Display table of contents');
   t('Downloads');
-  t('Picture Carousel');
+  t('Related Content');
+  t('Related Document(s)');
   t('See also');
   t('Tags');
   t('The sidebar navigation block will appear with links to headings in the body field');

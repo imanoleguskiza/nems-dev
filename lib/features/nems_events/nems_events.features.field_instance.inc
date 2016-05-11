@@ -663,9 +663,8 @@ function nems_events_field_default_field_instances() {
   t('External Link');
   t('Image');
   t('Location');
+  t('Related Content');
   t('Related Document(s)');
-  t('Related Link(s)');
-  t('Related video');
   t('Tags');
   t('The external link can be used to refer to events located in other sites. If this field is filled, the rest of the content fields will be ignored.');
   t('Title');

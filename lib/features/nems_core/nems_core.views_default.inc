@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * nems_core.views_default.inc
+ */
 
 /**
  * Implements hook_views_default_views().

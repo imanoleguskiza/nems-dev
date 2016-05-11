@@ -1410,22 +1410,15 @@ function nems_homepage_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Abstract');
   t('Additional block(s)');
   t('Body');
   t('Date');
   t('External Url');
-  t('Free content');
   t('Image');
   t('JSON Object');
   t('Link');
-  t('Page');
-  t('Page(s)');
-  t('Position');
   t('Related video');
-  t('The Title of the block.');
   t('Title');
-  t('Weight');
 
   return $field_instances;
 }

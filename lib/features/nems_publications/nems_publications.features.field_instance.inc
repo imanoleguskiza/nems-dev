@@ -296,7 +296,8 @@ function nems_publications_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_publication-field_nems_core_related_content'.
+  // Exported field_instance:
+  // 'node-nems_publication-field_nems_core_related_content'.
   $field_instances['node-nems_publication-field_nems_core_related_content'] = array(
     'bundle' => 'nems_publication',
     'default_value' => NULL,
@@ -304,6 +305,12 @@ function nems_publications_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -361,7 +368,6 @@ function nems_publications_field_default_field_instances() {
       'weight' => 3,
     ),
   );
-
 
   // Exported field_instance:
   // 'node-nems_publication-field_nems_publication_file'.
@@ -597,6 +603,7 @@ function nems_publications_field_default_field_instances() {
   t('File');
   t('Image');
   t('Publications Category');
+  t('Related Content');
   t('Tags');
   t('The external link can be used to refer to news located in other sites. If this field is filled, the rest of the content fields will be ignored.');
   t('Title');
