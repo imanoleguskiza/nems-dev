@@ -153,17 +153,5 @@ function nems_core_strongarm() {
   );
   $export['theme_nems_theme_settings'] = $strongarm;
 
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'version_management_node_types';
-  $strongarm->value = array(
-    'article' => 'article',
-    'page' => 'page',
-    'nems_links' => 'nems_links',
-    'nems_news' => 'nems_news',
-  );
-  $export['version_management_node_types'] = $strongarm;
-
   return $export;
 }
