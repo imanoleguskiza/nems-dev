@@ -35,4 +35,10 @@
     <rule ref="Drupal.NamingConventions.ValidVariableName">
         <exclude-pattern>src/Phing</exclude-pattern>
     </rule>
+
+    <!-- Wysiwyg profiles exported in Features do not have a trailing period. -->
+    <!-- Remove this once https://www.drupal.org/node/2724173 is in. -->
+    <rule ref="Drupal.Commenting.InlineComment.InvalidEndChar">
+        <exclude-pattern>*.features.wysiwyg.inc</exclude-pattern>
+    </rule>
 </ruleset>
