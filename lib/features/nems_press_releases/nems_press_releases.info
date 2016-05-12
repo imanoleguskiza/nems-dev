@@ -2,7 +2,6 @@ name = NEMS Press Releases
 description = NEMS Press Releases
 core = 7.x
 package = NEMS
-version = 7.x-1.0
 php = 5.2.4
 dependencies[] = feeds
 dependencies[] = feeds_et

@@ -2,7 +2,6 @@ name = NEMS links
 description = The homepage feature fo the NEMS websites
 core = 7.x
 package = NEMS
-version = 7.x-1.0
 php = 5.2.4
 dependencies[] = nems_core
 dependencies[] = rabbit_hole

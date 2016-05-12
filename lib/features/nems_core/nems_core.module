@@ -21,9 +21,9 @@ function nems_core_permission() {
 /**
  * Implements hook_menu_alter().
  */
-function nems_core_menu_alter(&$items){
+function nems_core_menu_alter(&$items) {
   // List of menu items we will restrict access to.
-  $path_list = array (
+  $path_list = array(
     'admin/config/content/ckeditor_tabber',
     'admin/config/administration/admin_menu',
     'admin/config/content/title',
@@ -50,7 +50,7 @@ function nems_core_menu_alter(&$items){
     'admin/people/create',
     'admin/structure/block/add',
     'admin/config/regional/language/admin_language',
-    'admin/config/regional/language/configure'
+    'admin/config/regional/language/configure',
   );
   foreach ($path_list as $path) {
     if (isset($items[$path])) {
