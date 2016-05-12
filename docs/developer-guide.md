@@ -139,12 +139,49 @@ $ ./behat
 
 ### 8. Check coding standards
 
+#### Automated coding standards check on git push
+
 PHP CodeSniffer is preconfigured with the latest Drupal coding standards
 courtesy of the Coder module. A "git pre-push hook" is installed that will
 automatically check the coding standards whenever you push your branch.  When
 you are pushing new code to an existing branch only the changed files will be
 checked to increase performance. When you push an entirely new branch a
 complete check will be performed.
+
+This is intended to help you find coding standards violations before your work
+is pushed. The Continuous Integration service will fail any build containing
+coding standards violations, so it's better to catch them early.
+
+If you want to disable this pre-push hook, for instance because you are under
+time pressure and need to push your code urgently to switch to a different task,
+you can run the following Phing target:
+
+```
+$ ./bin/phing disable-pre-push
+```
+
+This will disable the automated check and you will be able to push freely. The
+CI server will still fail any build that doesn't follow coding standards, but at
+least your work is now safely pushed to the repository.
+
+To re-enable the pre-push hook:
+
+```
+$ ./bin/phing setup-php-codesniffer
+```
+
+You can also prevent the pre-push hook from being activated on new builds by
+setting the following property to 0 in your `build.properties.local`:
+
+```
+phpcs.prepush.enable = 1
+```
+
+This is not recommended however, the CI server will still reject any code that
+has coding standards violations.
+
+
+#### Manual coding standards check
 
 To manually check the coding standards you can run PHP CodeSniffer from the
 root folder:
