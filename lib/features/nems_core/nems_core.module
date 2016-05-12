@@ -18,7 +18,7 @@ function nems_core_permission() {
   );
 }
 
-/*
+/**
  * Implements hook_menu_alter().
  */
 function nems_core_menu_alter(&$items){

@@ -78,7 +78,6 @@ features[variable][] = site_map_page_title
 features[variable][] = site_map_show_front
 features[variable][] = site_map_show_menus
 features[variable][] = theme_nems_theme_settings
-features[variable][] = version_management_node_types
 features[views_view][] = nems_related_content
 features_exclude[dependencies][date] = date
 features_exclude[dependencies][file] = file

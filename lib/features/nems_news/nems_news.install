@@ -29,22 +29,3 @@ function nems_news_disable() {
   multisite_drupal_toolbox_disable_content_type('nems_news');
   drupal_set_message(t("The NEMS news feature is now disabled on your site"));
 }
-
-/**
- * Implements hook_install().
- */
-function nems_news_install() {
-  // Enable entity translation support for terms.
-  $enabled = variable_get('entity_translation_entity_types', array());
-  $enabled_types = array_filter($enabled);
-  if (!in_array('taxonomy_term', $enabled_types)) {
-    $enabled['taxonomy_term'] = 'taxonomy_term';
-    variable_set('entity_translation_entity_types', $enabled);
-  }
-
-  // Enable title_field.
-  if (module_exists('title')) {
-    multisite_config_service('title')->replaceTitleField('node', 'nems_news', 'title');
-    title_field_replacement_toggle('taxonomy_term', 'nems_news_categories', 'name');
-  }
-}
