@@ -202,3 +202,48 @@ a Views plugin which has class names that do not strictly respect the coding
 standards) then you can put your additional rules in the `phpcs-ruleset.xml`
 file. Please refer to the documentation of PHP CodeSniffer on how to configure
 the rules.
+
+
+### 9. Create a pull request
+
+When your code is ready for review, you should create a pull request. The code
+can be considered ready if:
+
+* The functionality has been fully implemented.
+* Test coverage for all end user facing functionality has been provided as a
+Behat test scenario.
+
+Creating a pull request happens in five steps:
+
+1. **Create a fork**: The first (or actually zeroth) step is to create a fork of
+your project in your own profile. If your project is called `myproject`, the
+official repository will be called `myproject-reference` and you can find it at
+https://github.com/ec-europa/myproject-reference. In the top right you can find
+a "Fork" button. Click it to create a fork. You will only need to do this once.
+When the fork is set up you can use it for all your pull requests in the future.
+Make sure you are using this fork to push your code to. You can find information
+on how to do this in the Github documentation:
+[Fork A Repo](https://help.github.com/articles/fork-a-repo/).
+2. **Create a ticket in Jira**: As usual each feature request and bug fix needs a
+ticket in Jira for the QA team. You can create one at the
+[MULTISITE project](https://webgate.ec.europa.eu/CITnet/jira/browse/MULTISITE/)
+in Jira. Your ticket will get a number such as MULTISITE-12345. Write this down.
+3. **Create a feature branch**: In your local development repository, create a
+feature branch. The ticket number should be part of the name of the branch so
+we can always find the relevant information in Jira. If you are submitting a
+bugfix, call the branch `bugfix/MULTISITE-12345`. If it is a new feature it
+shall be named `feature/MULTISITE-12345`. Push it to your fork. For more
+detailed information on this step, see [Creating and deleting branches within
+your repository](https://help.github.com/articles/creating-and-deleting-branches-within-your-repository/).
+4. **Create the pull request**: Now you are ready to create the pull request.
+Go to the homepage of your fork and click on "Branches", then click the "New
+pull request" button next to your branch. Make sure to mention your Jira ticket
+number in the title of the pull request. Full instructions for this step can be
+found in [Using pull requests](https://help.github.com/articles/using-pull-requests/).
+5. **Link the PR in your Jira ticket**: Finally, go back to the Jira ticket and
+post a link to the PR in the ticket, so that the QA engineer can find it.
+
+The code will now be automatically tested: the Behat test scenarios will be
+executed, the coding standards will be checked and an automated QA checklist
+will be run. You will be able to see the result of this automated check in your
+pull request as soon as this process is finished.
