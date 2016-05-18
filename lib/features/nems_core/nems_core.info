@@ -30,7 +30,6 @@ dependencies[] = site_map
 dependencies[] = splash_screen
 dependencies[] = taxonomy_access_fix
 dependencies[] = tb_megamenu
-dependencies[] = text_with_summary
 dependencies[] = viewreference
 dependencies[] = views_block_filter_block
 features[bean_type][] = list_block
