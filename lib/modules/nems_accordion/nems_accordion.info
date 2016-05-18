@@ -1,8 +1,0 @@
-name = NEMS WYSIWYG Accordion Plugin
-description = Insert an Accordion markup into the WYSIWYG body.
-project = nems_accordion
-core = 7.x
-multisite_version = 2.1
-php = 5.6
-dependencies[] = wysiwyg
-version = 7.x-1.0
