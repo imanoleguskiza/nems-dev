@@ -10,7 +10,7 @@
 function nems_core_block_access_defaults() {
   $block_access = array();
 
-  // Exported Block Access settings for module system
+  // Exported Block Access settings for module system.
   $block_access['system'] = array(
     'webmaster' => array(
       0 => 'config',
@@ -39,7 +39,7 @@ function nems_core_block_access_defaults() {
     ),
   );
 
-  // Exported Block Access settings for module menu_block
+  // Exported Block Access settings for module menu_block.
   $block_access['menu_block'] = array(
     'webmaster' => array(
       0 => 'config',
@@ -68,7 +68,7 @@ function nems_core_block_access_defaults() {
     ),
   );
 
-  // Exported Block Access settings for module tb_megamenu
+  // Exported Block Access settings for module tb_megamenu.
   $block_access['tb_megamenu'] = array(
     'webmaster' => array(
       0 => 'config',
@@ -97,7 +97,7 @@ function nems_core_block_access_defaults() {
     ),
   );
 
-  // Exported Block Access settings for module bean
+  // Exported Block Access settings for module bean.
   $block_access['bean'] = array(
     'webmaster' => array(
       0 => 'config',

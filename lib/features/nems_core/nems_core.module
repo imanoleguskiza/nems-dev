@@ -6,8 +6,8 @@
 
 include_once 'nems_core.features.inc';
 
-define("EUROPAEU_CORE_BLOCK_ACCESS_ROLE", 6);
-const EUROPAEU_CORE_BLOCK_ACCESS_PERMISSIONS = array(
+define("NEMS_CORE_BLOCK_ACCESS_ROLE", 6);
+const NEMS_CORE_BLOCK_ACCESS_PERMISSIONS = array(
   'config',
   'config_body',
   'config_desc',
@@ -91,20 +91,19 @@ function _nems_core_menu_block_access($account = NULL) {
   return user_access('administer blocks', $account);
 }
 
-
 /**
  * Add access restrictions to a block.
  */
 function _nems_core_restrict_block_access($module, $delta) {
-  foreach (EUROPAEU_CORE_BLOCK_ACCESS_PERMISSIONS as $permission) {
+  foreach (NEMS_CORE_BLOCK_ACCESS_PERMISSIONS as $permission) {
     db_insert('block_access_roles')
-    ->fields(array(
-      'module' => $module,
-      'delta' => $delta,
-      'rid' => EUROPAEU_CORE_BLOCK_ACCESS_ROLE,
-      'permission' => $permission,
-    ))
-    ->execute();
+      ->fields(array(
+        'module' => $module,
+        'delta' => $delta,
+        'rid' => NEMS_CORE_BLOCK_ACCESS_ROLE,
+        'permission' => $permission,
+      ))
+      ->execute();
   }
 }
 

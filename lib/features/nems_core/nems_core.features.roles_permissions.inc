@@ -10,7 +10,7 @@
 function nems_core_default_roles_permissions() {
   $roles = array();
 
-  // Exported role: contributor
+  // Exported role: contributor.
   $roles['contributor'] = (object) array(
     'name' => 'contributor',
     'weight' => 3,
@@ -36,7 +36,7 @@ function nems_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: editor
+  // Exported role: editor.
   $roles['editor'] = (object) array(
     'name' => 'editor',
     'weight' => 4,
@@ -74,7 +74,7 @@ function nems_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: webmaster
+  // Exported role: webmaster.
   $roles['webmaster'] = (object) array(
     'name' => 'webmaster',
     'weight' => 5,

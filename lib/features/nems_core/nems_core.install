@@ -29,7 +29,6 @@ function nems_core_install() {
   $menu['i18n_mode'] = 5;
   menu_save($menu);
 
-
   // Restrict access to certain blocks.
   $restricted_blocks = array(
     'system' => array(
