@@ -290,7 +290,7 @@ function nems_core_field_default_field_bases() {
     'module' => 'file',
     'settings' => array(
       'display_default' => 0,
-      'display_field' => 0,
+      'display_field' => 1,
       'entity_translation_sync' => array(
         0 => 'fid',
       ),

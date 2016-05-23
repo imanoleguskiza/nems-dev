@@ -13,7 +13,7 @@ function nems_publications_field_default_field_bases() {
   // Exported field_base: 'field_nems_publication_file'.
   $field_bases['field_nems_publication_file'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_nems_publication_file',
@@ -26,7 +26,7 @@ function nems_publications_field_default_field_bases() {
     'module' => 'file',
     'settings' => array(
       'display_default' => 0,
-      'display_field' => 0,
+      'display_field' => 1,
       'entity_translation_sync' => array(
         0 => 'fid',
       ),
