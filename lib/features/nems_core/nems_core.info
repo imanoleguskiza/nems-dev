@@ -52,6 +52,7 @@ features[field_base][] = field_view_more
 features[field_instance][] = bean-list_block-field_block_reference
 features[field_instance][] = bean-list_block-field_description
 features[field_instance][] = bean-list_block-field_view_more
+features[field_instance][] = bean-list_block-title_field
 features[file_display][] = document__wysiwyg__file_field_file_download_link
 features[file_display][] = document__wysiwyg__file_field_file_table
 features[filter][] = filtered_html

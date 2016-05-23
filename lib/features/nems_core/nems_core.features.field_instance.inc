@@ -198,12 +198,51 @@ function nems_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'bean-list_block-title_field'.
+  $field_instances['bean-list_block-title_field'] = array(
+    'bundle' => 'list_block',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The Title of the block.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'bean',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Block reference');
-  t('Blocktest');
   t('Description');
   t('Link to More');
+  t('The Title of the block.');
+  t('Title');
 
   return $field_instances;
 }
