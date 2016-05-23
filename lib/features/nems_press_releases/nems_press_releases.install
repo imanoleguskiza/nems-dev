@@ -8,14 +8,14 @@
  * Implements hook_enable().
  */
 function nems_press_releases_enable() {
-  drupal_set_message('NEMS press releases feature is now active on your site.');
+  drupal_set_message(t('NEMS press releases feature is now active on your site.'));
 }
 
 /**
  * Implements hook_disable().
  */
 function nems_press_releases_disable() {
-  drupal_set_message('NEMS press releases feature is now disabled on your site.');
+  drupal_set_message(t('NEMS press releases feature is now disabled on your site.'));
 }
 
 /**
@@ -24,7 +24,7 @@ function nems_press_releases_disable() {
 function nems_press_releases_install() {
 
   $importer_urls = array(
-    'europa_eu_rapid_' => 'http://europa.eu/rapid/search-result.htm?format=XML&dateRange=30d&exportSize=5000&oldUrl=true',
+    'europa_eu_rapid_' => url('http://europa.eu/rapid/search-result.htm?format=XML&dateRange=30d&exportSize=5000&oldUrl=true'),
   );
 
   foreach ($importer_urls as $key => $url) {

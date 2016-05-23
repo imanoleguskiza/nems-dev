@@ -34,8 +34,10 @@ function nems_multilingual_setup_drush_help($command) {
   switch ($command) {
     case 'drush:export-po-translations':
       return dt('Export translations defined on translations.json file');
+
     case 'drush:import-po-translations':
       return dt('Import translations defined on translations folder');
+
   }
 }
 
@@ -108,7 +110,7 @@ function drush_nems_multilingual_setup_import_po_translations($module = FALSE) {
       module_load_include('inc', 'i18n_string', 'i18n_string.admin');
       i18n_string_refresh_reset($type);
       if ($strings = i18n_string_group_string_list($type)) {
-        $count = i18n_string_refresh_string_list($strings);
+        i18n_string_refresh_string_list($strings);
       }
       module_invoke_all('i18n_string_refresh', $type);
       drush_print('Strings for ' . $type . ' was refreshed');

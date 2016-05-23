@@ -6,3 +6,4 @@ package = Multilingual - Internationalization
 core = 7.x
 multisite_version = 2.1
 php = 5.6
+features[features_api][] = api:2
