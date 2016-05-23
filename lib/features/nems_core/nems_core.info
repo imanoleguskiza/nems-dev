@@ -6,6 +6,7 @@ php = 5.6
 dependencies[] = admin_language
 dependencies[] = bean_admin_ui
 dependencies[] = block_access
+dependencies[] = blockreference
 dependencies[] = ckeditor_tabber
 dependencies[] = collapsiblock
 dependencies[] = colorbox
