@@ -119,6 +119,7 @@ function nems_core_default_roles_permissions() {
       'create blocks' => TRUE,
       'create files' => TRUE,
       'create translation jobs' => TRUE,
+      'create url aliases' => TRUE,
       'delete any list_block bean' => TRUE,
       'delete any webtools bean' => TRUE,
       'delete revisions' => TRUE,
