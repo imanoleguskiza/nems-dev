@@ -29,7 +29,7 @@ function nems_core_field_default_field_instances() {
     ),
     'entity_type' => 'bean',
     'field_name' => 'field_block_reference',
-    'label' => 'Blocktest',
+    'label' => 'Block reference',
     'required' => 0,
     'settings' => array(
       'blockreference_modules' => array(
