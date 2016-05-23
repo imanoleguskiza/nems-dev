@@ -44,7 +44,7 @@ function _nems_multilingual_setup_import_translations($module) {
         i18n_string_refresh_string_list($strings);
       }
       module_invoke_all('i18n_string_refresh', $type);
-      drupal_set_message(t('Strings for @type was refreshed', array('@type' => $type));
+      drupal_set_message(t('Strings for @type was refreshed', array('@type' => $type)));
     }
   }
   else {
