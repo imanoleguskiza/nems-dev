@@ -12,6 +12,9 @@ projects[block_access][subdir] = "contrib"
 projects[block_access][version] = 1.6
 projects[block_access][patch][] = "https://www.drupal.org/files/block_access_delete_fix-2039989-2.patch"
 
+projects[blockreference][subdir] = "contrib"
+projects[blockreference][version] = 2.3
+
 projects[collapsiblock][subdir] = "contrib"
 projects[collapsiblock][version] = 1.1
 
@@ -79,9 +82,6 @@ projects[tb_megamenu][version] = 1.0-rc2
 
 projects[tocify][subdir] = "contrib"
 projects[tocify][version] = 1.0
-
-projects[viewreference][subdir] = "contrib"
-projects[viewreference][version] = 3.5
 
 projects[views_block_filter_block][subdir] = "contrib"
 projects[views_block_filter_block][version] = 1.0-beta2
