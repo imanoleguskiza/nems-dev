@@ -28,6 +28,43 @@ function nems_core_install() {
   $menu = menu_load('menu-service-tools');
   $menu['i18n_mode'] = 5;
   menu_save($menu);
+
+  // Restrict access to certain blocks.
+  $restricted_blocks = array(
+    'system' => array(
+      'help',
+      'main',
+      'management',
+      'navigation',
+      'powered-by',
+      'user-menu',
+    ),
+    'tb_megamenu' => array(
+      'management',
+      'menu-breadcrumb-menu',
+      'menu-service-tools',
+      'navigation',
+      'user-menu',
+    ),
+  );
+  foreach ($restricted_blocks as $module => $deltas) {
+    foreach ($deltas as $delta) {
+      _nems_core_restrict_block_access($module, $delta);
+    }
+
+  // Add accordion and tabber buttons in wysiwyg.
+  $plugin_settings = array(
+    'tabber' => array(
+      'addTab',
+    ),
+    'nems_accordion_plugin' => array(
+      'nems_accordion_plugin_button',
+    ),
+  );
+  foreach ($plugin_settings as $group => $buttons) {
+    multisite_config_service('wysiwyg')->addButtonsToProfile('full_html', $group, $buttons);
+
+  }
 }
 
 /**
