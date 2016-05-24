@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the NEMS Publications feature.
+ */
+
+include_once 'nems_publications.features.inc';

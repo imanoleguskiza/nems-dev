@@ -1,0 +1,46 @@
+<?php
+/**
+ * @file
+ * Install file for the NEMS press releases feature.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function nems_press_releases_enable() {
+  drupal_set_message(t('NEMS press releases feature is now active on your site.'));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function nems_press_releases_disable() {
+  drupal_set_message(t('NEMS press releases feature is now disabled on your site.'));
+}
+
+/**
+ * Implements hook_install().
+ */
+function nems_press_releases_install() {
+
+  $importer_urls = array(
+    'europa_eu_rapid_' => url('http://europa.eu/rapid/search-result.htm?format=XML&dateRange=30d&exportSize=5000&oldUrl=true'),
+  );
+
+  foreach ($importer_urls as $key => $url) {
+    $source = feeds_source($key);
+    $source->addConfig(array(
+      'FeedsHTTPFetcher' => array(
+        'source' => $url,
+      ),
+    ));
+    $source->save();
+    $source->schedule();
+  }
+
+  // Give webmasters access to feeds.
+  $webmaster = user_role_load_by_name("webmaster");
+  if ($webmaster) {
+    user_role_grant_permissions($webmaster->rid, array('administer feeds'));
+  }
+}

@@ -1,0 +1,7 @@
+name = NEMS WYSIWYG Accordion Plugin
+description = Insert an Accordion markup into the WYSIWYG body.
+package = NEMS
+core = 7.x
+multisite_version = 2.1
+php = 5.6
+features[features_api][] = api:2

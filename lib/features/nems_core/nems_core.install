@@ -1,0 +1,97 @@
+<?php
+/**
+ * @file
+ * Code for the nems_core feature.
+ */
+
+include_once 'nems_core.features.inc';
+
+/**
+ * Implements hook_install().
+ */
+function nems_core_install() {
+  variable_set('views_localize_all', TRUE);
+  variable_set('node_admin_theme', TRUE);
+  multisite_drupal_toolbox_remove_block_context('site_wide', 'language_selector_site');
+  multisite_drupal_toolbox_add_block_context('site_wide', 'locale-language', 'locale', 'language', 'header_top', '-8');
+  multisite_drupal_toolbox_add_block_context('site_wide', 'nexteuropa_europa_search-nexteuropa_search_form', 'nexteuropa_europa_search', 'nexteuropa_search_form', 'header_right', '2');
+  multisite_drupal_toolbox_remove_block_context('site_wide', 'form');
+  multisite_drupal_toolbox_remove_block_context('site_wide', 'language_selector_page-language_selector_page');
+  multisite_drupal_toolbox_remove_block_context('homepage', 'views-multisite_settings_core-block_1');
+
+  menu_delete_links('main-menu');
+  $menu = menu_load('main-menu');
+  $menu['i18n_mode'] = 5;
+  menu_save($menu);
+
+  menu_delete_links('menu-service-tools');
+  $menu = menu_load('menu-service-tools');
+  $menu['i18n_mode'] = 5;
+  menu_save($menu);
+
+  // Restrict access to certain blocks.
+  $restricted_blocks = array(
+    'system' => array(
+      'help',
+      'main',
+      'management',
+      'navigation',
+      'powered-by',
+      'user-menu',
+    ),
+    'tb_megamenu' => array(
+      'management',
+      'menu-breadcrumb-menu',
+      'menu-service-tools',
+      'navigation',
+      'user-menu',
+    ),
+  );
+  foreach ($restricted_blocks as $module => $deltas) {
+    foreach ($deltas as $delta) {
+      _nems_core_restrict_block_access($module, $delta);
+    }
+  }
+
+  // Add accordion and tabber buttons in wysiwyg.
+  $plugin_settings = array(
+    'tabber' => array(
+      'addTab',
+    ),
+    'nems_accordion_plugin' => array(
+      'nems_accordion_plugin_button',
+    ),
+  );
+  foreach ($plugin_settings as $group => $buttons) {
+    multisite_config_service('wysiwyg')->addButtonsToProfile('full_html', $group, $buttons);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function nems_core_uninstall() {
+  variable_set('theme_default', 'ec_resp');
+  variable_set('views_localize_all', FALSE);
+  variable_set('node_admin_theme', FALSE);
+  variable_set('nexteuropa_search_url', 'http://ec.europa.eu/geninfo/query/resultaction.jsp');
+  variable_set('easy_breadcrumb-include_title_segment', "1");
+  multisite_drupal_toolbox_add_block_context('site_wide', 'language_selector_site', 'language_selector_site', 'language_selector_site', 'header_right', '-10');
+  multisite_drupal_toolbox_add_block_context('site_wide', 'form', 'search', 'form', 'header_right', '1');
+  multisite_drupal_toolbox_remove_block_context('site_wide', 'locale-language');
+  multisite_drupal_toolbox_remove_block_context('site_wide', 'nexteuropa_europa_search-nexteuropa_search_form');
+}
+
+/**
+ * Implements hook_enable().
+ */
+function nems_core_enable() {
+  drupal_set_message(t('NEMS core feature is now active on your site.'));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function nems_core_disable() {
+  drupal_set_message(t('NEMS core feature is now disabled on your site.'));
+}

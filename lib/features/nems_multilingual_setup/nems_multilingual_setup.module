@@ -1,0 +1,53 @@
+<?php
+/**
+ * @file
+ * Code for the nems_multilingual_setup feature.
+ */
+
+/**
+ * Function to import the .po translation files.
+ *
+ * @param string $module
+ *   Module which will be used.
+ */
+function _nems_multilingual_setup_import_translations($module) {
+  $directory = drupal_get_path('module', $module) . '/translations/';
+  $translations_file = 'translations.json';
+  if (file_exists($directory . $translations_file)) {
+    $json_content = json_decode(file_get_contents($directory . $translations_file));
+    foreach ($json_content as $type => $items) {
+      foreach (language_list() as $key_lang => $language) {
+        $language_file = $directory . $type . '_' . $key_lang . '.po';
+        if (file_exists($language_file)) {
+          $file = new stdClass();
+          $file->uri = $language_file;
+          $file->filename = $type . '_' . $key_lang . '.po';
+          _locale_import_po($file, $key_lang, LOCALE_IMPORT_OVERWRITE, $type);
+          drupal_set_message(t('@module language group imported @type for language @key_lang', array(
+            '@module' => $module,
+            '@type' => $type,
+            '@key_lang' => $key_lang,
+          )));
+        }
+        else {
+          drupal_set_message(t('@module language .po file does not exists @type for language @key_lang', array(
+            '@module' => $module,
+            '@type' => $type,
+            '@key_lang' => $key_lang,
+          )));
+        }
+      }
+
+      module_load_include('inc', 'i18n_string', 'i18n_string.admin');
+      i18n_string_refresh_reset($type);
+      if ($strings = i18n_string_group_string_list($type)) {
+        i18n_string_refresh_string_list($strings);
+      }
+      module_invoke_all('i18n_string_refresh', $type);
+      drupal_set_message(t('Strings for @type was refreshed', array('@type' => $type)));
+    }
+  }
+  else {
+    drupal_set_message(t('translations.json file for specified module does not exist'));
+  }
+}

@@ -30,6 +30,9 @@
     <echo msg="Loading Drush Makefile task." />
     <taskdef name="drushmakefile" classname="\NextEuropa\Phing\DrushMakeFileTask" />
 
+    <echo msg="Loading Starterkit update check task." />
+    <taskdef name="checkstarterkit" classname="\NextEuropa\Phing\CheckStarterkitTask" />
+
     <import file="build.package.xml" />
     <import file="build.test.xml" />
 
@@ -40,13 +43,13 @@
         <property name="aws.profile" value="" />
         <aws-config region="${aws.region}" profile="${aws.profile}" />
     </target>
-    
+
     <target name="delete-deployment-group">
         <aws-deploy-delete-deployment-group
                 name="${deploy.groupName}"
                 application="${deploy.applicationName}" />
     </target>
-    
+
     <target name="delete-stack" depends="delete-deployment-group">
         <aws-cf-deletestack name="${cf.stackName}" />
     </target>
@@ -56,7 +59,7 @@
             <equals arg1="single-server" arg2="${cf.template}" />
             <then>
                 <aws-cf-runstack
-                        name="subsite-${cf.stackName}"
+                        name="${deploy.applicationName}-${cf.stackName}"
                         updateOnConflict="true"
                         capabilities="CAPABILITY_IAM"
                         templatePath="./resources/cloudformation/${cf.template}.template">
@@ -68,7 +71,7 @@
             <else>
                 <!-- Todo: This is currently untested. -->
                 <aws-cf-runstack
-                        name="subsite-${cf.stackName}"
+                        name="${deploy.applicationName}-${cf.stackName}"
                         updateOnConflict="true"
                         capabilities="CAPABILITY_IAM"
                         templatePath="./resources/cloudformation/${cf.template}.template">
@@ -93,7 +96,7 @@
                         deploymentConfigName="CodeDeployDefault.OneAtATime"
                         serviceRole="${deploy.serviceRole}"
                         application="${deploy.applicationName}">
-                    <ec2TagFilter key="env" value="${cf.stackName}" />
+                    <ec2TagFilter key="stack" value="${deploy.applicationName}-${cf.stackName}" />
                 </aws-deploy-deployment-group>
             </then>
             <else>

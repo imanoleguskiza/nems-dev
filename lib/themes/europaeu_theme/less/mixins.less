@@ -1,0 +1,148 @@
+//* ************************************************************************** variables & mixins */
+//* ********************************* colors */
+@white: #ffffff;
+@black: #000000;
+@blue_dark: #284f75;
+@blue_medium: #336699;
+@blue: #2dace3;
+@blue_light: #347c98;
+@blue_lighter: #dbe4e7;
+@grey_darker: #333333;
+@grey_dark: #404040;
+@grey: #e0e0e0;
+@grey_medium: #e5e4e2;
+@grey_light: #e9eff3;
+@grey_lighter: #f2f2f2;
+@grey_lightest: #f3f3f3;
+@grey_6: #666666;
+@grey_5: #555555;
+@grey_9: #999999;
+@grey_e: #eeeeee;
+@grey_c: #cccccc;
+//* ********************************* fonts */
+.font-size(@sizeValue) {
+    @remValue: @sizeValue;
+    @pxValue: (@sizeValue * 10);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem";
+}
+
+//* verdana */
+@verdana: Verdana,
+Arial,
+Helvetica,
+"DejaVu Sans",
+sans-serif;
+//* arial */
+@arial: Arial,
+Helvetica,
+"DejaVu Sans",
+sans-serif;
+//* georgia */
+@georgia: Georgia,
+"Times New Roman",
+Times,
+serif;
+//* ************************************************************************** box, shadows, opacity */
+.opacity (@opacity: 0.5) {
+    -webkit-opacity: @opacity;
+    -moz-opacity: @opacity;
+    opacity: @opacity;
+}
+
+.border-radius (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+.box-shadow (@string) {
+    -webkit-box-shadow: @string;
+    -moz-box-shadow: @string;
+    box-shadow: @string;
+}
+
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+    text-shadow: @string;
+}
+
+//* ************************************************************************** gradients */
+//* ********************************* gradient-horizontal() */
+.gradient-h (@startColor: #eee, @endColor: #fff) {
+    background-color: @endColor;
+    background-image: -webkit-gradient(linear, left center, right center, from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+    background-image: -moz-linear-gradient(left, @startColor, @endColor);
+    background-image: -o-linear-gradient(left, @startColor, @endColor);
+    background-image: linear-gradient(left, @startColor, @endColor);
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='%d', EndColorStr='%d')", @startColor, @endColor));
+}
+
+//* ********************************* gradient-vertical() */
+.gradient-v (@startColor: #eee, @endColor: #fff) {
+    background-color: mix(@startColor, @endColor, 60%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(top, @startColor, @endColor);
+    background-image: -moz-linear-gradient(top, @startColor, @endColor);
+    background-image: -o-linear-gradient(top, @startColor, @endColor);
+    background-image: linear-gradient(top, @startColor, @endColor);
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='%d', EndColorStr='%d')", @startColor, @endColor));
+}
+
+//* ********************************* gradient-radial() */
+.gradient-radial (@innerColor: #eee, @outerColor: #fff) {
+    background-color: @outerColor;
+    background-image: -webkit-gradient(radial, 50% 50%, 200, 50% 50%, 20, from(@outerColor), to(@innerColor));
+    background-image: -webkit-radial-gradient(50% 50%, @innerColor, @outerColor);
+    background-image: -moz-radial-gradient(50% 50%, @innerColor, @outerColor);
+    background-image: -o-radial-gradient(50% 50%, @innerColor, @outerColor);
+    background-image: radial-gradient(50% 50%, @innerColor, @outerColor);
+}
+
+.gradient-direction (@startColor: #555, @endColor: #333, @degrees: 45) {
+    background: @endColor;
+    background-image: -webkit-gradient(linear, ~"@{degrees}deg", from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(~"@{degrees}deg", @startColor, @endColor);
+    background-image: -moz-linear-gradient(~"@{degrees}deg", @startColor, @endColor);
+    background-image: -o-linear-gradient(~"@{degrees}deg", @startColor, @endColor);
+    background-image: linear-gradient(~"@{degrees}deg", @startColor, @endColor);
+}
+
+//* ************************************************************************** clearfix */
+.clearfix () {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+//* ************************************************************************** clearfix */
+//* ********************************* column width, column count, column gap, column border color, column border style, column border width.  */
+.columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+    -moz-column-width: @colwidth;
+    -moz-column-count: @colcount;
+    -moz-column-gap: @colgap;
+    -moz-column-rule-color: @columnRuleColor;
+    -moz-column-rule-style: @columnRuleStyle;
+    -moz-column-rule-width: @columnRuleWidth;
+    -webkit-column-width: @colwidth;
+    -webkit-column-count: @colcount;
+    -webkit-column-gap: @colgap;
+    -webkit-column-rule-color: @columnRuleColor;
+    -webkit-column-rule-style: @columnRuleStyle;
+    -webkit-column-rule-width: @columnRuleWidth;
+    column-width: @colwidth;
+    column-count: @colcount;
+    column-gap: @colgap;
+    column-rule-color: @columnRuleColor;
+    column-rule-style: @columnRuleStyle;
+    column-rule-width: @columnRuleWidth;
+}

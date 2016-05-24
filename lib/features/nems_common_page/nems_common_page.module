@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the nems_common_page feature.
+ */
+
+include_once 'nems_common_page.features.inc';
