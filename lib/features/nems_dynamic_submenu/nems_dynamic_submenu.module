@@ -25,7 +25,7 @@ function nems_dynamic_submenu_preprocess_page(&$variables) {
  * Implements hook_block_view_MODULE_DELTA_alter().
  */
 function nems_dynamic_submenu_block_view_tocify_tocify_alter(&$data, $block) {
-  if (arg(0) != 'node') {
+  if (menu_get_object('node')) {
     $data['content']['#attached']['js'][0]['data']['tocify']['context'] = '.view-content';
     $data['content']['#attached']['js'][0]['data']['tocify']['selectors'] = 'h3';
   }
