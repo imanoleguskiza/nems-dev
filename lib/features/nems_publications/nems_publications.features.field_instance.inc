@@ -535,7 +535,7 @@ function nems_publications_field_default_field_instances() {
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 10,
     ),
   );
