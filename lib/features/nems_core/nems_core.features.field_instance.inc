@@ -18,26 +18,70 @@ function nems_core_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'viewreference',
-        'settings' => array(),
-        'type' => 'viewreference_default',
-        'weight' => 1,
+        'label' => 'above',
+        'module' => 'blockreference',
+        'settings' => array(
+          'show_empty_blocks' => FALSE,
+        ),
+        'type' => 'blockreference_default',
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'bean',
     'field_name' => 'field_block_reference',
     'label' => 'Block reference',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
+      'blockreference_modules' => array(
+        'admin_language' => 0,
+        'apachesolr_search' => 0,
+        'bean' => 0,
+        'block' => 0,
+        'cce_basic_config' => 0,
+        'ckeditor_lite' => 0,
+        'comment' => 0,
+        'context_ui' => 0,
+        'current_search' => 0,
+        'diff' => 0,
+        'easy_breadcrumb' => 0,
+        'ecas' => 0,
+        'facetapi' => 0,
+        'language_selector_page' => 0,
+        'language_selector_site' => 0,
+        'locale' => 0,
+        'menu' => 0,
+        'menu_block' => 0,
+        'multisite_create_button' => 0,
+        'nexteuropa_europa_search' => 0,
+        'node' => 0,
+        'nodeblock' => 0,
+        'print' => 0,
+        'print_mail' => 0,
+        'print_pdf' => 0,
+        'print_ui' => 0,
+        'quicktabs' => 0,
+        'search' => 0,
+        'site_map' => 0,
+        'system' => 0,
+        'tagclouds' => 0,
+        'taxonomy_browser' => 0,
+        'tb_megamenu' => 0,
+        'tocify' => 0,
+        'user' => 0,
+        'views' => 'views',
+        'workbench' => 0,
+      ),
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'viewreference',
-      'settings' => array(),
-      'type' => 'viewreference_select',
-      'weight' => 12,
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 14,
     ),
   );
 
@@ -154,11 +198,51 @@ function nems_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'bean-list_block-title_field'.
+  $field_instances['bean-list_block-title_field'] = array(
+    'bundle' => 'list_block',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The Title of the block.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'bean',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Block reference');
   t('Description');
   t('Link to More');
+  t('The Title of the block.');
+  t('Title');
 
   return $field_instances;
 }
