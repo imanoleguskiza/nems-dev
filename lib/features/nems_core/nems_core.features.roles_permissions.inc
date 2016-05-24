@@ -81,6 +81,7 @@ function nems_core_default_roles_permissions() {
       'access bean overview' => TRUE,
       'access content overview' => TRUE,
       'access ecas import users function' => TRUE,
+      'access europa search' => TRUE,
       'access media browser' => TRUE,
       'access site reports' => TRUE,
       'access the block administration page' => TRUE,

@@ -30,10 +30,15 @@ const NEMS_CORE_BLOCK_ACCESS_PERMISSIONS = array(
  */
 function nems_core_permission() {
   return array(
-    'nems menu access' => array(
+    'access nems menu' => array(
       'title' => t('NEMS Menu access'),
       'description' => t('Restrict the access to several menu items on the NEMS template.'),
     ),
+    'access europa search' => array(
+      'title' => t('Europa Search access'),
+      'description' => t('Access the configuration of the Europa Search tool.'),
+    ),
+
   );
 }
 
@@ -41,6 +46,7 @@ function nems_core_permission() {
  * Implements hook_menu_alter().
  */
 function nems_core_menu_alter(&$items) {
+
   // List of menu items we will restrict access to.
   $path_list = array(
     'admin/config/content/ckeditor_tabber',
@@ -76,11 +82,14 @@ function nems_core_menu_alter(&$items) {
       if (isset($items[$path]['access callback'])) {
         unset($items[$path]['access callback']);
       }
-      $items[$path]['access arguments'][0] = 'nems menu access';
+      $items[$path]['access arguments'][0] = 'access nems menu';
     }
   }
   if (isset($items['admin/structure/block/add-menu-block'])) {
     $items['admin/structure/block/add-menu-block']['access callback'] = '_nems_core_menu_block_access';
+  }
+  if (isset($items['admin/config/search/europa_search'])) {
+    $items['admin/config/search/europa_search']['access arguments'][0] = 'access europa search';
   }
 }
 
