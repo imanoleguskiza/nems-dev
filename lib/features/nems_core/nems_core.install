@@ -51,6 +51,7 @@ function nems_core_install() {
     foreach ($deltas as $delta) {
       _nems_core_restrict_block_access($module, $delta);
     }
+  }
 
   // Add accordion and tabber buttons in wysiwyg.
   $plugin_settings = array(
@@ -63,7 +64,6 @@ function nems_core_install() {
   );
   foreach ($plugin_settings as $group => $buttons) {
     multisite_config_service('wysiwyg')->addButtonsToProfile('full_html', $group, $buttons);
-
   }
 }
 
