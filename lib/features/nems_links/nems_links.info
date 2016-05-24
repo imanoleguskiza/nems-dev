@@ -61,6 +61,7 @@ features[variable][] = scheduler_unpublish_required_nems_link
 features[variable][] = scheduler_unpublish_revision_nems_link
 features[variable][] = scheduler_use_vertical_tabs_nems_link
 features[variable][] = workbench_moderation_default_state_nems_link
+features[views_view][] = nems_links
 features_exclude[dependencies][cce_basic_config] = cce_basic_config
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][features] = features
