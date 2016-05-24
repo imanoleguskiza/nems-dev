@@ -37,4 +37,10 @@ function nems_press_releases_install() {
     $source->save();
     $source->schedule();
   }
+
+  // Give webmasters access to feeds.
+  $webmaster = user_role_load_by_name("webmaster");
+  if ($webmaster) {
+    user_role_grant_permissions($webmaster->rid, array('administer feeds'));
+  }
 }
