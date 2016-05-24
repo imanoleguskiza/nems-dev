@@ -113,7 +113,6 @@ function nems_core_default_roles_permissions() {
       'configure all block titles' => TRUE,
       'configure all blocks' => TRUE,
       'configure all language settings' => TRUE,
-      'configure all region settings' => TRUE,
       'create any list_block bean' => TRUE,
       'create any webtools bean' => TRUE,
       'create blocks' => TRUE,
