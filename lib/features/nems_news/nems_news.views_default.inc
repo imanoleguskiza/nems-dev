@@ -1036,7 +1036,7 @@ function nems_news_views_default_views() {
   );
 
   /* Display: News Home block */
-  $handler = $view->new_display('block', 'News Home block', 'block_1');
+  $handler = $view->new_display('block', 'News Home block', 'block_news_home');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['group_by'] = FALSE;
@@ -1122,6 +1122,11 @@ function nems_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'nems_news' => 'nems_news',
   );
+  /* Filter criterion: Content: Promoted to front page */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
   $export['nems_news'] = $view;
 
   $view = new view();
