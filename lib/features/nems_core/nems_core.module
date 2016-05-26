@@ -67,6 +67,7 @@ function nems_core_menu_alter(&$items) {
     'admin/config/media/image-toolkit',
     'admin/config/media/colorbox',
     'admin/config/media/file-settings',
+    'admin/config/regional/i18n',
     'admin/config/regional/language/configure',
     'admin/config/security/settings',
     'admin/config/system/nexteuropa-tokens',
