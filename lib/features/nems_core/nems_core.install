@@ -72,6 +72,9 @@ function nems_core_install() {
     'bean' => 'bean',
   );
   variable_set('entity_translation_entity_types', $entity_translatable_entities);
+
+  multisite_config_service('title')->replaceTitleField('taxonomy_term', 'tags', 'name');
+  multisite_config_service('title')->replaceTitleField('taxonomy_term', 'tags', 'description');
 }
 
 /**
