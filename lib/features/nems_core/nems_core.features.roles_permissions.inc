@@ -146,6 +146,7 @@ function nems_core_default_roles_permissions() {
       'translate content' => TRUE,
       'translate interface' => TRUE,
       'translate node entities' => TRUE,
+      'translate taxonomy_term entities' => TRUE,
       'translate user-defined strings' => TRUE,
       'use media wysiwyg' => TRUE,
       'use text format filtered_html' => TRUE,
