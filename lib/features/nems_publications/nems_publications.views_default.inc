@@ -63,7 +63,7 @@ function nems_publications_views_default_views() {
   $handler->display->display_options['fields']['field_nems_core_external_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_nems_core_external_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_nems_core_external_url']['type'] = 'link_absolute';
-  /* Field: Content: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -209,7 +209,7 @@ function nems_publications_views_default_views() {
   $handler->display->display_options['fields']['field_nems_core_external_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_nems_core_external_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_nems_core_external_url']['type'] = 'link_absolute';
-  /* Field: Content: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -263,7 +263,7 @@ function nems_publications_views_default_views() {
   $handler->display->display_options['fields']['field_nems_core_external_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_nems_core_external_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_nems_core_external_url']['type'] = 'link_absolute';
-  /* Field: Content: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -317,7 +317,7 @@ function nems_publications_views_default_views() {
   $handler->display->display_options['fields']['field_nems_core_external_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_nems_core_external_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_nems_core_external_url']['type'] = 'link_absolute';
-  /* Field: Content: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -382,7 +382,7 @@ function nems_publications_views_default_views() {
   $handler->display->display_options['fields']['field_nems_core_external_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_nems_core_external_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_nems_core_external_url']['type'] = 'link_absolute';
-  /* Field: Content: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -447,7 +447,7 @@ function nems_publications_views_default_views() {
   $handler->display->display_options['fields']['field_nems_core_external_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_nems_core_external_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_nems_core_external_url']['type'] = 'link_absolute';
-  /* Field: Content: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -502,7 +502,7 @@ function nems_publications_views_default_views() {
   $handler->display->display_options['fields']['field_nems_core_external_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_nems_core_external_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_nems_core_external_url']['type'] = 'link_absolute';
-  /* Field: Content: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -555,7 +555,7 @@ function nems_publications_views_default_views() {
   $handler->display->display_options['fields']['field_nems_core_external_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_nems_core_external_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_nems_core_external_url']['type'] = 'link_absolute';
-  /* Field: Content: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
