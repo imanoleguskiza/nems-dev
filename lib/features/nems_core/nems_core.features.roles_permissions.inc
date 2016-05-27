@@ -10,7 +10,7 @@
 function nems_core_default_roles_permissions() {
   $roles = array();
 
-  // Exported role: contributor.
+  // Exported role: contributor
   $roles['contributor'] = (object) array(
     'name' => 'contributor',
     'weight' => 3,
@@ -36,7 +36,7 @@ function nems_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: editor.
+  // Exported role: editor
   $roles['editor'] = (object) array(
     'name' => 'editor',
     'weight' => 4,
@@ -44,15 +44,11 @@ function nems_core_default_roles_permissions() {
       'access media browser' => TRUE,
       'add media from remote sources' => TRUE,
       'create article content' => TRUE,
-      'create nems_news content' => TRUE,
       'delete any article content' => TRUE,
       'delete own article content' => TRUE,
-      'delete own nems_news content' => TRUE,
       'delete revisions' => TRUE,
       'edit any article content' => TRUE,
-      'edit any nems_news content' => TRUE,
       'edit own article content' => TRUE,
-      'edit own nems_news content' => TRUE,
       'export nodes' => TRUE,
       'moderate content from draft to needs_review' => TRUE,
       'moderate content from needs_review to draft' => TRUE,
@@ -70,7 +66,7 @@ function nems_core_default_roles_permissions() {
     ),
   );
 
-  // Exported role: webmaster.
+  // Exported role: webmaster
   $roles['webmaster'] = (object) array(
     'name' => 'webmaster',
     'weight' => 5,
@@ -114,42 +110,33 @@ function nems_core_default_roles_permissions() {
       'configure all block titles' => TRUE,
       'configure all blocks' => TRUE,
       'configure all language settings' => TRUE,
+      'create any block bean' => TRUE,
       'create any list_block bean' => TRUE,
       'create any webtools bean' => TRUE,
       'create blocks' => TRUE,
       'create files' => TRUE,
       'create translation jobs' => TRUE,
       'create url aliases' => TRUE,
+      'delete any block bean' => TRUE,
       'delete any list_block bean' => TRUE,
       'delete any webtools bean' => TRUE,
       'delete revisions' => TRUE,
       'delete terms in 1' => TRUE,
       'delete terms in 2' => TRUE,
+      'edit any block bean' => TRUE,
       'edit any list_block bean' => TRUE,
       'edit any webtools bean' => TRUE,
       'edit meta tags' => TRUE,
       'edit terms in 1' => TRUE,
       'edit terms in 2' => TRUE,
-      'moderate content from draft to expired' => TRUE,
       'moderate content from draft to needs_review' => TRUE,
-      'moderate content from draft to published' => TRUE,
-      'moderate content from draft to validated' => TRUE,
-      'moderate content from expired to draft' => TRUE,
-      'moderate content from expired to needs_review' => TRUE,
-      'moderate content from expired to published' => TRUE,
-      'moderate content from expired to validated' => TRUE,
       'moderate content from needs_review to draft' => TRUE,
-      'moderate content from needs_review to expired' => TRUE,
       'moderate content from needs_review to published' => TRUE,
       'moderate content from needs_review to validated' => TRUE,
       'moderate content from published to archived' => TRUE,
       'moderate content from published to draft' => TRUE,
       'moderate content from published to expired' => TRUE,
       'moderate content from published to needs_review' => TRUE,
-      'moderate content from published to validated' => TRUE,
-      'moderate content from validated to draft' => TRUE,
-      'moderate content from validated to expired' => TRUE,
-      'moderate content from validated to needs_review' => TRUE,
       'moderate content from validated to published' => TRUE,
       'multisite_workbench_moderation_view_bulk_update' => TRUE,
       'override default scheduler time' => TRUE,
@@ -166,6 +153,7 @@ function nems_core_default_roles_permissions() {
       'use text format full_html' => TRUE,
       'version management edits' => TRUE,
       'view all unpublished content' => TRUE,
+      'view any block bean' => TRUE,
       'view any list_block bean' => TRUE,
       'view any webtools bean' => TRUE,
       'view bean page' => TRUE,
