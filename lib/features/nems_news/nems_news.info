@@ -23,6 +23,7 @@ features[field_instance][] = node-nems_news-field_nems_core_related_content
 features[field_instance][] = node-nems_news-field_nems_news_category
 features[field_instance][] = node-nems_news-field_tags
 features[field_instance][] = node-nems_news-title_field
+features[field_instance][] = taxonomy_term-nems_news_categories-description_field
 features[field_instance][] = taxonomy_term-nems_news_categories-name_field
 features[node][] = nems_news
 features[taxonomy][] = nems_news_categories
