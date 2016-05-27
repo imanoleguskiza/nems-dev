@@ -30,7 +30,7 @@ function nems_news_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Broken/missing handler */
+  /* Field: Entity translation: Name: translated */
   $handler->display->display_options['fields']['name_field_et']['id'] = 'name_field_et';
   $handler->display->display_options['fields']['name_field_et']['table'] = 'field_data_name_field';
   $handler->display->display_options['fields']['name_field_et']['field'] = 'name_field_et';
