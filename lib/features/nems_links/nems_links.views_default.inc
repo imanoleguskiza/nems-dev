@@ -42,7 +42,7 @@ function nems_links_views_default_views() {
   $handler->display->display_options['relationships']['field_main_file_fid']['id'] = 'field_main_file_fid';
   $handler->display->display_options['relationships']['field_main_file_fid']['table'] = 'field_data_field_main_file';
   $handler->display->display_options['relationships']['field_main_file_fid']['field'] = 'field_main_file_fid';
-  /* Field: Content: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
