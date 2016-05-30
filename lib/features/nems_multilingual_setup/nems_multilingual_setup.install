@@ -7,6 +7,23 @@
 include_once 'nems_multilingual_setup.features.inc';
 
 /**
+ * Implements hook_install().
+ */
+function nems_multilingual_setup_install() {
+  foreach (language_list() as $key_lang => $language) {
+    $directory = drupal_get_path('module', $module) . '/translations/';
+    $language_file = $directory . 'views-7.x-3.13.' . $key_lang . '.po';
+    if (file_exists($language_file)) {
+      $file = new stdClass();
+      $file->uri = $language_file;
+      $file->filename = $type . '_' . $key_lang . '.po';
+      _locale_import_po($file, $key_lang, LOCALE_IMPORT_OVERWRITE, $type);
+
+    }
+  }
+}
+
+/**
  * Implements hook_enable().
  */
 function nems_multilingual_setup_enable() {

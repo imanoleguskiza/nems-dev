@@ -1,0 +1,34 @@
+{
+  "field": [
+    "field_gallery_image:gallery:label",
+    "field_nems_gallery_category:gallery:label",
+    "comment_body:comment_node_gallery:label",
+    "description_field:nems_picture_gallery_categories:label",
+    "name_field:nems_picture_gallery_categories:label",
+    "body:gallery:label",
+    "title_field:gallery:label",
+  ],
+  "field_group": [
+    "node:gallery:form:group_nems_gallery_category:label",
+    "node:gallery:form:group_gallery:label",
+    "node:gallery:form:group_content:label"
+  ],
+  "node": [
+    "type:gallery:name",
+    "type:gallery:title_label",
+    "type:video_gallery:description"
+  ],
+  "views": [
+    "nems_gallery:default:use_more_text",
+    "nems_gallery:default:exposed_form:submit_button",
+    "nems_gallery:default:exposed_form:reset_button_label",
+    "nems_gallery:default:exposed_form:exposed_sorts_label",
+    "nems_gallery:default:exposed_form:sort_asc_label",
+    "nems_gallery:default:exposed_form:sort_desc_label",
+    "nems_gallery:default:header:views:area_text_custom:content",
+    "nems_gallery:default:relationship:field_data_field_gallery_image:field_gallery_image_fid:label",
+    "nems_gallery:default:field:field_data_field_gallery_image:field_gallery_image:alter:alt",
+    "nems_gallery:default:argument:node:nid:exception:title"
+  ]
+}
+

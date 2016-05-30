@@ -1,0 +1,37 @@
+{
+  "field": [
+    "field_nems_core_file:common_page:label",
+    "body:common_page:label",
+    "field_downloads_items:common_page:label",
+    "field_dynamic_submenu:common_page:label",
+    "field_dynamic_submenu:common_page:description",
+    "field_see_also_items:common_page:label",
+    "title_field:common_page:label",
+    "field_dynamic_submenu:common_page:label",
+    "field_dynamic_submenu:common_page:description",
+    "field_carousel_items:common_page:label",
+    "field_gallery_items:common_page:label",
+    "field_video_gallery_items:common_page:label",
+    "field_downloads_items:common_page:label",
+    "field_see_also_items:common_page:label",
+    "field_nems_core_related_content:common_page:label",
+    "comment_body:comment_node_common_page:label",
+    "field_nems_core_file:common_page:label",
+    "body:common_page:label",
+    "field_tags:common_page:label",
+    "field_tags:common_page:label",
+    "title_field:common_page:label",
+    "field_meta_classification:common_page:label",
+    "field_meta_description:common_page:label"
+  ],
+  "field_group": [
+    "node:common_page:form:group_tags:label",
+    "node:common_page:form:group_nems_files:label",
+    "node:common_page:form:group_links:label",
+    "node:common_page:form:group_description:label"
+  ],
+  "node": [
+    "type:common_page:name",
+    "type:common_page:title_label"
+  ]
+}

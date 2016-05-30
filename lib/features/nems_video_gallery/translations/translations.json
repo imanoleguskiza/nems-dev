@@ -1,5 +1,33 @@
 {
-    "views": [
-        "nems_video_gallery:default:field:views:nothing:alter:text"
-    ]
+  "field": [
+    "body:video_gallery:label",
+    "comment_body:comment_node_video_gallery:label",
+    "description_field:nems_video_gallery_categories:label",
+    "field_nems_video_category:video_gallery:label",
+    "field_video_gallery_items:common_page:label",
+    "field_video_items:video_gallery:label",
+    "name_field:nems_video_gallery_categories:label",
+    "title_field:video_gallery:label"
+  ],
+  "field_group": [
+    "node:video_gallery:form:group_content:label",
+    "node:video_gallery:form:group_gallery:label",
+    "node:video_gallery:form:group_nems_video_category:label"
+  ],
+  "node": [
+    "type:video_gallery:description",
+    "type:video_gallery:name",
+    "type:video_gallery:title_label"
+  ],
+  "views": [
+    "nems_video_gallery:default:argument:node:nid:exception:title",
+    "nems_video_gallery:default:exposed_form:exposed_sorts_label",
+    "nems_video_gallery:default:exposed_form:reset_button_label",
+    "nems_video_gallery:default:exposed_form:sort_asc_label",
+    "nems_video_gallery:default:exposed_form:sort_desc_label",
+    "nems_video_gallery:default:exposed_form:submit_button",
+    "nems_video_gallery:default:header:views:area_text_custom:content",
+    "nems_video_gallery:default:relationship:field_data_field_video_items:field_video_items_fid:label",
+    "nems_video_gallery:default:use_more_text"
+  ]
 }
