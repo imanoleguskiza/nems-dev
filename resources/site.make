@@ -88,21 +88,6 @@ projects[views_block_filter_block][version] = 1.0-beta2
 
 projects[weight][subdir] = "contrib"
 projects[weight][version] = 3.1
-; =========
-; Libraries
-; =========
-
-libraries[fancybox][destination] = libraries
-libraries[fancybox][directory_name] = "fancybox"
-libraries[fancybox][download][type] = git
-libraries[fancybox][download][tag] = 'v2.1.5'
-libraries[fancybox][download][url] = "https://github.com/fancyapps/fancyBox.git"
-
-libraries[owlcarousel][destination] = libraries
-libraries[owlcarousel][directory_name] = "owl-carousel"
-libraries[owlcarousel][download][subtree] = "OwlCarousel-master/owl-carousel"
-libraries[owlcarousel][download][type] = file
-libraries[owlcarousel][download][url] = "https://github.com/OwlFonk/OwlCarousel/archive/master.zip"
 
 ; ======
 ; Themes
