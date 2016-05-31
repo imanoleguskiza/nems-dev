@@ -100,9 +100,9 @@ libraries[fancybox][download][url] = "https://github.com/fancyapps/fancyBox.git"
 
 libraries[owlcarousel][destination] = libraries
 libraries[owlcarousel][directory_name] = "owl-carousel"
-libraries[owlcarousel][download][subtree] = "owl-carousel"
+libraries[owlcarousel][download][subtree] = "OwlCarousel-master/owl-carousel"
 libraries[owlcarousel][download][type] = file
-libraries[owlcarousel][download][url] = "http://owlgraphic.com/owlcarousel/owl.carousel.zip"
+libraries[owlcarousel][download][url] = "https://github.com/OwlFonk/OwlCarousel/archive/master.zip"
 
 ; ======
 ; Themes
