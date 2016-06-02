@@ -22,7 +22,7 @@ function nems_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -35,7 +35,7 @@ function nems_core_field_default_field_bases() {
   $field_bases['field_block_reference'] = array(
     'active' => 1,
     'cardinality' => 1,
-    'deleted' => 0,
+    'deleted' => 1,
     'entity_types' => array(),
     'field_name' => 'field_block_reference',
     'indexes' => array(
@@ -248,7 +248,7 @@ function nems_core_field_default_field_bases() {
         0 => 'format',
       ),
     ),
-    'locked' => 0,
+    'locked' => 1,
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
