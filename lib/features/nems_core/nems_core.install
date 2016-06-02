@@ -6,6 +6,24 @@
 
 include_once 'nems_core.features.inc';
 
+const NEMS_CORE_BLOCK_RESTRICTIONS = array(
+  'system' => array(
+    'help',
+    'main',
+    'management',
+    'navigation',
+    'powered-by',
+    'user-menu',
+  ),
+  'tb_megamenu' => array(
+    'management',
+    'menu-breadcrumb-menu',
+    'menu-service-tools',
+    'navigation',
+    'user-menu',
+  ),
+);
+
 /**
  * Implements hook_install().
  */
@@ -30,24 +48,7 @@ function nems_core_install() {
   menu_save($menu);
 
   // Restrict access to certain blocks.
-  $restricted_blocks = array(
-    'system' => array(
-      'help',
-      'main',
-      'management',
-      'navigation',
-      'powered-by',
-      'user-menu',
-    ),
-    'tb_megamenu' => array(
-      'management',
-      'menu-breadcrumb-menu',
-      'menu-service-tools',
-      'navigation',
-      'user-menu',
-    ),
-  );
-  foreach ($restricted_blocks as $module => $deltas) {
+  foreach (NEMS_CORE_BLOCK_RESTRICTIONS as $module => $deltas) {
     foreach ($deltas as $delta) {
       _nems_core_restrict_block_access($module, $delta);
     }
@@ -75,6 +76,17 @@ function nems_core_install() {
 
   multisite_config_service('title')->replaceTitleField('taxonomy_term', 'tags', 'name');
   multisite_config_service('title')->replaceTitleField('taxonomy_term', 'tags', 'description');
+
+  // Grant nems bean permissions for anonymous user role.
+  user_role_grant_permissions('1', array(
+    'view any block bean',
+    'view any list_block bean',
+  ));
+  // Grant nems bean permissions for authenticated user role.
+  user_role_grant_permissions('2', array(
+    'view any block bean',
+    'view any list_block bean',
+  ));
 }
 
 /**
@@ -94,6 +106,14 @@ function nems_core_uninstall() {
     'node' => 'node',
   );
   variable_set('entity_translation_entity_types', $entity_translatable_entities);
+
+  // Restrict access to certain blocks.
+  foreach (NEMS_CORE_BLOCK_RESTRICTIONS as $module => $deltas) {
+    foreach ($deltas as $delta) {
+      module_load_include('module', 'nems_core');
+      _nems_core_restrict_block_access($module, $delta, TRUE);
+    }
+  }
 }
 
 /**
