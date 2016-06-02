@@ -78,14 +78,14 @@ function nems_core_install() {
   multisite_config_service('title')->replaceTitleField('taxonomy_term', 'tags', 'description');
 
   // Grant nems bean permissions for anonymous user role.
-  user_role_grant_permissions('1', array(
-    'view any block bean',
-    'view any list_block bean',
+  user_role_grant_permissions('1', array(
+    'view any block bean',
+    'view any list_block bean',
   ));
   // Grant nems bean permissions for authenticated user role.
-  user_role_grant_permissions('2', array(
-    'view any block bean',
-    'view any list_block bean',
+  user_role_grant_permissions('2', array(
+    'view any block bean',
+    'view any list_block bean',
   ));
 }
 
