@@ -1,5 +1,5 @@
 name = NEMS links
-description = The homepage feature fo the NEMS websites
+description = The links feature fo the NEMS websites
 core = 7.x
 package = NEMS
 php = 5.2.4
