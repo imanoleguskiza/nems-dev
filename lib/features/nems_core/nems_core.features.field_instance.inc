@@ -116,7 +116,7 @@ function nems_core_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'blockreference',
         'settings' => array(
           'show_empty_blocks' => FALSE,
@@ -304,10 +304,9 @@ function nems_core_field_default_field_instances() {
     'description' => 'The Title of the block.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 4,
       ),
     ),

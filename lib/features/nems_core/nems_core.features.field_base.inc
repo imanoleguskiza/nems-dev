@@ -35,7 +35,7 @@ function nems_core_field_default_field_bases() {
   $field_bases['field_block_reference'] = array(
     'active' => 1,
     'cardinality' => 1,
-    'deleted' => 1,
+    'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_block_reference',
     'indexes' => array(
