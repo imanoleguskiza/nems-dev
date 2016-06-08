@@ -1,18 +1,18 @@
 <?php
 /**
  * @file
- * nems_call_for_tenders.features.field_instance.inc
+ * nems_call_for_proposals.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function nems_call_for_tenders_field_default_field_instances() {
+function nems_call_for_proposals_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-nems_call_for_tenders-body'.
-  $field_instances['node-nems_call_for_tenders-body'] = array(
-    'bundle' => 'nems_call_for_tenders',
+  // Exported field_instance: 'node-nems_call_for_proposals-body'.
+  $field_instances['node-nems_call_for_proposals-body'] = array(
+    'bundle' => 'nems_call_for_proposals',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -51,13 +51,14 @@ function nems_call_for_tenders_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-nems_call_for_tenders-field_nems_deadline'.
-  $field_instances['node-nems_call_for_tenders-field_nems_deadline'] = array(
-    'bundle' => 'nems_call_for_tenders',
+  // Exported field_instance:
+  // 'node-nems_call_for_proposals-field_nems_deadline'.
+  $field_instances['node-nems_call_for_proposals-field_nems_deadline'] = array(
+    'bundle' => 'nems_call_for_proposals',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -73,7 +74,7 @@ function nems_call_for_tenders_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 6,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -104,16 +105,16 @@ function nems_call_for_tenders_field_default_field_instances() {
         'label_position' => 'above',
         'no_fieldset' => 0,
         'text_parts' => array(),
-        'year_range' => '-9:+9',
+        'year_range' => '-8:+8',
       ),
       'type' => 'date_popup',
       'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-nems_call_for_tenders-field_nems_file'.
-  $field_instances['node-nems_call_for_tenders-field_nems_file'] = array(
-    'bundle' => 'nems_call_for_tenders',
+  // Exported field_instance: 'node-nems_call_for_proposals-field_nems_file'.
+  $field_instances['node-nems_call_for_proposals-field_nems_file'] = array(
+    'bundle' => 'nems_call_for_proposals',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -122,7 +123,7 @@ function nems_call_for_tenders_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 9,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -172,13 +173,72 @@ function nems_call_for_tenders_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
-  // Exported field_instance: 'node-nems_call_for_tenders-field_nems_reference'.
-  $field_instances['node-nems_call_for_tenders-field_nems_reference'] = array(
-    'bundle' => 'nems_call_for_tenders',
+  // Exported field_instance: 'node-nems_call_for_proposals-field_nems_oj_link'.
+  $field_instances['node-nems_call_for_proposals-field_nems_oj_link'] = array(
+    'bundle' => 'nems_call_for_proposals',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_nems_oj_link',
+    'label' => 'Link to OJ',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-nems_call_for_proposals-field_nems_reference'.
+  $field_instances['node-nems_call_for_proposals-field_nems_reference'] = array(
+    'bundle' => 'nems_call_for_proposals',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -188,7 +248,7 @@ function nems_call_for_tenders_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -239,13 +299,13 @@ function nems_call_for_tenders_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
-  // Exported field_instance: 'node-nems_call_for_tenders-field_nems_status'.
-  $field_instances['node-nems_call_for_tenders-field_nems_status'] = array(
-    'bundle' => 'nems_call_for_tenders',
+  // Exported field_instance: 'node-nems_call_for_proposals-field_nems_status'.
+  $field_instances['node-nems_call_for_proposals-field_nems_status'] = array(
+    'bundle' => 'nems_call_for_proposals',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -255,7 +315,7 @@ function nems_call_for_tenders_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 8,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -279,13 +339,13 @@ function nems_call_for_tenders_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
-  // Exported field_instance: 'node-nems_call_for_tenders-title_field'.
-  $field_instances['node-nems_call_for_tenders-title_field'] = array(
-    'bundle' => 'nems_call_for_tenders',
+  // Exported field_instance: 'node-nems_call_for_proposals-title_field'.
+  $field_instances['node-nems_call_for_proposals-title_field'] = array(
+    'bundle' => 'nems_call_for_proposals',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -331,6 +391,7 @@ function nems_call_for_tenders_field_default_field_instances() {
   t('Body');
   t('Deadline');
   t('Files');
+  t('Link to OJ');
   t('Reference');
   t('Status');
   t('Title');

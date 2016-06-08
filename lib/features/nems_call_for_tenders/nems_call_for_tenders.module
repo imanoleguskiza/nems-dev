@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the NEMS call for tenders feature.
- */
-
-include_once 'nems_call_for_tenders.features.inc';
