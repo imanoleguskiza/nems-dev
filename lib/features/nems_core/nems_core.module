@@ -144,6 +144,7 @@ function nems_core_features_api_alter(&$components) {
 
 /**
  * Implements hook_block_view_alter().
+ *
  * We hide bean blocks if blockreference is empty.
  */
 function nems_core_block_view_alter(&$data, $block) {
@@ -153,7 +154,6 @@ function nems_core_block_view_alter(&$data, $block) {
     $bean = current($data['content']['bean']);
     // Check the bundle and look for the reference.
     if ($bean['#bundle'] == 'list_block' && !isset($bean['field_block_reference'])) {
-      dpm($data);
       $data['subject'] = '';
       $data['content'] = '';
     }
