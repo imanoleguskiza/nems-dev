@@ -45,7 +45,7 @@ function nems_call_for_tenders_views_default_views() {
   $handler->display->display_options['fields']['field_nems_deadline_1']['settings'] = array(
     'format_type' => 'short',
     'fromto' => 'both',
-    'multiple_number' => '1',
+    'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
     'show_remaining_days' => 0,
