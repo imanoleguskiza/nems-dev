@@ -2,6 +2,7 @@ name = NEMS vacancy
 description = The vacancy Feature of the NEMS Website
 core = 7.x
 package = NEMS
+php = 5.6
 dependencies[] = nems_core
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
