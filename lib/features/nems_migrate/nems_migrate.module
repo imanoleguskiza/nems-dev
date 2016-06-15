@@ -5,6 +5,42 @@
  */
 
 /**
+ * Implements hook_menu().
+ */
+function nems_migrate_menu() {
+  $items = array();
+  $items['admin/content/nems_migrate'] = array(
+    'title' => 'Europa Migrate',
+    'description' => 'Europa Migrate settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('nems_migrate_settings_form'),
+    'access arguments' => array('administer content'),
+    'file' => 'nems_migrate.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_migrate_api().
+ */
+function nems_migrate_migrate_api() {
+  return array(
+    'api' => 2,
+    'field handlers' => array(
+      'MigrateNemsFileFieldHandler',
+      'MigrateNemsImageFieldHandler'
+    ),
+    'migrations' => array(
+      'NemsMigratePages' => array(
+        'class_name' => 'NemsPageMigration',
+        'group_name' => 'NemsMigrate',
+      ),
+    ),
+  );
+}
+
+/**
  * Check for images and files.
  *
  * @param string|array $files
@@ -105,7 +141,7 @@ function _nems_migrate_import_contents_filter($text, $site) {
     // Check if the link belongs to the domain.
     if (strrpos($link->getAttribute('href'), 'http://europa.eu/' . $site . '/', -strlen($link->getAttribute('href'))) !== false) {
       // Find internal links to files.
-      preg_match('#(.*?)/(.*?).(doc|docx|xls|ppt|pdf|zip|rar)$#', $link->getAttribute('href'), $file);
+      preg_match('#(.*?)/(.*?).(doc|docx|xls|ppt|pdf|zip|rar|mp3|mp4|jpg|jpeg)$#', $link->getAttribute('href'), $file);
       if (!empty($file[2])) {
         // Import the file and replace the href attibute of the link.
         _nems_migrate_import_files($link, 'docs/body');
@@ -172,6 +208,7 @@ function _nems_migrate_import_files($link, $dir) {
         // Import the file, the TRUE parameter means that it will be managed.
       $dfile = system_retrieve_file($file, $dest, TRUE, FILE_EXISTS_REPLACE);
       $file_link = file_create_url($dfile->uri);
+      _nems_migrate_add_mapping($link->getAttribute($attribute), $file_link);
       }
       if ($file == $link->getAttribute($attribute)) {
           $link->setAttribute($attribute, $file_link);
@@ -191,7 +228,7 @@ function _nems_migrate_import_files($link, $dir) {
  * @return string
  *   Path.
  */
-function _nems_migrate_path($url, $site = FALSE) {
+function _nems_migrate_path($url) {
   $lang = locale_language_list('name');
   $lang_keys = array_keys($lang);
   $str = array();
@@ -256,4 +293,31 @@ function _nems_migrate_check_coverage($file) {
     $coverage[] = $file;
   }
   return $coverage;
+}
+
+function _nems_migrate_add_mapping($source, $destination) {
+  $result = db_select('migrate_log', 'ml')
+    ->fields('ml', array('starttime', 'machine_name'))
+    ->condition('endtime', NULL)
+    ->condition('process_type', 1, '=')
+    ->execute()
+    ->fetchAssoc();
+  if ($result) {
+    $dest = 'public://';
+    $filename = $result['machine_name'] . "_" . $result['starttime'] . ".csv";
+    if (file_exists($dest . $filename)) {
+      $file_link = drupal_realpath($dest . $filename);
+    }
+    else {
+      // Import the file, the TRUE parameter means that it will be managed.
+      $dfile = file_save_data("", $dest . $filename);
+      $file_link = drupal_realpath($dfile->uri);
+      $fp = fopen($file_link, 'a');
+      fputcsv($fp, array("Source", "Destination"));
+      fclose($fp);
+    }
+    $fp = fopen($file_link, 'a');
+    fputcsv($fp, array($source, $destination));
+    fclose($fp);
+  }
 }
