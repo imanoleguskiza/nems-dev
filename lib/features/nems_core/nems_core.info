@@ -55,7 +55,6 @@ features[field_base][] = field_nems_core_related_content
 features[field_base][] = field_nems_deadline
 features[field_base][] = field_nems_file
 features[field_base][] = field_nems_reference
-features[field_base][] = field_nems_status
 features[field_base][] = field_view_more
 features[field_instance][] = bean-list_block-field_block_reference
 features[field_instance][] = bean-list_block-field_description

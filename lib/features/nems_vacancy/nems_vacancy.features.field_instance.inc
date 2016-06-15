@@ -243,8 +243,8 @@ function nems_vacancy_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_vacancy-field_nems_status'.
-  $field_instances['node-nems_vacancy-field_nems_status'] = array(
+  // Exported field_instance: 'node-nems_vacancy-field_nems_vacancy_status'.
+  $field_instances['node-nems_vacancy-field_nems_vacancy_status'] = array(
     'bundle' => 'nems_vacancy',
     'default_value' => NULL,
     'deleted' => 0,
@@ -265,7 +265,7 @@ function nems_vacancy_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_nems_status',
+    'field_name' => 'field_nems_vacancy_status',
     'label' => 'Status',
     'required' => 0,
     'settings' => array(
