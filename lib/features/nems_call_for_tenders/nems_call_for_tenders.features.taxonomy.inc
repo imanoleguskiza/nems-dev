@@ -7,17 +7,17 @@
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function nems_core_taxonomy_default_vocabularies() {
+function nems_call_for_tenders_taxonomy_default_vocabularies() {
   return array(
-    'nems_call_status' => (object) array(
-      'name' => 'Nems Call Status',
-      'machine_name' => 'nems_call_status',
-      'description' => 'Status for Call for Tenders and Call for Proposals',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => 0,
+    'nems_call_for_tenders_status' => (object) array(
+      'name' => 'NEMS Call for tenders Status',
+      'machine_name' => 'nems_call_for_tenders_status',
+      'description' => 'Vocabulary Status for Call For tenders content types',
+      'hierarchy' => 1,
+      'module' => 'nems_call_for_tenders',
+      'weight' => 1,
       'language' => 'und',
-      'i18n_mode' => 1,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',

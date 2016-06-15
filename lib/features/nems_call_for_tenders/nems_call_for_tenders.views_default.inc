@@ -15,22 +15,24 @@ function nems_call_for_tenders_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'NEMS Call For Tenders';
+  $view->human_name = 'NEMS Call For tenders';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'NEMS Call For Tenders';
+  $handler->display->display_options['title'] = 'NEMS Call For tenders';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '12';
   $handler->display->display_options['style_plugin'] = 'table';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -40,10 +42,10 @@ function nems_call_for_tenders_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Deadline */
-  $handler->display->display_options['fields']['field_nems_deadline_1']['id'] = 'field_nems_deadline_1';
-  $handler->display->display_options['fields']['field_nems_deadline_1']['table'] = 'field_data_field_nems_deadline';
-  $handler->display->display_options['fields']['field_nems_deadline_1']['field'] = 'field_nems_deadline';
-  $handler->display->display_options['fields']['field_nems_deadline_1']['settings'] = array(
+  $handler->display->display_options['fields']['field_nems_deadline']['id'] = 'field_nems_deadline';
+  $handler->display->display_options['fields']['field_nems_deadline']['table'] = 'field_data_field_nems_deadline';
+  $handler->display->display_options['fields']['field_nems_deadline']['field'] = 'field_nems_deadline';
+  $handler->display->display_options['fields']['field_nems_deadline']['settings'] = array(
     'format_type' => 'short',
     'fromto' => 'both',
     'multiple_number' => '',
@@ -51,15 +53,17 @@ function nems_call_for_tenders_views_default_views() {
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
-  $handler->display->display_options['fields']['field_nems_deadline_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_nems_deadline']['group_column'] = 'entity_id';
+  $handler->display->display_options['fields']['field_nems_deadline']['delta_offset'] = '0';
   /* Field: Content: Status */
-  $handler->display->display_options['fields']['field_nems_status']['id'] = 'field_nems_status';
-  $handler->display->display_options['fields']['field_nems_status']['table'] = 'field_data_field_nems_status';
-  $handler->display->display_options['fields']['field_nems_status']['field'] = 'field_nems_status';
+  $handler->display->display_options['fields']['field_nems_tenders_status']['id'] = 'field_nems_tenders_status';
+  $handler->display->display_options['fields']['field_nems_tenders_status']['table'] = 'field_data_field_nems_tenders_status';
+  $handler->display->display_options['fields']['field_nems_tenders_status']['field'] = 'field_nems_tenders_status';
   /* Field: Content: Reference */
   $handler->display->display_options['fields']['field_nems_reference']['id'] = 'field_nems_reference';
   $handler->display->display_options['fields']['field_nems_reference']['table'] = 'field_data_field_nems_reference';
   $handler->display->display_options['fields']['field_nems_reference']['field'] = 'field_nems_reference';
+  $handler->display->display_options['fields']['field_nems_reference']['type'] = 'text_plain';
   /* Sort criterion: Content: Deadline (field_nems_deadline) */
   $handler->display->display_options['sorts']['field_nems_deadline_value']['id'] = 'field_nems_deadline_value';
   $handler->display->display_options['sorts']['field_nems_deadline_value']['table'] = 'field_data_field_nems_deadline';
@@ -97,14 +101,6 @@ function nems_call_for_tenders_views_default_views() {
     3 => 0,
     4 => 0,
     7 => 0,
-  );
-  $handler->display->display_options['filters']['title']['group_info']['label'] = 'Title';
-  $handler->display->display_options['filters']['title']['group_info']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['group_info']['remember'] = FALSE;
-  $handler->display->display_options['filters']['title']['group_info']['group_items'] = array(
-    1 => array(),
-    2 => array(),
-    3 => array(),
   );
   /* Filter criterion: Content: Reference (field_nems_reference) */
   $handler->display->display_options['filters']['field_nems_reference_value']['id'] = 'field_nems_reference_value';

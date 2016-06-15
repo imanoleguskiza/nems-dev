@@ -68,16 +68,13 @@ function nems_call_for_tenders_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '9',
+          'weight' => '4',
         ),
         'path' => array(
-          'weight' => '3',
-        ),
-        'rabbit_hole' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
         'language' => array(
-          'weight' => '2',
+          'weight' => '1',
         ),
       ),
       'display' => array(),

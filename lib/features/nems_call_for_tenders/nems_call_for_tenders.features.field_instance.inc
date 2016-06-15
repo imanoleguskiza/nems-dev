@@ -51,11 +51,12 @@ function nems_call_for_tenders_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-nems_call_for_tenders-field_nems_deadline'.
+  // Exported field_instance:
+  // 'node-nems_call_for_tenders-field_nems_deadline'.
   $field_instances['node-nems_call_for_tenders-field_nems_deadline'] = array(
     'bundle' => 'nems_call_for_tenders',
     'deleted' => 0,
@@ -73,7 +74,7 @@ function nems_call_for_tenders_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 6,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -104,7 +105,7 @@ function nems_call_for_tenders_field_default_field_instances() {
         'label_position' => 'above',
         'no_fieldset' => 0,
         'text_parts' => array(),
-        'year_range' => '-9:+9',
+        'year_range' => '-8:+8',
       ),
       'type' => 'date_popup',
       'weight' => 5,
@@ -122,7 +123,7 @@ function nems_call_for_tenders_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 9,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -172,11 +173,53 @@ function nems_call_for_tenders_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-nems_call_for_tenders-field_nems_tenders_status'.
+  $field_instances['node-nems_call_for_tenders-field_nems_tenders_status'] = array(
+    'bundle' => 'nems_call_for_tenders',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_nems_tenders_status',
+    'label' => 'Status',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
       'weight' => 8,
     ),
   );
 
-  // Exported field_instance: 'node-nems_call_for_tenders-field_nems_reference'.
+  // Exported field_instance:
+  // 'node-nems_call_for_tenders-field_nems_reference'.
   $field_instances['node-nems_call_for_tenders-field_nems_reference'] = array(
     'bundle' => 'nems_call_for_tenders',
     'default_value' => NULL,
@@ -188,7 +231,7 @@ function nems_call_for_tenders_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -239,46 +282,6 @@ function nems_call_for_tenders_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-nems_call_for_tenders-field_nems_status'.
-  $field_instances['node-nems_call_for_tenders-field_nems_status'] = array(
-    'bundle' => 'nems_call_for_tenders',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
-        'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_nems_status',
-    'label' => 'Status',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
-      'type' => 'options_select',
       'weight' => 7,
     ),
   );
@@ -331,6 +334,7 @@ function nems_call_for_tenders_field_default_field_instances() {
   t('Body');
   t('Deadline');
   t('Files');
+  t('Link to OJ');
   t('Reference');
   t('Status');
   t('Title');

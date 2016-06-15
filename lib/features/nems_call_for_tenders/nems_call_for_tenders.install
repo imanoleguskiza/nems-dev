@@ -8,12 +8,61 @@
  * Implements hook_enable().
  */
 function nems_call_for_tenders_enable() {
-  drupal_set_message(t('NEMS Call For Tenders feature is now active on your site.'));
+  drupal_set_message(t('NEMS vacancy feature is now active on your site.'));
 }
 
 /**
  * Implements hook_disable().
  */
 function nems_call_for_tenders_disable() {
-  drupal_set_message(t('NEMS Call For Tenders feature is now disabled on your site.'));
+  drupal_set_message(t('NEMS vacancy feature is now disabled on your site.'));
+}
+
+/**
+ * Implements hook_install().
+ */
+function nems_call_for_tenders_install() {
+  // Create new Taxonomy Vocabulary NEMS Call Status.
+  $vocabularies = taxonomy_vocabulary_get_names();
+  $pos = array_search('nems_call_for_tenders_status', $vocabularies);
+  if ($pos !== FALSE) {
+    $vid = $pos;
+  } else {
+    $vocabulary = array(
+      'name' => t('NEMS Call For tenders Status'),
+      'machine_name' => 'nems_call_for_tenders_status',
+      'description' => t('Vocabulary Status for Call for tenders content types'),
+      'hierarchy' => 1,
+      'module' => 'nems_call_for_tenders',
+      'weight' => 1,
+    );
+    $vocabulary = (object) $vocabulary;
+    taxonomy_vocabulary_save($vocabulary);
+    $vid = $vocabulary->vid;
+  }
+
+  // Populate Taxonomy NEMS Call Status with a predefined set of values defined in $items Array.
+  $items = array(
+    'Pending',
+    'Open',
+    'Closed'
+  );
+  foreach ($items as $key => $item) {
+    $newterm = new stdClass();
+    $newterm->name = t($item);
+    $newterm->vid = $vid;
+    $newterm->parent = 0;
+    taxonomy_term_save($newterm);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function nems_call_for_tenders_uninstall() {
+  // Remove Taxonomy Vocabulary NEMS Call Status.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('nems_call_for_tenders_status');
+  if ($vocabulary) {
+    taxonomy_vocabulary_delete($vocabulary->vid);
+  }
 }
