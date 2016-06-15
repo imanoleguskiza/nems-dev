@@ -25,9 +25,11 @@ function nems_call_for_proposals_views_default_views() {
   $handler->display->display_options['title'] = 'NEMS Call For Proposals';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '12';
@@ -51,15 +53,17 @@ function nems_call_for_proposals_views_default_views() {
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
+  $handler->display->display_options['fields']['field_nems_deadline']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_nems_deadline']['delta_offset'] = '0';
   /* Field: Content: Status */
-  $handler->display->display_options['fields']['field_nems_status']['id'] = 'field_nems_status';
-  $handler->display->display_options['fields']['field_nems_status']['table'] = 'field_data_field_nems_status';
-  $handler->display->display_options['fields']['field_nems_status']['field'] = 'field_nems_status';
+  $handler->display->display_options['fields']['field_nems_proposals_status']['id'] = 'field_nems_proposals_status';
+  $handler->display->display_options['fields']['field_nems_proposals_status']['table'] = 'field_data_field_nems_proposals_status';
+  $handler->display->display_options['fields']['field_nems_proposals_status']['field'] = 'field_nems_proposals_status';
   /* Field: Content: Reference */
   $handler->display->display_options['fields']['field_nems_reference']['id'] = 'field_nems_reference';
   $handler->display->display_options['fields']['field_nems_reference']['table'] = 'field_data_field_nems_reference';
   $handler->display->display_options['fields']['field_nems_reference']['field'] = 'field_nems_reference';
+  $handler->display->display_options['fields']['field_nems_reference']['type'] = 'text_plain';
   /* Sort criterion: Content: Deadline (field_nems_deadline) */
   $handler->display->display_options['sorts']['field_nems_deadline_value']['id'] = 'field_nems_deadline_value';
   $handler->display->display_options['sorts']['field_nems_deadline_value']['table'] = 'field_data_field_nems_deadline';
