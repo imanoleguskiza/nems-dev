@@ -14,7 +14,7 @@ function nems_vacancy_taxonomy_default_vocabularies() {
       'machine_name' => 'nems_call_vacancy_status',
       'description' => 'Vocabulary Status for Vacancy content types',
       'hierarchy' => 1,
-      'module' => 'nmes_vacancy',
+      'module' => 'nems_vacancy',
       'weight' => 1,
       'language' => 'und',
       'i18n_mode' => 0,

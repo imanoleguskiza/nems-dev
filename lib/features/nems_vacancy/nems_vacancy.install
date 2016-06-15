@@ -33,7 +33,7 @@ function nems_vacancy_install() {
       'machine_name' => 'nems_call_vacancy_status',
       'description' => t('Vocabulary Status for Vacancy content types'),
       'hierarchy' => 1,
-      'module' => 'nmes_vacancy',
+      'module' => 'nems_vacancy',
       'weight' => 1,
     );
     $vocabulary = (object) $vocabulary;
