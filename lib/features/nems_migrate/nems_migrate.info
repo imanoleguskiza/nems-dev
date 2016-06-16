@@ -7,3 +7,4 @@ dependencies[] = integration_migrate
 
 files[] = includes/nems_migrate.abstract.inc
 files[] = includes/nems_migrate.menu.inc
+files[] = includes/nems_migrate.page.inc

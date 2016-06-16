@@ -1,0 +1,77 @@
+{
+  "_id": "testpage",
+  "type": "page",
+  "default_language": "en",
+  "languages": [
+    "en",
+    "es"
+  ],
+  "fields": {
+    "original_url": {
+      "en": [
+        "http://europa.eu/test_page/index_en.htm"
+      ],
+      "es": [
+        "http://europa.eu/test_page/index_es.htm"
+      ]
+    },
+    "title": {
+      "en": [
+        "Test page"
+      ],
+      "es": [
+        "Pagina de prueba"
+      ]
+    },
+    "meta_description": {
+      "en": [
+        "Test page."
+      ],
+      "es": [
+        "Pagina de prueba"
+      ]
+    },
+    "meta_keywords": {
+      "en": [
+        "Test",
+        "Page"
+      ],
+      "es": [
+        "Prueba",
+        "Página"
+      ]
+    },
+    "body": {
+      "en": [
+        "<p>This is a test page.</p>"
+      ],
+      "es": [
+        "<p>Esto es una pagina de prueba.</p>"
+      ]
+    },
+    "related_content": {
+      "en": [
+        "<p>This content is related.</p>"
+      ],
+      "es": [
+        "<p>Este contenido esta relacionado.</p>"
+      ]
+    },
+    "see_also": {
+      "en": [
+        "<ul><li><a href=\"/\">This is a link</a></li></ul>"
+      ],
+      "es": [
+        "<ul><li><a href=\"/\">Esto es un link</a></li></ul>"
+      ]
+    },
+    "downloads": {
+      "en": [
+        "<ul><li><a href=\"/\">This is another link</a></li></ul>"
+      ],
+      "es": [
+        "<ul><li><a href=\"/\">Esto es otro link</a></li></ul>"
+      ]
+    }
+  }
+}
