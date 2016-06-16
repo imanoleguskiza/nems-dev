@@ -10,6 +10,10 @@ projects[admin_language][version] = 1.0-beta1
 
 projects[block_access][subdir] = "contrib"
 projects[block_access][version] = 1.6
+projects[block_access][patch][] = "https://www.drupal.org/files/block_access_delete_fix-2039989-2.patch"
+
+projects[blockreference][subdir] = "contrib"
+projects[blockreference][version] = 2.3
 
 projects[collapsiblock][subdir] = "contrib"
 projects[collapsiblock][version] = 1.1
@@ -19,6 +23,9 @@ projects[ckeditor_tabber][version] = 1.3
 
 projects[entityconnect][subdir] = "contrib"
 projects[entityconnect][version] = 1.0-rc5
+
+projects[eva][subdir] = "contrib"
+projects[eva][version] = 1.2
 
 projects[features_extra][subdir] = "contrib"
 projects[features_extra][version] = 1.0
@@ -46,11 +53,11 @@ projects[insert_block][patch][] = "https://www.drupal.org/files/1873624-insert_b
 projects[integration][subdir] = "contrib"
 projects[integration][version] = 1.x-dev
 
-projects[page_title][subdir] = "contrib"
-projects[page_title][version] = 2.7
-
 projects[menu_admin_per_menu][subdir] = "contrib"
 projects[menu_admin_per_menu][version] = 1.1
+
+projects[nodeblock][subdir] = "contrib"
+projects[nodeblock][version] = 1.7
 
 projects[owlcarousel][subdir] = "contrib"
 projects[owlcarousel][version] = 1.5
@@ -67,14 +74,8 @@ projects[remote_stream_wrapper][version] = 1.0-rc1
 projects[role_delegation][subdir] = "contrib"
 projects[role_delegation][version] = 1.1
 
-projects[social_media_links][subdir] = "contrib"
-projects[social_media_links][version] = 1.5
-
 projects[taxonomy_access_fix][subdir] = "contrib"
 projects[taxonomy_access_fix][version] = 2.3
-
-projects[text_with_summary][subdir] = "contrib"
-projects[text_with_summary][version] = 1.0
 
 projects[tb_megamenu][subdir] = "contrib"
 projects[tb_megamenu][version] = 1.0-rc2
@@ -87,21 +88,6 @@ projects[views_block_filter_block][version] = 1.0-beta2
 
 projects[weight][subdir] = "contrib"
 projects[weight][version] = 3.1
-; =========
-; Libraries
-; =========
-
-libraries[fancybox][destination] = libraries
-libraries[fancybox][directory_name] = "fancybox"
-libraries[fancybox][download][type] = git
-libraries[fancybox][download][tag] = 'v2.1.5'
-libraries[fancybox][download][url] = "https://github.com/fancyapps/fancyBox.git"
-
-libraries[owlcarousel][destination] = libraries
-libraries[owlcarousel][directory_name] = "owl-carousel"
-libraries[owlcarousel][download][subtree] = "owl-carousel"
-libraries[owlcarousel][download][type] = file
-libraries[owlcarousel][download][url] = "http://owlgraphic.com/owlcarousel/owl.carousel.zip"
 
 ; ======
 ; Themes

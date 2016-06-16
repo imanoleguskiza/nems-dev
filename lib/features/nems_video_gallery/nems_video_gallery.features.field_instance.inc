@@ -264,12 +264,24 @@ function nems_video_gallery_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'carousel' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 0,
+      ),
+      'eva_display' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -302,33 +314,76 @@ function nems_video_gallery_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-video_gallery-field_nems_video_category'.
+  $field_instances['node-video_gallery-field_nems_video_category'] = array(
+    'bundle' => 'video_gallery',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_nems_video_category',
+    'label' => 'Video Gallery Category',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-video_gallery-field_video_items'.
   $field_instances['node-video_gallery-field_video_items'] = array(
     'bundle' => 'video_gallery',
     'deleted' => 0,
     'description' => '',
     'display' => array(
+      'carousel' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'file_entity',
         'settings' => array(
-          'autoplay' => FALSE,
-          'controls' => TRUE,
-          'height' => NULL,
-          'loop' => FALSE,
-          'multiple_file_behavior' => 'tags',
-          'muted' => FALSE,
-          'preload' => '',
-          'width' => NULL,
+          'file_view_mode' => 'default',
         ),
-        'type' => 'file_video',
+        'type' => 'file_rendered',
         'weight' => 1,
+      ),
+      'eva_display' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -386,22 +441,112 @@ function nems_video_gallery_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
-      'default' => array(
+      'carousel' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
       ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'eva_display' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
       'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'taxonomy_term-nems_video_gallery_categories-description_field'.
+  $field_instances['taxonomy_term-nems_video_gallery_categories-description_field'] = array(
+    'bundle' => 'nems_video_gallery_categories',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'description_field',
+    'label' => 'Description',
+    'required' => FALSE,
+    'settings' => array(
+      'display_summary' => 0,
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => -5,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'taxonomy_term-nems_video_gallery_categories-name_field'.
+  $field_instances['taxonomy_term-nems_video_gallery_categories-name_field'] = array(
+    'bundle' => 'nems_video_gallery_categories',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
       ),
     ),
-    'entity_type' => 'node',
-    'field_name' => 'title_field',
-    'label' => 'Title',
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'name_field',
+    'label' => 'Name',
     'required' => TRUE,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -426,9 +571,12 @@ function nems_video_gallery_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('A field replacing file name.');
   t('Body');
+  t('Description');
   t('File name');
+  t('Name');
   t('Title');
   t('Video Description');
+  t('Video Gallery Category');
   t('Video item');
   t('Video thumbnail');
 

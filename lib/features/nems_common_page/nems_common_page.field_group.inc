@@ -24,6 +24,7 @@ function nems_common_page_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'body',
+      1 => 'field_nems_core_related_content',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -48,7 +49,7 @@ function nems_common_page_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Links',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_downloads_items',
       1 => 'field_see_also_items',
@@ -68,31 +69,29 @@ function nems_common_page_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_multimedia|node|common_page|form';
-  $field_group->group_name = 'group_multimedia';
+  $field_group->identifier = 'group_nems_files|node|common_page|form';
+  $field_group->group_name = 'group_nems_files';
   $field_group->entity_type = 'node';
   $field_group->bundle = 'common_page';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Multimedia',
+    'label' => 'Upload files',
     'weight' => '5',
     'children' => array(
-      0 => 'field_carousel_items',
-      1 => 'field_gallery_items',
-      2 => 'field_video_gallery_items',
+      0 => 'field_nems_core_file',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => 'group-nems-files field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $field_groups['group_multimedia|node|common_page|form'] = $field_group;
+  $field_groups['group_nems_files|node|common_page|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -105,7 +104,7 @@ function nems_common_page_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_tags',
     ),
@@ -125,9 +124,9 @@ function nems_common_page_field_group_info() {
   // Included for use with string extractors like potx.
   t('Description');
   t('Links');
-  t('Metadata');
   t('Multimedia');
   t('Tags');
+  t('Upload files');
 
   return $field_groups;
 }

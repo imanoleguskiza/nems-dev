@@ -14,7 +14,7 @@ function nems_links_enable() {
     ),
   ));
 
-  $version_settings = variable_get('version_management_node_types','');
+  $version_settings = variable_get('version_management_node_types', '');
   if (!empty($version_settings)) {
     $version_settings['nems_links'] = 'nems_links';
     variable_set('version_management_node_types', $version_settings);

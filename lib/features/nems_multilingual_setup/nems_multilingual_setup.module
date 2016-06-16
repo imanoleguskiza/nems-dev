@@ -23,20 +23,28 @@ function _nems_multilingual_setup_import_translations($module) {
           $file->uri = $language_file;
           $file->filename = $type . '_' . $key_lang . '.po';
           _locale_import_po($file, $key_lang, LOCALE_IMPORT_OVERWRITE, $type);
-          drupal_set_message($module . ' language group imported ' . $type . ' for language ' . $key_lang);
+          drupal_set_message(t('@module language group imported @type for language @key_lang', array(
+            '@module' => $module,
+            '@type' => $type,
+            '@key_lang' => $key_lang,
+          )));
         }
         else {
-          drupal_set_message($module . ' language .po file does not exists ' . $type . ' for language ' . $key_lang);
+          drupal_set_message(t('@module language .po file does not exists @type for language @key_lang', array(
+            '@module' => $module,
+            '@type' => $type,
+            '@key_lang' => $key_lang,
+          )));
         }
       }
 
       module_load_include('inc', 'i18n_string', 'i18n_string.admin');
       i18n_string_refresh_reset($type);
       if ($strings = i18n_string_group_string_list($type)) {
-        $count = i18n_string_refresh_string_list($strings);
+        i18n_string_refresh_string_list($strings);
       }
       module_invoke_all('i18n_string_refresh', $type);
-      drupal_set_message('Strings for ' . $type . ' was refreshed');
+      drupal_set_message(t('Strings for @type was refreshed', array('@type' => $type)));
     }
   }
   else {

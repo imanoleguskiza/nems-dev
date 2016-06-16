@@ -1,10 +1,9 @@
 name = NEMS Nolink
-project = nems_nolink
 description = Allow users to add links ponting to null in menus.
 package = europa_eu
 core = 7.x
-version = 7.x-1.0
 php = 5.6
 multisite_version = 2.1
 dependencies[] = menu
 configure = admin/config/system/nems_nolink
+features[features_api][] = api:2

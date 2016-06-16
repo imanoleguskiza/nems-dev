@@ -90,6 +90,59 @@ function nems_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_entity_types';
+  $strongarm->value = array(
+    'node' => 'node',
+    'bean' => 'bean',
+    'taxonomy_term' => 0,
+    'comment' => 0,
+    'file' => 0,
+    'user' => 0,
+  );
+  $export['entity_translation_entity_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_bean__block';
+  $strongarm->value = array(
+    'default_language' => 'xx-et-default',
+    'hide_language_selector' => 0,
+    'exclude_language_none' => 0,
+    'lock_language' => 0,
+    'shared_fields_original_only' => 0,
+  );
+  $export['entity_translation_settings_bean__block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_bean__list_block';
+  $strongarm->value = array(
+    'default_language' => 'xx-et-default',
+    'hide_language_selector' => 0,
+    'exclude_language_none' => 0,
+    'lock_language' => 0,
+    'shared_fields_original_only' => 0,
+  );
+  $export['entity_translation_settings_bean__list_block'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_bean__webtools';
+  $strongarm->value = array(
+    'default_language' => 'xx-et-default',
+    'hide_language_selector' => 0,
+    'exclude_language_none' => 0,
+    'lock_language' => 0,
+    'shared_fields_original_only' => 0,
+  );
+  $export['entity_translation_settings_bean__webtools'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'site_map_css';
   $strongarm->value = 1;
   $export['site_map_css'] = $strongarm;
@@ -152,29 +205,6 @@ function nems_core_strongarm() {
     'ec_resp_base_theme_of_subtheme' => '',
   );
   $export['theme_nems_theme_settings'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'version_management_node_types';
-  $strongarm->value = array(
-    'article' => 'article',
-    'page' => 'page',
-    'common_page' => 'common_page',
-    'nems_event' => 'nems_event',
-    'nems_homepage' => 'nems_homepage',
-    'nems_homepage_additional_block' => 'nems_homepage_additional_block',
-    'nems_news' => 'nems_news',
-    'gallery' => 'gallery',
-    'nems_publication' => 'nems_publication',
-    'nems_slide_footer' => 'nems_slide_footer',
-    'nems_slide_homepage' => 'nems_slide_homepage',
-    'nems_video' => 'nems_video',
-    'video_gallery' => 'video_gallery',
-    'editorial_team' => 0,
-    'flexslider_example' => 0,
-  );
-  $export['version_management_node_types'] = $strongarm;
 
   return $export;
 }

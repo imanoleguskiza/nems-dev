@@ -6,6 +6,24 @@
 
 include_once 'nems_core.features.inc';
 
+const NEMS_CORE_BLOCK_RESTRICTIONS = array(
+  'system' => array(
+    'help',
+    'main',
+    'management',
+    'navigation',
+    'powered-by',
+    'user-menu',
+  ),
+  'tb_megamenu' => array(
+    'management',
+    'menu-breadcrumb-menu',
+    'menu-service-tools',
+    'navigation',
+    'user-menu',
+  ),
+);
+
 /**
  * Implements hook_install().
  */
@@ -28,6 +46,47 @@ function nems_core_install() {
   $menu = menu_load('menu-service-tools');
   $menu['i18n_mode'] = 5;
   menu_save($menu);
+
+  // Restrict access to certain blocks.
+  foreach (NEMS_CORE_BLOCK_RESTRICTIONS as $module => $deltas) {
+    foreach ($deltas as $delta) {
+      _nems_core_restrict_block_access($module, $delta);
+    }
+  }
+
+  // Add accordion and tabber buttons in wysiwyg.
+  $plugin_settings = array(
+    'tabber' => array(
+      'addTab',
+    ),
+    'nems_accordion_plugin' => array(
+      'nems_accordion_plugin_button',
+    ),
+  );
+  foreach ($plugin_settings as $group => $buttons) {
+    multisite_config_service('wysiwyg')->addButtonsToProfile('full_html', $group, $buttons);
+  }
+
+  $entity_translatable_entities = array(
+    'node' => 'node',
+    'taxonomy_term' => 'taxonomy_term',
+    'bean' => 'bean',
+  );
+  variable_set('entity_translation_entity_types', $entity_translatable_entities);
+
+  multisite_config_service('title')->replaceTitleField('taxonomy_term', 'tags', 'name');
+  multisite_config_service('title')->replaceTitleField('taxonomy_term', 'tags', 'description');
+
+  // Grant nems bean permissions for anonymous user role.
+  user_role_grant_permissions('1', array(
+    'view any block bean',
+    'view any list_block bean',
+  ));
+  // Grant nems bean permissions for authenticated user role.
+  user_role_grant_permissions('2', array(
+    'view any block bean',
+    'view any list_block bean',
+  ));
 }
 
 /**
@@ -43,6 +102,18 @@ function nems_core_uninstall() {
   multisite_drupal_toolbox_add_block_context('site_wide', 'form', 'search', 'form', 'header_right', '1');
   multisite_drupal_toolbox_remove_block_context('site_wide', 'locale-language');
   multisite_drupal_toolbox_remove_block_context('site_wide', 'nexteuropa_europa_search-nexteuropa_search_form');
+  $entity_translatable_entities = array(
+    'node' => 'node',
+  );
+  variable_set('entity_translation_entity_types', $entity_translatable_entities);
+
+  // Restrict access to certain blocks.
+  foreach (NEMS_CORE_BLOCK_RESTRICTIONS as $module => $deltas) {
+    foreach ($deltas as $delta) {
+      module_load_include('module', 'nems_core');
+      _nems_core_restrict_block_access($module, $delta, TRUE);
+    }
+  }
 }
 
 /**

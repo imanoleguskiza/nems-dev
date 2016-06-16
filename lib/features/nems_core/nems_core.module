@@ -5,3 +5,139 @@
  */
 
 include_once 'nems_core.features.inc';
+
+define("NEMS_CORE_BLOCK_ACCESS_ROLE", 6);
+const NEMS_CORE_BLOCK_ACCESS_PERMISSIONS = array(
+  'config',
+  'config_body',
+  'config_desc',
+  'config_lang',
+  'config_page_visibility',
+  'config_region',
+  'config_role_visibility',
+  'config_title',
+  'config_type_visibility',
+  'config_user_visibility',
+  'delete',
+  'disable',
+  'enable',
+  'move',
+  'view',
+);
+
+/**
+ * Implements hook_permission().
+ */
+function nems_core_permission() {
+  return array(
+    'access nems menu' => array(
+      'title' => t('NEMS Menu access'),
+      'description' => t('Restrict the access to several menu items on the NEMS template.'),
+    ),
+    'access europa search' => array(
+      'title' => t('Europa Search access'),
+      'description' => t('Access the configuration of the Europa Search tool.'),
+    ),
+
+  );
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function nems_core_menu_alter(&$items) {
+
+  // List of menu items we will restrict access to.
+  $path_list = array(
+    'admin/config/content/ckeditor_tabber',
+    'admin/config/administration/admin_menu',
+    'admin/config/content/title',
+    'admin/config/content/entityconnect',
+    'admin/config/content/version_management/settings',
+    'admin/config/media/file-system',
+    'admin/config/media/file-system/transliteration',
+    'admin/config/content/node_export',
+    'admin/config/date/date_popup',
+    'admin/config/development/strongarm',
+    'admin/config/people/accounts',
+    'admin/config/development/jquery_update',
+    'admin/config/development/generate/user',
+    'admin/config/menu_token',
+    'admin/config/media/media_node',
+    'admin/config/media/image-toolkit',
+    'admin/config/media/colorbox',
+    'admin/config/media/file-settings',
+    'admin/config/regional/i18n',
+    'admin/config/regional/language/configure',
+    'admin/config/security/settings',
+    'admin/config/system/nexteuropa-tokens',
+    'admin/config/system/cron',
+    'admin/config/user-interface/chosen',
+    'admin/people/create',
+    'admin/structure/block/add',
+    'admin/config/regional/language/admin_language',
+    'admin/config/regional/language/configure',
+  );
+  foreach ($path_list as $path) {
+    if (isset($items[$path])) {
+      if (isset($items[$path]['access callback'])) {
+        unset($items[$path]['access callback']);
+      }
+      $items[$path]['access arguments'][0] = 'access nems menu';
+    }
+  }
+  if (isset($items['admin/structure/block/add-menu-block'])) {
+    $items['admin/structure/block/add-menu-block']['access callback'] = '_nems_core_menu_block_access';
+  }
+  if (isset($items['admin/config/search/europa_search'])) {
+    $items['admin/config/search/europa_search']['access arguments'][0] = 'access europa search';
+  }
+}
+
+/**
+ * Determine whether the user has permission to use menu_block module.
+ */
+function _nems_core_menu_block_access($account = NULL) {
+  return user_access('administer blocks', $account);
+}
+
+/**
+ * Add access restrictions to a block.
+ */
+function _nems_core_restrict_block_access($module, $delta, $delete = FALSE) {
+  if (!$delete) {
+    foreach (NEMS_CORE_BLOCK_ACCESS_PERMISSIONS as $permission) {
+      db_insert('block_access_roles')
+        ->fields(array(
+          'module' => $module,
+          'delta' => $delta,
+          'rid' => NEMS_CORE_BLOCK_ACCESS_ROLE,
+          'permission' => $permission,
+        ))
+        ->execute();
+    }
+  }
+  else {
+    foreach (NEMS_CORE_BLOCK_ACCESS_PERMISSIONS as $permission) {
+      db_delete('block_access_roles')
+        ->condition('module', $module)
+        ->condition('delta', $delta)
+        ->condition('rid', NEMS_CORE_BLOCK_ACCESS_ROLE)
+        ->condition('permission', $permission)
+        ->execute();
+    }
+  }
+}
+
+/**
+ * Implements hook_features_api_alter().
+ */
+function nems_core_features_api_alter(&$components) {
+  // We force block_access components to be processed
+  // after roles have been added.
+  if (isset($components['block_access'])) {
+    $setting = $components['block_access'];
+    unset($components['block_access']);
+    $components['block_access'] = $setting;
+  }
+}

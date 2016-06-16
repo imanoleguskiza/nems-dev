@@ -1,23 +1,23 @@
 <?php
 /**
  * @file
- * nems_homepage.features.taxonomy.inc
+ * nems_events.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function nems_homepage_taxonomy_default_vocabularies() {
+function nems_events_taxonomy_default_vocabularies() {
   return array(
-    'nems_news_categories' => (object) array(
-      'name' => 'NEMS News Categories',
-      'machine_name' => 'nems_news_categories',
-      'description' => 't',
+    'nems_events_categories' => (object) array(
+      'name' => 'NEMS Events Categories',
+      'machine_name' => 'nems_events_categories',
+      'description' => 'Events Content Type Vocabulary',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 1,
+      'weight' => -5,
       'language' => 'und',
-      'i18n_mode' => 4,
+      'i18n_mode' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',

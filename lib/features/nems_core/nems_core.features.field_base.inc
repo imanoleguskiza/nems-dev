@@ -10,6 +10,70 @@
 function nems_core_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'description_field'.
+  $field_bases['description_field'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'description_field',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'text_with_summary',
+  );
+
+  // Exported field_base: 'field_block_reference'.
+  $field_bases['field_block_reference'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_block_reference',
+    'indexes' => array(
+      'moddelta' => array(
+        0 => 'moddelta',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'blockreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'referenceable_modules' => array(),
+    ),
+    'translatable' => 0,
+    'type' => 'blockreference',
+  );
+
+  // Exported field_base: 'field_description'.
+  $field_bases['field_description'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_description',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_nems_core_date'.
   $field_bases['field_nems_core_date'] = array(
     'active' => 1,
@@ -86,7 +150,7 @@ function nems_core_field_default_field_bases() {
     'module' => 'file',
     'settings' => array(
       'display_default' => 0,
-      'display_field' => 0,
+      'display_field' => 1,
       'entity_translation_sync' => array(
         0 => 'fid',
       ),
@@ -121,13 +185,34 @@ function nems_core_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_nems_core_related_links'.
-  $field_bases['field_nems_core_related_links'] = array(
+  // Exported field_base: 'field_nems_core_related_content'.
+  $field_bases['field_nems_core_related_content'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_nems_core_related_links',
+    'field_name' => 'field_nems_core_related_content',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 1,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_view_more'.
+  $field_bases['field_view_more'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_view_more',
     'indexes' => array(),
     'locked' => 1,
     'module' => 'link',
@@ -151,25 +236,26 @@ function nems_core_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_nems_core_related_video'.
-  $field_bases['field_nems_core_related_video'] = array(
+  // Exported field_base: 'name_field'.
+  $field_bases['name_field'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_nems_core_related_video',
+    'field_name' => 'name_field',
     'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
+      'format' => array(
+        0 => 'format',
       ),
     ),
     'locked' => 1,
-    'module' => 'mediafield',
+    'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'max_length' => 255,
     ),
     'translatable' => 1,
-    'type' => 'media',
+    'type' => 'text',
   );
 
   return $field_bases;

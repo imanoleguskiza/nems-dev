@@ -62,6 +62,19 @@ function nems_publications_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_settings_node__nems_publication';
+  $strongarm->value = array(
+    'default_language' => 'xx-et-default',
+    'hide_language_selector' => 0,
+    'exclude_language_none' => 1,
+    'lock_language' => 0,
+    'shared_fields_original_only' => 0,
+  );
+  $export['entity_translation_settings_node__nems_publication'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__nems_publication';
   $strongarm->value = array(
     'view_modes' => array(
@@ -69,7 +82,7 @@ function nems_publications_strongarm() {
         'custom_settings' => TRUE,
       ),
       'teaser' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
@@ -96,16 +109,19 @@ function nems_publications_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '11',
+          'weight' => '7',
         ),
         'language' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'xmlsitemap' => array(
           'weight' => '30',
         ),
         'rabbit_hole' => array(
-          'weight' => '12',
+          'weight' => '8',
+        ),
+        'metatags' => array(
+          'weight' => '9',
         ),
       ),
       'display' => array(),
@@ -177,7 +193,7 @@ function nems_publications_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_nems_publication';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_nems_publication'] = $strongarm;
 
   $strongarm = new stdClass();

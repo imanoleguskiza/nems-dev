@@ -10,50 +10,6 @@
 function nems_gallery_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_carousel_items'.
-  $field_bases['field_carousel_items'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_carousel_items',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 1,
-    'module' => 'entityreference',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'gallery' => 'gallery',
-        ),
-      ),
-      'target_type' => 'node',
-    ),
-    'translatable' => 1,
-    'type' => 'entityreference',
-  );
-
   // Exported field_base: 'field_gallery_image'.
   $field_bases['field_gallery_image'] = array(
     'active' => 1,
@@ -61,14 +17,6 @@ function nems_gallery_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_gallery_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -87,48 +35,32 @@ function nems_gallery_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_gallery_items'.
-  $field_bases['field_gallery_items'] = array(
+  // Exported field_base: 'field_nems_gallery_category'.
+  $field_bases['field_nems_gallery_category'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_gallery_items',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
+    'field_name' => 'field_nems_gallery_category',
     'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
+      'tid' => array(
+        0 => 'tid',
       ),
     ),
     'locked' => 1,
-    'module' => 'entityreference',
+    'module' => 'taxonomy',
     'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'handler' => 'base',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'gallery' => 'gallery',
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'nems_picture_gallery_categories',
+          'parent' => 0,
         ),
       ),
-      'target_type' => 'node',
+      'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
-    'translatable' => 1,
-    'type' => 'entityreference',
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
   );
 
   return $field_bases;

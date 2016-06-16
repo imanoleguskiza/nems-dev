@@ -1,10 +1,9 @@
 name = NEMS Field group translation
-project = nems_i18n_field_group
 description = Translation field groups.
 dependencies[] = field_group
 dependencies[] = i18n_string
 package = Multilingual - Internationalization
-version = 7.x-1.0
 core = 7.x
 multisite_version = 2.1
 php = 5.6
+features[features_api][] = api:2
