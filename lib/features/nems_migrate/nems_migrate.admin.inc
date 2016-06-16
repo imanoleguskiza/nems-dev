@@ -13,7 +13,7 @@ function nems_migrate_settings_form() {
   $form['nems_migrate_source_url'] = array(
     '#type' => 'textfield',
     '#title' => t('Source migration URL'),
-    '#default_value' => variable_get('nexteuropa_webtools_smartloader_prurl', ''),
+    '#default_value' => variable_get('nems_migrate_source_url', ''),
     '#description' => t("The base URL of the source migration without trailing slash at the end. e.g. 'http://europa.eu'"),
     '#required' => TRUE,
   );

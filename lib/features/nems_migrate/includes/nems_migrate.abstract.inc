@@ -350,6 +350,15 @@ abstract class NemsAbstractMigration extends AbstractMigration {
   }
 
   /**
+   * Implements prepareRow().
+   */
+  public function prepareRow(&$row) {
+    if (isset($row->meta_keywords) && is_array($row->meta_keywords)) {
+      $row->meta_keywords = implode(', ', $row->meta_keywords);
+    }
+  }
+
+  /**
    * Implements Migration::complete() callback.
    *
    * @param object $entity

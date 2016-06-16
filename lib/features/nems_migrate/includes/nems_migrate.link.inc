@@ -65,7 +65,9 @@ class NemsLinkMigration extends NemsAbstractMigration {
    * Implements prepareRow().
    */
   public function prepareRow(&$row) {
-    parent::prepareRow($row);
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
     // Process the body field.
     $row->body = _nems_migrate_import_contents_filter($row->body);
   }

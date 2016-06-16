@@ -4,6 +4,8 @@
  * Code for the Nems Migrate module.
  */
 
+define('NEMS_MIGRATE_COVERAGE_URL', 'http://europa.eu/cgi-bin/coverage/coverage');
+
 /**
  * Implements hook_menu().
  */
@@ -50,13 +52,14 @@ function nems_migrate_migrate_api() {
  *   Checked file or files.
  */
 function _nems_migrate_file_check($files) {
+  $source_site = variable_get('nems_migrate_source_url', 'http://europa.eu');
   // Can be a string or an array.
   if (is_array($files)) {
     $i = 0;
     foreach ($files as $file) {
       // Check that the value is a valid URL.
       if (!filter_var($file, FILTER_VALIDATE_URL)) {
-        $files[$i] = 'http://europa.eu' . $file;
+        $files[$i] = $source_site . $file;
       }
       // Now check if the resource exists.
       if (!$fp = curl_init($files[$i])) {
@@ -71,7 +74,7 @@ function _nems_migrate_file_check($files) {
   // String.
   else {
     if (!filter_var($files, FILTER_VALIDATE_URL)) {
-      $files = 'http://europa.eu' . $files;
+      $files = $source_site . $files;
     }
     if (!$fp = curl_init($files)) {
       $files = FALSE;
@@ -123,7 +126,8 @@ function _nems_migrate_get_classification($value) {
  * @return string
  *   Text filtered.
  */
-function _nems_migrate_import_contents_filter($text, $site) {
+function _nems_migrate_import_contents_filter($text) {
+  $source_site = variable_get('nems_migrate_source_url', 'http://europa.eu');
   // Remove styles.
   preg_match_all('/style="(.*?)"/s', $text, $styles);
   preg_match_all('/class="lead"/s', $text, $styles);
@@ -139,7 +143,7 @@ function _nems_migrate_import_contents_filter($text, $site) {
   $links = $document->getElementsByTagName('a');
   foreach ($links as $link) {
     // Check if the link belongs to the domain.
-    if (strrpos($link->getAttribute('href'), 'http://europa.eu/' . $site . '/', -strlen($link->getAttribute('href'))) !== false) {
+    if (strrpos($link->getAttribute('href'), $source_site . '/', -strlen($link->getAttribute('href'))) !== false) {
       // Find internal links to files.
       preg_match('#(.*?)/(.*?).(doc|docx|xls|ppt|pdf|zip|rar|mp3|mp4|jpg|jpeg)$#', $link->getAttribute('href'), $file);
       if (!empty($file[2])) {
@@ -229,20 +233,17 @@ function _nems_migrate_import_files($link, $dir) {
  *   Path.
  */
 function _nems_migrate_path($url) {
+  $source_site = variable_get('nems_migrate_source_url', 'http://europa.eu');
   $lang = locale_language_list('name');
   $lang_keys = array_keys($lang);
   $str = array();
-  $str[] = 'http://europa.eu';
+  $str[] = $source_site . '/';
 
   foreach ($lang_keys as $lang_key) {
     $str[] = '/index_' . $lang_key . '.htm';
     $str[] = '_' . $lang_key . '.htm';
     $str[] = '/index_' . $lang_key . '.xml';
     $str[] = '_' . $lang_key . '.xml';
-  }
-
-  if ($site) {
-    $str[] = '/' . $site . '/';
   }
 
   $rep[] = '';
@@ -278,7 +279,9 @@ function _nems_migrate_file_exists($file, $dest) {
  *
  */
 function _nems_migrate_check_coverage($file) {
-  $response = drupal_http_request('http://europa.eu/cgi-bin/coverage/coverage?url=' . $file);
+
+  $coverage_query= url(NEMS_MIGRATE_COVERAGE_URL, array('query' => array('url' => $file)));
+  $response = drupal_http_request($coverage_query);
   $data = simplexml_load_string($response->data);
   $coverage = array();
   if ($response->code == 200) {

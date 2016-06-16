@@ -69,7 +69,9 @@ class NemsEventMigration extends NemsAbstractMigration {
    * Implements prepareRow().
    */
   public function prepareRow(&$row) {
-    parent::prepareRow($row);
+    if (parent::prepareRow($row) === FALSE) {
+      return FALSE;
+    }
     // Process the body field.
     $row->body = _nems_migrate_import_contents_filter($row->body);
   }
@@ -78,7 +80,6 @@ class NemsEventMigration extends NemsAbstractMigration {
    * Implements prepare().
    */
   public function prepare(&$entity, $row) {
-    parent::prepare($entity, $row);
     $alias = trim(_nems_migrate_path($row->original_url));
     $entity->path['pathauto'] = 0;
     if (isset($entity->nid)) {
