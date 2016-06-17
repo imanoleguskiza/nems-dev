@@ -104,16 +104,28 @@ function _nems_core_menu_block_access($account = NULL) {
 /**
  * Add access restrictions to a block.
  */
-function _nems_core_restrict_block_access($module, $delta) {
-  foreach (NEMS_CORE_BLOCK_ACCESS_PERMISSIONS as $permission) {
-    db_insert('block_access_roles')
-      ->fields(array(
-        'module' => $module,
-        'delta' => $delta,
-        'rid' => NEMS_CORE_BLOCK_ACCESS_ROLE,
-        'permission' => $permission,
-      ))
-      ->execute();
+function _nems_core_restrict_block_access($module, $delta, $delete = FALSE) {
+  if (!$delete) {
+    foreach (NEMS_CORE_BLOCK_ACCESS_PERMISSIONS as $permission) {
+      db_insert('block_access_roles')
+        ->fields(array(
+          'module' => $module,
+          'delta' => $delta,
+          'rid' => NEMS_CORE_BLOCK_ACCESS_ROLE,
+          'permission' => $permission,
+        ))
+        ->execute();
+    }
+  }
+  else {
+    foreach (NEMS_CORE_BLOCK_ACCESS_PERMISSIONS as $permission) {
+      db_delete('block_access_roles')
+        ->condition('module', $module)
+        ->condition('delta', $delta)
+        ->condition('rid', NEMS_CORE_BLOCK_ACCESS_ROLE)
+        ->condition('permission', $permission)
+        ->execute();
+    }
   }
 }
 
