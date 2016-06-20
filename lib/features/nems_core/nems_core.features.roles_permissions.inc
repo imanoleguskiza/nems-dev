@@ -102,6 +102,7 @@ function nems_core_default_roles_permissions() {
       'administer workbench moderation' => TRUE,
       'assign contributor role' => TRUE,
       'assign editor role' => TRUE,
+      'assign webmaster role' => TRUE,
       'bypass node access' => TRUE,
       'bypass workbench moderation' => TRUE,
       'change own username' => TRUE,
