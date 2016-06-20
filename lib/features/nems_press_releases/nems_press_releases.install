@@ -35,7 +35,6 @@ function nems_press_releases_install() {
       ),
     ));
     $source->save();
-    $source->schedule();
   }
 
   // Give webmasters access to feeds.
