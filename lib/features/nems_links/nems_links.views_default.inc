@@ -38,10 +38,10 @@ function nems_links_views_default_views() {
   $handler->display->display_options['row_options']['inline'] = array(
     'filemime' => 'filemime',
   );
-  /* Relationship: Content: Main file (field_main_file:fid) */
-  $handler->display->display_options['relationships']['field_main_file_fid']['id'] = 'field_main_file_fid';
-  $handler->display->display_options['relationships']['field_main_file_fid']['table'] = 'field_data_field_main_file';
-  $handler->display->display_options['relationships']['field_main_file_fid']['field'] = 'field_main_file_fid';
+  /* Relationship: Content: Main file (field_nems_main_file:fid) */
+  $handler->display->display_options['relationships']['field_nems_main_file_fid']['id'] = 'field_nems_main_file_fid';
+  $handler->display->display_options['relationships']['field_nems_main_file_fid']['table'] = 'field_data_field_nems_main_file';
+  $handler->display->display_options['relationships']['field_nems_main_file_fid']['field'] = 'field_nems_main_file_fid';
   /* Field: Field: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
@@ -51,34 +51,34 @@ function nems_links_views_default_views() {
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Content: Main file */
-  $handler->display->display_options['fields']['field_main_file']['id'] = 'field_main_file';
-  $handler->display->display_options['fields']['field_main_file']['table'] = 'field_data_field_main_file';
-  $handler->display->display_options['fields']['field_main_file']['field'] = 'field_main_file';
-  $handler->display->display_options['fields']['field_main_file']['label'] = '';
-  $handler->display->display_options['fields']['field_main_file']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_main_file']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_main_file']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_main_file']['type'] = 'file_url_plain';
+  $handler->display->display_options['fields']['field_nems_main_file']['id'] = 'field_nems_main_file';
+  $handler->display->display_options['fields']['field_nems_main_file']['table'] = 'field_data_field_nems_main_file';
+  $handler->display->display_options['fields']['field_nems_main_file']['field'] = 'field_nems_main_file';
+  $handler->display->display_options['fields']['field_nems_main_file']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_main_file']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_nems_main_file']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_main_file']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_nems_main_file']['type'] = 'file_url_plain';
   /* Field: File: Mime type */
   $handler->display->display_options['fields']['filemime']['id'] = 'filemime';
   $handler->display->display_options['fields']['filemime']['table'] = 'file_managed';
   $handler->display->display_options['fields']['filemime']['field'] = 'filemime';
-  $handler->display->display_options['fields']['filemime']['relationship'] = 'field_main_file_fid';
+  $handler->display->display_options['fields']['filemime']['relationship'] = 'field_nems_main_file_fid';
   $handler->display->display_options['fields']['filemime']['label'] = '';
   $handler->display->display_options['fields']['filemime']['exclude'] = TRUE;
   $handler->display->display_options['fields']['filemime']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['filemime']['filemime_image'] = TRUE;
   /* Field: Content: Main link */
-  $handler->display->display_options['fields']['field_main_link']['id'] = 'field_main_link';
-  $handler->display->display_options['fields']['field_main_link']['table'] = 'field_data_field_main_link';
-  $handler->display->display_options['fields']['field_main_link']['field'] = 'field_main_link';
-  $handler->display->display_options['fields']['field_main_link']['label'] = '';
-  $handler->display->display_options['fields']['field_main_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_main_link']['alter']['text'] = '<a href=[field_main_link]>[title_field]</a>';
-  $handler->display->display_options['fields']['field_main_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_main_link']['empty'] = '[filemime]<a href=[field_main_file]>[title_field]</a>';
-  $handler->display->display_options['fields']['field_main_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_main_link']['type'] = 'link_absolute';
+  $handler->display->display_options['fields']['field_nems_main_link']['id'] = 'field_nems_main_link';
+  $handler->display->display_options['fields']['field_nems_main_link']['table'] = 'field_data_field_nems_main_link';
+  $handler->display->display_options['fields']['field_nems_main_link']['field'] = 'field_nems_main_link';
+  $handler->display->display_options['fields']['field_nems_main_link']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_main_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_nems_main_link']['alter']['text'] = '<a href=[field_nems_main_link]>[title_field]</a>';
+  $handler->display->display_options['fields']['field_nems_main_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_main_link']['empty'] = '[filemime]<a href=[field_nems_main_file]>[title_field]</a>';
+  $handler->display->display_options['fields']['field_nems_main_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_nems_main_link']['type'] = 'link_absolute';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';

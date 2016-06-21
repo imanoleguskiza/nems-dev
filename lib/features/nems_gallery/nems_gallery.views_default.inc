@@ -37,34 +37,34 @@ function nems_gallery_views_default_views() {
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['content'] = '[body]';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
-  /* Relationship: Content: Image (field_gallery_image:fid) */
-  $handler->display->display_options['relationships']['field_gallery_image_fid']['id'] = 'field_gallery_image_fid';
-  $handler->display->display_options['relationships']['field_gallery_image_fid']['table'] = 'field_data_field_gallery_image';
-  $handler->display->display_options['relationships']['field_gallery_image_fid']['field'] = 'field_gallery_image_fid';
-  $handler->display->display_options['relationships']['field_gallery_image_fid']['required'] = TRUE;
+  /* Relationship: Content: Image (field_nems_gallery_image:fid) */
+  $handler->display->display_options['relationships']['field_nems_gallery_image_fid']['id'] = 'field_nems_gallery_image_fid';
+  $handler->display->display_options['relationships']['field_nems_gallery_image_fid']['table'] = 'field_data_field_nems_gallery_image';
+  $handler->display->display_options['relationships']['field_nems_gallery_image_fid']['field'] = 'field_nems_gallery_image_fid';
+  $handler->display->display_options['relationships']['field_nems_gallery_image_fid']['required'] = TRUE;
   /* Field: File: Path */
   $handler->display->display_options['fields']['uri']['id'] = 'uri';
   $handler->display->display_options['fields']['uri']['table'] = 'file_managed';
   $handler->display->display_options['fields']['uri']['field'] = 'uri';
-  $handler->display->display_options['fields']['uri']['relationship'] = 'field_gallery_image_fid';
+  $handler->display->display_options['fields']['uri']['relationship'] = 'field_nems_gallery_image_fid';
   $handler->display->display_options['fields']['uri']['label'] = '';
   $handler->display->display_options['fields']['uri']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uri']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uri']['file_download_path'] = TRUE;
   /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_gallery_image']['id'] = 'field_gallery_image';
-  $handler->display->display_options['fields']['field_gallery_image']['table'] = 'field_data_field_gallery_image';
-  $handler->display->display_options['fields']['field_gallery_image']['field'] = 'field_gallery_image';
-  $handler->display->display_options['fields']['field_gallery_image']['label'] = '';
-  $handler->display->display_options['fields']['field_gallery_image']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_gallery_image']['alter']['path'] = '[uri]';
-  $handler->display->display_options['fields']['field_gallery_image']['alter']['alt'] = '[field_gallery_image-title]';
-  $handler->display->display_options['fields']['field_gallery_image']['alter']['rel'] = 'group_gallery';
-  $handler->display->display_options['fields']['field_gallery_image']['alter']['link_class'] = 'fancybox';
-  $handler->display->display_options['fields']['field_gallery_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_gallery_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_gallery_image']['type'] = 'colorbox';
-  $handler->display->display_options['fields']['field_gallery_image']['settings'] = array(
+  $handler->display->display_options['fields']['field_nems_gallery_image']['id'] = 'field_nems_gallery_image';
+  $handler->display->display_options['fields']['field_nems_gallery_image']['table'] = 'field_data_field_nems_gallery_image';
+  $handler->display->display_options['fields']['field_nems_gallery_image']['field'] = 'field_nems_gallery_image';
+  $handler->display->display_options['fields']['field_nems_gallery_image']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_gallery_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_nems_gallery_image']['alter']['path'] = '[uri]';
+  $handler->display->display_options['fields']['field_nems_gallery_image']['alter']['alt'] = '[field_nems_gallery_image-title]';
+  $handler->display->display_options['fields']['field_nems_gallery_image']['alter']['rel'] = 'group_gallery';
+  $handler->display->display_options['fields']['field_nems_gallery_image']['alter']['link_class'] = 'fancybox';
+  $handler->display->display_options['fields']['field_nems_gallery_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_gallery_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_nems_gallery_image']['type'] = 'colorbox';
+  $handler->display->display_options['fields']['field_nems_gallery_image']['settings'] = array(
     'colorbox_node_style' => 'medium',
     'colorbox_node_style_first' => '',
     'colorbox_image_style' => '',
@@ -73,13 +73,13 @@ function nems_gallery_views_default_views() {
     'colorbox_caption' => 'auto',
     'colorbox_caption_custom' => '',
   );
-  $handler->display->display_options['fields']['field_gallery_image']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_gallery_image']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_nems_gallery_image']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_gallery_image']['delta_offset'] = '0';
   /* Field: File: Title Text */
   $handler->display->display_options['fields']['field_file_image_title_text']['id'] = 'field_file_image_title_text';
   $handler->display->display_options['fields']['field_file_image_title_text']['table'] = 'field_data_field_file_image_title_text';
   $handler->display->display_options['fields']['field_file_image_title_text']['field'] = 'field_file_image_title_text';
-  $handler->display->display_options['fields']['field_file_image_title_text']['relationship'] = 'field_gallery_image_fid';
+  $handler->display->display_options['fields']['field_file_image_title_text']['relationship'] = 'field_nems_gallery_image_fid';
   $handler->display->display_options['fields']['field_file_image_title_text']['label'] = '';
   $handler->display->display_options['fields']['field_file_image_title_text']['element_label_colon'] = FALSE;
   /* Field: Content: Body */
@@ -89,9 +89,9 @@ function nems_gallery_views_default_views() {
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Image (field_gallery_image:delta) */
+  /* Sort criterion: Content: Image (field_nems_gallery_image:delta) */
   $handler->display->display_options['sorts']['delta']['id'] = 'delta';
-  $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_gallery_image';
+  $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_nems_gallery_image';
   $handler->display->display_options['sorts']['delta']['field'] = 'delta';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';

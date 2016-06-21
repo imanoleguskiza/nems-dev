@@ -50,8 +50,8 @@ function nems_links_field_group_info() {
     'label' => 'Link target',
     'weight' => '4',
     'children' => array(
-      0 => 'field_main_file',
-      1 => 'field_main_link',
+      0 => 'field_nems_main_file',
+      1 => 'field_nems_main_link',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
