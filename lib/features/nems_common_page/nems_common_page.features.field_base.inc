@@ -10,13 +10,13 @@
 function nems_common_page_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_downloads_items'.
-  $field_bases['field_downloads_items'] = array(
+  // Exported field_base: 'field_nems_downloads_items'.
+  $field_bases['field_nems_downloads_items'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_downloads_items',
+    'field_name' => 'field_nems_downloads_items',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -31,13 +31,13 @@ function nems_common_page_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_see_also_items'.
-  $field_bases['field_see_also_items'] = array(
+  // Exported field_base: 'field_nems_see_also_items'.
+  $field_bases['field_nems_see_also_items'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_see_also_items',
+    'field_name' => 'field_nems_see_also_items',
     'indexes' => array(
       'format' => array(
         0 => 'format',

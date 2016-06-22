@@ -31,13 +31,13 @@ function nems_core_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_block_reference'.
-  $field_bases['field_block_reference'] = array(
+  // Exported field_base: 'field_nems_block_reference'.
+  $field_bases['field_nems_block_reference'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_block_reference',
+    'field_name' => 'field_nems_block_reference',
     'indexes' => array(
       'moddelta' => array(
         0 => 'moddelta',
@@ -53,13 +53,13 @@ function nems_core_field_default_field_bases() {
     'type' => 'blockreference',
   );
 
-  // Exported field_base: 'field_description'.
-  $field_bases['field_description'] = array(
+  // Exported field_base: 'field_nems_description'.
+  $field_bases['field_nems_description'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_description',
+    'field_name' => 'field_nems_description',
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -206,13 +206,13 @@ function nems_core_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_view_more'.
-  $field_bases['field_view_more'] = array(
+  // Exported field_base: 'field_nems_view_more'.
+  $field_bases['field_nems_view_more'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_view_more',
+    'field_name' => 'field_nems_view_more',
     'indexes' => array(),
     'locked' => 1,
     'module' => 'link',

@@ -51,8 +51,8 @@ function nems_common_page_field_group_info() {
     'label' => 'Links',
     'weight' => '7',
     'children' => array(
-      0 => 'field_downloads_items',
-      1 => 'field_see_also_items',
+      0 => 'field_nems_downloads_items',
+      1 => 'field_nems_see_also_items',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

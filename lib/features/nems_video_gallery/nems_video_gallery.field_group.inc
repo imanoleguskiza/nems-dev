@@ -50,7 +50,7 @@ function nems_video_gallery_field_group_info() {
     'label' => 'Gallery',
     'weight' => '6',
     'children' => array(
-      0 => 'field_video_items',
+      0 => 'field_nems_video_items',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -55,8 +55,8 @@ function nems_links_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_link-field_main_file'.
-  $field_instances['node-nems_link-field_main_file'] = array(
+  // Exported field_instance: 'node-nems_link-field_nems_main_file'.
+  $field_instances['node-nems_link-field_nems_main_file'] = array(
     'bundle' => 'nems_link',
     'deleted' => 0,
     'description' => '',
@@ -76,7 +76,7 @@ function nems_links_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_main_file',
+    'field_name' => 'field_nems_main_file',
     'label' => 'Main file',
     'required' => 0,
     'settings' => array(
@@ -120,8 +120,8 @@ function nems_links_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_link-field_main_link'.
-  $field_instances['node-nems_link-field_main_link'] = array(
+  // Exported field_instance: 'node-nems_link-field_nems_main_link'.
+  $field_instances['node-nems_link-field_nems_main_link'] = array(
     'bundle' => 'nems_link',
     'default_value' => NULL,
     'deleted' => 0,
@@ -142,7 +142,7 @@ function nems_links_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_main_link',
+    'field_name' => 'field_nems_main_link',
     'label' => 'Main link',
     'required' => 0,
     'settings' => array(

@@ -11,6 +11,6 @@ features[ctools][] = context:context:3
 features[ctools][] = strongarm:strongarm:1
 features[fe_block_settings][] = tocify-tocify
 features[features_api][] = api:2
-features[field_base][] = field_dynamic_submenu
+features[field_base][] = field_nems_dynamic_submenu
 features[variable][] = tocify_context
 features[variable][] = tocify_selectors

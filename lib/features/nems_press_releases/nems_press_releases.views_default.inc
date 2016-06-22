@@ -60,17 +60,17 @@ function nems_press_releases_views_default_views() {
   $handler->display->display_options['fields']['title_field']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   /* Field: Content: Main link */
-  $handler->display->display_options['fields']['field_press_release_main_link']['id'] = 'field_press_release_main_link';
-  $handler->display->display_options['fields']['field_press_release_main_link']['table'] = 'field_data_field_press_release_main_link';
-  $handler->display->display_options['fields']['field_press_release_main_link']['field'] = 'field_press_release_main_link';
-  $handler->display->display_options['fields']['field_press_release_main_link']['label'] = '';
-  $handler->display->display_options['fields']['field_press_release_main_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_press_release_main_link']['alter']['text'] = '<a href="[field_press_release_main_link]">[title_field]</a>';
-  $handler->display->display_options['fields']['field_press_release_main_link']['alter']['path'] = '[field_press_release_main_link] ';
-  $handler->display->display_options['fields']['field_press_release_main_link']['alter']['alt'] = '[title_field]';
-  $handler->display->display_options['fields']['field_press_release_main_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_press_release_main_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_press_release_main_link']['type'] = 'link_absolute';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['id'] = 'field_nems_pr_main_link';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['table'] = 'field_data_field_nems_pr_main_link';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['field'] = 'field_nems_pr_main_link';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['alter']['text'] = '<a href="[field_nems_pr_main_link]">[title_field]</a>';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['alter']['path'] = '[field_nems_pr_main_link] ';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['alter']['alt'] = '[title_field]';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['type'] = 'link_absolute';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -113,19 +113,19 @@ function nems_press_releases_views_default_views() {
   $handler->display->display_options['fields']['title_field']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   /* Field: Content: Main link */
-  $handler->display->display_options['fields']['field_press_release_main_link']['id'] = 'field_press_release_main_link';
-  $handler->display->display_options['fields']['field_press_release_main_link']['table'] = 'field_data_field_press_release_main_link';
-  $handler->display->display_options['fields']['field_press_release_main_link']['field'] = 'field_press_release_main_link';
-  $handler->display->display_options['fields']['field_press_release_main_link']['label'] = '';
-  $handler->display->display_options['fields']['field_press_release_main_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_press_release_main_link']['alter']['text'] = '<a href="[field_press_release_main_link]">[title_field]</a>';
-  $handler->display->display_options['fields']['field_press_release_main_link']['alter']['path'] = '[field_press_release_main_link] ';
-  $handler->display->display_options['fields']['field_press_release_main_link']['alter']['alt'] = '[title_field]';
-  $handler->display->display_options['fields']['field_press_release_main_link']['element_type'] = 'h2';
-  $handler->display->display_options['fields']['field_press_release_main_link']['element_class'] = 'list-title';
-  $handler->display->display_options['fields']['field_press_release_main_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_press_release_main_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_press_release_main_link']['type'] = 'link_absolute';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['id'] = 'field_nems_pr_main_link';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['table'] = 'field_data_field_nems_pr_main_link';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['field'] = 'field_nems_pr_main_link';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['alter']['text'] = '<a href="[field_nems_pr_main_link]">[title_field]</a>';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['alter']['path'] = '[field_nems_pr_main_link] ';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['alter']['alt'] = '[title_field]';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['element_class'] = 'list-title';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['type'] = 'link_absolute';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -174,19 +174,19 @@ function nems_press_releases_views_default_views() {
   $handler->display->display_options['fields']['title_field']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   /* Field: Content: Main link */
-  $handler->display->display_options['fields']['field_press_release_main_link']['id'] = 'field_press_release_main_link';
-  $handler->display->display_options['fields']['field_press_release_main_link']['table'] = 'field_data_field_press_release_main_link';
-  $handler->display->display_options['fields']['field_press_release_main_link']['field'] = 'field_press_release_main_link';
-  $handler->display->display_options['fields']['field_press_release_main_link']['label'] = '';
-  $handler->display->display_options['fields']['field_press_release_main_link']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_press_release_main_link']['alter']['text'] = '<a href="[field_press_release_main_link]">[title_field]</a>';
-  $handler->display->display_options['fields']['field_press_release_main_link']['alter']['path'] = '[field_press_release_main_link] ';
-  $handler->display->display_options['fields']['field_press_release_main_link']['alter']['alt'] = '[title_field]';
-  $handler->display->display_options['fields']['field_press_release_main_link']['element_type'] = 'h2';
-  $handler->display->display_options['fields']['field_press_release_main_link']['element_class'] = 'list-title';
-  $handler->display->display_options['fields']['field_press_release_main_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_press_release_main_link']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_press_release_main_link']['type'] = 'link_absolute';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['id'] = 'field_nems_pr_main_link';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['table'] = 'field_data_field_nems_pr_main_link';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['field'] = 'field_nems_pr_main_link';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['alter']['text'] = '<a href="[field_nems_pr_main_link]">[title_field]</a>';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['alter']['path'] = '[field_nems_pr_main_link] ';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['alter']['alt'] = '[title_field]';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['element_class'] = 'list-title';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_nems_pr_main_link']['type'] = 'link_absolute';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
