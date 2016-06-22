@@ -40,6 +40,33 @@ function nems_links_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_editorial_team|node|nems_link|form';
+  $field_group->group_name = 'group_editorial_team';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'nems_link';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Editorial team',
+    'weight' => '6',
+    'children' => array(
+      0 => 'og_group_ref',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-editorial-team field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_editorial_team|node|nems_link|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_link_target|node|nems_link|form';
   $field_group->group_name = 'group_link_target';
   $field_group->entity_type = 'node';
@@ -122,6 +149,7 @@ function nems_links_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Content');
+  t('Editorial team');
   t('Link target');
   t('Links Category');
   t('Tags');
