@@ -128,22 +128,22 @@ function nems_press_releases_feeds_importer_default() {
           ),
           7 => array(
             'source' => 'xpathparser:7',
-            'target' => 'field_press_release_main_link:url:et:en',
+            'target' => 'field_nems_pr_main_link:url:et:en',
             'unique' => FALSE,
           ),
           8 => array(
             'source' => 'xpathparser:8',
-            'target' => 'field_press_release_main_link:url:et:fr',
+            'target' => 'field_nems_pr_main_link:url:et:fr',
             'unique' => FALSE,
           ),
           9 => array(
             'source' => 'xpathparser:9',
-            'target' => 'field_press_release_main_link:url:et:de',
+            'target' => 'field_nems_pr_main_link:url:et:de',
             'unique' => FALSE,
           ),
           10 => array(
             'source' => 'xpathparser:10',
-            'target' => 'field_press_release_keywords',
+            'target' => 'field_nems_pr_keywords',
             'term_search' => '0',
             'autocreate' => 1,
           ),

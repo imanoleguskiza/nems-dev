@@ -62,8 +62,8 @@ function nems_common_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-common_page-field_downloads_items'.
-  $field_instances['node-common_page-field_downloads_items'] = array(
+  // Exported field_instance: 'node-common_page-field_nems_downloads_items'.
+  $field_instances['node-common_page-field_nems_downloads_items'] = array(
     'bundle' => 'common_page',
     'default_value' => NULL,
     'deleted' => 0,
@@ -91,7 +91,7 @@ function nems_common_page_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_downloads_items',
+    'field_name' => 'field_nems_downloads_items',
     'label' => 'Downloads',
     'required' => 0,
     'settings' => array(
@@ -136,8 +136,8 @@ function nems_common_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-common_page-field_dynamic_submenu'.
-  $field_instances['node-common_page-field_dynamic_submenu'] = array(
+  // Exported field_instance: 'node-common_page-field_nems_dynamic_submenu'.
+  $field_instances['node-common_page-field_nems_dynamic_submenu'] = array(
     'bundle' => 'common_page',
     'default_value' => NULL,
     'deleted' => 0,
@@ -163,7 +163,7 @@ function nems_common_page_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_dynamic_submenu',
+    'field_name' => 'field_nems_dynamic_submenu',
     'label' => 'Display table of contents',
     'required' => 0,
     'settings' => array(
@@ -326,8 +326,8 @@ function nems_common_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-common_page-field_see_also_items'.
-  $field_instances['node-common_page-field_see_also_items'] = array(
+  // Exported field_instance: 'node-common_page-field_nems_see_also_items'.
+  $field_instances['node-common_page-field_nems_see_also_items'] = array(
     'bundle' => 'common_page',
     'default_value' => NULL,
     'deleted' => 0,
@@ -355,7 +355,7 @@ function nems_common_page_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_see_also_items',
+    'field_name' => 'field_nems_see_also_items',
     'label' => 'See also',
     'required' => 0,
     'settings' => array(

@@ -36,11 +36,11 @@ function nems_video_gallery_views_default_views() {
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['content'] = '[body]';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
-  /* Relationship: Content: Video item (field_video_items:fid) */
-  $handler->display->display_options['relationships']['field_video_items_fid']['id'] = 'field_video_items_fid';
-  $handler->display->display_options['relationships']['field_video_items_fid']['table'] = 'field_data_field_video_items';
-  $handler->display->display_options['relationships']['field_video_items_fid']['field'] = 'field_video_items_fid';
-  $handler->display->display_options['relationships']['field_video_items_fid']['required'] = TRUE;
+  /* Relationship: Content: Video item (field_nems_video_items:fid) */
+  $handler->display->display_options['relationships']['field_nems_video_items_fid']['id'] = 'field_nems_video_items_fid';
+  $handler->display->display_options['relationships']['field_nems_video_items_fid']['table'] = 'field_data_field_nems_video_items';
+  $handler->display->display_options['relationships']['field_nems_video_items_fid']['field'] = 'field_nems_video_items_fid';
+  $handler->display->display_options['relationships']['field_nems_video_items_fid']['required'] = TRUE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -49,30 +49,30 @@ function nems_video_gallery_views_default_views() {
   $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   /* Field: Content: Video item */
-  $handler->display->display_options['fields']['field_video_items']['id'] = 'field_video_items';
-  $handler->display->display_options['fields']['field_video_items']['table'] = 'field_data_field_video_items';
-  $handler->display->display_options['fields']['field_video_items']['field'] = 'field_video_items';
-  $handler->display->display_options['fields']['field_video_items']['label'] = '';
-  $handler->display->display_options['fields']['field_video_items']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_video_items']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_video_items']['type'] = 'file_rendered';
-  $handler->display->display_options['fields']['field_video_items']['settings'] = array(
+  $handler->display->display_options['fields']['field_nems_video_items']['id'] = 'field_nems_video_items';
+  $handler->display->display_options['fields']['field_nems_video_items']['table'] = 'field_data_field_nems_video_items';
+  $handler->display->display_options['fields']['field_nems_video_items']['field'] = 'field_nems_video_items';
+  $handler->display->display_options['fields']['field_nems_video_items']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_video_items']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_video_items']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_nems_video_items']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_nems_video_items']['settings'] = array(
     'file_view_mode' => 'default',
   );
-  $handler->display->display_options['fields']['field_video_items']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_video_items']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_nems_video_items']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_video_items']['delta_offset'] = '0';
   /* Field: File: Download link */
   $handler->display->display_options['fields']['download']['id'] = 'download';
   $handler->display->display_options['fields']['download']['table'] = 'file_managed';
   $handler->display->display_options['fields']['download']['field'] = 'download';
-  $handler->display->display_options['fields']['download']['relationship'] = 'field_video_items_fid';
+  $handler->display->display_options['fields']['download']['relationship'] = 'field_nems_video_items_fid';
   $handler->display->display_options['fields']['download']['label'] = '';
   $handler->display->display_options['fields']['download']['element_label_colon'] = FALSE;
   /* Field: File: Name */
   $handler->display->display_options['fields']['filename']['id'] = 'filename';
   $handler->display->display_options['fields']['filename']['table'] = 'file_managed';
   $handler->display->display_options['fields']['filename']['field'] = 'filename';
-  $handler->display->display_options['fields']['filename']['relationship'] = 'field_video_items_fid';
+  $handler->display->display_options['fields']['filename']['relationship'] = 'field_nems_video_items_fid';
   $handler->display->display_options['fields']['filename']['label'] = '';
   $handler->display->display_options['fields']['filename']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['filename']['link_to_file'] = FALSE;
@@ -80,27 +80,27 @@ function nems_video_gallery_views_default_views() {
   $handler->display->display_options['fields']['field_video_description']['id'] = 'field_video_description';
   $handler->display->display_options['fields']['field_video_description']['table'] = 'field_data_field_video_description';
   $handler->display->display_options['fields']['field_video_description']['field'] = 'field_video_description';
-  $handler->display->display_options['fields']['field_video_description']['relationship'] = 'field_video_items_fid';
+  $handler->display->display_options['fields']['field_video_description']['relationship'] = 'field_nems_video_items_fid';
   $handler->display->display_options['fields']['field_video_description']['label'] = '';
   $handler->display->display_options['fields']['field_video_description']['element_label_colon'] = FALSE;
   /* Field: File: Video thumbnail */
-  $handler->display->display_options['fields']['field_video_thumbnail']['id'] = 'field_video_thumbnail';
-  $handler->display->display_options['fields']['field_video_thumbnail']['table'] = 'field_data_field_video_thumbnail';
-  $handler->display->display_options['fields']['field_video_thumbnail']['field'] = 'field_video_thumbnail';
-  $handler->display->display_options['fields']['field_video_thumbnail']['relationship'] = 'field_video_items_fid';
-  $handler->display->display_options['fields']['field_video_thumbnail']['label'] = '';
-  $handler->display->display_options['fields']['field_video_thumbnail']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_video_thumbnail']['element_class'] = 'video-thumbnail hidden';
-  $handler->display->display_options['fields']['field_video_thumbnail']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_video_thumbnail']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_video_thumbnail']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_video_thumbnail']['settings'] = array(
+  $handler->display->display_options['fields']['field_nems_video_thumbnail']['id'] = 'field_nems_video_thumbnail';
+  $handler->display->display_options['fields']['field_nems_video_thumbnail']['table'] = 'field_data_field_nems_video_thumbnail';
+  $handler->display->display_options['fields']['field_nems_video_thumbnail']['field'] = 'field_nems_video_thumbnail';
+  $handler->display->display_options['fields']['field_nems_video_thumbnail']['relationship'] = 'field_nems_video_items_fid';
+  $handler->display->display_options['fields']['field_nems_video_thumbnail']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_video_thumbnail']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_nems_video_thumbnail']['element_class'] = 'video-thumbnail hidden';
+  $handler->display->display_options['fields']['field_nems_video_thumbnail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_video_thumbnail']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_nems_video_thumbnail']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_nems_video_thumbnail']['settings'] = array(
     'image_style' => '',
     'image_link' => '',
   );
-  /* Sort criterion: Content: Video item (field_video_items:delta) */
+  /* Sort criterion: Content: Video item (field_nems_video_items:delta) */
   $handler->display->display_options['sorts']['delta']['id'] = 'delta';
-  $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_video_items';
+  $handler->display->display_options['sorts']['delta']['table'] = 'field_data_field_nems_video_items';
   $handler->display->display_options['sorts']['delta']['field'] = 'delta';
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';

@@ -119,8 +119,8 @@ function nems_video_gallery_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-video-field_video_thumbnail'.
-  $field_instances['file-video-field_video_thumbnail'] = array(
+  // Exported field_instance: 'file-video-field_nems_video_thumbnail'.
+  $field_instances['file-video-field_nems_video_thumbnail'] = array(
     'bundle' => 'video',
     'deleted' => 0,
     'description' => '',
@@ -151,7 +151,7 @@ function nems_video_gallery_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'file',
-    'field_name' => 'field_video_thumbnail',
+    'field_name' => 'field_nems_video_thumbnail',
     'label' => 'Video thumbnail',
     'required' => 0,
     'settings' => array(
@@ -352,8 +352,8 @@ function nems_video_gallery_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video_gallery-field_video_items'.
-  $field_instances['node-video_gallery-field_video_items'] = array(
+  // Exported field_instance: 'node-video_gallery-field_nems_video_items'.
+  $field_instances['node-video_gallery-field_nems_video_items'] = array(
     'bundle' => 'video_gallery',
     'deleted' => 0,
     'description' => '',
@@ -387,7 +387,7 @@ function nems_video_gallery_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_video_items',
+    'field_name' => 'field_nems_video_items',
     'label' => 'Video item',
     'required' => 0,
     'settings' => array(

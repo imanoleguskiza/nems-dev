@@ -10,13 +10,13 @@
 function nems_links_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_main_file'.
-  $field_bases['field_main_file'] = array(
+  // Exported field_base: 'field_nems_main_file'.
+  $field_bases['field_nems_main_file'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_main_file',
+    'field_name' => 'field_nems_main_file',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -36,13 +36,13 @@ function nems_links_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_main_link'.
-  $field_bases['field_main_link'] = array(
+  // Exported field_base: 'field_nems_main_link'.
+  $field_bases['field_nems_main_link'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_main_link',
+    'field_name' => 'field_nems_main_link',
     'indexes' => array(),
     'locked' => 1,
     'module' => 'link',
