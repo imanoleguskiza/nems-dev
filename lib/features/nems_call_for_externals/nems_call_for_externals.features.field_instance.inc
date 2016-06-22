@@ -55,7 +55,8 @@ function nems_call_for_externals_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_call_for_externals-field_nems_deadline'.
+  // Exported field_instance:
+  // 'node-nems_call_for_externals-field_nems_deadline'.
   $field_instances['node-nems_call_for_externals-field_nems_deadline'] = array(
     'bundle' => 'nems_call_for_externals',
     'deleted' => 0,
@@ -176,7 +177,8 @@ function nems_call_for_externals_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_call_for_externals-field_nems_reference'.
+  // Exported field_instance:
+  // 'node-nems_call_for_externals-field_nems_reference'.
   $field_instances['node-nems_call_for_externals-field_nems_reference'] = array(
     'bundle' => 'nems_call_for_externals',
     'default_value' => NULL,
@@ -243,7 +245,8 @@ function nems_call_for_externals_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-nems_call_for_externals-field_nems_externals_status'.
+  // Exported field_instance:
+  // 'node-nems_call_for_externals-field_nems_externals_status'.
   $field_instances['node-nems_call_for_externals-field_nems_externals_status'] = array(
     'bundle' => 'nems_call_for_externals',
     'default_value' => NULL,

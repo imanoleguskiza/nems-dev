@@ -27,7 +27,8 @@ function nems_call_for_tenders_install() {
   $pos = array_search('nems_call_for_tenders_status', $vocabularies);
   if ($pos !== FALSE) {
     $vid = $pos;
-  } else {
+  }
+  else {
     $vocabulary = array(
       'name' => t('NEMS Call For tenders Status'),
       'machine_name' => 'nems_call_for_tenders_status',
@@ -41,15 +42,15 @@ function nems_call_for_tenders_install() {
     $vid = $vocabulary->vid;
   }
 
-  // Populate Taxonomy NEMS Call Status with a predefined set of values defined in $items Array.
+  // Populate Taxonomy NEMS Call Status with a predefined set of values.
   $items = array(
     'Pending',
     'Open',
-    'Closed'
+    'Closed',
   );
   foreach ($items as $key => $item) {
     $newterm = new stdClass();
-    $newterm->name = t($item);
+    $newterm->name = $item;
     $newterm->vid = $vid;
     $newterm->parent = 0;
     taxonomy_term_save($newterm);

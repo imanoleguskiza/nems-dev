@@ -258,7 +258,7 @@ function nems_core_field_default_field_bases() {
     'type' => 'text',
   );
 
-    // Exported field_base: 'field_nems_deadline'.
+  // Exported field_base: 'field_nems_deadline'.
   $field_bases['field_nems_deadline'] = array(
     'active' => 1,
     'cardinality' => -1,
