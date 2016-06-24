@@ -213,7 +213,7 @@ function nems_gallery_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'eva_display' => array(
         'label' => 'above',
