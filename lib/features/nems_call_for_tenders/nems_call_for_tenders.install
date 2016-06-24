@@ -29,10 +29,11 @@ function nems_call_for_tenders_install() {
     $vid = $pos;
   }
   else {
+    $t = get_t();
     $vocabulary = array(
-      'name' => t('NEMS Call For tenders Status'),
+      'name' => $t('NEMS Call For tenders Status'),
       'machine_name' => 'nems_call_for_tenders_status',
-      'description' => t('Vocabulary Status for Call for tenders content types'),
+      'description' => $t('Vocabulary Status for Call for tenders content types'),
       'hierarchy' => 1,
       'module' => 'nems_call_for_tenders',
       'weight' => 1,

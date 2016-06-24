@@ -29,10 +29,11 @@ function nems_call_for_proposals_install() {
     $vid = $pos;
   }
   else {
+    $t = get_t();
     $vocabulary = array(
-      'name' => t('NEMS Call For Proposals Status'),
+      'name' => $t('NEMS Call For Proposals Status'),
       'machine_name' => 'nems_call_for_proposals_status',
-      'description' => t('Vocabulary Status for Call for Proposals content types'),
+      'description' => $t('Vocabulary Status for Call for Proposals content types'),
       'hierarchy' => 1,
       'module' => 'nems_call_for_proposals',
       'weight' => 1,

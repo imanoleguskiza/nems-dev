@@ -29,10 +29,11 @@ function nems_vacancy_install() {
     $vid = $pos;
   }
   else {
+    $t = get_t();
     $vocabulary = array(
-      'name' => t('NEMS Call Vacancy Status'),
+      'name' => $t('NEMS Call Vacancy Status'),
       'machine_name' => 'nems_call_vacancy_status',
-      'description' => t('Vocabulary Status for Vacancy content types'),
+      'description' => $t('Vocabulary Status for Vacancy content types'),
       'hierarchy' => 1,
       'module' => 'nems_vacancy',
       'weight' => 1,

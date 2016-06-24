@@ -29,10 +29,11 @@ function nems_call_for_externals_install() {
     $vid = $pos;
   }
   else {
+    $t = get_t();
     $vocabulary = array(
-      'name' => t('NEMS Call For External Experts Status'),
+      'name' => $t('NEMS Call For External Experts Status'),
       'machine_name' => 'nems_call_for_externals_status',
-      'description' => t('Vocabulary Status for Call For Externals content types'),
+      'description' => $t('Vocabulary Status for Call For Externals content types'),
       'hierarchy' => 1,
       'module' => 'nems_call_for_externals',
       'weight' => 1,
