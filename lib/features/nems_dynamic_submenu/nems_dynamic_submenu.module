@@ -10,8 +10,8 @@ include_once 'nems_dynamic_submenu.features.inc';
  * Implements hook_preprocess_HOOK().
  */
 function nems_dynamic_submenu_preprocess_page(&$variables) {
-  if (isset($variables['node']) && isset($variables['node']->field_nems_dynamic_submenu['und']['0']['value'])
-    && $variables['node']->field_nems_dynamic_submenu['und']['0']['value'] == 1
+  if (isset($variables['node']) && isset($variables['node']->field_nems_dynamic_submenu[LANGUAGE_NONE]['0']['value'])
+    && $variables['node']->field_nems_dynamic_submenu[LANGUAGE_NONE]['0']['value'] == 1
     && isset($variables['page']['sidebar_left'])
   ) {
     $block = block_load('tocify', 'tocify');
