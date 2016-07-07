@@ -226,6 +226,15 @@
         </composer>
     </target>
 
+    <!-- Install Composer development dependencies for the platform. -->
+    <!-- Note: this is a temporary workaround until we get Composer to work properly with sub-sites. -->
+    <!-- See https://webgate.ec.europa.eu/CITnet/jira/browse/NEXTEUROPA-11706 for more information. -->
+    <target name="install-platform-dev-dependencies">
+        <composer command="install" composer="${composer.bin}">
+            <arg value="--working-dir=${platform.build.dir}" />
+        </composer>
+    </target>
+
     <!-- Link site document root to Webserver document root. -->
     <target
         name="link-docroot"
@@ -304,7 +313,7 @@
     <target
         name="build-dev"
         description="Build a local development version of the subsite."
-        depends="install-build-dependencies, delete-dev, make-dev, link-dev-resources, install-dev-dependencies, setup-behat, update-htaccess, setup-php-codesniffer, download-development-modules"
+        depends="install-build-dependencies, delete-dev, make-dev, link-dev-resources, install-platform-dev-dependencies, install-dev-dependencies, setup-behat, update-htaccess, setup-php-codesniffer, download-development-modules"
     />
 
     <target
