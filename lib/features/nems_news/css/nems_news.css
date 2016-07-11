@@ -1,0 +1,24 @@
+.nems_news_image {
+  float: left;
+  margin-bottom: 20px;
+  margin-left: 0;
+  width: 100px; 
+  clear:left;
+}
+.nems_news_external_link,
+.nems_news_date,
+.nems_news_body {
+  margin-left: 120px;
+}
+
+@media (max-width: 700px) {
+  .nems_news_image {
+    width: 100%;
+    clear: right;
+  }
+  .nems_news_external_link,
+  .nems_news_date,
+  .nems_news_body {
+    margin-left: 0px;
+  }
+}
