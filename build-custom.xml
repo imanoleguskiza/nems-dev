@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="My subsite" default="help">
+    <target name="custom-build">
+        <echo message="Running your custom stuff" />
+    </target>
+</project>
