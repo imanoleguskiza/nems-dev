@@ -15,7 +15,7 @@ of the European Commission.
 
 ## Features
 
-- Support for NextEuropa 2.1.0 and later.
+- Support for NextEuropa 2.2.35 and later.
 - Easily test your code on the latest development branch of the NextEuropa
   platform to validate if your site will work on the next release.
 - Integrated support for Behat and PHP CodeSniffer.
