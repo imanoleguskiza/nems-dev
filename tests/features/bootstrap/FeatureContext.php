@@ -10,6 +10,8 @@ use Behat\Gherkin\Node\TableNode;
 use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Exception\ExpectationException;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
+use Behat\Behat\Hook\Scope\AfterStepScope;
+use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
 /**
  * Contains generic step definitions.
@@ -117,13 +119,12 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   /**
    * Prepare for PHP errors log.
    *
-   * @BeforeStep
+   * @BeforeScenario
    */
-  public static function preparePhpErrors($event) {
-    // Clear out the watchdog table at the beginning of each test suite.
+  public static function preparePhpErrors(BeforeScenarioScope $scope) {
+    // Clear out the watchdog table at the beginning of each test scenario.
     db_truncate('watchdog')->execute();
   }
-
   /**
    * Check for PHP errors log.
    *
@@ -153,8 +154,8 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
       $message .= "Feature: '$feature_title' on '$feature_file' line $step_line\n";
       $message .= "Step: '$step_text'\n";
       $message .= "Errors:\n";
+      $message .= "----------\n";
       foreach ($log as $error) {
-        $message .= "--------\n";
         $error->variables = unserialize($error->variables);
         $date = date('Y-m-d H:i:sP', $error->timestamp);
         $message .= sprintf("Message: %s: %s in %s (line %s of %s).\n", $error->variables['%type'], $error->variables['!message'], $error->variables['%function'], $error->variables['%line'], $error->variables['%file']);
@@ -162,7 +163,7 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
         $message .= "Referer: $error->referer\n";
         $message .= "Date/Time: $date\n\n";
       }
-      $message .= "--------\n";
+      $message .= "----------\n";
       throw new \Exception($message);
     }
   }
