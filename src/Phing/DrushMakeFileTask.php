@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains \NextEuropa\build\Phing\DrushMakeFileTask.
+ */
+
 namespace NextEuropa\Phing;
 
 use Symfony\Component\Yaml\Dumper;
