@@ -7,8 +7,8 @@
     <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal" />
 
     <!-- Minified files don't have to comply with coding standards. -->
-    <exclude-pattern>*.min.css</exclude-pattern>
-    <exclude-pattern>*.min.js</exclude-pattern>
+    <exclude-pattern>*\.min\.css</exclude-pattern>
+    <exclude-pattern>*\.min\.js</exclude-pattern>
 
     <!-- Exclude files that do not contain PHP, Javascript or CSS code. -->
     <exclude-pattern>*\.json</exclude-pattern>
