@@ -174,10 +174,13 @@
         <!-- Symlink composer configuration. -->
         <symlink link="${platform.build.subsite.composer.json}" target="${subsite.resources.composer.json}" />
         <symlink link="${platform.build.subsite.composer.lock}" target="${subsite.resources.composer.lock}" />
-        <!-- Symlink Behat binary and test directory from platform build. -->
-        <!-- See https://webgate.ec.europa.eu/CITnet/jira/browse/NEXTEUROPA-11706 for more information. -->
-        <symlink link="bin/behat" target="${platform.build.dir}/vendor/bin/behat" overwrite="true"/>
-        <symlink link="${platform.build.dir}/tests" target="${project.basedir}/tests" overwrite="true"/>
+    </target>
+
+    <!-- Symlink the Behat bin and test directory in './sites/all'. -->
+    <target name="link-behat">
+        <echo msg="Symlink the Behat bin and test directory in './sites/all'." />
+        <symlink link="bin/behat" target="${platform.build.subsite.dir}/vendor/bin/behat" overwrite="true"/>
+        <symlink link="${platform.build.subsite.dir}/tests" target="${project.basedir}/tests" overwrite="true"/>
     </target>
 
     <!-- Copy subsite resources into the build folder. -->
@@ -214,24 +217,26 @@
 
     <!-- Install Composer dependencies for the build system. -->
     <target name="install-build-dependencies">
+        <echo msg="Run 'composer install' in platform root." />
         <composer command="install" composer="${composer.bin}">
             <arg value="--working-dir=${project.basedir}" />
         </composer>
     </target>
 
-    <!-- Install Composer dependencies for the subsite. -->
+    <!-- Install Composer dev dependencies for the subsite. -->
     <target name="install-dev-dependencies">
+        <echo msg="Run 'composer install' in './sites/all' for sub-site development purposes." />
         <composer command="install" composer="${composer.bin}">
             <arg value="--working-dir=${platform.build.subsite.dir}" />
         </composer>
     </target>
 
-    <!-- Install Composer development dependencies for the platform. -->
-    <!-- Note: this is a temporary workaround until we get Composer to work properly with sub-sites. -->
-    <!-- See https://webgate.ec.europa.eu/CITnet/jira/browse/NEXTEUROPA-11706 for more information. -->
-    <target name="install-platform-dev-dependencies">
+    <!-- Install Composer dist dependencies for the subsite. -->
+    <target name="install-dist-dependencies">
+        <echo msg="Run 'composer install --no-dev' in './build'." />
         <composer command="install" composer="${composer.bin}">
-            <arg value="--working-dir=${platform.build.dir}" />
+            <arg value="--working-dir=${dist.build.dir}" />
+            <arg value="--no-dev" />
         </composer>
     </target>
 
@@ -313,13 +318,28 @@
     <target
         name="build-dev"
         description="Build a local development version of the subsite."
-        depends="install-build-dependencies, delete-dev, make-dev, link-dev-resources, install-platform-dev-dependencies, install-dev-dependencies, setup-behat, update-htaccess, setup-php-codesniffer, download-development-modules"
+        depends="
+            install-build-dependencies,
+            delete-dev,
+            make-dev,
+            link-dev-resources,
+            install-dev-dependencies,
+            link-behat,
+            setup-behat,
+            update-htaccess,
+            setup-php-codesniffer,
+            download-development-modules"
     />
 
     <target
         name="build-dist"
         description="Build a version of the subsite intended to distribute as a release package."
-        depends="install-build-dependencies, delete-dist, make-dist, copy-dist-resources"
+        depends="
+            install-build-dependencies,
+            delete-dist,
+            make-dist,
+            copy-dist-resources,
+            install-dist-dependencies"
     />
 
 </project>
