@@ -4,7 +4,6 @@ core = 7.x
 package = NEMS
 php = 5.2.4
 dependencies[] = nems_core
-stylesheets[all][] = css/nems_publications.css
 features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
