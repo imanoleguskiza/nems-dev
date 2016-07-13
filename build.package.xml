@@ -313,7 +313,7 @@
     <target
         name="build-dev"
         description="Build a local development version of the subsite."
-        depends="install-build-dependencies, delete-dev, make-dev, link-dev-resources, install-platform-dev-dependencies, install-dev-dependencies, setup-behat, update-htaccess, setup-php-codesniffer, download-development-modules"
+        depends="install-build-dependencies, delete-dev, make-dev, link-dev-resources, install-platform-dev-dependencies, install-dev-dependencies, setup-behat, update-htaccess, setup-files-directory, setup-php-codesniffer, download-development-modules"
     />
 
     <target
@@ -322,4 +322,13 @@
         depends="install-build-dependencies, delete-dist, make-dist, copy-dist-resources"
     />
 
+	<!-- Setup file directory -->
+    <target name="setup-files-directory">
+		 <if>
+            <istrue value="${platform.build.files.dir}" />
+            <then>
+                <mkdir dir="${platform.build.files.dir}/private_files" />
+            </then>
+        </if>
+    </target>
 </project>
