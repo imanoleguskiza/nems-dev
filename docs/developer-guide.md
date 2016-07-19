@@ -250,7 +250,7 @@ executed, the coding standards will be checked and an automated QA checklist
 will be run. You will be able to see the result of this automated check in your
 pull request as soon as this process is finished.
 
-### 9. Working with Composer
+### 10. Working with Composer
 
 The Subsite Starterkit comes with full Composer support. Subsite dependencies
 are specified in `resources/composer.json`.
