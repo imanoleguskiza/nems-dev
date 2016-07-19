@@ -25,10 +25,14 @@ of the European Commission.
 
 ## Recent notable changes
 
-- 2015-12-22: The structure of the platform package that is being downloaded
-  from ContinuousPHP has changed. The codebase now resides in the root folder
-  instead of the `build/` folder. The platform downloads should be much faster
-  now.
+- **2016-07-19**: Subsites now support [Composer](https://getcomposer.org) 
+    dependencies. Please refer to the [Developer guide](docs/developer-guide.md) 
+    for more information.
+- **2016-07-07**: The Subsite Starterkit now supports NextEuropa 2.2.35 and later.
+- **2015-12-22**: The structure of the platform package that is being downloaded
+    from ContinuousPHP has changed. The codebase now resides in the root folder
+    instead of the `build/` folder. The platform downloads should be much faster
+    now.
 
 
 ## Repository structure

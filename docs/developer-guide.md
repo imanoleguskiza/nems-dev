@@ -8,7 +8,7 @@ might be hosted elsewhere. Your project manager will be able to inform you of
 the exact location.
 
 > Note that you will not be working directly on the Subsite Starterkit code base
-> (aka `ec-europa/subsite-starterkit`), but on a project specific fork.
+> (aka `ec-europa/Subsite-starterkit`), but on a project specific fork.
 
 Let's assume our project is called `ec-europa/myproject` and is hosted on our
 Github. We will be working on the "dev" version.
@@ -96,6 +96,8 @@ This will:
 * Build the project into the `platform/` subfolder.
 * Symlink your custom modules and themes into the platform. This allows you to
   work inside the Drupal site, and still commit your files easily.
+* Run `composer install` in the Subsite development directory
+  (typically `platform/sites/all`).
 
 > Go get some coffee. The first time you build the site this can take a very
 > long time. Future builds will be quicker since the platform will be cached and
@@ -247,3 +249,21 @@ The code will now be automatically tested: the Behat test scenarios will be
 executed, the coding standards will be checked and an automated QA checklist
 will be run. You will be able to see the result of this automated check in your
 pull request as soon as this process is finished.
+
+### 9. Working with Composer
+
+The Subsite Starterkit comes with full Composer support. Subsite dependencies
+are specified in `resources/composer.json`.
+
+It is important to notice that `resources/composer.json` is a carbon-copy of
+the platform's one, as it contains platform-level dependencies. Simply add your
+dependencies next to those already specified in `resources/composer.json`.
+
+The NextEuropa platform team might update the core `composer.json`; when that
+happen they will take care of updating the Subsite Starterkit accordingly.
+It will be your responsibility, as Subsite developer, to manually merge the two.
+
+Also, after modifying `resources/composer.json` and running `composer update`
+in the current Subsite development directory (typically `platform/sites/all`)
+you need to push `resources/composer.lock` changes in order to share them with
+your team members.
