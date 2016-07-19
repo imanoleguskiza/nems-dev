@@ -176,7 +176,7 @@
         <symlink link="${platform.build.subsite.composer.lock}" target="${subsite.resources.composer.lock}" />
     </target>
 
-    <!-- Symlink the Behat bin and test directory in './sites/all'. -->
+    <!-- Symlink the Behat bin and test directory in the subsite folder. -->
     <target name="link-behat">
         <echo msg="Symlink the Behat bin and test directory in './sites/all'." />
         <symlink link="bin/behat" target="${platform.build.subsite.dir}/vendor/bin/behat" overwrite="true"/>
@@ -225,7 +225,7 @@
 
     <!-- Install Composer dev dependencies for the subsite. -->
     <target name="install-dev-dependencies">
-        <echo msg="Run 'composer install' in './sites/all' for sub-site development purposes." />
+        <echo msg="Run 'composer install' in the subsite folder for development purposes." />
         <composer command="install" composer="${composer.bin}">
             <arg value="--working-dir=${platform.build.subsite.dir}" />
         </composer>
@@ -233,7 +233,7 @@
 
     <!-- Install Composer dist dependencies for the subsite. -->
     <target name="install-dist-dependencies">
-        <echo msg="Run 'composer install --no-dev' in './build'." />
+        <echo msg="Run 'composer install --no-dev' in the build destination folder." />
         <composer command="install" composer="${composer.bin}">
             <arg value="--working-dir=${dist.build.dir}" />
             <arg value="--no-dev" />
