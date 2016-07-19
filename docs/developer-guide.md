@@ -8,7 +8,7 @@ might be hosted elsewhere. Your project manager will be able to inform you of
 the exact location.
 
 > Note that you will not be working directly on the Subsite Starterkit code base
-> (aka `ec-europa/Subsite-starterkit`), but on a project specific fork.
+> (aka `ec-europa/subsite-starterkit`), but on a project specific fork.
 
 Let's assume our project is called `ec-europa/myproject` and is hosted on our
 Github. We will be working on the "dev" version.
