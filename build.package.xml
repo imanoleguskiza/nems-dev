@@ -327,6 +327,7 @@
             link-behat,
             setup-behat,
             update-htaccess,
+            setup-files-directory,
             setup-php-codesniffer,
             download-development-modules"
     />
@@ -342,4 +343,13 @@
             install-dist-dependencies"
     />
 
+	<!-- Setup file directory -->
+    <target name="setup-files-directory">
+		 <if>
+            <istrue value="${platform.build.files.dir}" />
+            <then>
+                <mkdir dir="${platform.build.files.dir}/private_files" />
+            </then>
+        </if>
+    </target>
 </project>
