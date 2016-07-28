@@ -32,6 +32,9 @@
             features and modules which need to be enabled after installation.
          -->
          <phingcall target="enable-install-modules" />
+
+        <!-- Rebuild node access after Subsites modules activation -->
+        <phingcall target="rebuild-node-access" />
     </target>
 
     <!-- Enable required modules after installation of the profile. -->
@@ -161,4 +164,15 @@
         depends="install, enable-development-modules"
     />
 
+    <!-- Rebuild node access. -->
+    <target name="rebuild-node-access">
+        <drush
+            command="php-eval"
+            assume="yes"
+            root="${platform.build.dir}"
+            bin="${drush.bin}"
+            verbose="${drush.verbose}">
+            <param>"node_access_rebuild()"</param>
+        </drush>
+    </target>
 </project>
