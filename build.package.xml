@@ -313,7 +313,7 @@
     <target
         name="build-dev"
         description="Build a local development version of the subsite."
-        depends="install-build-dependencies, delete-dev, make-dev, link-dev-resources, install-platform-dev-dependencies, install-dev-dependencies, setup-behat, update-htaccess, setup-files-directory, setup-php-codesniffer, download-development-modules build-custom"
+        depends="install-build-dependencies, delete-dev, make-dev, link-dev-resources, install-platform-dev-dependencies, install-dev-dependencies, setup-behat, update-htaccess, setup-files-directory, setup-php-codesniffer, download-development-modules, build-custom"
     />
 
     <target
