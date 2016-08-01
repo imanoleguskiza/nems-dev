@@ -59,6 +59,9 @@ The configuration of the project is managed in 3 `build.properties` files:
   downloaded and copied into the Drupal website.
 * If you have any custom Composer dependencies, declare them in
   `resources/composer.json` and `resources/composer.lock`.
+* If you require custom build steps for your subsite, you are free to use the 
+  `resources/build.custom.xml` phing target. This target is included by default
+   in build-dev & build-dist targets.
 
 ### 3. Drupal root
 
