@@ -7,14 +7,14 @@
     <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal" />
 
     <!-- Minified files don't have to comply with coding standards. -->
-    <exclude-pattern>*.min.css</exclude-pattern>
-    <exclude-pattern>*.min.js</exclude-pattern>
+    <exclude-pattern>*\.min\.css</exclude-pattern>
+    <exclude-pattern>*\.min\.js</exclude-pattern>
 
     <!-- Exclude files that do not contain PHP, Javascript or CSS code. -->
-    <exclude-pattern>*.json</exclude-pattern>
-    <exclude-pattern>*.sh</exclude-pattern>
-    <exclude-pattern>*.xml</exclude-pattern>
-    <exclude-pattern>*.yml</exclude-pattern>
+    <exclude-pattern>*\.json</exclude-pattern>
+    <exclude-pattern>*\.sh</exclude-pattern>
+    <exclude-pattern>*\.xml</exclude-pattern>
+    <exclude-pattern>*\.yml</exclude-pattern>
     <exclude-pattern>composer.lock</exclude-pattern>
 
     <!-- Exclude third party code. -->
@@ -34,5 +34,11 @@
     <!-- Phing tasks require to use CamelCaps for argument names. -->
     <rule ref="Drupal.NamingConventions.ValidVariableName">
         <exclude-pattern>src/Phing</exclude-pattern>
+    </rule>
+
+    <!-- Wysiwyg profiles exported in Features do not have a trailing period. -->
+    <!-- Remove this once https://www.drupal.org/node/2724173 is in. -->
+    <rule ref="Drupal.Commenting.InlineComment.InvalidEndChar">
+        <exclude-pattern>*.features.wysiwyg.inc</exclude-pattern>
     </rule>
 </ruleset>

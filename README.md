@@ -1,5 +1,7 @@
 # NextEuropa Subsite Starterkit
 
+**Version:** 1.0.1
+
 ```
 T                                    \`.    T
 |    T     .--------------.___________) \   |    T
@@ -15,7 +17,7 @@ of the European Commission.
 
 ## Features
 
-- Support for NextEuropa 2.1.0 and later.
+- Support for NextEuropa 2.2.35 and later.
 - Easily test your code on the latest development branch of the NextEuropa
   platform to validate if your site will work on the next release.
 - Integrated support for Behat and PHP CodeSniffer.
@@ -57,6 +59,9 @@ The configuration of the project is managed in 3 `build.properties` files:
   downloaded and copied into the Drupal website.
 * If you have any custom Composer dependencies, declare them in
   `resources/composer.json` and `resources/composer.lock`.
+* If you require custom build steps for your subsite, you are free to use the 
+  `resources/build.custom.xml` phing target. This target is included by default
+   in build-dev & build-dist targets.
 
 ### 3. Drupal root
 

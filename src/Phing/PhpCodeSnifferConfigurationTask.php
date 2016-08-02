@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains NextEuropa\Phing\PhpCodeSnifferConfigurationTask.
+ */
+
 namespace NextEuropa\Phing;
 
 require_once 'phing/Task.php';

@@ -10,6 +10,8 @@ use Behat\Gherkin\Node\TableNode;
 use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Exception\ExpectationException;
 use Drupal\DrupalExtension\Context\RawDrupalContext;
+use Behat\Behat\Hook\Scope\AfterStepScope;
+use Behat\Behat\Hook\Scope\BeforeScenarioScope;
 
 /**
  * Contains generic step definitions.
@@ -111,6 +113,58 @@ class FeatureContext extends RawDrupalContext implements SnippetAcceptingContext
   public function assertElementType(NodeElement $element, $type) {
     if ($element->getTagName() !== $type) {
       throw new ExpectationException("The element is not a '$type'' field.", $this->getSession());
+    }
+  }
+
+  /**
+   * Prepare for PHP errors log.
+   *
+   * @BeforeScenario
+   */
+  public static function preparePhpErrors(BeforeScenarioScope $scope) {
+    // Clear out the watchdog table at the beginning of each test scenario.
+    db_truncate('watchdog')->execute();
+  }
+  /**
+   * Check for PHP errors log.
+   *
+   * @param AfterStepScope $scope
+   *    AfterStep hook scope object.
+   *
+   * @throws \Exception
+   *    Print out descriptive error message by throwing an exception.
+   *
+   * @AfterStep
+   */
+  public static function checkPhpErrors(AfterStepScope $scope) {
+    // Find any PHP errors at the end of the suite
+    // and output them as an exception.
+    $log = db_select('watchdog', 'w')
+      ->fields('w')
+      ->condition('w.type', 'php', '=')
+      ->execute()
+      ->fetchAll();
+    if (!empty($log)) {
+      $errors = count($log);
+      $step_text = $scope->getStep()->getText();
+      $step_line = $scope->getStep()->getLine();
+      $feature_title = $scope->getFeature()->getTitle();
+      $feature_file = $scope->getFeature()->getFile();
+      $message = "$errors PHP errors were logged to the watchdog\n";
+      $message .= "Feature: '$feature_title' on '$feature_file' line $step_line\n";
+      $message .= "Step: '$step_text'\n";
+      $message .= "Errors:\n";
+      $message .= "----------\n";
+      foreach ($log as $error) {
+        $error->variables = unserialize($error->variables);
+        $date = date('Y-m-d H:i:sP', $error->timestamp);
+        $message .= sprintf("Message: %s: %s in %s (line %s of %s).\n", $error->variables['%type'], $error->variables['!message'], $error->variables['%function'], $error->variables['%line'], $error->variables['%file']);
+        $message .= "Location: $error->location\n";
+        $message .= "Referer: $error->referer\n";
+        $message .= "Date/Time: $date\n\n";
+      }
+      $message .= "----------\n";
+      throw new \Exception($message);
     }
   }
 
