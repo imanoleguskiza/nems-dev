@@ -31,11 +31,11 @@ function nems_core_install() {
   variable_set('views_localize_all', TRUE);
   variable_set('node_admin_theme', TRUE);
   multisite_drupal_toolbox_remove_block_context('site_wide', 'language_selector_site');
-  multisite_drupal_toolbox_add_block_context('site_wide', 'locale-language', 'locale', 'language', 'header_top', '-8');
-  multisite_drupal_toolbox_add_block_context('site_wide', 'nexteuropa_europa_search-nexteuropa_search_form', 'nexteuropa_europa_search', 'nexteuropa_search_form', 'header_right', '2');
+  multisite_drupal_toolbox_remove_block_context('site_wide', 'system-main-menu');
   multisite_drupal_toolbox_remove_block_context('site_wide', 'form');
-  multisite_drupal_toolbox_remove_block_context('site_wide', 'language_selector_page-language_selector_page');
   multisite_drupal_toolbox_remove_block_context('homepage', 'views-multisite_settings_core-block_1');
+  multisite_drupal_toolbox_add_block_context('site_wide', 'locale-language', 'locale', 'language', 'header_top', '-8');
+  multisite_drupal_toolbox_add_block_context('site_wide', 'nexteuropa_europa_search-nexteuropa_europa_search_form', 'nexteuropa_europa_search', 'nexteuropa_europa_search_form', 'header_right', '2');
 
   menu_delete_links('main-menu');
   $menu = menu_load('main-menu');
