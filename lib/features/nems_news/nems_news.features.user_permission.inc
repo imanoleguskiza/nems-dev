@@ -25,6 +25,7 @@ function nems_news_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -34,6 +35,7 @@ function nems_news_user_default_permissions() {
     'name' => 'delete any nems_news content',
     'roles' => array(
       'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -44,6 +46,7 @@ function nems_news_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -63,6 +66,7 @@ function nems_news_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -73,6 +77,7 @@ function nems_news_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );

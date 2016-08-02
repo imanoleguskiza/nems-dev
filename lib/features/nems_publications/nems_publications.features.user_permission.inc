@@ -25,6 +25,7 @@ function nems_publications_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -34,6 +35,7 @@ function nems_publications_user_default_permissions() {
     'name' => 'delete any nems_publication content',
     'roles' => array(
       'administrator' => 'administrator',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -44,6 +46,7 @@ function nems_publications_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -63,6 +66,7 @@ function nems_publications_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );
@@ -72,6 +76,8 @@ function nems_publications_user_default_permissions() {
     'name' => 'edit own nems_publication content',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'webmaster' => 'webmaster',
     ),
     'module' => 'node',
   );

@@ -19,6 +19,35 @@ function nems_links_user_default_permissions() {
     'module' => 'taxonomy_access_fix',
   );
 
+  // Exported permission: 'create nems_link content'.
+  $permissions['create nems_link content'] = array(
+    'name' => 'create nems_link content',
+    'roles' => array(
+      'editor' => 'editor',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any nems_link content'.
+  $permissions['delete any nems_link content'] = array(
+    'name' => 'delete any nems_link content',
+    'roles' => array(
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own nems_link content'.
+  $permissions['delete own nems_link content'] = array(
+    'name' => 'delete own nems_link content',
+    'roles' => array(
+      'editor' => 'editor',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete terms in nems_links_categories'.
   $permissions['delete terms in nems_links_categories'] = array(
     'name' => 'delete terms in nems_links_categories',
@@ -26,6 +55,26 @@ function nems_links_user_default_permissions() {
       'webmaster' => 'webmaster',
     ),
     'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit any nems_link content'.
+  $permissions['edit any nems_link content'] = array(
+    'name' => 'edit any nems_link content',
+    'roles' => array(
+      'editor' => 'editor',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own nems_link content'.
+  $permissions['edit own nems_link content'] = array(
+    'name' => 'edit own nems_link content',
+    'roles' => array(
+      'editor' => 'editor',
+      'webmaster' => 'webmaster',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: 'edit terms in nems_links_categories'.
