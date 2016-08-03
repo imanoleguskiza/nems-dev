@@ -46,7 +46,7 @@ function nems_core_permission() {
  * Implements hook_menu_alter().
  */
 function nems_core_menu_alter(&$items) {
-dpm($items);
+
   // List of menu items we will restrict access to.
   $path_list = array(
     'admin/config/content/ckeditor_tabber',
@@ -96,7 +96,7 @@ dpm($items);
   if (isset($items['admin/config/search/europa_search'])) {
     $items['admin/config/search/europa_search']['access arguments'][0] = 'access europa search';
   }
-  // Add restrictions to access bartik and seven
+  // Add restrictions to access bartik and seven.
   if (isset($items['admin/structure/block/list/bartik'])) {
     $items['admin/structure/block/list/bartik']['access callback'] = '_nems_core_block_themes_access';
   }
