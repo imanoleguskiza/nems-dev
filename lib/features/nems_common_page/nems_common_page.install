@@ -11,7 +11,7 @@ include_once 'nems_common_page.features.inc';
  */
 function nems_common_page_enable() {
 
-   $content_type_variables = array(
+  $content_type_variables = array(
     'version_management_node_types',
     'linkchecker_scan_nodetypes',
   );

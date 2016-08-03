@@ -95,11 +95,11 @@ function nems_core_install() {
     'view any list_block bean',
   ));
 
-  // Set the linkchecker interval to 1 day
+  // Set the linkchecker interval to 1 day.
   $linkchecker_interval = variable_get('linkchecker_check_links_interval', '');
-    if (!empty($linkchecker_interval)) {
-      variable_set('linkchecker_check_links_interval', '86400');
-    }
+  if (!empty($linkchecker_interval)) {
+    variable_set('linkchecker_check_links_interval', '86400');
+  }
 }
 
 /**
