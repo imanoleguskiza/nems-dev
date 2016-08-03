@@ -30,13 +30,18 @@ const NEMS_CORE_BLOCK_RESTRICTIONS = array(
 function nems_core_install() {
   variable_set('views_localize_all', TRUE);
   variable_set('node_admin_theme', TRUE);
+
+  // Remove unwanted blocks from contexts.
   multisite_drupal_toolbox_remove_block_context('site_wide', 'language_selector_site');
   multisite_drupal_toolbox_remove_block_context('site_wide', 'system-main-menu');
   multisite_drupal_toolbox_remove_block_context('site_wide', 'form');
   multisite_drupal_toolbox_remove_block_context('homepage', 'views-multisite_settings_core-block_1');
+
+  // Add new sitewide blocks.
   multisite_drupal_toolbox_add_block_context('site_wide', 'locale-language', 'locale', 'language', 'header_top', '-8');
   multisite_drupal_toolbox_add_block_context('site_wide', 'nexteuropa_europa_search-nexteuropa_europa_search_form', 'nexteuropa_europa_search', 'nexteuropa_europa_search_form', 'header_right', '2');
 
+  // Empty main-menu and service tools.
   menu_delete_links('main-menu');
   $menu = menu_load('main-menu');
   $menu['i18n_mode'] = 5;
@@ -67,6 +72,7 @@ function nems_core_install() {
     multisite_config_service('wysiwyg')->addButtonsToProfile('full_html', $group, $buttons);
   }
 
+  // Set taxonomy terms and beans as entity translatable.
   $entity_translatable_entities = array(
     'node' => 'node',
     'taxonomy_term' => 'taxonomy_term',
@@ -74,6 +80,7 @@ function nems_core_install() {
   );
   variable_set('entity_translation_entity_types', $entity_translatable_entities);
 
+  // Replace name and description in tags vocab.
   multisite_config_service('title')->replaceTitleField('taxonomy_term', 'tags', 'name');
   multisite_config_service('title')->replaceTitleField('taxonomy_term', 'tags', 'description');
 
@@ -87,6 +94,12 @@ function nems_core_install() {
     'view any block bean',
     'view any list_block bean',
   ));
+
+  // Set the linkchecker interval to 1 day
+  $linkchecker_interval = variable_get('linkchecker_check_links_interval', '');
+    if (!empty($linkchecker_interval)) {
+      variable_set('linkchecker_check_links_interval', '86400');
+    }
 }
 
 /**
