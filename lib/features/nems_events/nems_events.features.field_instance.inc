@@ -29,7 +29,7 @@ function nems_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'popup' => array(
         'label' => 'above',
@@ -409,7 +409,7 @@ function nems_events_field_default_field_instances() {
         'weight' => 2,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -478,7 +478,7 @@ function nems_events_field_default_field_instances() {
         'weight' => 3,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'title',
         'settings' => array(
           'title_class' => '',
@@ -486,7 +486,7 @@ function nems_events_field_default_field_instances() {
           'title_style' => '',
         ),
         'type' => 'title_linked',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'popup' => array(
         'label' => 'above',
