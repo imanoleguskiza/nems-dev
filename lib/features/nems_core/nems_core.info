@@ -26,7 +26,6 @@ dependencies[] = nodeblock
 dependencies[] = pathologic
 dependencies[] = role_delegation
 dependencies[] = site_map
-dependencies[] = splash_screen
 dependencies[] = taxonomy_access_fix
 dependencies[] = tb_megamenu
 dependencies[] = views_block_filter_block

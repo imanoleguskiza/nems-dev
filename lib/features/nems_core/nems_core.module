@@ -46,7 +46,7 @@ function nems_core_permission() {
  * Implements hook_menu_alter().
  */
 function nems_core_menu_alter(&$items) {
-
+dpm($items);
   // List of menu items we will restrict access to.
   $path_list = array(
     'admin/config/content/ckeditor_tabber',
@@ -86,11 +86,22 @@ function nems_core_menu_alter(&$items) {
       $items[$path]['access arguments'][0] = 'access nems menu';
     }
   }
+
+  // Give access to menu block to users that can administer blocks.
   if (isset($items['admin/structure/block/add-menu-block'])) {
     $items['admin/structure/block/add-menu-block']['access callback'] = '_nems_core_menu_block_access';
   }
+
+  // Restrict access to europa search.
   if (isset($items['admin/config/search/europa_search'])) {
     $items['admin/config/search/europa_search']['access arguments'][0] = 'access europa search';
+  }
+  // Add restrictions to access bartik and seven
+  if (isset($items['admin/structure/block/list/bartik'])) {
+    $items['admin/structure/block/list/bartik']['access callback'] = '_nems_core_block_themes_access';
+  }
+  if (isset($items['admin/structure/block/list/seven'])) {
+    $items['admin/structure/block/list/seven']['access callback'] = '_nems_core_block_themes_access';
   }
 }
 
@@ -157,5 +168,24 @@ function nems_core_block_view_alter(&$data, $block) {
       $data['subject'] = '';
       $data['content'] = '';
     }
+  }
+}
+
+/**
+ * Custom access function to restrict the access to bartik and seven.
+ */
+function _nems_core_block_themes_access($theme) {
+
+  if ($theme->name == 'bartik' || $theme->name == 'seven') {
+    global $user;
+    if (in_array('administrator', array_values($user->roles))) {
+      return TRUE;
+    }
+    else {
+      return FALSE;
+    }
+  }
+  else {
+    return _block_themes_access($theme);
   }
 }
