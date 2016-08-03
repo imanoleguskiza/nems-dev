@@ -46,7 +46,6 @@ function nems_core_permission() {
  * Implements hook_menu_alter().
  */
 function nems_core_menu_alter(&$items) {
-
   // List of menu items we will restrict access to.
   $path_list = array(
     'admin/config/content/ckeditor_tabber',
@@ -103,6 +102,10 @@ function nems_core_menu_alter(&$items) {
   if (isset($items['admin/structure/block/list/seven'])) {
     $items['admin/structure/block/list/seven']['access callback'] = '_nems_core_block_themes_access';
   }
+
+  // Restrict access to administrator users.
+  $items['user/%user/edit']['access callback'] = '_nems_core_user_edit_access';
+  $items['user/%user/cancel']['access callback'] = '_nems_core_user_edit_access';
 }
 
 /**
@@ -188,4 +191,18 @@ function _nems_core_block_themes_access($theme) {
   else {
     return _block_themes_access($theme);
   }
+}
+
+/**
+ * Restrict access to administrator and superuser accounts.
+ */
+function _nems_core_user_edit_access($account) {
+  // Restrict access to user 1 account.
+  if ($account->uid == 1 and $GLOBALS['user']->uid != 1) {
+    return FALSE;
+  }
+  if (in_array('administrator', $account->roles) && !in_array('administrator', $GLOBALS['user']->roles)) {
+    return FALSE;
+  }
+  return user_edit_access($account);
 }
