@@ -23,6 +23,7 @@ function nems_video_gallery_user_default_permissions() {
   $permissions['create video_gallery content'] = array(
     'name' => 'create video_gallery content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
     ),
@@ -42,6 +43,7 @@ function nems_video_gallery_user_default_permissions() {
   $permissions['delete own video_gallery content'] = array(
     'name' => 'delete own video_gallery content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
     ),
@@ -71,6 +73,7 @@ function nems_video_gallery_user_default_permissions() {
   $permissions['edit own video_gallery content'] = array(
     'name' => 'edit own video_gallery content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
     ),

@@ -23,6 +23,7 @@ function nems_links_user_default_permissions() {
   $permissions['create nems_link content'] = array(
     'name' => 'create nems_link content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
     ),
@@ -42,6 +43,7 @@ function nems_links_user_default_permissions() {
   $permissions['delete own nems_link content'] = array(
     'name' => 'delete own nems_link content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
     ),
@@ -71,6 +73,7 @@ function nems_links_user_default_permissions() {
   $permissions['edit own nems_link content'] = array(
     'name' => 'edit own nems_link content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
     ),

@@ -14,6 +14,7 @@ function nems_common_page_user_default_permissions() {
   $permissions['create common_page content'] = array(
     'name' => 'create common_page content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
     ),
@@ -33,6 +34,7 @@ function nems_common_page_user_default_permissions() {
   $permissions['delete own common_page content'] = array(
     'name' => 'delete own common_page content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
     ),
@@ -53,6 +55,7 @@ function nems_common_page_user_default_permissions() {
   $permissions['edit own common_page content'] = array(
     'name' => 'edit own common_page content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
     ),

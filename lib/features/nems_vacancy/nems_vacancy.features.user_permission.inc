@@ -23,6 +23,7 @@ function nems_vacancy_user_default_permissions() {
   $permissions['create nems_vacancy content'] = array(
     'name' => 'create nems_vacancy content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
     ),
@@ -42,6 +43,7 @@ function nems_vacancy_user_default_permissions() {
   $permissions['delete own nems_vacancy content'] = array(
     'name' => 'delete own nems_vacancy content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
     ),
@@ -71,6 +73,7 @@ function nems_vacancy_user_default_permissions() {
   $permissions['edit own nems_vacancy content'] = array(
     'name' => 'edit own nems_vacancy content',
     'roles' => array(
+      'contributor' => 'contributor',
       'editor' => 'editor',
       'webmaster' => 'webmaster',
     ),
