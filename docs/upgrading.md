@@ -20,13 +20,14 @@ $ git fetch starterkit
 ```
 
 At this point run the following command to discover which commit hash has been
-tagged with `2.0.0`:
+tagged with `starterkit/2.0.0` (tags are prepended with `starterkit/` in order
+to avoid conflicts with existing tags on forked subsite repositories):
 
 ```
 $ git ls-remote --tags starterkit 
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa   refs/tags/2.0.0
-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb   refs/tags/1.0.1
-cccccccccccccccccccccccccccccccccccccccc   refs/tags/1.0.0
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa   refs/tags/starterkit/2.0.0
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb   refs/tags/starterkit/1.0.1
+cccccccccccccccccccccccccccccccccccccccc   refs/tags/starterkit/1.0.0
 ```
 
 After that just run:
@@ -38,7 +39,7 @@ $ git diff aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 This will give you the list of changes you need to apply to your current repository.
 You can also merge the 2.0.0 tag into your current branch and solve conflicts manually.
 
-Now you have Subsite Starterkit `2.0.0` on your project and you need a full re-build
+Now you have Subsite Starterkit 2.0.0 on your project and you need a full re-build
 in order to benefit from the new features.
 
 In your repository root run:

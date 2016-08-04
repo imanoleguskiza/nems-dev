@@ -1,7 +1,5 @@
 # NextEuropa Subsite Starterkit
 
-**Version:** 2.0.0
-
 ```
 T                                    \`.    T
 |    T     .--------------.___________) \   |    T
@@ -27,6 +25,9 @@ of the European Commission.
 
 ## Recent notable changes
 
+- **2016-08-04**: The Subsite Starterkit has now actual releases. Tags are
+    prepended with `starterkit/` in order to avoid conflicts with existing tags
+    on forked subsite repositories.
 - **2016-07-19**: Subsites now support [Composer](https://getcomposer.org) 
     dependencies. Please refer to the [Developer guide](docs/developer-guide.md) 
     for more information.
