@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains Drupal\nexteuropa\Context\DrupalContext.
+ */
+
 namespace Drupal\nexteuropa\Context;
 
 use Drupal\DrupalExtension\Context\DrupalContext as DrupalExtensionDrupalContext;

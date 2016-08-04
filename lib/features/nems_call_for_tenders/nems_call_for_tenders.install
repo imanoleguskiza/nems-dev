@@ -56,6 +56,18 @@ function nems_call_for_tenders_install() {
     $newterm->parent = 0;
     taxonomy_term_save($newterm);
   }
+
+  $content_type_variables = array(
+    'version_management_node_types',
+    'linkchecker_scan_nodetypes',
+  );
+  foreach ($content_type_variables as $content_type_variable) {
+    $version_settings = variable_get($content_type_variable, '');
+    if (!empty($version_settings)) {
+      $version_settings['nems_call_for_tenders'] = 'nems_call_for_tenders';
+      variable_set($content_type_variable, $version_settings);
+    }
+  }
 }
 
 /**
