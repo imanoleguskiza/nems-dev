@@ -105,8 +105,8 @@ function nems_news_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'body',
-      1 => 'field_nems_core_image',
-      2 => 'field_nems_core_date',
+      1 => 'field_nems_core_date',
+      2 => 'field_nems_core_image',
       3 => 'field_nems_core_related_content',
     ),
     'format_type' => 'tab',
@@ -132,7 +132,7 @@ function nems_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Tags',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_tags',
     ),
