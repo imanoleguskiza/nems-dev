@@ -59,6 +59,7 @@ function nems_call_for_tenders_views_default_views() {
   $handler->display->display_options['fields']['field_nems_tenders_status']['id'] = 'field_nems_tenders_status';
   $handler->display->display_options['fields']['field_nems_tenders_status']['table'] = 'field_data_field_nems_tenders_status';
   $handler->display->display_options['fields']['field_nems_tenders_status']['field'] = 'field_nems_tenders_status';
+  $handler->display->display_options['fields']['field_nems_tenders_status']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Reference */
   $handler->display->display_options['fields']['field_nems_reference']['id'] = 'field_nems_reference';
   $handler->display->display_options['fields']['field_nems_reference']['table'] = 'field_data_field_nems_reference';
