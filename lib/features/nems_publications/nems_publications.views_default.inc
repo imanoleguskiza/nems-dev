@@ -595,6 +595,214 @@ function nems_publications_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+
+  /* Display: Publications list (Sharing all tags) float display */
+  $handler = $view->new_display('block', 'Publications list (Sharing all tags) float display', 'block_1');
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'More Publications';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_nems_core_image']['id'] = 'field_nems_core_image';
+  $handler->display->display_options['fields']['field_nems_core_image']['table'] = 'field_data_field_nems_core_image';
+  $handler->display->display_options['fields']['field_nems_core_image']['field'] = 'field_nems_core_image';
+  $handler->display->display_options['fields']['field_nems_core_image']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_core_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_core_image']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_nems_core_image']['element_wrapper_class'] = 'nems_publications_image';
+  $handler->display->display_options['fields']['field_nems_core_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_nems_core_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  /* Field: title not linked */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['ui_name'] = 'title not linked';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: external link */
+  $handler->display->display_options['fields']['field_nems_core_external_url']['id'] = 'field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['table'] = 'field_data_field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['field'] = 'field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['ui_name'] = 'external link';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_nems_core_external_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_core_external_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['type'] = 'link_absolute';
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
+  $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field_1']['label'] = '';
+  $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 1;
+  /* Field: Content: External Link */
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['id'] = 'field_nems_core_external_url_1';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['table'] = 'field_data_field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['field'] = 'field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['alter']['text'] = '<h3><a href="[field_nems_core_external_url]">[title_field]</a></h3>';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['element_wrapper_class'] = 'nems_publications_external_link';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['empty'] = '<h3>[title_field_1]</h3>';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['click_sort_column'] = 'url';
+
+  /* Display: All Publications list float display */
+  $handler = $view->new_display('block', 'All Publications list float display', 'block_2');
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'More Publications';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_nems_core_image']['id'] = 'field_nems_core_image';
+  $handler->display->display_options['fields']['field_nems_core_image']['table'] = 'field_data_field_nems_core_image';
+  $handler->display->display_options['fields']['field_nems_core_image']['field'] = 'field_nems_core_image';
+  $handler->display->display_options['fields']['field_nems_core_image']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_core_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_core_image']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_nems_core_image']['element_wrapper_class'] = 'nems_publications_image';
+  $handler->display->display_options['fields']['field_nems_core_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_nems_core_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  /* Field: title not linked */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['ui_name'] = 'title not linked';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: external link */
+  $handler->display->display_options['fields']['field_nems_core_external_url']['id'] = 'field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['table'] = 'field_data_field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['field'] = 'field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['ui_name'] = 'external link';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_nems_core_external_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_core_external_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['type'] = 'link_absolute';
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
+  $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field_1']['label'] = '';
+  $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 1;
+  /* Field: Content: External Link */
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['id'] = 'field_nems_core_external_url_1';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['table'] = 'field_data_field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['field'] = 'field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['alter']['text'] = '<h3><a href="[field_nems_core_external_url]">[title_field]</a></h3>';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['element_wrapper_class'] = 'nems_publications_external_link';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['empty'] = '<h3>[title_field_1]</h3>';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['click_sort_column'] = 'url';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+
+  /* Display: Publications list (Sharing any tags) float display */
+  $handler = $view->new_display('block', 'Publications list (Sharing any tags) float display', 'block_3');
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'More Publications';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Image */
+  $handler->display->display_options['fields']['field_nems_core_image']['id'] = 'field_nems_core_image';
+  $handler->display->display_options['fields']['field_nems_core_image']['table'] = 'field_data_field_nems_core_image';
+  $handler->display->display_options['fields']['field_nems_core_image']['field'] = 'field_nems_core_image';
+  $handler->display->display_options['fields']['field_nems_core_image']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_core_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_core_image']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_nems_core_image']['element_wrapper_class'] = 'nems_publications_image';
+  $handler->display->display_options['fields']['field_nems_core_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_nems_core_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  /* Field: title not linked */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['ui_name'] = 'title not linked';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: external link */
+  $handler->display->display_options['fields']['field_nems_core_external_url']['id'] = 'field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['table'] = 'field_data_field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['field'] = 'field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['ui_name'] = 'external link';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_nems_core_external_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_core_external_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_nems_core_external_url']['type'] = 'link_absolute';
+  /* Field: Field: Title */
+  $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
+  $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field_1']['label'] = '';
+  $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 1;
+  /* Field: Content: External Link */
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['id'] = 'field_nems_core_external_url_1';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['table'] = 'field_data_field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['field'] = 'field_nems_core_external_url';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['label'] = '';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['alter']['text'] = '<h3><a href="[field_nems_core_external_url]">[title_field]</a></h3>';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['element_wrapper_class'] = 'nems_publications_external_link';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['empty'] = '<h3>[title_field_1]</h3>';
+  $handler->display->display_options['fields']['field_nems_core_external_url_1']['click_sort_column'] = 'url';
   $export['nems_publications'] = $view;
 
   return $export;

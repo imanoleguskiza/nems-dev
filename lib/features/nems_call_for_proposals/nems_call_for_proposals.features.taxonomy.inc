@@ -13,7 +13,7 @@ function nems_call_for_proposals_taxonomy_default_vocabularies() {
       'name' => 'NEMS Call for proposals Status',
       'machine_name' => 'nems_call_for_proposals_status',
       'description' => 'Vocabulary Status for Call For Proposals content types',
-      'hierarchy' => 1,
+      'hierarchy' => 0,
       'module' => 'nems_call_for_proposals',
       'weight' => 1,
       'language' => 'und',
