@@ -329,7 +329,8 @@
             update-htaccess,
             setup-files-directory,
             setup-php-codesniffer,
-            download-development-modules"
+            download-development-modules,
+            build-custom"
     />
 
     <target
@@ -340,7 +341,8 @@
             delete-dist,
             make-dist,
             copy-dist-resources,
-            install-dist-dependencies"
+            install-dist-dependencies,
+            build-custom"
     />
 
 	<!-- Setup file directory -->
