@@ -108,6 +108,9 @@ function nems_events_strongarm() {
       'popup' => array(
         'custom_settings' => FALSE,
       ),
+      'carousel' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
