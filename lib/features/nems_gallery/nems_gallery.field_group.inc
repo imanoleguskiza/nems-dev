@@ -21,7 +21,7 @@ function nems_gallery_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Content',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'body',
     ),
@@ -48,7 +48,7 @@ function nems_gallery_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Gallery',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_nems_gallery_image',
     ),
@@ -75,7 +75,7 @@ function nems_gallery_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Picture Gallery Category',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_nems_gallery_category',
     ),
@@ -91,11 +91,39 @@ function nems_gallery_field_group_info() {
   );
   $field_groups['group_nems_gallery_category|node|gallery|form'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_tags|node|gallery|form';
+  $field_group->group_name = 'group_tags';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'gallery';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Tags',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_tags',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-tags field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_tags|node|gallery|form'] = $field_group;
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Content');
   t('Gallery');
   t('Picture Gallery Category');
+  t('Tags');
 
   return $field_groups;
 }

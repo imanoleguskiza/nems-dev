@@ -178,10 +178,10 @@ function nems_gallery_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '3',
+          'weight' => '2',
         ),
         'language' => array(
-          'weight' => '2',
+          'weight' => '1',
         ),
         'metatags' => array(
           'weight' => '7',
@@ -206,6 +206,16 @@ function nems_gallery_strongarm() {
           ),
           'carousel' => array(
             'weight' => '0',
+            'visible' => TRUE,
+          ),
+        ),
+        'nems_gallery_picture_carousel' => array(
+          'default' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'carousel' => array(
+            'weight' => '1',
             'visible' => TRUE,
           ),
         ),

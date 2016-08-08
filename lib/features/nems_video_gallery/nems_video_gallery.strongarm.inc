@@ -174,13 +174,13 @@ function nems_video_gallery_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
-        ),
-        'language' => array(
           'weight' => '2',
         ),
+        'language' => array(
+          'weight' => '1',
+        ),
         'metatags' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
         'rabbit_hole' => array(
           'weight' => '1',
@@ -207,8 +207,12 @@ function nems_video_gallery_strongarm() {
         ),
         'nems_video_gallery_video_carousel' => array(
           'carousel' => array(
-            'weight' => '0',
+            'weight' => '1',
             'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '4',
+            'visible' => FALSE,
           ),
         ),
       ),
