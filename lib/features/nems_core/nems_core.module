@@ -110,6 +110,12 @@ function nems_core_menu_alter(&$items) {
 
 /**
  * Determine whether the user has permission to use menu_block module.
+ *
+ * @param object $account
+ *   Object containing account data.
+ *
+ * @return bool
+ *   Access rights edit result.
  */
 function _nems_core_menu_block_access($account = NULL) {
   return user_access('administer blocks', $account);
@@ -117,6 +123,13 @@ function _nems_core_menu_block_access($account = NULL) {
 
 /**
  * Add access restrictions to a block.
+ *
+ * @param object $module
+ *   Module that built the block.
+ * @param object $delta
+ *   Delta identifying the block.
+ * @param bool $delete
+ *   Flag to mark a deletion processs.
  */
 function _nems_core_restrict_block_access($module, $delta, $delete = FALSE) {
   if (!$delete) {
@@ -176,6 +189,12 @@ function nems_core_block_view_alter(&$data, $block) {
 
 /**
  * Custom access function to restrict the access to bartik and seven.
+ *
+ * @param object $theme
+ *   Object containing theme data.
+ *
+ * @return bool
+ *   Access rights edit result.
  */
 function _nems_core_block_themes_access($theme) {
 
@@ -195,13 +214,20 @@ function _nems_core_block_themes_access($theme) {
 
 /**
  * Restrict access to administrator and superuser accounts.
+ *
+ * @param object $account
+ *   Object containing account data.
+ *
+ * @return bool
+ *   Access rights edit result.
  */
 function _nems_core_user_edit_access($account) {
+  global $user;
   // Restrict access to user 1 account.
-  if ($account->uid == 1 and $GLOBALS['user']->uid != 1) {
+  if ($account->uid == 1 and $user->uid != 1) {
     return FALSE;
   }
-  if (in_array('administrator', $account->roles) && !in_array('administrator', $GLOBALS['user']->roles)) {
+  if (in_array('administrator', $account->roles) && !in_array('administrator', $user->roles)) {
     return FALSE;
   }
   return user_edit_access($account);
