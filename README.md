@@ -25,6 +25,9 @@ of the European Commission.
 
 ## Recent notable changes
 
+- **2016-08-09**: We made the `resources/site.make` optional for use. Please
+    pay attention when upgrading (merging upstream) that you don't lose
+    your `resources/site.make` in the process.
 - **2016-08-04**: The Subsite Starterkit has now actual releases. Tags are
     prepended with `starterkit/` in order to avoid conflicts with existing tags
     on forked subsite repositories.
@@ -61,7 +64,10 @@ The configuration of the project is managed in 3 `build.properties` files:
   contents of this folder get symlinked into the Drupal website at `sites/all/`.
 * Any contrib modules, themes, libraries and patches you use should be put in
   the make file `resources/site.make`. Whenever the site is built these will be
-  downloaded and copied into the Drupal website.
+  downloaded and copied into the Drupal website. By default we provide an example
+  file in `resources/site.make.example`. Feel free to copy or rename this file
+  to `resources/site.make`. This make file will be included in `build-dev`
+  and `build-dist` by default.
 * If you have any custom Composer dependencies, declare them in
   `resources/composer.json` and `resources/composer.lock`.
 * If you require custom build steps for your subsite, you are free to use the 
