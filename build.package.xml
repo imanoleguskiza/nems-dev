@@ -124,7 +124,6 @@
             installation. The actual build is in the /sites/all subfolder. Build
             in a temporary folder and move the subsite into place when done.
          -->
-        <mkdir dir="${phing.project.tmp.dir}/build/sites/all" />
         <if>
             <available file="${subsite.make}" type="file" />
             <then>
@@ -135,6 +134,7 @@
             </then>
             <else>
                 <echo msg="No make file found. Skipping..." />
+                <mkdir dir="${phing.project.tmp.dir}/build/sites/all" />
             </else>
         </if>
 
