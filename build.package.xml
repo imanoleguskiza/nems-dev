@@ -95,11 +95,20 @@
 
     <!-- Make the development version of the subsite. -->
     <target name="make-dev" depends="unpack-platform">
-        <echo msg="Make the subsite." />
-        <phingcall target="drush-make-no-core">
-            <property name="drush.make.target.file" value="${subsite.make}" />
-            <property name="drush.make.root" value="${platform.build.dir}" />
-        </phingcall>
+        <if>
+            <available file="${subsite.make}" type="file" />
+                <then>
+                    <echo msg="Make the subsite." />
+                    <phingcall target="drush-make-no-core">
+                        <property name="drush.make.target.file" value="${subsite.make}" />
+                        <property name="drush.make.root" value="${platform.build.dir}" />
+                    </phingcall>
+                </then>
+            <else>
+                <echo msg="No make file found. Skipping..." />
+            </else>
+        </if>
+
     </target>
 
     <!-- Make the distribution version of the subsite. -->
@@ -115,10 +124,19 @@
             installation. The actual build is in the /sites/all subfolder. Build
             in a temporary folder and move the subsite into place when done.
          -->
-        <phingcall target="drush-make-no-core">
-            <property name="drush.make.target.file" value="${subsite.make}" />
-            <property name="drush.make.root" value="${phing.project.tmp.dir}/build" />
-        </phingcall>
+        <if>
+            <available file="${subsite.make}" type="file" />
+            <then>
+                <phingcall target="drush-make-no-core">
+                    <property name="drush.make.target.file" value="${subsite.make}" />
+                    <property name="drush.make.root" value="${phing.project.tmp.dir}/build" />
+                </phingcall>
+            </then>
+            <else>
+                <echo msg="No make file found. Skipping..." />
+                <mkdir dir="${phing.project.tmp.dir}/build/sites/all" />
+            </else>
+        </if>
 
         <!-- Move the subsite to its destination. -->
         <echo msg='mv "${phing.project.tmp.dir}/build/sites/all/" "${dist.build.dir}"' />
