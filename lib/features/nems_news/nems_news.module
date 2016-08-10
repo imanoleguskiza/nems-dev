@@ -5,3 +5,23 @@
  */
 
 include_once 'nems_news.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function nems_news_theme($existing) {
+  return array(
+    'views_view_field__nems_news_full_list__field_nems_core_external_url_1' => array(
+      'arguments' => array('view' => NULL),
+      'template' => 'views-view-field--nems-news-full-list--field-nems-core-external-url-1',
+      'base hook' => 'views_view_field',
+      'path' => drupal_get_path('module', 'nems_news') . '/templates',
+    ),
+    'views_view_field__nems_news__field_nems_core_external_url_1' => array(
+      'arguments' => array('view' => NULL),
+      'template' => 'views-view-field--nems-news--field-nems-core-external-url-1',
+      'base hook' => 'views_view_field',
+      'path' => drupal_get_path('module', 'nems_news') . '/templates',
+    ),
+  );
+}
