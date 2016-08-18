@@ -74,6 +74,7 @@ function nems_core_menu_alter(&$items) {
     'admin/config/user-interface/chosen',
     'admin/people/create',
     'admin/structure/block/add',
+    'admin/structure/tb-megamenu/%tb_megamenu_menu_name',
     'admin/config/regional/language/admin_language',
     'admin/config/regional/language/configure',
   );
