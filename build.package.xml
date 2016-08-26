@@ -258,6 +258,16 @@
         </composer>
     </target>
 
+    <!-- Do quality assurance checks on build-dist -->
+    <target name="qa-dist">
+        <qualityassurance
+            projectBaseDir="${project.basedir}"
+            resourcesDir="${subsite.resources.dir}"
+            distBuildDir="${dist.build.dir}"
+            libDir="${subsite.resources.lib.dir}"
+        />
+    </target>
+
     <!-- Link site document root to Webserver document root. -->
     <target
         name="link-docroot"
@@ -360,7 +370,8 @@
             make-dist,
             copy-dist-resources,
             install-dist-dependencies,
-            build-custom"
+            build-custom,
+            qa-dist"
     />
 
 	<!-- Setup file directory -->

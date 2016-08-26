@@ -5,6 +5,8 @@
     <description>Drupal coding standard for NextEuropa subsites</description>
 
     <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal" />
+    <rule ref="./vendor/ec-europa/qa-automation/DrupalSecure" />
+    <rule ref="./vendor/ec-europa/qa-automation/FPFISQualityAssurance" />
 
     <!-- Minified files don't have to comply with coding standards. -->
     <exclude-pattern>*\.min\.css</exclude-pattern>
