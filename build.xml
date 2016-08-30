@@ -67,6 +67,7 @@
                     <param name="KeyName" value="${cf.KeyName}" />
                     <param name="ApplicationName" value="${deploy.applicationName}" />
                     <param name="env" value="${cf.stackName}" />
+                    <tag key="env" value="demo" />
                 </aws-cf-runstack>
             </then>
             <else>
@@ -82,6 +83,7 @@
                     <param name="DBPassword" value="${cf.DBPassword}" />
                     <param name="env" value="${cf.stackName}" />
                     <output name="AutoscalingGroup" property="deploy.autoScalingGroup" />
+                    <tag key="env" value="demo" />
                 </aws-cf-runstack>
             </else>
         </if>
