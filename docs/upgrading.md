@@ -10,7 +10,7 @@ as suggested on the "Starting a new project" page.
 First of all add the main Subsite Starterkit repository as a new remote: 
 
 ```
-$ git remote add starterkit git@github.com:ec-europa/subsite-starterkit.git
+$ git remote add starterkit https://github.com/ec-europa/subsite-starterkit.git
 ```
 
 Then fetch the newly added remote:
