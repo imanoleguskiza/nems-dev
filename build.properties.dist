@@ -185,7 +185,7 @@ phpcs.config = ${project.basedir}/phpcs.xml
 phpcs.standard = ${project.basedir}/phpcs-ruleset.xml
 
 # Paths to check, delimited by semicolons.
-phpcs.files = ${subsite.resources.dir};${subsite.resources.lib.dir};${phing.project.src.dir};${behat.src.dir}
+phpcs.files = ${dist.build.dir}
 
 # Paths to ignore, delimited by semicolons.
 phpcs.ignore =
@@ -210,6 +210,15 @@ phpcs.prepush.enable = 1
 phpcs.prepush.source = ${project.basedir}/vendor/pfrenssen/phpcs-pre-push/pre-push
 phpcs.prepush.destination = ${project.basedir}/.git/hooks/pre-push
 
+
+# Quality Assurance
+#------------------
+
+# Automatic selection of modules on or off. Used for cphp.
+qa.skip.select = 0
+
+# Skip running of phpcs on modules. Used for cphp.
+qa.skip.phpcs = 0
 
 # Host configuration
 # ------------------

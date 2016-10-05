@@ -5,6 +5,8 @@
     <description>Drupal coding standard for NextEuropa subsites</description>
 
     <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal" />
+    <rule ref="./vendor/ec-europa/qa-automation/DrupalSecure" />
+    <rule ref="./vendor/ec-europa/qa-automation/QualityAssurance" />
 
     <!-- Minified files don't have to comply with coding standards. -->
     <exclude-pattern>*\.min\.css</exclude-pattern>
@@ -17,9 +19,15 @@
     <exclude-pattern>*\.yml</exclude-pattern>
     <exclude-pattern>composer.lock</exclude-pattern>
 
-    <!-- Exclude third party code. -->
-    <exclude-pattern>resources/cloudformation</exclude-pattern>
-    <exclude-pattern>resources/codedeploy</exclude-pattern>
+    <!-- Exclude non drupal folders. -->
+    <exclude-pattern>/vendor</exclude-pattern>
+    <exclude-pattern>/src</exclude-pattern>
+    <exclude-pattern>/resources</exclude-pattern>
+
+    <!-- Exclude folders of example modules. -->
+    <exclude-pattern>**/example_module</exclude-pattern>
+    <exclude-pattern>**/myproject_core</exclude-pattern>
+    <exclude-pattern>**/example_theme</exclude-pattern>
 
     <!-- Views handlers not strictly follow Drupal class name conventions. -->
     <rule ref="Drupal.NamingConventions.ValidClassName">

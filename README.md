@@ -19,12 +19,15 @@ of the European Commission.
 - Easily test your code on the latest development branch of the NextEuropa
   platform to validate if your site will work on the next release.
 - Integrated support for Behat and PHP CodeSniffer.
+- QA automation tools to provide static code checks.
 - Built-in support for Continuous Integration using ContinuousPHP.
 - Build your website in an automated way to get your entire team up and running
   fast!
 
 ## Recent notable changes
 
+- **2016-10-05**: Added QA automation tools that should be run before each time
+    you make a pull request to your reference repository.
 - **2016-08-09**: We made the `resources/site.make` optional for use. Please
     pay attention when upgrading (merging upstream) that you don't lose
     your `resources/site.make` in the process.
