@@ -210,7 +210,7 @@ the rules.
 Before each pull request to a reference repository of ec-europa you need to run the
 QA automation tool. This will perform static code checks on the result of build-dist.
 The tool is included in the starterkit as a composer dependency. More information on
-the tool can be found at (https://github.com/ec-europa/qa-automation).
+the tool can be found at https://github.com/ec-europa/qa-automation.
 
 ```
 $ ./bin/phing mjolnir
