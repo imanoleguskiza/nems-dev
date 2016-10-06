@@ -216,6 +216,10 @@ the tool can be found at https://github.com/ec-europa/qa-automation.
 $ ./bin/phing mjolnir
 ```
 
+Note: this tool can only be run after a "composer install" that successfully executed
+the post-install script. Without a composer.lock file this post-install hook will not
+fire.
+
 
 ### 9. Create a pull request
 
