@@ -185,7 +185,7 @@ phpcs.config = ${project.basedir}/phpcs.xml
 phpcs.standard = ${project.basedir}/phpcs-ruleset.xml
 
 # Paths to check, delimited by semicolons.
-phpcs.files = ${dist.build.dir}
+phpcs.files = ${subsite.resources.dir};${subsite.resources.lib.dir};${phing.project.src.dir};${behat.src.dir}
 
 # Paths to ignore, delimited by semicolons.
 phpcs.ignore =
