@@ -83,14 +83,13 @@ function nems_call_for_proposals_field_group_info() {
       3 => 'field_nems_proposals_status',
       4 => 'field_nems_reference',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => 'group-proposals-content field-group-fieldset',
+        'classes' => '',
         'required_fields' => 1,
-        'id' => '',
       ),
     ),
   );
