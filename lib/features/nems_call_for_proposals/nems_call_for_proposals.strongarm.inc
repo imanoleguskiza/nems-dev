@@ -99,7 +99,7 @@ function nems_call_for_proposals_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '4',
+          'weight' => '7',
         ),
         'path' => array(
           'weight' => '2',

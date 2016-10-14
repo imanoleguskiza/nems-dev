@@ -99,16 +99,16 @@ function nems_call_for_externals_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '9',
+          'weight' => '7',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '2',
         ),
         'rabbit_hole' => array(
           'weight' => '1',
         ),
         'language' => array(
-          'weight' => '2',
+          'weight' => '1',
         ),
       ),
       'display' => array(),

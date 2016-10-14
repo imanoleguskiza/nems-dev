@@ -51,7 +51,7 @@ function nems_call_for_proposals_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 7,
     ),
   );
 
@@ -108,7 +108,7 @@ function nems_call_for_proposals_field_default_field_instances() {
         'year_range' => '-8:+8',
       ),
       'type' => 'date_popup',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -173,7 +173,7 @@ function nems_call_for_proposals_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -231,7 +231,7 @@ function nems_call_for_proposals_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -272,7 +272,7 @@ function nems_call_for_proposals_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
@@ -340,7 +340,103 @@ function nems_call_for_proposals_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-nems_call_for_proposals-field_tags'.
+  $field_instances['node-nems_call_for_proposals-field_tags'] = array(
+    'bundle' => 'nems_call_for_proposals',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-nems_call_for_proposals-og_group_ref'.
+  $field_instances['node-nems_call_for_proposals-og_group_ref'] = array(
+    'bundle' => 'nems_call_for_proposals',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'og_group_ref',
+    'label' => 'Groups audience',
+    'required' => FALSE,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 8,
     ),
   );
 
@@ -355,7 +451,7 @@ function nems_call_for_proposals_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -392,9 +488,11 @@ function nems_call_for_proposals_field_default_field_instances() {
   t('Body');
   t('Deadline');
   t('Files');
+  t('Groups audience');
   t('Link to OJ');
   t('Reference');
   t('Status');
+  t('Tags');
   t('Title');
 
   return $field_instances;
