@@ -1,0 +1,82 @@
+<?php
+/**
+ * @file
+ * Hooks executed during module installation.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function nems_call_for_externals_enable() {
+  drupal_set_message(t('NEMS Call for External Experts feature is now active on your site.'));
+}
+
+/**
+ * Implements hook_disable().
+ */
+function nems_call_for_externals_disable() {
+  drupal_set_message(t('NEMS Call for External Experts feature is now disabled on your site.'));
+}
+
+/**
+ * Implements hook_install().
+ */
+function nems_call_for_externals_install() {
+  // Create new Taxonomy Vocabulary NEMS Call Status.
+  $vocabularies = taxonomy_vocabulary_get_names();
+  $pos = array_search('nems_call_for_externals_status', $vocabularies);
+  if ($pos !== FALSE) {
+    $vid = $pos;
+  }
+  else {
+    $t = get_t();
+    $vocabulary = array(
+      'name' => $t('NEMS Call For External Experts Status'),
+      'machine_name' => 'nems_call_for_externals_status',
+      'description' => $t('Vocabulary Status for Call For Externals content types'),
+      'hierarchy' => 1,
+      'module' => 'nems_call_for_externals',
+      'weight' => 1,
+    );
+    $vocabulary = (object) $vocabulary;
+    taxonomy_vocabulary_save($vocabulary);
+    $vid = $vocabulary->vid;
+  }
+
+  // Populate Taxonomy NEMS Call Status with a predefined set of values.
+  $items = array(
+    'Pending',
+    'Open',
+    'Closed',
+  );
+  foreach ($items as $key => $item) {
+    $newterm = new stdClass();
+    $newterm->name = $item;
+    $newterm->vid = $vid;
+    $newterm->parent = 0;
+    taxonomy_term_save($newterm);
+  }
+
+  $content_type_variables = array(
+    'version_management_node_types',
+    'linkchecker_scan_nodetypes',
+  );
+  foreach ($content_type_variables as $content_type_variable) {
+    $version_settings = variable_get($content_type_variable, '');
+    if (!empty($version_settings)) {
+      $version_settings['nems_call_for_externals'] = 'nems_call_for_externals';
+      variable_set($content_type_variable, $version_settings);
+    }
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function nems_call_for_externals_uninstall() {
+  // Remove Taxonomy Vocabulary NEMS Call Status.
+  $vocabulary = taxonomy_vocabulary_machine_name_load('nems_call_for_externals_status');
+  if ($vocabulary) {
+    taxonomy_vocabulary_delete($vocabulary->vid);
+  }
+}

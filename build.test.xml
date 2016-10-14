@@ -32,6 +32,9 @@
             features and modules which need to be enabled after installation.
          -->
          <phingcall target="enable-install-modules" />
+
+        <!-- Rebuild node access after Subsites modules activation -->
+        <phingcall target="rebuild-node-access" />
     </target>
 
     <!-- Enable required modules after installation of the profile. -->
@@ -87,6 +90,20 @@
             showSniffCodes="${phpcs.sniffcodes}"
             standard="${phpcs.standard}"
         />
+
+        <!-- Set up the git pre-push hook. -->
+        <phingcall target="disable-pre-push"/>
+        <if>
+            <equals arg1="${phpcs.prepush.enable}" arg2="1" />
+            <then>
+                <symlink link="${phpcs.prepush.destination}" target="${phpcs.prepush.source}" overwrite="true" />
+            </then>
+        </if>
+    </target>
+
+    <!-- Disable the PHP CodeSniffer pre-push hook. -->
+    <target name="disable-pre-push" description="Disable the coding standards check when pushing to a git repository.">
+        <delete file="${phpcs.prepush.destination}" failonerror="false" />
     </target>
 
     <!-- Set up Behat. -->
@@ -147,4 +164,15 @@
         depends="install, enable-development-modules"
     />
 
+    <!-- Rebuild node access. -->
+    <target name="rebuild-node-access">
+        <drush
+            command="php-eval"
+            assume="yes"
+            root="${platform.build.dir}"
+            bin="${drush.bin}"
+            verbose="${drush.verbose}">
+            <param>"node_access_rebuild()"</param>
+        </drush>
+    </target>
 </project>

@@ -38,13 +38,13 @@ function nems_video_gallery_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_video_items'.
-  $field_bases['field_video_items'] = array(
+  // Exported field_base: 'field_nems_video_items'.
+  $field_bases['field_nems_video_items'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_video_items',
+    'field_name' => 'field_nems_video_items',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -64,13 +64,13 @@ function nems_video_gallery_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_video_thumbnail'.
-  $field_bases['field_video_thumbnail'] = array(
+  // Exported field_base: 'field_nems_video_thumbnail'.
+  $field_bases['field_nems_video_thumbnail'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_video_thumbnail',
+    'field_name' => 'field_nems_video_thumbnail',
     'indexes' => array(
       'fid' => array(
         0 => 'fid',

@@ -22,14 +22,14 @@ function nems_events_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 1,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'popup' => array(
         'label' => 'above',
@@ -79,7 +79,7 @@ function nems_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'above',
@@ -148,14 +148,14 @@ function nems_events_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 6,
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'inline',
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 4,
+        'weight' => 2,
       ),
       'popup' => array(
         'label' => 'above',
@@ -327,7 +327,7 @@ function nems_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'above',
@@ -395,7 +395,7 @@ function nems_events_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -406,10 +406,10 @@ function nems_events_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -420,7 +420,7 @@ function nems_events_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'popup' => array(
         'label' => 'above',
@@ -471,14 +471,14 @@ function nems_events_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'title',
         'settings' => array(
           'title_class' => '',
@@ -486,7 +486,7 @@ function nems_events_field_default_field_instances() {
           'title_style' => '',
         ),
         'type' => 'title_linked',
-        'weight' => 1,
+        'weight' => 4,
       ),
       'popup' => array(
         'label' => 'above',
@@ -559,7 +559,7 @@ function nems_events_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 13,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'above',
@@ -602,13 +602,12 @@ function nems_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'inline',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'popup' => array(
@@ -721,7 +720,7 @@ function nems_events_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'above',

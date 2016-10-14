@@ -1,0 +1,20 @@
+.nems_publications_image {
+  float: left;
+  margin-bottom: 20px;
+  margin-left: 0;
+  width: 100px;
+  clear: left;
+}
+.nems_publications_external_link {
+  margin-left: 120px;
+}
+
+@media (max-width: 700px) {
+  .nems_publications_image {
+    width: 100%;
+    clear: right;
+  }
+  .nems_publications_external_link {
+    margin-left: 0px;
+  }
+}

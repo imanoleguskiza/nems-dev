@@ -10,13 +10,13 @@
 function nems_press_releases_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_press_release_keywords'.
-  $field_bases['field_press_release_keywords'] = array(
+  // Exported field_base: 'field_nems_pr_keywords'.
+  $field_bases['field_nems_pr_keywords'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_press_release_keywords',
+    'field_name' => 'field_nems_pr_keywords',
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -38,13 +38,13 @@ function nems_press_releases_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_press_release_main_link'.
-  $field_bases['field_press_release_main_link'] = array(
+  // Exported field_base: 'field_nems_pr_main_link'.
+  $field_bases['field_nems_pr_main_link'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_press_release_main_link',
+    'field_name' => 'field_nems_pr_main_link',
     'indexes' => array(),
     'locked' => 1,
     'module' => 'link',

@@ -22,14 +22,14 @@ function nems_publications_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'popup' => array(
         'label' => 'above',
@@ -75,7 +75,7 @@ function nems_publications_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -86,10 +86,10 @@ function nems_publications_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 7,
+        'weight' => 4,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
           'format_type' => 'long',
@@ -100,7 +100,7 @@ function nems_publications_field_default_field_instances() {
           'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'popup' => array(
         'label' => 'above',
@@ -152,11 +152,11 @@ function nems_publications_field_default_field_instances() {
     'description' => 'The external link can be used to refer to news located in other sites. If this field is filled, the rest of the content fields will be ignored.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 6,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'above',
@@ -228,7 +228,7 @@ function nems_publications_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 5,
+        'weight' => 0,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -327,7 +327,7 @@ function nems_publications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'above',
@@ -400,14 +400,14 @@ function nems_publications_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 4,
+        'weight' => 2,
       ),
       'full' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'popup' => array(
         'label' => 'above',
@@ -480,7 +480,7 @@ function nems_publications_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 12,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'above',
@@ -521,16 +521,14 @@ function nems_publications_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 10,
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'inline',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'popup' => array(
@@ -644,7 +642,7 @@ function nems_publications_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'above',

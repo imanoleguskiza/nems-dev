@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the NEMS Call For Externals feature.
+ */
+
+include_once 'nems_call_for_externals.features.inc';

@@ -1,0 +1,28 @@
+.nems_events_image {
+  float: left;
+  margin-bottom: 20px;
+  margin-left: 0;
+  width: 100px;
+  clear: left;
+}
+.nems_events_contional_title,
+.nems_events_external_link,
+.nems_events_date,
+.nems_events_location,
+.nems_events_body {
+  margin-left: 120px;
+}
+
+@media (max-width: 700px) {
+  .nems_events_image {
+    width: 100%;
+    clear: right;
+  }
+  .nems_events_contional_title,
+  .nems_events_external_link,
+  .nems_events_date,
+  .nems_events_location,
+  .nems_events_body {
+    margin-left: 0px;
+  }
+}

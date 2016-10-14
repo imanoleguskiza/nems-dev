@@ -5,3 +5,17 @@
  */
 
 include_once 'nems_publications.features.inc';
+
+/**
+ * Implements hook_theme().
+ */
+function nems_publications_theme($existing) {
+  return array(
+    'views_view_field__nems_publications__field_nems_core_external_url_1' => array(
+      'arguments' => array('view' => NULL),
+      'template' => 'views-view-field--nems-publications--field-nems-core-external-url-1',
+      'base hook' => 'views_view_field',
+      'path' => drupal_get_path('module', 'nems_publications') . '/templates',
+    ),
+  );
+}

@@ -31,6 +31,5 @@ features[language][] = ro
 features[language][] = sk
 features[language][] = sl
 features[language][] = sv
-features[variable][] = entity_translation_entity_types
 features[variable][] = language_suffix_delimiter
 features[variable][] = language_types

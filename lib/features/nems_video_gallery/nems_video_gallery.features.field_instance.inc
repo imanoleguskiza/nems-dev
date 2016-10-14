@@ -10,6 +10,89 @@
 function nems_video_gallery_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'file-video-field_nems_video_thumbnail'.
+  $field_instances['file-video-field_nems_video_thumbnail'] = array(
+    'bundle' => 'video',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'wysiwyg' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'file',
+    'field_name' => 'field_nems_video_thumbnail',
+    'label' => 'Video thumbnail',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => 'video_thumbnails',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'avportal' => 0,
+          'dailymotion' => 0,
+          'feed' => 0,
+          'http' => 0,
+          'https' => 0,
+          'node' => 0,
+          'private' => 0,
+          'public' => 'public',
+          'vimeo' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+          'media_internet' => 'media_internet',
+          'remote_file' => 'remote_file',
+          'upload' => 'upload',
+          'youtube' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'file-video-field_video_description'.
   $field_instances['file-video-field_video_description'] = array(
     'bundle' => 'video',
@@ -119,89 +202,6 @@ function nems_video_gallery_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-video-field_video_thumbnail'.
-  $field_instances['file-video-field_video_thumbnail'] = array(
-    'bundle' => 'video',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-      'preview' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'wysiwyg' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'file',
-    'field_name' => 'field_video_thumbnail',
-    'label' => 'Video thumbnail',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'entity_translation_sync' => FALSE,
-      'file_directory' => 'video_thumbnails',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'avportal' => 0,
-          'dailymotion' => 0,
-          'feed' => 0,
-          'http' => 0,
-          'https' => 0,
-          'node' => 0,
-          'private' => 0,
-          'public' => 'public',
-          'vimeo' => 0,
-          'youtube' => 0,
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'document' => 0,
-          'image' => 'image',
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-          'media_internet' => 'media_internet',
-          'remote_file' => 'remote_file',
-          'upload' => 'upload',
-          'youtube' => 0,
-        ),
-      ),
-      'type' => 'media_generic',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'file-video-filename_field'.
   $field_instances['file-video-filename_field'] = array(
     'bundle' => 'video',
@@ -266,9 +266,10 @@ function nems_video_gallery_field_default_field_instances() {
     'display' => array(
       'carousel' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
+        'type' => 'text_default',
+        'weight' => 0,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -325,13 +326,12 @@ function nems_video_gallery_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 2,
       ),
     ),
@@ -352,8 +352,8 @@ function nems_video_gallery_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-video_gallery-field_video_items'.
-  $field_instances['node-video_gallery-field_video_items'] = array(
+  // Exported field_instance: 'node-video_gallery-field_nems_video_items'.
+  $field_instances['node-video_gallery-field_nems_video_items'] = array(
     'bundle' => 'video_gallery',
     'deleted' => 0,
     'description' => '',
@@ -362,7 +362,7 @@ function nems_video_gallery_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -387,7 +387,7 @@ function nems_video_gallery_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_video_items',
+    'field_name' => 'field_nems_video_items',
     'label' => 'Video item',
     'required' => 0,
     'settings' => array(
@@ -431,6 +431,43 @@ function nems_video_gallery_field_default_field_instances() {
       ),
       'type' => 'media_generic',
       'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-video_gallery-field_tags'.
+  $field_instances['node-video_gallery-field_tags'] = array(
+    'bundle' => 'video_gallery',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 7,
     ),
   );
 
@@ -505,13 +542,13 @@ function nems_video_gallery_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'eva_display' => array(
         'label' => 'above',
@@ -635,6 +672,7 @@ function nems_video_gallery_field_default_field_instances() {
   t('File name');
   t('Groups audience');
   t('Name');
+  t('Tags');
   t('Title');
   t('Video Description');
   t('Video Gallery Category');

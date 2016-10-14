@@ -19,9 +19,10 @@ function nems_gallery_field_default_field_instances() {
     'display' => array(
       'carousel' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
+        'type' => 'text_default',
+        'weight' => 0,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -67,8 +68,45 @@ function nems_gallery_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gallery-field_gallery_image'.
-  $field_instances['node-gallery-field_gallery_image'] = array(
+  // Exported field_instance: 'node-gallery-field_nems_gallery_category'.
+  $field_instances['node-gallery-field_nems_gallery_category'] = array(
+    'bundle' => 'gallery',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_nems_gallery_category',
+    'label' => 'Picture Gallery Category',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-gallery-field_nems_gallery_image'.
+  $field_instances['node-gallery-field_nems_gallery_image'] = array(
     'bundle' => 'gallery',
     'deleted' => 0,
     'description' => '',
@@ -77,7 +115,7 @@ function nems_gallery_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 4,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -109,7 +147,7 @@ function nems_gallery_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_gallery_image',
+    'field_name' => 'field_nems_gallery_image',
     'label' => 'Image',
     'required' => 0,
     'settings' => array(
@@ -158,8 +196,8 @@ function nems_gallery_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-gallery-field_nems_gallery_category'.
-  $field_instances['node-gallery-field_nems_gallery_category'] = array(
+  // Exported field_instance: 'node-gallery-field_tags'.
+  $field_instances['node-gallery-field_tags'] = array(
     'bundle' => 'gallery',
     'default_value' => NULL,
     'deleted' => 0,
@@ -169,19 +207,18 @@ function nems_gallery_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_nems_gallery_category',
-    'label' => 'Picture Gallery Category',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -267,13 +304,13 @@ function nems_gallery_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'default' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'eva_display' => array(
         'label' => 'above',
@@ -397,6 +434,7 @@ function nems_gallery_field_default_field_instances() {
   t('Image');
   t('Name');
   t('Picture Gallery Category');
+  t('Tags');
   t('Title');
 
   return $field_instances;

@@ -108,20 +108,23 @@ function nems_news_strongarm() {
       'popup' => array(
         'custom_settings' => FALSE,
       ),
+      'carousel' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '9',
+          'weight' => '8',
         ),
         'language' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'xmlsitemap' => array(
           'weight' => '30',
         ),
         'metatags' => array(
-          'weight' => '8',
+          'weight' => '7',
         ),
         'rabbit_hole' => array(
           'weight' => '2',

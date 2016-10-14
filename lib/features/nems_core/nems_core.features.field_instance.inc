@@ -10,8 +10,8 @@
 function nems_core_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'bean-block-field_description'.
-  $field_instances['bean-block-field_description'] = array(
+  // Exported field_instance: 'bean-block-field_nems_description'.
+  $field_instances['bean-block-field_nems_description'] = array(
     'bundle' => 'block',
     'default_value' => NULL,
     'deleted' => 0,
@@ -26,7 +26,7 @@ function nems_core_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'bean',
-    'field_name' => 'field_description',
+    'field_name' => 'field_nems_description',
     'label' => 'Description',
     'required' => 0,
     'settings' => array(
@@ -108,8 +108,8 @@ function nems_core_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'bean-list_block-field_block_reference'.
-  $field_instances['bean-list_block-field_block_reference'] = array(
+  // Exported field_instance: 'bean-list_block-field_nems_block_reference'.
+  $field_instances['bean-list_block-field_nems_block_reference'] = array(
     'bundle' => 'list_block',
     'default_value' => NULL,
     'deleted' => 0,
@@ -126,7 +126,7 @@ function nems_core_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'bean',
-    'field_name' => 'field_block_reference',
+    'field_name' => 'field_nems_block_reference',
     'label' => 'Block reference',
     'required' => 0,
     'settings' => array(
@@ -183,8 +183,8 @@ function nems_core_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'bean-list_block-field_description'.
-  $field_instances['bean-list_block-field_description'] = array(
+  // Exported field_instance: 'bean-list_block-field_nems_description'.
+  $field_instances['bean-list_block-field_nems_description'] = array(
     'bundle' => 'list_block',
     'default_value' => NULL,
     'deleted' => 0,
@@ -199,7 +199,7 @@ function nems_core_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'bean',
-    'field_name' => 'field_description',
+    'field_name' => 'field_nems_description',
     'label' => 'Description',
     'required' => 0,
     'settings' => array(
@@ -244,8 +244,8 @@ function nems_core_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'bean-list_block-field_view_more'.
-  $field_instances['bean-list_block-field_view_more'] = array(
+  // Exported field_instance: 'bean-list_block-field_nems_view_more'.
+  $field_instances['bean-list_block-field_nems_view_more'] = array(
     'bundle' => 'list_block',
     'default_value' => NULL,
     'deleted' => 0,
@@ -260,7 +260,7 @@ function nems_core_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'bean',
-    'field_name' => 'field_view_more',
+    'field_name' => 'field_nems_view_more',
     'label' => 'Link to More',
     'required' => 0,
     'settings' => array(
@@ -490,46 +490,46 @@ function nems_core_field_default_field_instances() {
     'deleted' => 0,
     'description' => '',
     'display' => array(
-        'default' => array(
-            'label' => 'above',
-            'module' => 'i18n_taxonomy',
-            'settings' => array(),
-            'type' => 'i18n_taxonomy_term_reference_link',
-            'weight' => 0,
-        ),
-        'preview' => array(
-            'label' => 'above',
-            'settings' => array(),
-            'type' => 'hidden',
-            'weight' => 0,
-        ),
-        'teaser' => array(
-            'label' => 'above',
-            'settings' => array(),
-            'type' => 'hidden',
-            'weight' => 0,
-        ),
-        'wysiwyg' => array(
-            'label' => 'above',
-            'settings' => array(),
-            'type' => 'hidden',
-            'weight' => 0,
-        ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 0,
+      ),
+      'preview' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'wysiwyg' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'file',
     'field_name' => 'field_tags',
     'label' => 'Tags',
     'required' => 0,
     'settings' => array(
-        'entity_translation_sync' => FALSE,
-        'user_register_form' => FALSE,
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
     ),
     'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => 2,
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 2,
     ),
   );
 
