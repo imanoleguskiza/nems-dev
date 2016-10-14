@@ -46,7 +46,6 @@ function nems_core_permission() {
  * Implements hook_menu_alter().
  */
 function nems_core_menu_alter(&$items) {
-  dpm($items);
   // List of menu items we will restrict access to.
   $path_list = array(
     'admin/config/content/ckeditor_tabber',
@@ -202,15 +201,15 @@ function nems_core_block_view_alter(&$data, $block) {
  * Hide tb-megamenu items for webmasters.
  */
 function nems_core_form_tb_megamenu_admin_settings_alter(&$form, &$form_state, $form_id) {
-    $perm_menus = _menu_admin_per_menu_get_perm_menus();
-    foreach ($form as $name => $item) {
-      if (substr($name, 0, strlen('#')) !== '#') {
+  $perm_menus = _menu_admin_per_menu_get_perm_menus();
+  foreach ($form as $name => $item) {
+    if (substr($name, 0, strlen('#')) !== '#') {
 
-        if (!isset($perm_menus[$name])) {
-          unset($form[$name]);
-        }
+      if (!isset($perm_menus[$name])) {
+        unset($form[$name]);
       }
     }
+  }
 }
 
 
