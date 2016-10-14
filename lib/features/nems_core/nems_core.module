@@ -46,6 +46,7 @@ function nems_core_permission() {
  * Implements hook_menu_alter().
  */
 function nems_core_menu_alter(&$items) {
+  dpm($items);
   // List of menu items we will restrict access to.
   $path_list = array(
     'admin/config/content/ckeditor_tabber',
@@ -74,7 +75,6 @@ function nems_core_menu_alter(&$items) {
     'admin/config/user-interface/chosen',
     'admin/people/create',
     'admin/structure/block/add',
-    'admin/structure/tb-megamenu/%tb_megamenu_menu_name',
     'admin/config/regional/language/admin_language',
     'admin/config/regional/language/configure',
   );
@@ -102,6 +102,14 @@ function nems_core_menu_alter(&$items) {
   }
   if (isset($items['admin/structure/block/list/seven'])) {
     $items['admin/structure/block/list/seven']['access callback'] = '_nems_core_block_themes_access';
+  }
+
+  // Add restrictions to tb-megamenu.
+  if (isset($items['admin/structure/tb-megamenu'])) {
+    $items['admin/structure/tb-megamenu/%tb_megamenu_menu_name']['access callback'] = '_nems_core_tb_megamenu_access';
+    $items['admin/structure/tb-megamenu/%tb_megamenu_menu_name']['access arguments'] = array(3);
+    $items['admin/structure/tb-megamenu/%tb_megamenu_menu_name/config']['access callback'] = '_nems_core_tb_megamenu_access';
+    $items['admin/structure/tb-megamenu/%tb_megamenu_menu_name/config']['access arguments'] = array(3);
   }
 
   // Restrict access to administrator users.
@@ -189,6 +197,24 @@ function nems_core_block_view_alter(&$data, $block) {
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Hide tb-megamenu items for webmasters.
+ */
+function nems_core_form_tb_megamenu_admin_settings_alter(&$form, &$form_state, $form_id) {
+    $perm_menus = _menu_admin_per_menu_get_perm_menus();
+    foreach ($form as $name => $item) {
+      if (substr($name, 0, strlen('#')) !== '#') {
+
+        if (!isset($perm_menus[$name])) {
+          unset($form[$name]);
+        }
+      }
+    }
+}
+
+
+/**
  * Custom access function to restrict the access to bartik and seven.
  *
  * @param object $theme
@@ -232,4 +258,16 @@ function _nems_core_user_edit_access($account) {
     return FALSE;
   }
   return user_edit_access($account);
+}
+
+
+/**
+ * Access callback for tb-megamenu.
+ */
+function _nems_core_tb_megamenu_access($menu) {
+  if (user_access('administer menu')) {
+    return TRUE;
+  }
+  $perm_menus = _menu_admin_per_menu_get_perm_menus();
+  return isset($perm_menus[array_shift($menu)]);
 }
