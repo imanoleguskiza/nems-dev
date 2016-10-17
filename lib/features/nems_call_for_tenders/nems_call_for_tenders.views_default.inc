@@ -65,6 +65,13 @@ function nems_call_for_tenders_views_default_views() {
   $handler->display->display_options['fields']['field_nems_reference']['table'] = 'field_data_field_nems_reference';
   $handler->display->display_options['fields']['field_nems_reference']['field'] = 'field_nems_reference';
   $handler->display->display_options['fields']['field_nems_reference']['type'] = 'text_plain';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Deadline (field_nems_deadline) */
   $handler->display->display_options['sorts']['field_nems_deadline_value']['id'] = 'field_nems_deadline_value';
   $handler->display->display_options['sorts']['field_nems_deadline_value']['table'] = 'field_data_field_nems_deadline';
@@ -84,17 +91,19 @@ function nems_call_for_tenders_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'nems_call_for_tenders' => 'nems_call_for_tenders',
   );
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['operator'] = 'word';
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Call for tenders';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Global: Combine fields filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['operator'] = 'contains';
+  $handler->display->display_options['filters']['combine']['group'] = 1;
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Contains';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     6 => 0,
@@ -103,17 +112,22 @@ function nems_call_for_tenders_views_default_views() {
     4 => 0,
     7 => 0,
   );
-  /* Filter criterion: Content: Reference (field_nems_reference) */
-  $handler->display->display_options['filters']['field_nems_reference_value']['id'] = 'field_nems_reference_value';
-  $handler->display->display_options['filters']['field_nems_reference_value']['table'] = 'field_data_field_nems_reference';
-  $handler->display->display_options['filters']['field_nems_reference_value']['field'] = 'field_nems_reference_value';
-  $handler->display->display_options['filters']['field_nems_reference_value']['operator'] = 'word';
-  $handler->display->display_options['filters']['field_nems_reference_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_nems_reference_value']['expose']['operator_id'] = 'field_nems_reference_value_op';
-  $handler->display->display_options['filters']['field_nems_reference_value']['expose']['label'] = 'Reference';
-  $handler->display->display_options['filters']['field_nems_reference_value']['expose']['operator'] = 'field_nems_reference_value_op';
-  $handler->display->display_options['filters']['field_nems_reference_value']['expose']['identifier'] = 'field_nems_reference_value';
-  $handler->display->display_options['filters']['field_nems_reference_value']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'title' => 'title',
+    'field_nems_reference' => 'field_nems_reference',
+    'body' => 'body',
+  );
+  /* Filter criterion: Content: Deadline (field_nems_deadline) */
+  $handler->display->display_options['filters']['field_nems_deadline_value']['id'] = 'field_nems_deadline_value';
+  $handler->display->display_options['filters']['field_nems_deadline_value']['table'] = 'field_data_field_nems_deadline';
+  $handler->display->display_options['filters']['field_nems_deadline_value']['field'] = 'field_nems_deadline_value';
+  $handler->display->display_options['filters']['field_nems_deadline_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_nems_deadline_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_nems_deadline_value']['expose']['operator_id'] = 'field_nems_deadline_value_op';
+  $handler->display->display_options['filters']['field_nems_deadline_value']['expose']['label'] = 'Deadline';
+  $handler->display->display_options['filters']['field_nems_deadline_value']['expose']['operator'] = 'field_nems_deadline_value_op';
+  $handler->display->display_options['filters']['field_nems_deadline_value']['expose']['identifier'] = 'field_nems_deadline_value';
+  $handler->display->display_options['filters']['field_nems_deadline_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     6 => 0,
@@ -122,6 +136,29 @@ function nems_call_for_tenders_views_default_views() {
     4 => 0,
     7 => 0,
   );
+  $handler->display->display_options['filters']['field_nems_deadline_value']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['field_nems_deadline_value']['year_range'] = '-10:+10';
+  /* Filter criterion: Content: Status (field_nems_tenders_status) */
+  $handler->display->display_options['filters']['field_nems_tenders_status_tid']['id'] = 'field_nems_tenders_status_tid';
+  $handler->display->display_options['filters']['field_nems_tenders_status_tid']['table'] = 'field_data_field_nems_tenders_status';
+  $handler->display->display_options['filters']['field_nems_tenders_status_tid']['field'] = 'field_nems_tenders_status_tid';
+  $handler->display->display_options['filters']['field_nems_tenders_status_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_nems_tenders_status_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_nems_tenders_status_tid']['expose']['operator_id'] = 'field_nems_tenders_status_tid_op';
+  $handler->display->display_options['filters']['field_nems_tenders_status_tid']['expose']['label'] = 'Status';
+  $handler->display->display_options['filters']['field_nems_tenders_status_tid']['expose']['operator'] = 'field_nems_tenders_status_tid_op';
+  $handler->display->display_options['filters']['field_nems_tenders_status_tid']['expose']['identifier'] = 'field_nems_tenders_status_tid';
+  $handler->display->display_options['filters']['field_nems_tenders_status_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    6 => 0,
+    5 => 0,
+    3 => 0,
+    4 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['field_nems_proposals_status_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_nems_tenders_status_tid']['vocabulary'] = 'nems_call_for_tenders_status';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
