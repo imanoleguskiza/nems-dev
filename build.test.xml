@@ -150,11 +150,33 @@
         />
     </target>
 
+    <!-- Do quality assurance checks. -->
+    <target name="quality-assurance">
+        <if>
+            <available file="${dist.build.dir}" type="dir" />
+            <then>
+                <qualityassurance
+                    skipSelect="${qa.skip.select}"
+                    skipPhpcs="${qa.skip.phpcs}"
+                    makeFile="${subsite.make}"
+                    projectBaseDir="${project.basedir}"
+                    resourcesDir="${subsite.resources.dir}"
+                    distBuildDir="${dist.build.dir}"
+                    libDir="${subsite.resources.lib.dir}"
+                    profileName="${platform.profile.name}"
+                />
+            </then>
+            <else>
+                <fail message="Please run build-dist before running quality-assurance" />
+            </else>
+        </if>
+    </target>
+
     <!-- Run a full static analysis. -->
     <target
         name="mjolnir"
-        description="The Hammer Of Thor will execute a full static analysis. Run this before sending a delivery to QA. Before starting this, make sure to do a full clean build + installation."
-        depends="check-starterkit, setup-behat, behat"
+        description="The Hammer Of Thor will execute a full static analysis on the deployment package. Run this before sending a delivery to QA."
+        depends="build-dist, setup-php-codesniffer, quality-assurance"
     />
 
     <!-- Install a development version of the subsite. -->

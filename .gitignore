@@ -15,3 +15,7 @@ build/
 platform/
 tmp/
 vendor/
+
+# Ignore QA symlinks
+src/Phing/QualityAssuranceSubsiteTask.php
+src/Phing/QualityAssuranceTask.php

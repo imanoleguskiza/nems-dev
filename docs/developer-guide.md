@@ -205,6 +205,21 @@ standards) then you can put your additional rules in the `phpcs-ruleset.xml`
 file. Please refer to the documentation of PHP CodeSniffer on how to configure
 the rules.
 
+#### QA automation tool
+
+Before each pull request to a reference repository of ec-europa you need to run the
+QA automation tool. This will perform static code checks on the result of build-dist.
+The tool is included in the starterkit as a composer dependency. More information on
+the tool can be found at https://github.com/ec-europa/qa-automation.
+
+```
+$ ./bin/phing mjolnir
+```
+
+Note: this tool can only be run after a "composer install" that successfully executed
+the post-install script. Without a composer.lock file this post-install hook will not
+fire.
+
 
 ### 9. Create a pull request
 
