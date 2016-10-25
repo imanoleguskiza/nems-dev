@@ -16,6 +16,7 @@ dependencies[] = ecas_env
 dependencies[] = entityconnect
 dependencies[] = features_roles_permissions
 dependencies[] = insert_block
+dependencies[] = media_browser_plus
 dependencies[] = menu_admin_per_menu
 dependencies[] = nems_accordion
 dependencies[] = nems_i18n_field_group
