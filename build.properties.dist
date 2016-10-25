@@ -211,6 +211,15 @@ phpcs.prepush.source = ${project.basedir}/vendor/pfrenssen/phpcs-pre-push/pre-pu
 phpcs.prepush.destination = ${project.basedir}/.git/hooks/pre-push
 
 
+# Quality Assurance
+#------------------
+
+# Automatic selection of modules on or off. Used for cphp.
+qa.skip.select = 0
+
+# Skip running of phpcs on modules. Used for cphp.
+qa.skip.phpcs = 0
+
 # Host configuration
 # ------------------
 
