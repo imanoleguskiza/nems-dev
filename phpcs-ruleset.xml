@@ -24,6 +24,10 @@
     <exclude-pattern>/src</exclude-pattern>
     <exclude-pattern>/resources</exclude-pattern>
 
+    <!-- Exclude contrib folders. -->
+    <exclude-pattern>contrib</exclude-pattern>
+    <exclude-pattern>contributed</exclude-pattern>
+
     <!-- Exclude folders of example modules. -->
     <exclude-pattern>**/example_module</exclude-pattern>
     <exclude-pattern>**/myproject_core</exclude-pattern>
