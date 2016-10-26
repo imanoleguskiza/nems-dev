@@ -68,6 +68,7 @@ function nems_core_menu_alter(&$items) {
     'admin/config/media/file-settings',
     'admin/config/regional/i18n',
     'admin/config/regional/language/configure',
+    'admin/config/search/path/settings',
     'admin/config/security/settings',
     'admin/config/system/nexteuropa-tokens',
     'admin/config/system/cron',
@@ -77,12 +78,23 @@ function nems_core_menu_alter(&$items) {
     'admin/config/regional/language/admin_language',
     'admin/config/regional/language/configure',
   );
+
   foreach ($path_list as $path) {
     if (isset($items[$path])) {
-      if (isset($items[$path]['access callback'])) {
-        unset($items[$path]['access callback']);
+      // Add custom user access.
+      $items[$path]['access callback'] = '_nems_core_user_access';
+      $required_permissions = array();
+      // Pass original permission and custom one as arguments.
+      if (isset($items[$path]['access arguments'][0])) {
+        if (is_array($items[$path]['access arguments'][0])) {
+          $required_permissions = $items[$path]['access arguments'][0];
+        }
+        else {
+          $required_permissions[] = $items[$path]['access arguments'][0];
+        }
       }
-      $items[$path]['access arguments'][0] = 'access nems menu';
+      $required_permissions[] = 'access nems menu';
+      $items[$path]['access arguments'][0] = $required_permissions;
     }
   }
 
@@ -269,4 +281,44 @@ function _nems_core_tb_megamenu_access($menu) {
   }
   $perm_menus = _menu_admin_per_menu_get_perm_menus();
   return isset($perm_menus[array_shift($menu)]);
+}
+
+/**
+ * Custom function to check multiple permissions.
+ */
+function _nems_core_user_access($permissions, $account = NULL) {
+  $access = TRUE;
+  global $user;
+
+  if (!isset($account)) {
+    $account = $user;
+  }
+  // User #1 has all privileges:
+  if ($account->uid == 1) {
+    return TRUE;
+  }
+
+  // To reduce the number of SQL queries, we cache the user's permissions
+  // in a static variable.
+  // Use the advanced drupal_static() pattern, since this is called very often.
+  static $drupal_static_fast;
+  if (!isset($drupal_static_fast)) {
+    $drupal_static_fast['perm'] = &drupal_static(__FUNCTION__);
+  }
+  $perm = &$drupal_static_fast['perm'];
+  if (!isset($perm[$account->uid])) {
+    $role_permissions = user_role_permissions($account->roles);
+
+    $perms = array();
+    foreach ($role_permissions as $one_role) {
+      $perms += $one_role;
+    }
+    $perm[$account->uid] = $perms;
+  }
+  foreach ($permissions as $string) {
+    if (!isset($perm[$account->uid][$string])) {
+    $access = FALSE;
+    }
+  }
+  return $access;
 }
