@@ -65,7 +65,6 @@ features[field_instance][] = bean-list_block-title_field
 features[field_instance][] = file-audio-field_tags
 features[field_instance][] = file-document-field_tags
 features[field_instance][] = file-image-field_tags
-features[field_instance][] = file-video-field_tags
 features[file_display][] = document__wysiwyg__file_field_file_download_link
 features[file_display][] = document__wysiwyg__file_field_file_table
 features[filter][] = filtered_html
