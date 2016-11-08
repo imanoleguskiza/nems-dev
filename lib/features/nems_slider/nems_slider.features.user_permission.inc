@@ -92,6 +92,8 @@ function nems_slider_user_default_permissions() {
   $permissions['view any slider bean'] = array(
     'name' => 'view any slider bean',
     'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
       'webmaster' => 'webmaster',
     ),
     'module' => 'bean',
