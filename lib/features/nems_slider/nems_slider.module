@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the NEMS Slider feature.
+ */
+
+include_once 'nems_slider.features.inc';
