@@ -94,7 +94,7 @@ function nems_core_strongarm() {
   $strongarm->value = array(
     'node' => 'node',
     'bean' => 'bean',
-    'taxonomy_term' => 0,
+    'taxonomy_term' => taxonomy_term,
     'comment' => 0,
     'file' => 0,
     'user' => 0,
