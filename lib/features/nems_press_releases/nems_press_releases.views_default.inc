@@ -95,7 +95,6 @@ function nems_press_releases_views_default_views() {
   /* Display: Press Releases home block */
   $handler = $view->new_display('block', 'Press Releases home block', 'block_ps_home');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest press releases block';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'list-default';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -154,7 +153,6 @@ function nems_press_releases_views_default_views() {
   /* Display: All Press Releases list */
   $handler = $view->new_display('block', 'All Press Releases list', 'block_ps_full_list');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Latest press releases block';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'list-default';
   $handler->display->display_options['defaults']['pager'] = FALSE;
